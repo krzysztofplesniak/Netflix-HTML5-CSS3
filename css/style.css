@@ -1,0 +1,159 @@
+/* ======= resety CSS */
+
+* {
+	margin: 0px;
+	padding: 0px;
+	color: white
+}
+
+.container {
+	width: 95%;
+	margin: auto;
+	overflow: hidden;
+}
+/* ======= sekcja Header z menu na górze i logo Netflixa */
+
+header {
+	background: black;
+	padding-left: 25px;
+	padding-right: 25px;
+	overflow: auto;
+}
+
+header #logo h1 {
+ 	background: red;
+ 	display: inline-block;
+ 	float: left;
+ 	margin-right: 25px;
+ 	padding: 20px;
+ 	letter-spacing: 1.5px;
+}
+
+header nav {
+	display: inline-block;
+	padding: 30px;
+
+}
+
+.leftMenu {
+	float: left;
+}
+
+.rightMenu {
+	float: right;
+}
+
+header nav ul {
+	list-style: none;
+
+}
+
+header nav ul li {
+	display: inline;
+	padding: 20px;
+}
+
+header nav a {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: helvetica;
+	letter-spacing: 1px;
+}
+
+header nav a:hover {
+	color: red;
+}
+
+/* ======= sekcja HeroImage z dużą grafika w tle */
+
+#heroImage {
+	background: url(../img/background.jpg) no-repeat left top;
+	background-size: cover;
+	padding: 150px 0;
+}
+
+#heroImage .descriptonBox {
+	width: 50%;
+	overflow: hidden;
+}
+
+#heroImage .descriptonBox * {
+   color: white;
+   font-family: helvetica;
+}
+
+#heroImage .descriptonBox h1 {
+	font-family: serif;
+	font-size: 50px;
+	font-weight: 700;
+}
+
+#heroImage .descriptonBox h3 {
+	font-size: 30px;
+	font-weight: 500;
+}
+
+#heroImage .descriptonBox h4 {
+	font-size: 40px;
+	font-weight: 400;
+}
+
+#heroImage .descriptonBox p {
+	display: inline-block;
+	margin-left: 30px;
+	text-align: justify;
+	font-family: helvetica;
+	font-size: 15px;
+	font-weight: 100;
+	margin-top: 25px;
+	margin-bottom: 50px;
+	line-height: 1.3rem;
+	letter-spacing: 1px;
+}
+
+#heroImage .button {
+	display: inline-block;
+	width: 100px;
+	cursor: pointer;
+	padding: 15px 25px;
+	margin: 0px 15px 25px 10px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.btn1 {
+	background: black;
+}
+
+.btn2 {
+	background: red;
+}
+
+
+.btn1:hover {
+	background: rgba(0,0,0,0.6);
+	color: rgba(255,255,255,0.6);
+}
+
+.btn2:hover {
+	background: rgba(255,0,0,0.7);
+	color: rgba(255,255,255,0.6);
+}
+
+
+/* ======= sekcja videoSection z kafelkami filmowymi ======= */
+
+#videoSection {
+	font-size: 0;
+	background: black;
+	
+}
+
+#videoSection .videoBoxes {
+	display: inline-block;
+	width: 17%;
+	height: 150px
+	margin: 1.5%;
+	background: red; 
+	font-size: 16px;
+}

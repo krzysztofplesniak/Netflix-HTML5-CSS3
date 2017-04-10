@@ -1,42 +1,54 @@
-@import url(https://fonts.googleapis.com/css?family=Lato,Roboto);
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
 /* ======= resety CSS */
 
 * {
 	margin: 0px;
 	padding: 0px;
+	border: 0px;
 	color: white;
 	font-size: 16px;
+	font-family: Helvetica, Arial, sans-serif;
 }
+
 
 .container {
 	width: 95%;
-	margin: auto;
-	box-sizing: border-box;
+	max-width: 1800px;
+	margin: 0 auto;
+
+	/*box-sizing: border-box; czy to działa? */ 
 }
 /* ======= sekcja Header z menu na górze i logo Netflixa */
 
 header {
 	background: black;
-	padding-left: 25px;
-	padding-right: 25px;
-	overflow: auto;
 	height: 100px;
+	width: 100%;
+	border-bottom: red 3px solid;
+	overflow: hidden;
+
 }
 
-header #logo  {
-	background: url(../img/netflix.png) left top; 
-	background-size: cover;
-	height: 100px;
-	width: 300px;
-	display: inline-block;
+header #logo {
 	float: left;
+	width: 300px; 
+	height: 90px;
+	position: relative;
+	top: -15px;
+	background: url(../img/netflix.png) no-repeat; 
+	cursor: pointer;
+	margin-right: 25px;
+}
+
+header h1 {
+	position: relative;
+	left: -9999px;
 }
 
 header nav {
 	display: inline-block;
-	padding: 30px;
-	border: 1px solid yellow;
+	padding: 20px 0;
 	box-sizing: border-box;
 }
 
@@ -46,7 +58,6 @@ header nav {
 
 .rightMenu {
 	float: right;
-	border: 1px solid yellow;
 }
 
 header nav ul {
@@ -56,21 +67,23 @@ header nav ul {
 header nav ul li {
 	display: inline;
 	padding: 20px;
+	margin-right: 25px; 
+
 }
 
-header nav a {
+header nav ul li a {
+	font-size: 1.5rem;
 	text-decoration: none;
-	text-transform: uppercase;
-	font-family: helvetica;
 	letter-spacing: 1px;
+	font-family: Helvetica, Arial, sans-serif;
 }
 
-header nav a:hover {
+header nav ul li a:hover {
 	color: red;
 }
 
-header .rightMenu i {
-	font-size: 125%;
+header .rightMenu .iconSearch {
+	font-size: 1.25rem;
 	line-height: 1.2;
 }
 
@@ -80,20 +93,20 @@ header .rightMenu i {
 	display: inline-block; 
 	width: 150px;
 	height: 40px;
-	border: 2px solid yellow;
+	border: 2px solid black;
 	padding: 2px 10px;
 	box-sizing: border-box;
 }
 
 .menuSearch .Box {
-	font-size: 23px;
-	font-family: Helvetica,sans-serif;
+	font-size: 1.5rem;
 	text-align: right;
 }
 
 .menuSearch i {
 	display: inline-block; 
-	margin-right: 15px;
+	margin-right: 20px;
+	
 }	
 .menuSearch .smallBox {
 	color: red;
@@ -119,7 +132,7 @@ header .rightMenu i {
 	display: inline-block; 
 	border: 2px solid white;
 	width: 350px;
-	transition: width 1.5s;
+	transition: width 1s;
 }
 
 /* ======= sekcja HeroImage z dużą grafika w tle */
@@ -128,7 +141,7 @@ header .rightMenu i {
 	background: url(../img/background.jpg) left top; 
 	background-size: cover;
 	padding: 125px 0;
-	max-height: 450px;
+	height: 450px;
 }
 
 #heroImage .descriptonBox {
@@ -140,50 +153,49 @@ header .rightMenu i {
 }
 
 #heroImage .descriptonBox * {
-    font-family: 'Helvetica';
     color: white;
 }
 
 #heroImage .descriptonBox h1 {
-	font-size: 3em;
+	font-size: 3rem;
 	font-weight: 700;
-	line-height: 1.1em;
-	margin: .3em 0 .2em;
+	line-height: 3rem;
+	margin: .3rem 0 .2rem;
 }
 
 
 #heroImage .descriptonBox h2 {
 	color: red;
-	font-size: 1.5em;
+	font-size: 1.5rem;
 	font-weight: 700;
 	letter-spacing: 0.2px;
-	margin: 0 0 .5em;
+	margin: 0 0 .5rem;
 }
 
 #heroImage .descriptonBox h3 {
-	font-size: 1.3em;
+	font-size: 1.3rem;
 	font-weight: 200;
-	margin: .5em 0 .4em;
+	margin: .5rem 0 .4rem;
 }
 
 #heroImage .descriptonBox h4 {
-	font-size: 1.3 em;
+	font-size: 1.3rem;
 	font-weight: 400;
 }
 
 #heroImage .descriptonBox h4 span {
 	color: red;
-	font-size: 1em;
+	font-size: 1.1rem;
 	font-weight: 700;
+
 }
 
 #heroImage .descriptonBox p {
+	font-family: 'Lato';
 	display: inline-block;
 	margin-left: 10px;
 	text-align: justify;
-	font-family: helvetica, sans-serif;
-	font-size: 17px;
-	font-weight: 400;
+	font-size: 1.2rem;
 	margin-top: 15px;
 }
 
@@ -244,15 +256,22 @@ header .rightMenu i {
 	height: 100%;
 	background-size: cover;
 	display: inline-block;
-	border-radius: 10px;
-	opacity: 0.3; 
+	opacity: 0.5; 
+	border-radius: 7px; /*gdy jest w css zdjecie */
+}
+
+.videoBoxes .video img  {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 7px; /*gdy jest w html zdjecie*/
 }
 
 .videoBoxes p {
 	text-align: center;
-	font-family: 'Roboto', helvetica, sans-serif;
+	font-family: 'Lato', sans-serif;
 	color: white; 
-	font-size: 1.2em;	
+	font-size: 1.2rem;	
 	font-weight: 400;
 	padding: 10px;
 	border-bottom: 3px solid red;
@@ -268,7 +287,7 @@ header .rightMenu i {
 	left: 20%;
 	background: black;
 	opacity: .7;
-	font-size: 200%;
+	font-size: 2rem;
 	border: 2px solid white;
 	border-radius: 30px;
 	text-align: center;
@@ -277,18 +296,14 @@ header .rightMenu i {
 }
 
 .videoBoxes .video:hover {
-	border: 7px solid rgba(255,255,255,0); 
+	border: 5px solid rgba(255,255,255,0); 
 	box-sizing: border-box;
 	opacity: 1; 
-	transition: border .2s;
+	transition: border .1s;
 }
 
 .videoBoxes .video:hover i.fa-play-circle {
 	display: inline-block;
-}
-
-.video1 {
-	background: url(../img/witamy_na_hawajach.jpg) no-repeat; 
 }
 
 .video2 {

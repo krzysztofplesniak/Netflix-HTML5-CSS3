@@ -17,63 +17,57 @@
 	width: 95%;
 	max-width: 1800px;
 	margin: 0 auto;
-
-	/*box-sizing: border-box; czy to działa? */ 
+	overflow: hidden;
 }
+
 /* ======= sekcja Header z menu na górze i logo Netflixa */
 
 header {
 	height: 100px;
-	border-bottom: red 3px solid;
+	border-bottom: red 4px solid;
 	overflow: hidden;
 }
 
+
 header #logo {
 	float: left;
-	width: 300px; 
-	height: 85px;
-	position: relative;
-	top: -10px;
+	width: 310px; 
+	height: 90px;
+	margin: 5px;
 	background: url(../img/netflix.png) no-repeat; 
 	background-size: cover;
 	cursor: pointer;
-	margin-right: 20px;
-}
-
-header h1 {
-	position: relative;
-	left: -9999px;
 }
 
 header nav {
-	margin-top: 20px;
+	overflow: hidden;
 }
 
-.leftMenu {
-	float: left;
+header h1 {
+	position: relative;  /* dla celów SEO */*/;
+	left: -9999px;
+	font-size: 15px;
 }
 
-.rightMenu {
+header ul {
 	float: right;
-}
-
-header nav ul {
+	margin-top: 10px;
 	list-style: none;
 }
 
-header nav ul li {
-	display: inline;
-	padding: 0 25px;
+header ul li {
+	display: inline-block;
+	padding: 10px;
 }
 
-header nav ul li a {
+header ul li a {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 1.3rem;
 	text-decoration: none;
 	letter-spacing: 1px;
 }
 
-header nav ul li a:hover {
+header ul li a:hover {
 	color: red;
 }
 
@@ -81,26 +75,25 @@ header nav ul li a:hover {
 
 .menuSearch  {
 	width: 150px;
-	display: inline-block; 
 	padding: 10px;
 	border: 2px solid black;
+	margin: 0 auto;
 }
 
 .menuSearch .smallBox {
 	text-align: right;
 	color: red;	
-	margin-right: 20px;
 	font-size: 1.3rem;
 }
 
 .menuSearch .expandedBox {
 	display: none; 
-	border: 2px solid black;
-	font-size: 1.2rem;	
+	font-size: 1.3rem;	
 }
 
 .menuSearch:hover .expandedBox {
-	display: inline-block; 
+	display: block; 
+	text-align: right;
 }
 
 .menuSearch:hover .smallBox{
@@ -108,21 +101,24 @@ header nav ul li a:hover {
 }
 
 .menuSearch:hover {
-	width: 350px;
-	transition: width 1s;
+	width: 300px;
 	border: 2px solid white;
+	transition: linear width .4s;
 }
+
 
 /* ======= sekcja HeroImage z dużą grafika w tle */
 
 #heroImage {
 	background: url(../img/background.jpg) fixed 0 60px; 
 	background-size: cover;
-	padding: 140px 0;
-	height: 500px;
+	padding: 120px 0 40px;
+	height: auto;
 }
 
-#heroImage .descriptonBox {
+/* ======= sekcja descriptonBox z opisem filmu */
+
+.descriptonBox {
 	width: 75%;
 	opacity: .7;
 	margin-left: 10px;
@@ -130,18 +126,14 @@ header nav ul li a:hover {
    	overflow: hidden;
 }
 
-#heroImage .descriptonBox * {
-    color: white;
-}
-
-#heroImage .descriptonBox h1 {
+.descriptonBox h1 {
 	font-size: 3rem;
 	font-weight: 700;
 	line-height: 3rem;
 	margin: .3rem 0 1rem;
 }
 
-#heroImage .descriptonBox h2 {
+.descriptonBox h2 {
 	color: red;
 	font-size: 1.5rem;
 	font-weight: 700;
@@ -149,26 +141,25 @@ header nav ul li a:hover {
 	margin: 0 0 2rem;
 }
 
-#heroImage .descriptonBox h3 {
+.descriptonBox h3 {
 	font-size: 1.3rem;
 	font-weight: 200;
 	margin: .5rem 0 .5rem;
 }
 
-#heroImage .descriptonBox h4 {
+.descriptonBox h4 {
 	font-size: 1.1rem;
 	font-weight: 400;
 	margin-bottom: 30px;
 }
 
-#heroImage .descriptonBox h4 span {
+.descriptonBox h4 span {
 	color: red;
 	font-size: 1.1rem;
 	font-weight: 700;
-	
 }
 
-#heroImage .descriptonBox p {
+.descriptonBox p {
 	font-family: 'Lato';
 	margin-left: 10px;
 	text-align: justify;
@@ -176,7 +167,15 @@ header nav ul li a:hover {
 	margin-top: 10px;
 }
 
-#heroImage .button {
+.descriptonBox #pppp {
+	display: none;
+}
+
+.descriptonBox .hideMQ {
+	display: block;
+}
+
+.descriptonBox .button {
 	float: left;
 	width: 350px;
 	padding: 15px 15px;
@@ -189,20 +188,20 @@ header nav ul li a:hover {
 	box-sizing: border-box;
 }
 
-.btn1 {
+.descriptonBox .btn1 {
 	background: rgba(255,255,255,0.25);
 }
 
-.btn2 {
+.descriptonBox .btn2 {
 	background: rgba(255,0,0,1);
 }
 
 
-.btn1:hover {
+.descriptonBox .btn1:hover {
 	background: rgba(255,255,255,0.1);
 }
 
-.btn2:hover {
+.descriptonBox .btn2:hover {
 	background: rgba(255,0,0,0.6);
 }
 
@@ -253,20 +252,19 @@ header nav ul li a:hover {
 	width: 18%;
 	margin: 0% 1% 5% 1%;
 }
+.videoBoxes .video img  {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 7px; /*gdy jest w html zdjecie*/
+}
 
 .videoBoxes .video {
 	width: 100%;
-	height: 100%;
+	height: auto;
 	background-size: cover;
 	opacity: 0.5; 
 	border-radius: 7px; /*gdy jest w css zdjecie */
-}
-
-.videoBoxes .video img  {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	border-radius: 7px; /*gdy jest w html zdjecie*/
 }
 
 .videoBoxes p {
@@ -344,125 +342,4 @@ header nav ul li a:hover {
 
 .video10 {
 	background: url(../img/Stranger_Things.jpg) no-repeat; 
-}
-
-
-/* ============  MEDIA QUERIES ==================== */
-/* ================================================ */
-
-@media screen and (max-width: 768px) {
-
-	.container {
-		width: 100%;
-		margin: 0 0;
-
-	}
-
-	header {
-		height: auto;
-		width: 100%;
-		
-		overflow: hidden;
-		border: 2px solid yellow;
-	}	
-
-	header #logo {
-		float: none;
-		margin: 10px auto;
-		position: relative;
-		top: -15px;
-	}
-
-	.leftMenu, .rightMenu{
-		float: none;
-		padding: 3px 0;
-		margin: 0px;
-	}
-	header .menuSearch {
-		margin: 0 auto;
-	}
-
-	header nav ul li {
-		display: block;
-		padding: 5px 0;
-		text-align: center;
-	}
-
-	header nav ul li a {
-		font-size: 1.5rem;
-	}
-
-	#heroImage {
-		width: 100%;
-		border: 2px solid yellow;
-		padding: 15px 0;
-		height: auto;
-		background: url(../img/background.jpg) center no-repeat; 
-		background-size: cover;
-	}
-
-	#heroImage .descriptonBox {
-		width: 92%;
-		margin: 0 2%;
-		padding: 0 2%;
-	   	overflow: hidden;
-	}
-
-	#heroImage .descriptonBox h1 {
-		font-size: 2rem;
-	}
-
-	#heroImage .descriptonBox h2 {
-		font-size: 1.2rem;
-		margin: .5rem 0 .5rem;
-	}
-
-	#heroImage .descriptonBox h3 {
-		font-size: 1rem;
-	}
-
-	#heroImage .descriptonBox h4 {
-		font-size: 1rem;
-	}
-
-	#heroImage .descriptonBox p {
-		margin: 20px 0 0 0;
-		text-align: left;
-		font-size: 1.2rem;
-		line-height: 1.5rem;
-	}
-
-	#heroImage .button {
-		float: left;
-		margin: 40px 20px;
-		width: 200px;
-		padding: 20px 10px;
-		font-size: 1rem; 
-	}
-
-/* ======= sekcja scollDown ======= */
-
-	#scrollDown {
-		display: none;
-	}
-
-/* ======= sekcja videoSection z kafelkami filmowymi ======= */
-
-	.videoBoxes  {
-		height: 250px;
-		width: 46%;
-		margin: 0 2% 70px;
-	}
-
-	.videoBoxes i.fa-play-circle {
-		width: 125px;
-		height: 40px;
-		border-radius: 20px;
-		position: relative;
-		top: 45%;
-		left: 10%;
-		font-size: 1.2rem;
-		line-height: 40px;
-	}
-	
 }

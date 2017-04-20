@@ -1,0 +1,128 @@
+header {
+	height: auto;
+}
+
+header #logo {
+	float: none;
+	margin: 10px auto;
+}
+	
+header nav ul  {
+	float: none;
+	margin-top: 0px;
+}
+
+header nav ul li {
+	display: block;
+	text-align: center;
+	border-top: 2px solid #333;
+}
+
+.menuSearch .smallBox {
+	text-align: center;
+}
+
+.menuSearch:hover {
+	width: 65%;
+}
+
+.menuSearch:hover .expandedBox {
+	text-align: center;
+}
+/* ========= heroImages ========== */
+
+	#heroImage {
+		width: 100%;
+		padding: 15px 0;
+		height: auto;
+		background: url(../img/background.jpg) center no-repeat; 
+		background-size: cover;
+	}
+	
+	.descriptonBox {
+		width: 92%;
+		margin: 0 2%;
+		padding: 0 2%;
+	   	overflow: hidden;
+	}
+
+	.descriptonBox h1 {
+		font-size: 2rem;
+	}
+
+	.descriptonBox h2 {
+		font-size: 1.2rem;
+		margin: .5rem 0 .5rem;
+	}
+
+	.descriptonBox h3 {
+		font-size: 1rem;
+	}
+
+	.descriptonBox h4 {
+		font-size: 1rem;
+	}
+
+	.descriptonBox p {
+		margin: 20px 0 0 0;
+		text-align: left;
+		font-size: 1.2rem;
+		line-height: 1.5rem;
+	}
+
+	.descriptonBox .showMQ {
+		display: block;
+		width: 100px;
+	}
+	
+	.descriptonBox .hideMQ {
+		display: none;
+	}
+	.descriptonBox .showMQ #pppp {
+		display: block;
+		color: red;
+		font-weight: 700;
+	}
+
+	.descriptonBox .showMQ:hover {
+		width: 100%;
+		color: white;
+	}
+	
+	.descriptonBox .showMQ:hover .hideMQ {
+		display: block;
+		font-weight: 200;
+	}
+
+	#heroImage .button {
+		float: left;
+		margin: 40px 20px;
+		width: 200px;
+		padding: 20px 10px;
+		font-size: 1rem; 
+	}
+
+/* ======= sekcja scollDown ======= */
+
+	#scrollDown {
+		display: none;
+	}
+
+/* ======= sekcja videoSection z kafelkami filmowymi ======= */
+
+	.videoBoxes  {
+		height: 250px;
+		width: 40%;
+		margin: 0 2% 70px;
+	}
+
+	.videoBoxes i.fa-play-circle {
+		width: 125px;
+		height: 40px;
+		border-radius: 20px;
+		position: relative;
+		top: 45%;
+		left: 10%;
+		font-size: 1.2rem;
+		line-height: 40px;
+	}

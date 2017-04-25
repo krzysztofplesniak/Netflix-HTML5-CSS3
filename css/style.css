@@ -52,13 +52,13 @@ header h1 {
 
 header ul {
 	float: right;
-	margin-top: 10px;
+	margin-top: .8rem;
 	list-style: none;
 }
 
 header ul li {
 	float: left;
-	padding: 10px 20px;
+	padding: .5rem 1.5rem;
 	text-align: center;
 }
 
@@ -115,9 +115,8 @@ header ul li a {
 #heroImage {
 	background: url(../img/background.jpg) fixed 0 60px; 
 	background-size: cover;
-	padding: 120px 0 40px;
+	padding: 8rem 0 3rem;
 	height: auto;
-	
 }
 
 /* ======= sekcja descriptonBox z opisem filmu */
@@ -125,8 +124,8 @@ header ul li a {
 .descriptonBox {
 	width: 75%;
 	opacity: .7;
-	padding: 0px 10px;
-	margin-left: 10px;
+	padding: 0 1rem;
+	margin-left: 1rem;
 	overflow: hidden;
    	box-sizing: border-box;   	
 
@@ -156,7 +155,7 @@ header ul li a {
 .descriptonBox h4 {
 	font-size: 1.1rem;
 	font-weight: 400;
-	margin-bottom: 30px;
+	margin-bottom: 2rem;
 }
 
 .descriptonBox h4 span {
@@ -167,13 +166,12 @@ header ul li a {
 
 .descriptonBox p {
 	font-family: 'Lato';
-	margin-left: 10px;
+	margin: 1rem 0 1rem 1.5rem;
 	text-align: justify;
 	font-size: 1.2rem;
-	margin-top: 10px;
 }
 
-.descriptonBox #pppp {
+.descriptonBox .showMQ span {
 	display: none;
 }
 
@@ -183,13 +181,13 @@ header ul li a {
 
 .descriptonBox .button {
 	float: left;
-	width: 350px;
-	padding: 15px 15px;
-	margin: 40px 40px;
+	width: 300px;
+	padding: 1rem 1rem;
+	margin: 3rem 3rem;
 	border-radius: 5px;
 	cursor: pointer;
 	letter-spacing: 1.5px;
-	font-size: 1.4rem;
+	font-size: 3rem;
 	text-align: center;
 	box-sizing: border-box;
 }
@@ -232,15 +230,15 @@ header ul li a {
 }
 
 @keyframes arrow {
-    0%   {color:white; left:0px; top: -10px;}
-    100% {color:red; left:0px; top: 10px;}
+    0%   {color:white; left:0px; top: 0px;}
+    100% {color:red; left:0px; top: 15px;}
 }
 
 
 #scrollDown span {
 	font-size: 1.3rem;
 	position: relative;
-	top: -20px;
+	top: -15px;
 	letter-spacing: 1.3px;
 }
 
@@ -248,7 +246,7 @@ header ul li a {
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 #videoSection {
-	padding: 2%; 
+	padding: 1rem; 
 	overflow: hidden;	
 }
 
@@ -279,7 +277,7 @@ header ul li a {
 	color: white; 
 	font-size: 1.2rem;	
 	font-weight: 400;
-	padding: 10px;
+	padding: .5rem;
 	border-bottom: 3px solid red;
 	border-radius: 5px;
 }

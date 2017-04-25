@@ -1,5 +1,5 @@
 header {
-	height: 250px;
+	height: 230px;
 	box-sizing: border-box;
 }
 
@@ -10,19 +10,14 @@ header #logo {
 
 header ul {
 	float: none;
-	
 }
 
 header ul li {
 	width: 25%;
 }
 
-/*header ul li a{
+header ul li a{
 	font-size: 1.1rem;
-}*/
-
-header ul li:hover{
-	
 }
 
 header ul li:hover a{

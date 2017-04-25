@@ -60,6 +60,7 @@ header ul li {
 	float: left;
 	padding: .5rem 1.5rem;
 	text-align: center;
+
 }
 
 header ul li:hover {
@@ -78,8 +79,14 @@ header ul li a {
 
 .menuSearch  {
 	width: 150px;
-	margin: 0 auto;
 	height: 45px;
+	margin: 0 auto;
+	padding: .5rem .5rem;
+}
+
+.menuSearch .smallBox i {
+ 	margin-right: 15px;
+ 	
 }
 
 .menuSearch .smallBox {
@@ -88,24 +95,24 @@ header ul li a {
 	font-size: 1.3rem;
 }
 
+.menuSearch:hover .smallBox{
+	display: none; 
+}
+
 .menuSearch .expandedBox {
 	display: none; 
 	font-size: 1.3rem;	
+	text-align: right;
 }
 
 .menuSearch:hover .expandedBox {
 	display: block; 
-	text-align: right;
-}
-
-.menuSearch:hover .smallBox{
-	display: none; 
 }
 
 .menuSearch:hover {
 	width: 350px;
 	border: 2px solid white;
-	transition: linear width .4s;
+	transition: linear width .5s;
 	box-sizing: border-box;
 }
 

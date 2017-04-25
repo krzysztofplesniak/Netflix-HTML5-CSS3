@@ -1,0 +1,51 @@
+header {
+	height: 250px;
+	box-sizing: border-box;
+}
+
+header #logo {
+	float: none;
+	margin: 10px auto 0px;
+}
+
+header ul {
+	float: none;
+	
+}
+
+header ul li {
+	width: 25%;
+}
+
+/*header ul li a{
+	font-size: 1.1rem;
+}*/
+
+header ul li:hover{
+	
+}
+
+header ul li:hover a{
+	color: red;
+}
+
+.menuSearch {
+	width: 100%;
+}
+
+.menuSearch .smallBox {
+	text-align: center;
+}
+
+.menuSearch:hover .expandedBox {
+	text-align: center;
+}
+
+.menuSearch:hover {
+	width: 100%;
+}
+
+.descriptonBox {
+	width: 96%;
+	margin: 0 2%; 
+}

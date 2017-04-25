@@ -10,6 +10,7 @@
 	background: black;	
 	font-size: 15px;
 	font-family: Helvetica, Arial, sans-serif;
+	box-sizing: border-box;
 }
 
 
@@ -46,7 +47,7 @@ header nav {
 header h1 {
 	position: relative;  /* dla celów SEO */*/;
 	left: -9999px;
-	font-size: 15px;
+	font-size: 1rem;
 }
 
 header ul {
@@ -56,8 +57,14 @@ header ul {
 }
 
 header ul li {
-	display: inline-block;
-	padding: 10px;
+	float: left;
+	padding: 10px 20px;
+	text-align: center;
+}
+
+header ul li:hover {
+	border-bottom: 3px solid red;
+	transition: border-bottom .1s;
 }
 
 header ul li a {
@@ -67,17 +74,12 @@ header ul li a {
 	letter-spacing: 1px;
 }
 
-header ul li a:hover {
-	color: red;
-}
-
 /*efekt rozsuwania pola Szukaj po najechaniu myszką*/
 
 .menuSearch  {
 	width: 150px;
-	padding: 10px;
-	border: 2px solid black;
 	margin: 0 auto;
+	height: 45px;
 }
 
 .menuSearch .smallBox {
@@ -101,9 +103,10 @@ header ul li a:hover {
 }
 
 .menuSearch:hover {
-	width: 300px;
+	width: 350px;
 	border: 2px solid white;
 	transition: linear width .4s;
+	box-sizing: border-box;
 }
 
 
@@ -114,6 +117,7 @@ header ul li a:hover {
 	background-size: cover;
 	padding: 120px 0 40px;
 	height: auto;
+	
 }
 
 /* ======= sekcja descriptonBox z opisem filmu */
@@ -121,9 +125,11 @@ header ul li a:hover {
 .descriptonBox {
 	width: 75%;
 	opacity: .7;
+	padding: 0px 10px;
 	margin-left: 10px;
-	padding: 10px 10px;
-   	overflow: hidden;
+	overflow: hidden;
+   	box-sizing: border-box;   	
+
 }
 
 .descriptonBox h1 {
@@ -229,6 +235,7 @@ header ul li a:hover {
     0%   {color:white; left:0px; top: -10px;}
     100% {color:red; left:0px; top: 10px;}
 }
+
 
 #scrollDown span {
 	font-size: 1.3rem;

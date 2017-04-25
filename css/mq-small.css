@@ -8,28 +8,24 @@ header #logo {
 }
 	
 header nav ul  {
-	float: none;
 	margin-top: 0px;
 }
 
 header nav ul li {
-	display: block;
-	text-align: center;
+	float: none;
+	width: 100%;
 	border-top: 2px solid #333;
 }
 
-.menuSearch .smallBox {
-	text-align: center;
+header ul li:hover {
+	border-bottom: none;
 }
 
-.menuSearch:hover {
-	width: 65%;
+
+.menuSearch {
+	width: 100%;
 }
 
-.menuSearch:hover .expandedBox {
-	text-align: center;
-}
-/* ========= heroImages ========== */
 
 	#heroImage {
 		width: 100%;
@@ -41,9 +37,7 @@ header nav ul li {
 	
 	.descriptonBox {
 		width: 92%;
-		margin: 0 2%;
-		padding: 0 2%;
-	   	overflow: hidden;
+		margin: 0 4%;
 	}
 
 	.descriptonBox h1 {

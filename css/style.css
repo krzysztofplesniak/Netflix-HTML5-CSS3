@@ -54,13 +54,14 @@ header ul {
 	float: right;
 	margin-top: .8rem;
 	list-style: none;
+	border: 1px yellow solid;
 }
 
 header ul li {
 	float: left;
-	padding: .5rem 1.5rem;
+	padding: .5rem;
 	text-align: center;
-
+	height: 40px;
 }
 
 header ul li:hover {
@@ -79,7 +80,7 @@ header ul li a {
 
 .menuSearch  {
 	width: 150px;
-	height: 45px;
+	height: 40px;
 	margin: 0 auto;
 	padding: .5rem .5rem;
 }
@@ -131,18 +132,16 @@ header ul li a {
 .descriptonBox {
 	width: 75%;
 	opacity: .7;
-	padding: 0 1rem;
+	padding: 1rem;
 	margin-left: 1rem;
 	overflow: hidden;
-   	box-sizing: border-box;   	
-
 }
 
 .descriptonBox h1 {
 	font-size: 3rem;
 	font-weight: 700;
 	line-height: 3rem;
-	margin: .3rem 0 1rem;
+	margin: 2rem 0;
 }
 
 .descriptonBox h2 {
@@ -150,19 +149,19 @@ header ul li a {
 	font-size: 1.5rem;
 	font-weight: 700;
 	letter-spacing: 0.2px;
-	margin: 0 0 2rem;
+	margin: 0 0 1.5rem;
 }
 
 .descriptonBox h3 {
 	font-size: 1.3rem;
 	font-weight: 200;
-	margin: .5rem 0 .5rem;
+	margin: 0 0 .2rem;
 }
 
 .descriptonBox h4 {
 	font-size: 1.1rem;
 	font-weight: 400;
-	margin-bottom: 2rem;
+	margin: 0 0 1.5rem;
 }
 
 .descriptonBox h4 span {
@@ -173,9 +172,9 @@ header ul li a {
 
 .descriptonBox p {
 	font-family: 'Lato';
-	margin: 1rem 0 1rem 1.5rem;
 	text-align: justify;
 	font-size: 1.2rem;
+	margin: .5rem 0;
 }
 
 .descriptonBox .showMQ span {
@@ -189,8 +188,8 @@ header ul li a {
 .descriptonBox .button {
 	float: left;
 	width: 300px;
-	padding: 1rem 1rem;
-	margin: 1rem 2rem;
+	padding: 1rem;
+	margin: 1rem;
 	border-radius: 5px;
 	cursor: pointer;
 	letter-spacing: 1.5px;
@@ -201,6 +200,7 @@ header ul li a {
 
 .descriptonBox .btn1 {
 	background: rgba(255,255,255,0.25);
+	margin: 1rem 4rem 1rem 1rem;
 }
 
 .descriptonBox .btn2 {
@@ -226,7 +226,7 @@ header ul li a {
 	text-decoration: none;
 }
 
-#scrollDown i {
+/*#scrollDown i {
 	font-size: 450%;
 	margin-right: 20px; 
 	position: relative;
@@ -239,7 +239,7 @@ header ul li a {
 @keyframes arrow {
     0%   {color:white; left:0px; top: 0px;}
     100% {color:red; left:0px; top: 15px;}
-}
+}*/
 
 
 #scrollDown span {

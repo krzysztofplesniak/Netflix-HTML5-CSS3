@@ -44,3 +44,21 @@ header ul li:hover a {
 	width: 96%;
 	margin: 0 2%; 
 }
+
+
+.videoBoxes  {
+	height: 300px;
+	width: 31%;
+	margin: 0 2% 70px;
+}
+
+.videoBoxes i.fa-play-circle {
+	width: 150px;
+	height: 50px;
+	border-radius: 20px;
+	position: relative;
+	top: -145px;
+	left: 10%;
+	font-size: 1.2rem;
+	line-height: 40px;
+}

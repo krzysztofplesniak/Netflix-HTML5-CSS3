@@ -16,11 +16,11 @@ header ul li {
 	width: 25%;
 }
 
-header ul li a{
+header ul li a {
 	font-size: 1.1rem;
 }
 
-header ul li:hover a{
+header ul li:hover a {
 	color: red;
 }
 

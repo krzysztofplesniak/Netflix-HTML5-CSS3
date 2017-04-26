@@ -251,14 +251,15 @@ header ul li a {
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 #videoSection {
-	padding: 1rem; 
 	overflow: hidden;	
+	max-width: 1700px;
+	margin: 0 auto;
 }
 
 .videoBoxes {
 	float: left;  /* w tutku był (dipslay: inline-block) i powododował ze były odstępy międzye div'ami. Trzeba było zastosowac trik z() font-size: 0px)*/
-	width: 18%;
-	margin: 5px 1%;
+	width: 16%;
+	margin: 5px 2%;
 	opacity: 0.5; 
 }
 
@@ -267,12 +268,13 @@ header ul li a {
 	height: auto;
 	object-fit: cover;
 	border-radius: 7px; 
+
 }
 
 .videoBoxes:hover {
-	border: 5px solid black; 
-	box-sizing: border-box;
 	opacity: 1; 
+	border: 4px solid white; 
+	box-sizing: border-box;
 	transition: border .1s;
 }
 
@@ -285,6 +287,7 @@ header ul li a {
 	padding: .5rem;
 	border-bottom: 3px solid red;
 	border-radius: 5px;
+	height: 55px;
 }
 
 .videoBoxes .fa-play-circle {
@@ -306,9 +309,6 @@ header ul li a {
 .videoBoxes .video:hover .fa-play-circle {
 	display: block;
 }
-
-
-
 
 
 /* teraz jest grafika w  HTML a była kiedyś w CSS */

@@ -24,6 +24,10 @@ header ul li a {
 	font-size: 1.2rem;
 }
 
+#heroImage {
+	padding: 2rem 0 3rem;
+}
+
 .menuSearch {
 	width: 100%;
 }
@@ -45,20 +49,7 @@ header ul li a {
 	margin: 0 2%; 
 }
 
-
 .videoBoxes  {
-	height: 300px;
-	width: 31%;
-	margin: 0 2% 70px;
-}
-
-.videoBoxes i.fa-play-circle {
-	width: 150px;
-	height: 50px;
-	border-radius: 20px;
-	position: relative;
-	top: -145px;
-	left: 10%;
-	font-size: 1.2rem;
-	line-height: 40px;
+	width: 29%;
+	margin: 5px 2%;
 }

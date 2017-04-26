@@ -105,18 +105,6 @@ header ul li:hover {
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 .videoBoxes  {
-	height: 250px;
-	width: 40%;
-	margin: 0 2% 70px;
-}
-
-.videoBoxes i.fa-play-circle {
-	width: 125px;
-	height: 40px;
-	border-radius: 20px;
-	position: relative;
-	top: -145px;
-	left: 10%;
-	font-size: 1.2rem;
-	line-height: 40px;
+	width: 45%;
+	margin: 5px 2%;
 }

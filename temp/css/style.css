@@ -1,7 +1,6 @@
 @import url(href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Raleway:300,400,500,700|Roboto:300,400,500,700&amp;subset=latin-ext");
 
 /* ======= resety CSS */
-
 * {
 	margin: 0px;
 	padding: 0px;
@@ -29,23 +28,23 @@ header {
 	overflow: hidden;
 }
 
+header nav {
+	overflow: hidden;
+}
 
 header #logo {
 	float: left;
 	width: 310px; 
 	height: 90px;
 	margin: 5px;
-	background: url(../img/netflix.png) no-repeat; 
+	background: url(../../assets/img/netflix.png) no-repeat; 
 	background-size: cover;
 	cursor: pointer;
 }
 
-header nav {
-	overflow: hidden;
-}
 
 header h1 {
-	position: relative;  /* dla celów SEO */*/;
+	position: relative;  /* dla celów SEO */
 	left: -9999px;
 	font-size: 1rem;
 }
@@ -76,7 +75,6 @@ header ul li a {
 }
 
 /*efekt rozsuwania pola Szukaj po najechaniu myszką*/
-
 .menuSearch  {
 	width: 150px;
 	height: 40px;
@@ -129,7 +127,7 @@ header ul li a {
 /* ======= sekcja HeroImage z dużą grafika w tle */
 
 #heroImage {
-	background: url(../img/background.jpg) fixed 0 60px; 
+	background: url(../../assets/img/background.jpg) fixed 0 60px; 
 	background-size: cover;
 	padding: 8rem 0 3rem;
 	height: auto;
@@ -248,14 +246,12 @@ header ul li a {
     100% {color:red; left:0px; top: 15px;}
 }*/
 
-
 #scrollDown span {
 	font-size: 1.3rem;
 	position: relative;
 	top: -15px;
 	letter-spacing: 1.3px;
 }
-
 
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
@@ -284,7 +280,8 @@ header ul li a {
 .videoBoxes img  {
 	width: 100%;
 	height: 80%;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 	border-radius: 7px; 
 }
 
@@ -327,42 +324,3 @@ header ul li a {
 .fa-play-circle:before{
 	margin-right: 5px;
 }
-
-/* teraz jest grafika w  HTML a była kiedyś w CSS */
-/* dobrałem HTML dla wypełnenia na przyszłość danymi z bazy filmów kóre manipulowac będ poprze JS czyli na HTML a nie na CSS*/
-
-/*.video2 {
-	background: url(../img/HowDoYouNow.jpg) no-repeat; 
-}
-
-.video3 {
-	background: url(../img/The_Siege_of_Jadotville.jpg) no-repeat; 
-}
-
-.video4 {
-	background: url(../img/We_Were_Soldiers.jpg) no-repeat; 
-}
-
-.video5 {
-	background: url(../img/TearsOfTheSun.jpg) no-repeat; 
-}
-
-.video6 {
-	background: url(../img/W_starym_dobrym_stylu.jpg) no-repeat; 
-}
-
-.video7 {
-	background: url(../img/Orange_Is_the_New_Black.jpg) no-repeat; 
-}
-
-.video8 {
-	background: url(../img/House_of_Cards.jpg) no-repeat; 
-}
-
-.video9 {
-	background: url(../img/Timeless.jpg) no-repeat; 
-}
-
-.video10 {
-	background: url(../img/Stranger_Things.jpg) no-repeat; 
-}*/

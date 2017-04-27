@@ -21,7 +21,6 @@ header ul li:hover {
 	border-bottom: none;
 }
 
-
 .menuSearch {
 	width: 100%;
 }
@@ -85,13 +84,13 @@ header ul li:hover {
 	display: none;
 }
 
-#heroImage .button {
-	float: left;
-	width: 150px;
-	margin: 1rem;
-	padding: 1rem;
-	font-size: 1rem; 
+.descriptonBox .button {
+	width: 125px;
+	font-size: .8rem;
+	padding: .75rem;
+	margin: .3rem .5rem;
 }
+
 
 /* ======= sekcja scollDown ======= */
 
@@ -112,4 +111,8 @@ header ul li:hover {
 
 .videoBoxes i {
 	top: 25vw;
+	left: 25%;
+	width: 50%;
+	line-height: 37px;
+	font-size: 1rem;
 }

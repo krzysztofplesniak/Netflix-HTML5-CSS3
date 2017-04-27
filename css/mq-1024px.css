@@ -51,6 +51,11 @@ header ul li a {
 	margin: 0 2%; 
 }
 
+.descriptonBox .button {
+	width: 250px;
+	font-size: 1.2rem;
+}
+
 .videoBoxes  {
 	height: 40vw;
 	width: 21%;
@@ -62,5 +67,10 @@ header ul li a {
 }
 
 .videoBoxes i {
-	top: 15vw;
+	top: 13vw;
+	left: 15%;
+	width: 70%;
+	height: 40px;
+	line-height: 35px;
+	font-size: 1.3rem;
 }

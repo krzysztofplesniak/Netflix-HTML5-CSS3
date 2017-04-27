@@ -3,6 +3,13 @@ header ul {
 	margin: 0 0;
 }
 
+.descriptonBox .button {
+	width: 160px;
+	font-size: 1rem;
+	padding: .75rem 0rem;
+	margin: .75rem 1.5rem;
+}
+
 .videoBoxes  {
 	height: 50vw;
 	width: 29%;
@@ -11,4 +18,11 @@ header ul {
 .videoBoxes p {
 	top: 3vw;	
 	font-size: .9rem;	
+}
+
+.videoBoxes i {
+	top: 17vw;
+	left: 25%;
+	width: 50%;
+	font-size: 1.1rem;
 }

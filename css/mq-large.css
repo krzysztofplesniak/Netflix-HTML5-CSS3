@@ -1,0 +1,80 @@
+header {
+	height: 210px;
+	box-sizing: border-box;
+}
+
+header #logo {
+	float: none;
+	margin: 10px auto 0px;
+}
+
+header ul {
+	float: none;
+	width: 80%;
+	margin: 0 auto;
+}
+
+header ul li {
+	width: 25%;
+	padding: 0.5rem 0.5rem
+}
+
+header ul li:hover a {
+	color: red;
+}
+header ul li a {
+	font-size: 1.2rem;
+}
+
+#heroImage {
+	padding: 2rem 0 3rem;
+}
+
+.menuSearch {
+	width: 100%;
+}
+
+.menuSearch .smallBox {
+	text-align: center;
+}
+
+.menuSearch:hover .expandedBox {
+	text-align: center;
+}
+
+.menuSearch:hover {
+	width: 100%;
+}
+
+.descriptonBox {
+	width: 96%;
+	margin: 0 2%; 
+}
+
+#videoSection {
+	max-width: 1000px;
+	margin: 0 auto;
+	height: auto;
+}
+
+.videoBoxes  {
+	width: 21%;
+	height: 40vw;
+	margin: 5px 2%;
+}
+
+.videoBoxes img  {
+	height: 80%;
+}
+
+.videoBoxes i {
+	top: -270px;
+	left: 40px;
+}
+
+.videoBoxes p {
+	height: 20%;
+	line-height: 25px;
+	font-size: 1.1rem;	
+}
+}

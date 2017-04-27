@@ -1,0 +1,14 @@
+header ul {
+	width: 100%;
+	margin: 0 0;
+}
+
+.videoBoxes  {
+	height: 50vw;
+	width: 29%;
+}
+
+
+.videoBoxes p {
+	line-height: 20px;
+}

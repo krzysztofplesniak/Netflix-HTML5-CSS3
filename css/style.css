@@ -262,6 +262,7 @@ header ul li a {
 	height: 30vw;
 	margin: 5px 2%;
 	opacity: 0.5; 
+	position: relative;
 }
 
 .videoBoxes:hover img{
@@ -297,14 +298,14 @@ header ul li a {
 }
 
 .videoBoxes i {
-	display: none;
-	width: 155px;
+	/*display: none;*/
+	position: absolute;
+	top: 10vw;
+	left: 10%;
+	width: 80%;
 	height: 50px;
 	border: 2px solid white;
 	border-radius: 25px;
-	position: relative;
-	top: -200px;
-	left: 20px;
 	opacity: .7;
 	font-size: 1.5rem;
 	text-align: center;

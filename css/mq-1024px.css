@@ -51,30 +51,16 @@ header ul li a {
 	margin: 0 2%; 
 }
 
-#videoSection {
-	max-width: 1000px;
-	margin: 0 auto;
-	height: auto;
-}
-
 .videoBoxes  {
-	width: 21%;
 	height: 40vw;
-	margin: 5px 2%;
-}
-
-.videoBoxes img  {
-	height: 80%;
-}
-
-.videoBoxes i {
-	top: -270px;
-	left: 40px;
+	width: 21%;
 }
 
 .videoBoxes p {
-	height: 20%;
 	line-height: 25px;
 	font-size: 1.1rem;	
 }
+
+.videoBoxes i {
+	top: 15vw;
 }

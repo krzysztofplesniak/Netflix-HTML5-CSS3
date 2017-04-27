@@ -102,16 +102,15 @@ header ul li:hover {
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 .videoBoxes  {
-	width: 45%;
 	height: 75vw;
-	margin: 5px 2%;
-}
-
-.videoBoxes i {
-	top: -230px;
-	left: 10px;
+	width: 45%;
 }
 
 .videoBoxes p {
-	font-size: 1rem;	
+	font-size: 1rem;
+	line-height: 25px;	
+}
+
+.videoBoxes i {
+	top: 25vw;
 }

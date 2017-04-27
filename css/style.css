@@ -257,12 +257,14 @@ header ul li a {
 }
 
 .videoBoxes {
+	position: relative;  /*to jest dla klawisza PLAY w tagu "i"*/ 
 	float: left;  /* w tutku był (dipslay: inline-block) i powododował ze były odstępy międzye div'ami. Trzeba było zastosowac trik z() font-size: 0px)*/
 	width: 16%;
 	height: 30vw;
-	margin: 5px 2%;
+	margin: 10px 2%;
 	opacity: 0.5; 
-	position: relative;
+	border-bottom: 3px solid red;
+	border-radius: 5px;
 }
 
 .videoBoxes:hover img{
@@ -286,15 +288,13 @@ header ul li a {
 }
 
 .videoBoxes p {
-	height: 20%;
-	padding: .5rem;
-	border-bottom: 3px solid red;
-	border-radius: 5px;
 	text-align: center;
 	font-family: 'Lato', sans-serif;
 	color: white; 
 	font-size: 1.2rem;	
 	font-weight: 400;
+	position: relative;
+	top: 1.8vw;
 }
 
 .videoBoxes i {

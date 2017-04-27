@@ -107,8 +107,7 @@ header ul li:hover {
 }
 
 .videoBoxes p {
-	font-size: 1rem;
-	line-height: 25px;	
+	top: 5vw;	
 }
 
 .videoBoxes i {

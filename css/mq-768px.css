@@ -8,7 +8,7 @@ header ul {
 	width: 29%;
 }
 
-
 .videoBoxes p {
-	line-height: 20px;
+	top: 3vw;	
+	font-size: .9rem;	
 }

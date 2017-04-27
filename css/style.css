@@ -251,65 +251,67 @@ header ul li a {
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 #videoSection {
-	overflow: hidden;	
 	max-width: 1700px;
 	margin: 0 auto;
+	height: auto;
 }
 
 .videoBoxes {
 	float: left;  /* w tutku był (dipslay: inline-block) i powododował ze były odstępy międzye div'ami. Trzeba było zastosowac trik z() font-size: 0px)*/
 	width: 16%;
+	height: 30vw;
 	margin: 5px 2%;
 	opacity: 0.5; 
 }
 
-.videoBoxes img  {
-	width: 100%;
-	height: auto;
-	object-fit: cover;
-	border-radius: 7px; 
-
-}
-
-.videoBoxes:hover {
-	opacity: 1; 
-	border: 4px solid white; 
-	box-sizing: border-box;
+.videoBoxes:hover img{
+	border: 4px solid black; 
 	transition: border .1s;
 }
 
+.videoBoxes img  {
+	width: 100%;
+	height: 80%;
+	object-fit: cover;
+	border-radius: 7px; 
+}
+
+.videoBoxes:hover i {
+	display: inline-block;
+}
+
+
+.videoBoxes:hover {
+	opacity: 1; 
+}
+
 .videoBoxes p {
+	height: 20%;
+	padding: .5rem;
+	border-bottom: 3px solid red;
+	border-radius: 5px;
 	text-align: center;
 	font-family: 'Lato', sans-serif;
 	color: white; 
 	font-size: 1.2rem;	
 	font-weight: 400;
-	padding: .5rem;
-	border-bottom: 3px solid red;
-	border-radius: 5px;
-	height: 55px;
 }
 
-.videoBoxes .fa-play-circle {
+.videoBoxes i {
 	display: none;
-	width: 175px;
-	height: 60px;
+	width: 155px;
+	height: 50px;
 	border: 2px solid white;
-	border-radius: 30px;
+	border-radius: 25px;
 	position: relative;
-	top: -250px;
-	left: 20%;
+	top: -200px;
+	left: 20px;
 	opacity: .7;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	text-align: center;
-	line-height: 60px;
+	line-height: 45px;
 	cursor: pointer;
 }
-
-.videoBoxes .video:hover .fa-play-circle {
-	display: block;
-}
-
 
 /* teraz jest grafika w  HTML a była kiedyś w CSS */
 /* dobrałem HTML dla wypełnenia na przyszłość danymi z bazy filmów kóre manipulowac będ poprze JS czyli na HTML a nie na CSS*/

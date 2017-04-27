@@ -51,5 +51,22 @@ header ul li a {
 
 .videoBoxes  {
 	width: 29%;
+	height: 50vw;
 	margin: 5px 2%;
+}
+
+.videoBoxes img  {
+	height: 80%;
+}
+
+.videoBoxes i {
+	top: -270px;
+	left: 40px;
+}
+
+.videoBoxes p {
+	height: 20%;
+	line-height: 25px;
+	font-size: 1.1rem;	
+}
 }

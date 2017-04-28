@@ -231,7 +231,7 @@ header ul li a {
 	text-decoration: none;
 }
 
-/*#scrollDown i {
+#scrollDown i {
 	font-size: 450%;
 	margin-right: 20px; 
 	position: relative;
@@ -244,7 +244,7 @@ header ul li a {
 @keyframes arrow {
     0%   {color:white; left:0px; top: 0px;}
     100% {color:red; left:0px; top: 15px;}
-}*/
+}
 
 #scrollDown span {
 	font-size: 1.3rem;

@@ -23,7 +23,6 @@
 /* ======= sekcja Header z menu na górze i logo Netflixa */
 
 header {
-	background: red;	
 	height: 100px;
 	border-bottom: red 4px solid;
 	overflow: hidden;

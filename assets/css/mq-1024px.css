@@ -22,8 +22,9 @@ header ul li {
 header ul li:hover a {
 	color: red;
 }
+
 header ul li a {
-	font-size: 1.2rem;
+	font-size: 1.4rem;
 }
 
 #heroImage {
@@ -33,9 +34,10 @@ header ul li a {
 .menuSearch {
 	width: 100%;
 }
-
+ 
 .menuSearch .smallBox {
 	text-align: center;
+	font-size: 1.4rem;
 }
 
 .menuSearch:hover .expandedBox {
@@ -62,7 +64,6 @@ header ul li a {
 }
 
 .videoBoxes p {
-	top: 1.6vw;	
 	font-size: 1.1rem;
 }
 

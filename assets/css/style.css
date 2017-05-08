@@ -1,4 +1,9 @@
 @import url(href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Raleway:300,400,500,700|Roboto:300,400,500,700&amp;subset=latin-ext");
+@import url("mq-1280px.css") screen and (max-width: 1280px);
+@import url("mq-1024px.css") screen and (max-width: 1024px);
+@import url("mq-768px.css") screen and (max-width: 768px);
+@import url("mq-480px.css") screen and (max-width: 480px);
+
 
 /* ======= resety CSS */
 * {
@@ -26,10 +31,10 @@ header {
 	height: 100px;
 	border-bottom: red 4px solid;
 	overflow: hidden;
+}
 
-	nav {
-		overflow: hidden;
-	}
+header nav {
+	overflow: hidden;
 }
 
 header #logo {

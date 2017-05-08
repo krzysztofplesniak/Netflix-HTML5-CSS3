@@ -1,6 +1,6 @@
-@import url(href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Raleway:300,400,500,700|Roboto:300,400,500,700&amp;subset=latin-ext");
 
 /* ======= resety CSS */
+
 * {
 	margin: 0px;
 	padding: 0px;
@@ -11,7 +11,6 @@
 	font-family: Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
 }
-
 
 .container {
 	width: 95%;
@@ -111,17 +110,6 @@ header ul li a {
 	border: 2px solid white;
 	transition: linear width .5s;
 	box-sizing: border-box;
-}
-/* MQ dla porpawnego wyśwetlania rozsuwanej belki "Szukaj" 
-   po najechaniu myszką dla rodzielczosci bliskich 1024px */
-
-@media (min-width: 1024px) and (max-width: 1300px) {
-	header ul li {
-		padding: .5rem 10px;
-	}
-	.menuSearch:hover {
-		width: 200px;
-	}
 }
 
 /* ======= sekcja HeroImage z dużą grafika w tle */
@@ -325,3 +313,4 @@ header ul li a {
 .fa-play-circle:before{
 	margin-right: 5px;
 }
+

@@ -1,5 +1,82 @@
-header {
-	height: 210px;
-	box-sizing: border-box;
-	border: 10px solid green;
+/* ======== MEDIA QUERIES 1024PX =======*/
+
+@media (min-width: 769px) and (max-width: 1024px) {
+	header {
+		height: 210px;
+		box-sizing: border-box;
+		border: 10px solid green;
+	}
+
+	header #logo {
+		float: none;
+		margin: 10px auto 0px;
+	}
+
+	header ul {
+		float: none;
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	header ul li {
+		width: 25%;
+		padding: 0.5rem 0.5rem
+	}
+
+	header ul li:hover a {
+		color: red;
+	}
+
+	header ul li a {
+		font-size: 1.4rem;
+	}
+
+	#heroImage {
+		padding: 2rem 0 3rem;
+	}
+
+	.menuSearch {
+		width: 100%;
+	}
+	 
+	.menuSearch .smallBox {
+		text-align: center;
+		font-size: 1.4rem;
+	}
+
+	.menuSearch:hover .expandedBox {
+		text-align: center;
+	}
+
+	.menuSearch:hover {
+		width: 100%;
+	}
+
+	.descriptonBox {
+		width: 96%;
+		margin: 0 2%; 
+	}
+
+	.descriptonBox .button {
+		width: 250px;
+		font-size: 1.2rem;
+	}
+
+	.videoBoxes  {
+		height: 40vw;
+		width: 21%;
+	}
+
+	.videoBoxes p {
+		font-size: 1.1rem;
+	}
+
+	.videoBoxes i {
+		top: 13vw;
+		left: 15%;
+		width: 70%;
+		height: 40px;
+		line-height: 35px;
+		font-size: 1.3rem;
+	}
 }

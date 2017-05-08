@@ -1,8 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Raleway:300,400,500,700|Roboto:300,400,500,700&amp;subset=latin-ext");
+@media screen and (max-width: 1280px) {
 
+header ul li {
+	padding: .5rem 10px;
+}
+
+.menuSearch:hover {
+	width: 200px;
+}
+
+header {
+	height: 210px;
+	box-sizing: border-box;
+	border: 10px solid red;
+}
+
+header #logo {
+	float: none;
+	margin: 10px auto 0px;
+}
+
+header ul {
+	float: none;
+	width: 80%;
+	margin: 0 auto;
+}
+
+header ul li {
+	width: 25%;
+	padding: 0.5rem 0.5rem
+}
+
+header ul li:hover a {
+	color: red;
+}
+
+header ul li a {
+	font-size: 1.4rem;
+}
+
+#heroImage {
+	padding: 2rem 0 3rem;
+}
+
+.menuSearch {
+	width: 100%;
+}
+ 
+.menuSearch .smallBox {
+	text-align: center;
+	font-size: 1.4rem;
+}
+
+.menuSearch:hover .expandedBox {
+	text-align: center;
+}
+
+.menuSearch:hover {
+	width: 100%;
+}
+
+.descriptonBox {
+	width: 96%;
+	margin: 0 2%; 
+}
+
+.descriptonBox .button {
+	width: 250px;
+	font-size: 1.2rem;
+}
+
+.videoBoxes  {
+	height: 40vw;
+	width: 21%;
+}
+
+.videoBoxes p {
+	font-size: 1.1rem;
+}
+
+.videoBoxes i {
+	top: 13vw;
+	left: 15%;
+	width: 70%;
+	height: 40px;
+	line-height: 35px;
+	font-size: 1.3rem;
+}
+}
+/*@import url("mq-1024px.css") screen and (max-width: 1024px);
+@import url("mq-768px.css") screen and (max-width: 768px);
+@import url("mq-480px.css") screen and (max-width: 480px);*/
 /* ======= resety CSS */
-
 * {
-	margin: 0px;
+	margin: 10px;
 	padding: 0px;
 	border: 0px;
 	color: white;
@@ -11,26 +102,22 @@
 	font-family: Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
 }
-
 .container {
 	width: 95%;
 	max-width: 1800px;
 	margin: 0 auto;
 	overflow: hidden;
 }
-
 /* ======= sekcja Header z menu na górze i logo Netflixa */
-
-header {
+/*header {
 	height: 100px;
 	border-bottom: red 4px solid;
 	overflow: hidden;
-}
 
-header nav {
-	overflow: hidden;
-}
-
+	nav {
+		overflow: hidden;
+	}	
+}*/
 header #logo {
 	float: left;
 	width: 310px; 
@@ -40,89 +127,72 @@ header #logo {
 	background-size: cover;
 	cursor: pointer;
 }
-
 header h1 {
 	position: relative;  /* dla celów SEO */
 	left: -9999px;
 	font-size: 1rem;
 }
-
 header ul {
 	float: right;
 	margin-top: .8rem;
 	list-style: none;
 }
-
 header ul li {
 	float: left;
 	padding: .5rem 2vw;
 	text-align: center;
 	height: 40px;
 }
-
 header ul li:hover {
 	border-bottom: 3px solid red;
 	transition: border-bottom .1s;
 }
-
 header ul li a {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 1.3rem;
 	text-decoration: none;
 	letter-spacing: 1px;
 }
-
 /*efekt rozsuwania pola Szukaj po najechaniu myszką*/
 .menuSearch  {
 	width: 150px;
 	height: 40px;
 	margin: 0 auto;
 	padding: .5rem .5rem;
-	border: solid yellow 1px;
 }
-
 .menuSearch .smallBox i {
  	margin-right: 15px;
 }
-
 .menuSearch .smallBox {
 	text-align: right;
 	color: red;	
 	font-size: 1.3rem;
 }
-
 .menuSearch:hover .smallBox{
 	display: none; 
 }
-
 .menuSearch .expandedBox {
 	display: none; 
 	font-size: 1.3rem;	
 	text-align: right;
 }
-
 .menuSearch:hover .expandedBox {
 	display: block; 
 }
-
 .menuSearch:hover {
 	width: 350px;
 	border: 2px solid white;
 	transition: linear width .5s;
 	box-sizing: border-box;
 }
-
 /* ======= sekcja HeroImage z dużą grafika w tle */
-
 #heroImage {
 	background: url(../../assets/img/background.jpg) fixed 0 60px; 
 	background-size: cover;
 	padding: 8rem 0 3rem;
 	height: auto;
 }
-
 /* ======= sekcja descriptonBox z opisem filmu */
-
 .descriptonBox {
 	width: 75%;
 	opacity: .7;
@@ -130,14 +200,12 @@ header ul li a {
 	margin-left: 1rem;
 	overflow: hidden;
 }
-
 .descriptonBox h1 {
 	font-size: 3rem;
 	font-weight: 700;
 	line-height: 3rem;
 	margin: 2rem 0;
 }
-
 .descriptonBox h2 {
 	color: red;
 	font-size: 1.5rem;
@@ -145,41 +213,33 @@ header ul li a {
 	letter-spacing: 0.2px;
 	margin: 0 0 1.5rem;
 }
-
 .descriptonBox h3 {
 	font-size: 1.3rem;
 	font-weight: 200;
 	margin: 0 0 .2rem;
 }
-
 .descriptonBox h4 {
 	font-size: 1.1rem;
 	font-weight: 400;
 	margin: 0 0 1.5rem;
 }
-
 .descriptonBox h4 span {
 	color: red;
 	font-size: 1.1rem;
 	font-weight: 700;
 }
-
 .descriptonBox p {
 	font-family: 'Lato';
 	text-align: justify;
 	font-size: 1.2rem;
 	margin: .5rem 0;
-	line-height: 1.7rem;
 }
-
 .descriptonBox .showMQ span {
 	display: none;
 }
-
 .descriptonBox .hideMQ {
 	display: block;
 }
-
 .descriptonBox .button {
 	float: left;
 	width: 300px;
@@ -192,35 +252,27 @@ header ul li a {
 	text-align: center;
 	box-sizing: border-box;
 }
-
 .descriptonBox .btn1 {
 	background: rgba(255,255,255,0.25);
 	margin: 1rem 4rem 1rem 1rem;
 }
-
 .descriptonBox .btn2 {
 	background: rgba(255,0,0,1);
 }
-
 .descriptonBox .btn1:hover {
 	background: rgba(255,255,255,0.1);
 }
-
 .descriptonBox .btn2:hover {
 	background: rgba(255,0,0,0.6);
 }
-
 /* =======   sekcja scrollDown icony z FontAwesome umieszczone na dole strony pierwszej */
-
 #scrollDown {
 	text-align: center;
 }
-
 #scrollDown a {
 	text-decoration: none;
 }
-
-#scrollDown i {
+/*#scrollDown i {
 	font-size: 450%;
 	margin-right: 20px; 
 	position: relative;
@@ -233,23 +285,19 @@ header ul li a {
 @keyframes arrow {
     0%   {color:white; left:0px; top: 0px;}
     100% {color:red; left:0px; top: 15px;}
-}
-
+}*/
 #scrollDown span {
 	font-size: 1.3rem;
 	position: relative;
 	top: -15px;
 	letter-spacing: 1.3px;
 }
-
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
-
 #videoSection {
 	max-width: 1700px;
 	margin: 0 auto;
 	height: auto;
 }
-
 .videoBoxes {
 	position: relative;  /*to jest dla klawisza PLAY w tagu "i"*/ 
 	float: left;  /* w tutku był (dipslay: inline-block) i powododował ze były odstępy międzye div'ami. Trzeba było zastosowac trik z() font-size: 0px)*/
@@ -260,12 +308,10 @@ header ul li a {
 	border-bottom: 3px solid red;
 	border-radius: 5px;
 }
-
 .videoBoxes:hover img{
 	border: 4px solid black; 
 	transition: border .1s;
 }
-
 .videoBoxes img  {
 	width: 100%;
 	height: 80%;
@@ -273,15 +319,12 @@ header ul li a {
 	   object-fit: cover;
 	border-radius: 7px; 
 }
-
 .videoBoxes:hover i {
 	display: inline-block;
 }
-
 .videoBoxes:hover {
 	opacity: 1; 
 }
-
 .videoBoxes p {
 	text-align: center;
 	font-family: 'Lato', sans-serif;
@@ -289,7 +332,7 @@ header ul li a {
 	font-size: 1.2rem;	
 	font-weight: 400;
 	position: relative;
-	top: 2vw;
+	top: 1.8vw;
 }
 .videoBoxes span {
 	font-size: 1.5rem;
@@ -309,8 +352,6 @@ header ul li a {
 	line-height: 45px;
 	cursor: pointer;
 }
-
 .fa-play-circle:before{
 	margin-right: 5px;
 }
-

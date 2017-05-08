@@ -7,6 +7,6 @@ cssImport = require('postcss-import');
 
 gulp.task('styles', function() {
 	return gulp.src('./assets/css/style.css')
-	.pipe(postcss([cssvars, nested, autoprefixer]))
+	.pipe(postcss([cssImport, cssvars, nested, autoprefixer]))
 	.pipe(gulp.dest('./temp/css/'));
 });

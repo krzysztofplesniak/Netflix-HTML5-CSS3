@@ -1,6 +1,17 @@
+@media screen and (max-width: 1280px) {
+
+header ul li {
+	padding: .5rem 10px;
+}
+
+.menuSearch:hover {
+	width: 200px;
+}
+
 header {
 	height: 210px;
 	box-sizing: border-box;
+	border: 10px solid red;
 }
 
 header #logo {
@@ -75,15 +86,4 @@ header ul li a {
 	line-height: 35px;
 	font-size: 1.3rem;
 }
-
-/* MQ dla porpawnego wyśwetlania rozsuwanej belki "Szukaj" 
-   po najechaniu myszką dla rodzielczosci bliskich 1024px */
-
-@media (min-width: 1024px) and (max-width: 1300px) {
-	header ul li {
-		padding: .5rem 10px;
-	}
-	.menuSearch:hover {
-		width: 200px;
-	}
 }

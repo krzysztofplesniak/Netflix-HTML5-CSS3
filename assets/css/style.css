@@ -1,13 +1,16 @@
-@import url(href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Raleway:300,400,500,700|Roboto:300,400,500,700&amp;subset=latin-ext");
-@import url("mq-1280px.css") screen and (max-width: 1280px);
-@import url("mq-1024px.css") screen and (max-width: 1024px);
+@import url("https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Raleway:300,400,500,700|Roboto:300,400,500,700&amp;subset=latin-ext");
+@import url("../../assets/css/mq-1280px.css") ;
+
+
+/*@import url("mq-1024px.css") screen and (max-width: 1024px);
 @import url("mq-768px.css") screen and (max-width: 768px);
-@import url("mq-480px.css") screen and (max-width: 480px);
+@import url("mq-480px.css") screen and (max-width: 480px);*/
 
 
 /* ======= resety CSS */
+
 * {
-	margin: 0px;
+	margin: 10px;
 	padding: 0px;
 	border: 0px;
 	color: white;
@@ -16,7 +19,6 @@
 	font-family: Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
 }
-
 
 .container {
 	width: 95%;
@@ -27,15 +29,15 @@
 
 /* ======= sekcja Header z menu na górze i logo Netflixa */
 
-header {
+/*header {
 	height: 100px;
 	border-bottom: red 4px solid;
 	overflow: hidden;
-}
 
-header nav {
-	overflow: hidden;
-}
+	nav {
+		overflow: hidden;
+	}	
+}*/
 
 header #logo {
 	float: left;
@@ -116,17 +118,6 @@ header ul li a {
 	border: 2px solid white;
 	transition: linear width .5s;
 	box-sizing: border-box;
-}
-/* MQ dla porpawnego wyśwetlania rozsuwanej belki "Szukaj" 
-   po najechaniu myszką dla rodzielczosci bliskich 1024px */
-
-@media (min-width: 1024px) and (max-width: 1300px) {
-	header ul li {
-		padding: .5rem 10px;
-	}
-	.menuSearch:hover {
-		width: 200px;
-	}
 }
 
 /* ======= sekcja HeroImage z dużą grafika w tle */
@@ -236,7 +227,7 @@ header ul li a {
 	text-decoration: none;
 }
 
-#scrollDown i {
+/*#scrollDown i {
 	font-size: 450%;
 	margin-right: 20px; 
 	position: relative;
@@ -249,7 +240,7 @@ header ul li a {
 @keyframes arrow {
     0%   {color:white; left:0px; top: 0px;}
     100% {color:red; left:0px; top: 15px;}
-}
+}*/
 
 #scrollDown span {
 	font-size: 1.3rem;

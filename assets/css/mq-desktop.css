@@ -10,8 +10,6 @@
 	font-family: Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
 }
-
-
 .container {
 	width: 95%;
 	max-width: 1800px;
@@ -28,10 +26,6 @@ header {
 	box-sizing: border-box;
 }
 
-header nav {
-	overflow: hidden;
-}
-
 header #logo {
 	float: left;
 	width: 310px; 
@@ -42,17 +36,11 @@ header #logo {
 	cursor: pointer;
 }
 
-
-header h1 {
-	position: relative;  /* dla celów SEO */
-	left: -9999px;
-	font-size: 1rem;
-}
-
 header ul {
 	float: right;
-	margin-top: .8rem;
+	margin: 30px 0;
 	list-style: none;
+	overflow: hidden;
 }
 
 header ul li {

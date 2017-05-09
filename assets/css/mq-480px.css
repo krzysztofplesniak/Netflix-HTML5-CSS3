@@ -4,12 +4,12 @@ header {
 
 header #logo {
 	float: none;
-	margin: 10px auto;
+
 }
 	
-header ul  {
+/*header ul  {
 	margin-top: 0px;
-}
+}*/
 
 header ul li {
 	float: none;
@@ -79,7 +79,6 @@ header ul li:hover {
 .descriptonBox .hideMQ {
 	display: none;
 	font-weight: 700;
-	color: red;
 }
 
 .descriptonBox .button {

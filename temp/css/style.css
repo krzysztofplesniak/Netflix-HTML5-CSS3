@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Raleway:300,400,500,700|Roboto:300,400,500,700&amp;subset=latin-ext");
-/* ======== PLIK STYLE.CSS  =======*/
 /* ======= resety CSS */
 * {
-	margin: 10px;
+	margin: 0px;
 	padding: 0px;
 	border: 0px;
 	color: white;
@@ -21,7 +20,8 @@
 header {
 	height: 100px;
 	border-bottom: red 4px solid;
-	overflow: hidden;	
+	overflow: hidden;
+	box-sizing: border-box;
 }
 header nav {
 	overflow: hidden;
@@ -92,6 +92,16 @@ header ul li a {
 	border: 2px solid white;
 	transition: linear width .5s;
 	box-sizing: border-box;
+}
+/* MQ dla porpawnego wyśwetlania rozsuwanej belki "Szukaj" 
+   po najechaniu myszką dla rodzielczosci bliskich 1024px */
+@media (min-width: 1024px) and (max-width: 1300px) {
+	header ul li {
+		padding: .5rem 10px;
+	}
+	.menuSearch:hover {
+		width: 200px;
+	}
 }
 /* ======= sekcja HeroImage z dużą grafika w tle */
 #heroImage {
@@ -180,20 +190,27 @@ header ul li a {
 #scrollDown a {
 	text-decoration: none;
 }
-/*#scrollDown i {
+#scrollDown i {
 	font-size: 450%;
 	margin-right: 20px; 
 	position: relative;
-    animation-name: arrow;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: easy-in;
+    -webkit-animation-name: arrow;
+            animation-name: arrow;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: easy-in;
+            animation-timing-function: easy-in;
 }
-
+@-webkit-keyframes arrow {
+    0%   {color:white; left:0px; top: 0px;}
+    100% {color:red; left:0px; top: 15px;}
+}
 @keyframes arrow {
     0%   {color:white; left:0px; top: 0px;}
     100% {color:red; left:0px; top: 15px;}
-}*/
+}
 #scrollDown span {
 	font-size: 1.3rem;
 	position: relative;
@@ -263,291 +280,285 @@ header ul li a {
 .fa-play-circle:before{
 	margin-right: 5px;
 }
-@media (max-width: 480px) {
-	header {
-		height: auto;
-		border: 10px solid blue;
-	}
+@media (max-width: 1280px){
 
-	header #logo {
-		float: none;
-		margin: 10px auto;
-	}
-		
-	header ul  {
-		margin-top: 0px;
-	}
+	/* ======== MEDIA QUERIES 1280PX =======*/
 
-	header ul li {
-		float: none;
-		width: 100%;
-		height: 55px;
-		padding: 1.25rem 0.5rem;
-		border-top: 2px solid #333;
-	}
-
-	header ul li:hover {
-		border-bottom: none;
-	}
-
-	.menuSearch {
-		width: 100%;
-		padding: 0.3rem 0.5rem 0rem;
-	}
-
-	.menuSearch .smallBox i {
-	 	margin-right: 2px;
-	 	font-size: 2.5rem;
-	}
-
-	#heroImage {
-		width: 100%;
-		padding: 15px 0;
-	}
-		
-	.descriptonBox {
-		width: 96%;
-		margin: 0 2%;
-	}
-
-	.descriptonBox h1 {
-		font-size: 2.5rem;
-	}
-
-	.descriptonBox p {
-		margin: 20px 0 0 0;
-		font-size: 1rem;
-		line-height: 1.3rem;
-	}
-
-	.descriptonBox .showMQ {
-		display: block;
-		width: 150px;
-	}
-		
-	.descriptonBox .showMQ span {
-		display: block;
-		font-size: 1.2rem;
-		color: red;
-		font-weight: 700;
-		margin-top: 20px;
-	}
-
-	.descriptonBox .showMQ:hover {
-		width: 100%;
-		color: white;
-	}
-		
-	.descriptonBox .showMQ:hover .hideMQ {
-		display: block;
-		font-weight: 200;
-	}
-
-	.descriptonBox .hideMQ {
-		display: none;
-		font-weight: 700;
-		color: red;
-	}
-
-	.descriptonBox .button {
-		width: 250px;
-		margin: 1rem 0rem;
-	}
-
-
-	/* ======= sekcja scollDown ======= */
-
-	#scrollDown {
-		display: none;
-	}
-
-	/* ======= sekcja videoSection z kafelkami filmowymi ======= */
-
-	.videoBoxes  {
-		height: 75vw;
-		width: 45%;
-	}
-
-	.videoBoxes p {
-		top: 4vw;	
-	}
-
-	.videoBoxes i {
-		top: 25vw;
-		left: 25%;
-		width: 50%;
-		line-height: 37px;
-		font-size: 1rem;
-	}
-}
-/* ======== MEDIA QUERIES 768PX =======*/
-@media (min-width: 481px) and (max-width: 768px) {
-	header {
-		border: 10px solid pink;
-	}	
-	header ul {
-		width: 100%;
-		margin: 0 0;
-	}
-
-	header ul li {
-		height: 50px;
-	}
-
-	.menuSearch {
-		height: 50px;
-		padding: .5rem .5rem;	
-	}
-
-	.menuSearch .smallBox i {
-	 	margin-right: 5px;
-	 	font-size: 2rem;
-	}
-
-	.descriptonBox {
-		width: 96%;
-		margin: 0 2%; 
-	}
-
-	.descriptonBox h1 {
-		font-size: 2.75rem;
-	}
-
-	.descriptonBox h2 {
-		font-size: 1.25rem;
-		margin: .5rem 0 .5rem;
-	}
-
-	.descriptonBox h3 {
-		font-size: 1rem;
-	}
-
-	.descriptonBox h4 {
-		font-size: 0.9rem;
-	}
-
-	.descriptonBox p {
-		font-size: 1.1rem;
-		line-height: 1.6rem;
-	}
-
-	.descriptonBox .button {
-		width: 200px;
-		font-size: 1.1rem;
-		padding: 1rem 0rem;
-		margin: .75rem .5rem;
-	}
-
-	.videoBoxes  {
-		height: 50vw;
-		width: 29%;
-	}
-
-	.videoBoxes p {
-		top: 3vw;	
-	}
-
-	.videoBoxes i {
-		top: 17vw;
-		left: 25%;
-		width: 50%;
-		font-size: 1.1rem;
-	}
-}
-/* ======== MEDIA QUERIES 1024PX =======*/
-@media (min-width: 769px) and (max-width: 1024px) {
-	header {
-		height: 210px;
-		box-sizing: border-box;
-		border: 10px solid green;
-	}
-
-	header #logo {
-		float: none;
-		margin: 10px auto 0px;
-	}
-
-	header ul {
-		float: none;
-		width: 80%;
-		margin: 0 auto;
-	}
-
-	header ul li {
-		width: 25%;
-		padding: 0.5rem 0.5rem
-	}
-
-	header ul li:hover a {
-		color: red;
-	}
-
-	header ul li a {
-		font-size: 1.4rem;
-	}
-
-	#heroImage {
-		padding: 2rem 0 3rem;
-	}
-
-	.menuSearch {
-		width: 100%;
-	}
-	 
-	.menuSearch .smallBox {
-		text-align: center;
-		font-size: 1.4rem;
-	}
-
-	.menuSearch:hover .expandedBox {
-		text-align: center;
-	}
-
-	.menuSearch:hover {
-		width: 100%;
-	}
-
-	.descriptonBox {
-		width: 96%;
-		margin: 0 2%; 
-	}
-
-	.descriptonBox .button {
-		width: 250px;
-		font-size: 1.2rem;
-	}
-
-	.videoBoxes  {
-		height: 40vw;
-		width: 21%;
-	}
-
-	.videoBoxes p {
-		font-size: 1.1rem;
-	}
-
-	.videoBoxes i {
-		top: 13vw;
-		left: 15%;
-		width: 70%;
-		height: 40px;
-		line-height: 35px;
-		font-size: 1.3rem;
-	}
-}
-/* ======== MEDIA QUERIES 1280PX =======*/
-@media (min-width: 1025px) and (max-width: 1280px) {
-		
-	header {
-		height: 210px;
-		box-sizing: border-box;
-		border: 10px solid orange;
-	}	
-		
 	header ul li {
 		padding: .5rem 10px;
 	}
 	.menuSearch:hover {
 		width: 200px;
 	}
+}
+@media (max-width: 1024px){
+
+header {
+	height: 210px;
+}
+
+header #logo {
+	float: none;
+	margin: 10px auto 0px;
+}
+
+header ul {
+	float: none;
+	width: 80%;
+	margin: 0 auto;
+}
+
+header ul li {
+	width: 25%;
+	padding: 0.5rem 0.5rem
+}
+
+header ul li:hover a {
+	color: red;
+}
+
+header ul li a {
+	font-size: 1.4rem;
+}
+
+#heroImage {
+	padding: 2rem 0 3rem;
+}
+
+.menuSearch {
+	width: 100%;
+}
+ 
+.menuSearch .smallBox {
+	text-align: center;
+	font-size: 1.4rem;
+}
+
+.menuSearch:hover .expandedBox {
+	text-align: center;
+}
+
+.menuSearch:hover {
+	width: 100%;
+}
+
+.descriptonBox {
+	width: 96%;
+	margin: 0 2%; 
+}
+
+.descriptonBox .button {
+	width: 250px;
+	font-size: 1.2rem;
+}
+
+.videoBoxes  {
+	height: 40vw;
+	width: 21%;
+}
+
+.videoBoxes p {
+	font-size: 1.1rem;
+}
+
+.videoBoxes i {
+	top: 13vw;
+	left: 15%;
+	width: 70%;
+	height: 40px;
+	line-height: 35px;
+	font-size: 1.3rem;
+}
+}
+@media (max-width: 768px){
+
+header {
+	height: 210px;
+}
+
+header ul {
+	width: 100%;
+	margin: 0 0;
+}
+
+header ul li {
+	height: 50px;
+}
+
+.menuSearch {
+	height: 50px;
+	padding: .5rem .5rem;	
+}
+
+.menuSearch .smallBox i {
+ 	margin-right: 5px;
+ 	font-size: 2rem;
+}
+
+.descriptonBox {
+	width: 96%;
+	margin: 0 2%; 
+}
+
+.descriptonBox h1 {
+	font-size: 2.75rem;
+}
+
+.descriptonBox h2 {
+	font-size: 1.25rem;
+	margin: .5rem 0 .5rem;
+}
+
+.descriptonBox h3 {
+	font-size: 1rem;
+}
+
+.descriptonBox h4 {
+	font-size: 0.9rem;
+}
+
+.descriptonBox p {
+	font-size: 1.1rem;
+	line-height: 1.6rem;
+}
+
+.descriptonBox .button {
+	width: 200px;
+	font-size: 1.1rem;
+	padding: 1rem 0rem;
+	margin: .75rem .5rem;
+}
+
+.videoBoxes  {
+	height: 50vw;
+	width: 29%;
+}
+
+.videoBoxes p {
+	top: 3vw;	
+}
+
+.videoBoxes i {
+	top: 17vw;
+	left: 25%;
+	width: 50%;
+	font-size: 1.1rem;
+}
+}
+@media (max-width: 480px){
+
+header {
+	height: auto;
+}
+
+header #logo {
+	float: none;
+	margin: 10px auto;
+}
+	
+header ul  {
+	margin-top: 0px;
+}
+
+header ul li {
+	float: none;
+	width: 100%;
+	height: 55px;
+	padding: 1.25rem 0.5rem;
+	border-top: 2px solid #333;
+}
+
+header ul li:hover {
+	border-bottom: none;
+}
+
+.menuSearch {
+	width: 100%;
+	padding: 0.3rem 0.5rem 0rem;
+}
+
+.menuSearch .smallBox i {
+ 	margin-right: 2px;
+ 	font-size: 2.5rem;
+}
+
+#heroImage {
+	width: 100%;
+	padding: 15px 0;
+}
+	
+.descriptonBox {
+	width: 96%;
+	margin: 0 2%;
+}
+
+.descriptonBox h1 {
+	font-size: 2.5rem;
+}
+
+.descriptonBox p {
+	margin: 20px 0 0 0;
+	font-size: 1rem;
+	line-height: 1.3rem;
+}
+
+.descriptonBox .showMQ {
+	display: block;
+	width: 150px;
+}
+	
+.descriptonBox .showMQ span {
+	display: block;
+	font-size: 1.2rem;
+	color: red;
+	font-weight: 700;
+	margin-top: 20px;
+}
+
+.descriptonBox .showMQ:hover {
+	width: 100%;
+	color: white;
+}
+	
+.descriptonBox .showMQ:hover .hideMQ {
+	display: block;
+	font-weight: 200;
+}
+
+.descriptonBox .hideMQ {
+	display: none;
+	font-weight: 700;
+	color: red;
+}
+
+.descriptonBox .button {
+	width: 250px;
+	margin: 1rem 0rem;
+}
+
+
+/* ======= sekcja scollDown ======= */
+
+#scrollDown {
+	display: none;
+}
+
+/* ======= sekcja videoSection z kafelkami filmowymi ======= */
+
+.videoBoxes  {
+	height: 75vw;
+	width: 45%;
+}
+
+.videoBoxes p {
+	top: 4vw;	
+}
+
+.videoBoxes i {
+	top: 25vw;
+	left: 25%;
+	width: 50%;
+	line-height: 37px;
+	font-size: 1rem;
+}
 }

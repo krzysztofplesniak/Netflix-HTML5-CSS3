@@ -1,6 +1,11 @@
+/* ======== MEDIA QUERIES 768PX =======*/
+
+@media (min-width: 481px) and (max-width: 768px) {
+
 header {
 	height: 210px;
-}
+	border: 10px solid pink;
+}	
 
 header ul {
 	width: 100%;
@@ -69,4 +74,5 @@ header ul li {
 	left: 25%;
 	width: 50%;
 	font-size: 1.1rem;
+}
 }

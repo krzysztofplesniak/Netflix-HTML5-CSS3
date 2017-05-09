@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Raleway:300,400,500,700|Roboto:300,400,500,700&amp;subset=latin-ext");
 @import "../../assets/css/mq-desktop.css";
-@import "../../assets/css/mq-480px";
-@import "../../assets/css/mq-768px";
-@import "../../assets/css/mq-1024px";
-
-@import "../../assets/css/mq-1280px";
+@import "../../assets/css/mq-1280px" (max-width: 1280px);
+@import "../../assets/css/mq-1024px" (max-width: 1024px);
+@import "../../assets/css/mq-768px"  (max-width: 768px);
+@import "../../assets/css/mq-480px"  (max-width: 480px);

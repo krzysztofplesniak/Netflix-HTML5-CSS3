@@ -1,5 +1,8 @@
+@media (max-width: 480px) {
+
 header {
 	height: auto;
+	border: 10px solid blue;
 }
 
 header #logo {
@@ -111,4 +114,5 @@ header ul li:hover {
 	width: 50%;
 	line-height: 37px;
 	font-size: 1rem;
+}
 }

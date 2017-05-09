@@ -1,7 +1,13 @@
-header {
-	height: 210px;
-}
+/* ======== MEDIA QUERIES 1024PX =======*/
 
+@media (min-width: 769px) and (max-width: 1024px) {
+	header {
+		height: 210px;
+		border: 10px solid green;
+		box-sizing: border-box;
+	}
+
+	
 header #logo {
 	float: none;
 	margin: 10px auto 0px;
@@ -73,4 +79,5 @@ header ul li a {
 	height: 40px;
 	line-height: 35px;
 	font-size: 1.3rem;
+}
 }

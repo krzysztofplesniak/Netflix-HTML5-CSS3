@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Raleway:300,400,500,700|Roboto:300,400,500,700&amp;subset=latin-ext");
+/* ======== GŁÓWNY PLIK CSS Z ROZMIARAMI DLA DUŻYCH EKRANÓW PONAD 1280PX =======*/
 /* ======= resety CSS */
 * {
 	margin: 0px;
@@ -63,6 +64,7 @@ header ul li a {
 }
 .menuSearch .smallBox i {
  	margin-right: 15px;
+ 	font-size: 2rem;
 }
 .menuSearch .smallBox {
 	text-align: right;
@@ -85,16 +87,6 @@ header ul li a {
 	border: 2px solid white;
 	transition: linear width .5s;
 	box-sizing: border-box;
-}
-/* MQ dla porpawnego wyśwetlania rozsuwanej belki "Szukaj" 
-   po najechaniu myszką dla rodzielczosci bliskich 1024px */
-@media (min-width: 1024px) and (max-width: 1300px) {
-	header ul li {
-		padding: .5rem 10px;
-	}
-	.menuSearch:hover {
-		width: 200px;
-	}
 }
 /* ======= sekcja HeroImage z dużą grafika w tle */
 #heroImage {
@@ -188,13 +180,13 @@ header ul li a {
 	margin-right: 20px; 
 	position: relative;
     -webkit-animation-name: arrow;
-            animation-name: arrow;
+    animation-name: arrow;
     -webkit-animation-duration: 2s;
-            animation-duration: 2s;
+    animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
     -webkit-animation-timing-function: easy-in;
-            animation-timing-function: easy-in;
+    animation-timing-function: easy-in;
 }
 @-webkit-keyframes arrow {
     0%   {color:white; left:0px; top: 0px;}
@@ -234,7 +226,7 @@ header ul li a {
 	width: 100%;
 	height: 80%;
 	-o-object-fit: cover;
-	   object-fit: cover;
+	object-fit: cover;
 	border-radius: 7px; 
 }
 .videoBoxes:hover i {
@@ -285,7 +277,7 @@ header ul li a {
 	}
 }
 @media (max-width: 1024px){
-
+/* ======== MEDIA QUERIES 1024PX =======*/
 header {
 	height: 210px;
 }
@@ -364,7 +356,7 @@ header ul li a {
 }
 }
 @media (max-width: 768px){
-
+/* ======== MEDIA QUERIES 768PX =======*/
 header ul {
 	width: 100%;
 	margin: 0 0;
@@ -381,7 +373,6 @@ header ul li {
 
 .menuSearch .smallBox i {
  	margin-right: 5px;
- 	font-size: 2rem;
 }
 
 .descriptonBox {
@@ -436,6 +427,8 @@ header ul li {
 }
 @media (max-width: 480px){
 
+/*  Media queries 480px*/
+
 header {
 	height: auto;
 }
@@ -445,10 +438,6 @@ header #logo {
 
 }
 	
-/*header ul  {
-	margin-top: 0px;
-}*/
-
 header ul li {
 	float: none;
 	width: 100%;
@@ -520,10 +509,9 @@ header ul li:hover {
 }
 
 .descriptonBox .button {
-	width: 250px;
-	margin: 1rem 0rem;
+	width: 90%;
+	margin: 1rem 5%;
 }
-
 
 /* ======= sekcja scollDown ======= */
 
@@ -534,7 +522,7 @@ header ul li:hover {
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 .videoBoxes  {
-	height: 75vw;
+	height: 85vw;
 	width: 45%;
 }
 
@@ -548,5 +536,51 @@ header ul li:hover {
 	width: 50%;
 	line-height: 37px;
 	font-size: 1rem;
+}
+}
+@media (max-width: 350px){
+
+/*  Media queries 350px*/
+
+header ul li {
+	height: 50px;
+    padding: 1.1rem 0.5rem;
+}
+
+header #logo {
+  	margin: 5px auto;
+  	width: 290px; 
+    background-size: 90vw 90px;
+}
+
+#heroImage {
+    padding: 5px 0;
+}
+
+.descriptonBox {
+	width: 98%;
+	margin: 0 1%;
+	padding: 5px;
+}
+
+.descriptonBox h1 {
+	font-size: 2rem;
+	line-height: 1.7rem;
+	margin: 1.5rem 0;
+}
+
+.descriptonBox h2 {
+    font-size: 1rem;
+  
+}
+
+.descriptonBox .button {
+   	padding: .75rem 0rem;
+    margin: 0.75rem 5%;
+}
+
+.videoBoxes p {
+    top: 3vw;
+    font-size: 1rem;
 }
 }

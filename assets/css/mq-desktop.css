@@ -1,3 +1,5 @@
+/* ======== GŁÓWNY PLIK CSS Z ROZMIARAMI DLA DUŻYCH EKRANÓW PONAD 1280PX =======*/
+
 /* ======= resety CSS */
 
 * {
@@ -100,18 +102,6 @@ header ul li a {
 	transition: linear width .5s;
 	box-sizing: border-box;
 }
-/* MQ dla porpawnego wyśwetlania rozsuwanej belki "Szukaj" 
-   po najechaniu myszką dla rodzielczosci bliskich 1024px */
-
-@media (min-width: 1024px) and (max-width: 1300px) {
-	header ul li {
-		padding: .5rem 10px;
-	}
-	.menuSearch:hover {
-		width: 200px;
-	}
-}
-
 /* ======= sekcja HeroImage z dużą grafika w tle */
 
 #heroImage {

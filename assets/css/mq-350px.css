@@ -1,0 +1,43 @@
+/*  Media queries 350px*/
+
+header ul li {
+	height: 50px;
+    padding: 1.1rem 0.5rem;
+}
+
+header #logo {
+  	margin: 5px auto;
+  	width: 290px; 
+    background-size: 90vw 90px;
+}
+
+#heroImage {
+    padding: 5px 0;
+}
+
+.descriptonBox {
+	width: 98%;
+	margin: 0 1%;
+	padding: 5px;
+}
+
+.descriptonBox h1 {
+	font-size: 2rem;
+	line-height: 1.7rem;
+	margin: 1.5rem 0;
+}
+
+.descriptonBox h2 {
+    font-size: 1rem;
+  
+}
+
+.descriptonBox .button {
+   	padding: .75rem 0rem;
+    margin: 0.75rem 5%;
+}
+
+.videoBoxes p {
+    top: 3vw;
+    font-size: 1rem;
+}

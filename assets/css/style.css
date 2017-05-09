@@ -4,3 +4,4 @@
 @import "../../assets/css/mq-1024px" (max-width: 1024px);
 @import "../../assets/css/mq-768px"  (max-width: 768px);
 @import "../../assets/css/mq-480px"  (max-width: 480px);
+@import "../../assets/css/mq-350px"  (max-width: 350px);

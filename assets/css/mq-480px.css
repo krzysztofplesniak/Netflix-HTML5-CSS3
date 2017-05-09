@@ -1,3 +1,5 @@
+/*  Media queries 480px*/
+
 header {
 	height: auto;
 }
@@ -7,10 +9,6 @@ header #logo {
 
 }
 	
-/*header ul  {
-	margin-top: 0px;
-}*/
-
 header ul li {
 	float: none;
 	width: 100%;
@@ -82,10 +80,9 @@ header ul li:hover {
 }
 
 .descriptonBox .button {
-	width: 250px;
-	margin: 1rem 0rem;
+	width: 90%;
+	margin: 1rem 5%;
 }
-
 
 /* ======= sekcja scollDown ======= */
 
@@ -96,7 +93,7 @@ header ul li:hover {
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 .videoBoxes  {
-	height: 75vw;
+	height: 85vw;
 	width: 45%;
 }
 

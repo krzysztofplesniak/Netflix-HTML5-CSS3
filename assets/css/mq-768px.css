@@ -1,3 +1,4 @@
+/* ======== MEDIA QUERIES 768PX =======*/
 header ul {
 	width: 100%;
 	margin: 0 0;
@@ -14,7 +15,6 @@ header ul li {
 
 .menuSearch .smallBox i {
  	margin-right: 5px;
- 	font-size: 2rem;
 }
 
 .descriptonBox {

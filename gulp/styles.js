@@ -7,11 +7,10 @@ cssImport = require('postcss-import');
 
 gulp.task('styles', function() {
 	return gulp.src('./assets/css/style.css')
-	.pipe(postcss([cssImport, cssvars, nested, autoprefixer({
-		browserslist: [
-		"> 10%",
-    	"last 7 versions"],
-		cascade: false
-	})]))
+	.pipe(postcss([cssImport, cssvars, nested, 
+					autoprefixer({browserslist: 
+						["> 3%","last 3 versions"],cascade: false})
+				  ])
+	     )
 	.pipe(gulp.dest('./temp/css/'));
 });

@@ -2,12 +2,9 @@ window.onload=function() {
 
 	var showMoreText = document.querySelector('.showMoreText'); 
 	var hiddenText = document.querySelectorAll('.hiddenText'); 
-
+	
 	// event nałsuchujący kliknięcia na klawisz "Czytaj więcej" który odsłoni część tekstu dla małych MQ
 	showMoreText.addEventListener('click', showTextDescription); 
-
-	// wykrycie  eventu scrolowania dokumentu strony
-	document.addEventListener('scroll', scrollPage); 
 
 	function showTextDescription() {
 		hiddenText[0].style.display = "inline-block";
@@ -15,7 +12,11 @@ window.onload=function() {
 		showMoreText.style.display = "none";
 	}	
 
-	function scrollPage() {
-		 window.scrollBy(0, 100);
-	}
+	// wykrycie  eventu scrolowania dokumentu strony
+	// document.addEventListener('scroll', scrollPage); 
+
+	// function scrollPage() {
+	// 	 console.log(window.scrollY);
+	// 	 window.scrollBy(0, 200);
+	// }
 } 

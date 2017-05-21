@@ -509,6 +509,10 @@ header ul li:hover {
 	display: block;
 }
 
+.descriptonBox .hiddenText  {
+	display: none;
+}
+
 .descriptonBox .showMoreText:hover {
 	color: red;
 }
@@ -517,8 +521,6 @@ header ul li:hover {
 	width: 90%;
 	margin: 1rem 5%;
 }
-
-
 
 
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */

@@ -6,7 +6,6 @@ header {
 
 header #logo {
 	float: none;
-
 }
 	
 header ul li {
@@ -46,54 +45,31 @@ header ul li:hover {
 }
 
 .descriptonBox p {
-	margin: 20px 0 0 0;
+	margin: 15px 0 0 0;
 	font-size: 1rem;
 	line-height: 1.3rem;
 }
 
-.descriptonBox .showMQ {
+.descriptonBox .showMoreText  {
 	display: block;
-	width: 150px;
 }
-	
-.descriptonBox .showMQ span {
-	display: block;
-	font-size: 1.2rem;
+
+.descriptonBox .showMoreText:hover {
 	color: red;
-	font-weight: 700;
-	margin-top: 20px;
-}
-
-.descriptonBox .showMQ:hover {
-	width: 100%;
-	color: white;
 }
 	
-.descriptonBox .showMQ:hover .hideMQ {
-	display: block;
-	font-weight: 200;
-}
-
-.descriptonBox .hideMQ {
-	display: none;
-	font-weight: 700;
-}
-
 .descriptonBox .button {
 	width: 90%;
 	margin: 1rem 5%;
 }
 
-/* ======= sekcja scollDown ======= */
 
-#scrollDown {
-	display: none;
-}
+
 
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 .videoBoxes  {
-	height: 85vw;
+	height: 60vw;
 	width: 45%;
 }
 
@@ -105,6 +81,11 @@ header ul li:hover {
 	top: 25vw;
 	left: 25%;
 	width: 50%;
-	line-height: 37px;
+	height: 8vw;
+	line-height: 7vw;
 	font-size: 1rem;
+}
+
+.videoBoxes img  {
+	height: 55vw;
 }

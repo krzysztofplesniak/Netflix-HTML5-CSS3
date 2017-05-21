@@ -59,19 +59,24 @@ header ul li a {
 }
 
 .videoBoxes  {
-	height: 40vw;
+	height: 30vw;
 	width: 21%;
 }
 
 .videoBoxes p {
-	font-size: 1.1rem;
+	font-size: 1rem;
+	top: .9vw;
+}
+
+.videoBoxes img  {
+	height: 25vw;
 }
 
 .videoBoxes i {
 	top: 13vw;
-	left: 15%;
-	width: 70%;
-	height: 40px;
-	line-height: 35px;
-	font-size: 1.3rem;
+	left: 25%;
+	width: 50%;
+	height: 4vw;
+	line-height: 3.5vw;
+	font-size: 1.1rem;
 }

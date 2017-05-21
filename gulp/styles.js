@@ -8,7 +8,7 @@ cssImport = require('postcss-import');
 gulp.task('styles', function() {
 	return gulp.src('./assets/css/style.css')
 	.pipe(postcss([cssImport, cssvars, nested, 
-		s			autoprefixer({browserslist: 
+					autoprefixer({browserslist: 
 						["> 3%","last 3 versions"],cascade: false})
 				  ])
 	     )

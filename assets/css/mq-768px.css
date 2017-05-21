@@ -46,23 +46,28 @@ header ul li {
 
 .descriptonBox .button {
 	width: 200px;
-	font-size: 1.1rem;
 	padding: 1rem 0rem;
 	margin: .75rem .5rem;
 }
 
 .videoBoxes  {
-	height: 50vw;
+	height: 40vw;
 	width: 29%;
 }
 
 .videoBoxes p {
-	top: 3vw;	
+	top: 1.2vw;	
 }
 
 .videoBoxes i {
 	top: 17vw;
-	left: 25%;
-	width: 50%;
 	font-size: 1.1rem;
+	height: 6vw;
+	line-height: 5vw;
+	width: 70%;
+	left: 15%;
+}
+
+.videoBoxes img  {
+	height: 35vw;
 }

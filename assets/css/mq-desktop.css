@@ -105,7 +105,7 @@ header ul li a {
 /* ======= sekcja HeroImage z dużą grafika w tle */
 
 #heroImage {
-	background: url(../../assets/img/background.jpg) fixed 0 60px; 
+	background: url(../../assets/img/background.jpg) no-repeat fixed 0 70px; 
 	background-size: cover;
 	padding: 8rem 0 3rem;
 	height: auto;
@@ -158,15 +158,14 @@ header ul li a {
 	font-family: 'Lato';
 	text-align: justify;
 	font-size: 1.2rem;
-	margin: .5rem 0;
+	margin: .75rem 0;
 }
 
-.descriptonBox .showMQ span {
+.descriptonBox .showMoreText {
 	display: none;
-}
-
-.descriptonBox .hideMQ {
-	display: block;
+	margin-top: 20px;
+	font-size: 1.2rem;
+	font-weight: 700;
 }
 
 .descriptonBox .button {
@@ -242,12 +241,12 @@ header ul li a {
 .videoBoxes {
 	position: relative;  /*to jest dla klawisza PLAY w tagu "i"*/ 
 	float: left;  /* w tutku był (dipslay: inline-block) i powododował ze były odstępy międzye div'ami. Trzeba było zastosowac trik z() font-size: 0px)*/
+	height: 24vw;
 	width: 16%;
-	height: 30vw;
 	margin: 10px 2%;
 	opacity: 0.5; 
-	border-bottom: 3px solid red;
 	border-radius: 5px;
+	border-bottom: 3px solid red;
 }
 
 .videoBoxes:hover img{
@@ -257,7 +256,7 @@ header ul li a {
 
 .videoBoxes img  {
 	width: 100%;
-	height: 80%;
+	height: 20vw;
 	object-fit: cover;
 	border-radius: 7px; 
 }
@@ -277,27 +276,31 @@ header ul li a {
 	font-size: 1.2rem;	
 	font-weight: 400;
 	position: relative;
-	top: 1.8vw;
+	top: 1.5vw;
 }
+
 .videoBoxes span {
 	font-size: 1.5rem;
 }
 .videoBoxes i {
 	display: none;
 	position: absolute;
-	top: 10vw;
+	top: 9vw;
 	left: 20%;
 	width: 60%;
-	height: 50px;
+	height: 3vw;
 	border: 2px solid white;
 	border-radius: 25px;
 	opacity: .7;
-	font-size: 1.5rem;
+	font-size: 1.8rem;
 	text-align: center;
-	line-height: 45px;
+	line-height: 3vw; /*centrowanie napisu z ikona w obrebie obwódki */
 	cursor: pointer;
 }
 
+/*odstep między ikoną trójkat symbolizująca kalwisz Play a napisem PLAY */
+
 .fa-play-circle:before{
-	margin-right: 5px;
+	margin-right: 10px;
+
 }

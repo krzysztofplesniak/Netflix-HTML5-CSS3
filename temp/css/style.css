@@ -94,55 +94,56 @@ header ul li a {
 	padding: 8rem 0 3rem;
 	height: auto;
 }
-/* ======= sekcja descriptonBox z opisem filmu */
-.descriptonBox {
+/* ======= sekcja descriptionBox z opisem filmu */
+.descriptionBox {
 	width: 75%;
+	/*height: auto;*/
 	opacity: .7;
 	padding: 1rem;
 	margin-left: 1rem;
 	overflow: hidden;
 }
-.descriptonBox h1 {
+.descriptionBox h1 {
 	font-size: 3rem;
 	font-weight: 700;
 	line-height: 3rem;
 	margin: 2rem 0;
 }
-.descriptonBox h2 {
+.descriptionBox h2 {
 	color: red;
 	font-size: 1.5rem;
 	font-weight: 700;
 	letter-spacing: 0.2px;
 	margin: 0 0 1.5rem;
 }
-.descriptonBox h3 {
+.descriptionBox h3 {
 	font-size: 1.3rem;
 	font-weight: 200;
 	margin: 0 0 .2rem;
 }
-.descriptonBox h4 {
+.descriptionBox h4 {
 	font-size: 1.1rem;
 	font-weight: 400;
 	margin: 0 0 1.5rem;
 }
-.descriptonBox h4 span {
+.descriptionBox h4 span {
 	color: red;
 	font-size: 1.1rem;
 	font-weight: 700;
 }
-.descriptonBox p {
+.descriptionBox p {
 	font-family: 'Lato';
 	text-align: justify;
 	font-size: 1.2rem;
 	margin: .75rem 0;
 }
-.descriptonBox .showMoreText {
+.descriptionBox .showMoreText {
 	display: none;
 	margin-top: 20px;
 	font-size: 1.2rem;
 	font-weight: 700;
 }
-.descriptonBox .button {
+.descriptionBox .button {
 	float: left;
 	width: 300px;
 	padding: 1rem;
@@ -154,17 +155,17 @@ header ul li a {
 	text-align: center;
 	box-sizing: border-box;
 }
-.descriptonBox .btn1 {
+.descriptionBox .btn1 {
 	background: rgba(255,255,255,0.25);
 	margin: 1rem 4rem 1rem 1rem;
 }
-.descriptonBox .btn2 {
+.descriptionBox .btn2 {
 	background: rgba(255,0,0,1);
 }
-.descriptonBox .btn1:hover {
+.descriptionBox .btn1:hover {
 	background: rgba(255,255,255,0.1);
 }
-.descriptonBox .btn2:hover {
+.descriptionBox .btn2:hover {
 	background: rgba(255,0,0,0.6);
 }
 /* =======   sekcja scrollDown icony z FontAwesome umieszczone na dole strony pierwszej */
@@ -343,12 +344,12 @@ header ul li a {
 	width: 100%;
 }
 
-.descriptonBox {
+.descriptionBox {
 	width: 96%;
 	margin: 0 2%; 
 }
 
-.descriptonBox .button {
+.descriptionBox .button {
 	width: 250px;
 	font-size: 1.2rem;
 }
@@ -396,34 +397,34 @@ header ul li {
  	margin-right: 5px;
 }
 
-.descriptonBox {
+.descriptionBox {
 	width: 96%;
 	margin: 0 2%; 
 }
 
-.descriptonBox h1 {
+.descriptionBox h1 {
 	font-size: 2.75rem;
 }
 
-.descriptonBox h2 {
+.descriptionBox h2 {
 	font-size: 1.25rem;
 	margin: .5rem 0 .5rem;
 }
 
-.descriptonBox h3 {
+.descriptionBox h3 {
 	font-size: 1rem;
 }
 
-.descriptonBox h4 {
+.descriptionBox h4 {
 	font-size: 0.9rem;
 }
 
-.descriptonBox p {
+.descriptionBox p {
 	font-size: 1.1rem;
 	line-height: 1.6rem;
 }
 
-.descriptonBox .button {
+.descriptionBox .button {
 	width: 200px;
 	padding: 1rem 0rem;
 	margin: .75rem .5rem;
@@ -490,34 +491,34 @@ header ul li:hover {
 	padding: 15px 0;
 }
 	
-.descriptonBox {
+.descriptionBox {
 	width: 96%;
 	margin: 0 2%;
 }
 
-.descriptonBox h1 {
+.descriptionBox h1 {
 	font-size: 2.5rem;
 }
 
-.descriptonBox p {
+.descriptionBox p {
 	margin: 15px 0 0 0;
 	font-size: 1rem;
 	line-height: 1.3rem;
 }
 
-.descriptonBox .showMoreText  {
+.descriptionBox .showMoreText  {
 	display: block;
 }
 
-.descriptonBox .hiddenText  {
+.descriptionBox .hiddenText  {
 	display: none;
 }
 
-.descriptonBox .showMoreText:hover {
+.descriptionBox .showMoreText:hover {
 	color: red;
 }
 	
-.descriptonBox .button {
+.descriptionBox .button {
 	width: 90%;
 	margin: 1rem 5%;
 }
@@ -566,24 +567,24 @@ header #logo {
     padding: 5px 0;
 }
 
-.descriptonBox {
+.descriptionBox {
 	width: 98%;
 	margin: 0 1%;
 	padding: 5px;
 }
 
-.descriptonBox h1 {
+.descriptionBox h1 {
 	font-size: 2rem;
 	line-height: 1.7rem;
 	margin: 1.5rem 0;
 }
 
-.descriptonBox h2 {
+.descriptionBox h2 {
     font-size: 1rem;
   
 }
 
-.descriptonBox .button {
+.descriptionBox .button {
    	padding: .75rem 0rem;
     margin: 0.75rem 5%;
 }

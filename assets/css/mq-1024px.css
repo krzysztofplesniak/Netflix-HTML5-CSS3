@@ -48,12 +48,12 @@ header ul li a {
 	width: 100%;
 }
 
-.descriptonBox {
+.descriptionBox {
 	width: 96%;
 	margin: 0 2%; 
 }
 
-.descriptonBox .button {
+.descriptionBox .button {
 	width: 250px;
 	font-size: 1.2rem;
 }

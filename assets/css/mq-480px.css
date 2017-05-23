@@ -35,34 +35,34 @@ header ul li:hover {
 	padding: 15px 0;
 }
 	
-.descriptonBox {
+.descriptionBox {
 	width: 96%;
 	margin: 0 2%;
 }
 
-.descriptonBox h1 {
+.descriptionBox h1 {
 	font-size: 2.5rem;
 }
 
-.descriptonBox p {
+.descriptionBox p {
 	margin: 15px 0 0 0;
 	font-size: 1rem;
 	line-height: 1.3rem;
 }
 
-.descriptonBox .showMoreText  {
+.descriptionBox .showMoreText  {
 	display: block;
 }
 
-.descriptonBox .hiddenText  {
+.descriptionBox .hiddenText  {
 	display: none;
 }
 
-.descriptonBox .showMoreText:hover {
+.descriptionBox .showMoreText:hover {
 	color: red;
 }
 	
-.descriptonBox .button {
+.descriptionBox .button {
 	width: 90%;
 	margin: 1rem 5%;
 }

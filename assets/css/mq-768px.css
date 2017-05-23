@@ -17,34 +17,34 @@ header ul li {
  	margin-right: 5px;
 }
 
-.descriptonBox {
+.descriptionBox {
 	width: 96%;
 	margin: 0 2%; 
 }
 
-.descriptonBox h1 {
+.descriptionBox h1 {
 	font-size: 2.75rem;
 }
 
-.descriptonBox h2 {
+.descriptionBox h2 {
 	font-size: 1.25rem;
 	margin: .5rem 0 .5rem;
 }
 
-.descriptonBox h3 {
+.descriptionBox h3 {
 	font-size: 1rem;
 }
 
-.descriptonBox h4 {
+.descriptionBox h4 {
 	font-size: 0.9rem;
 }
 
-.descriptonBox p {
+.descriptionBox p {
 	font-size: 1.1rem;
 	line-height: 1.6rem;
 }
 
-.descriptonBox .button {
+.descriptionBox .button {
 	width: 200px;
 	padding: 1rem 0rem;
 	margin: .75rem .5rem;

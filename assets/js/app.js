@@ -13,10 +13,18 @@ window.onload=function() {
 	}	
 
 	// wykrycie  eventu scrolowania dokumentu strony
-	// document.addEventListener('scroll', scrollPage); 
+	document.addEventListener('scroll', scrollPage); 
+	
+	// złapanie eklemntu descriptionBox gdzie jest wyświetlany opis wybranego filmu
+	var descriptionBoxHeight = document.querySelector('.descriptionBox'); 
+	
+	function scrollPage() {
+	 	 
+	 	 // przesuniecie strony wzgledem osi Y
+	 	 pageYoffset = window.pageYOffset;
+	 	 console.log(pageYOffset);
 
-	// function scrollPage() {
-	// 	 console.log(window.scrollY);
-	// 	 window.scrollBy(0, 200);
-	// }
+	 	 if (pageYoffset > 400 ) {descriptionBoxHeight.style.height = "0px";}
+	 	 else {descriptionBoxHeight.style.height = "auto";}
+	}
 } 

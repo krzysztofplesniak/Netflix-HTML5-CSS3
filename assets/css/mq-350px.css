@@ -15,24 +15,24 @@ header #logo {
     padding: 5px 0;
 }
 
-.descriptonBox {
+.descriptionBox {
 	width: 98%;
 	margin: 0 1%;
 	padding: 5px;
 }
 
-.descriptonBox h1 {
+.descriptionBox h1 {
 	font-size: 2rem;
 	line-height: 1.7rem;
 	margin: 1.5rem 0;
 }
 
-.descriptonBox h2 {
+.descriptionBox h2 {
     font-size: 1rem;
   
 }
 
-.descriptonBox .button {
+.descriptionBox .button {
    	padding: .75rem 0rem;
     margin: 0.75rem 5%;
 }

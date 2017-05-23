@@ -1,30 +1,25 @@
-window.onload=function() {
-
-	var showMoreText = document.querySelector('.showMoreText'); 
-	var hiddenText = document.querySelectorAll('.hiddenText'); 
+window.addEventListener("load", function() {
 	
-	// event nałsuchujący kliknięcia na klawisz "Czytaj więcej" który odsłoni część tekstu dla małych MQ
-	showMoreText.addEventListener('click', showTextDescription); 
+	// złapanie elemntu header i nav w celu zmiany płynnej wysokości o 40px podczas scrolowania ekranu w dół
+	var header =  document.getElementById('header');
+	var navi =  document.getElementById('navi');
 
-	function showTextDescription() {
-		hiddenText[0].style.display = "inline-block";
-		hiddenText[1].style.display = "inline-block";
-		showMoreText.style.display = "none";
-	}	
-
-	// wykrycie  eventu scrolowania dokumentu strony
-	document.addEventListener('scroll', scrollPage); 
-	
-	// złapanie eklemntu descriptionBox gdzie jest wyświetlany opis wybranego filmu
-	var descriptionBoxHeight = document.querySelector('.descriptionBox'); 
+	window.addEventListener("scroll", scrollPage);
 	
 	function scrollPage() {
-	 	 
-	 	 // przesuniecie strony wzgledem osi Y
-	 	 pageYoffset = window.pageYOffset;
-	 	 console.log(pageYOffset);
-
-	 	 if (pageYoffset > 400 ) {descriptionBoxHeight.style.height = "0px";}
-	 	 else {descriptionBoxHeight.style.height = "auto";}
-	}
-} 
+		
+		var pageY = window.pageYOffset;
+		
+		if (window.outerWidth > 1300px) {
+			if (pageY > 125) {
+				header.style.height = "100px";
+				navi.style.marginTop = "0px";
+			} else {
+				header.style.height = "140px";
+				navi.style.marginTop = "20px";
+			}
+		}
+	}	
+ 	
+	
+}) 

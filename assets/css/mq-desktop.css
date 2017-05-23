@@ -22,10 +22,21 @@
 /* ======= sekcja Header z menu na górze i logo Netflixa */
 
 header {
-	height: 100px;
+	height: 140px;
+	width: 100%;
+	position: fixed;
+	z-index: 100;
 	border-bottom: red 4px solid;
 	overflow: hidden;
 	box-sizing: border-box;
+	transition: all .4s; 
+	/* transition daje efekt zmniejszania wysokosci się nawigacji podczas scrolowania myszki w dół
+	obsługa w JS w funkcji scrollPage()*/
+}
+
+header nav {
+	margin-top: 20px;
+	transition: all .5s;
 }
 
 header #logo {
@@ -109,13 +120,14 @@ header ul li a {
 	background-size: cover;
 	padding: 8rem 0 3rem;
 	height: auto;
+	
 }
 
 /* ======= sekcja descriptionBox z opisem filmu */
 
 .descriptionBox {
 	width: 75%;
-	/*height: auto;*/
+	height: auto;
 	opacity: .7;
 	padding: 1rem;
 	margin-left: 1rem;
@@ -236,7 +248,8 @@ header ul li a {
 #videoSection {
 	max-width: 1700px;
 	margin: 0 auto;
-	height: auto;
+	height: 100vh;
+	/*height: auto;*/
 }
 
 .videoBoxes {
@@ -304,4 +317,20 @@ header ul li a {
 .fa-play-circle:before{
 	margin-right: 10px;
 
+}
+
+#wypelniacz {
+	height: 200px;
+	width: 100%;
+	position: fixed;
+	z-index: 100;
+	background: yellow;
+}
+.wypelniacz2 {
+	height: 200px;
+	background: blue;
+}
+.wypelniacz3 {
+	height: 200px;
+	background: red;
 }

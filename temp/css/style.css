@@ -34,33 +34,35 @@ header nav {
 	margin-top: 20px;
 	transition: all .5s;
 }
-.hamburgerIcon {
-	/*display: none;*/
+/* pojemnik na hamburger menu*/
+header .hamburgerIcon {
+	display: none;
 	float: right;
 	width: 50px;
 	height: 50px;
 	cursor: pointer;
 	background: gray;
-	transition: all .2s easy-out;
 }
-.iconBar {
+header .iconBar {
 	margin: 0 auto;
-	width: 38px;
+	width: 40px;
 	height: 6px;
 	margin-top: 8px;
 	border-radius: 3px;
 	background: white;
+	transition: all .15s ease-out;
 }
-.one.showMenu{
-  	-webkit-transform: translateX(2px) translateY(14px) rotate(45deg);
-  	transform: translateX(2px) translateY(14px) rotate(45deg);
+/* animacje belek w hamburger menu */
+header .first.showMenu{
+  	-webkit-transform: translateY(14px) rotate(45deg);
+  	transform: translateY(14px) rotate(45deg);
 }
-.two.showMenu{
+header .second.showMenu{
 	display: none;
 }
-.third.showMenu{
-	-webkit-transform: translateX(2px) rotate(-45deg);
-	transform: translateX(2px) rotate(-45deg);
+header .third.showMenu{
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
 }
 header #logo {
 	float: left;
@@ -508,7 +510,7 @@ header {
 header #logo {
 	float: none;
 }
-	
+
 header ul li {
 	float: none;
 	width: 100%;
@@ -521,8 +523,15 @@ header ul li:hover {
 	border-bottom: none;
 }
 
-.menuItems {
-	display: none;	
+header .hamburgerIcon {
+	display: block;
+}	
+
+/*menu nie ma , dopiero po anciśniecu klawisza hamburger-menu pojawia się */
+header .menuItems {
+	height: 0px;
+	opacity: 0;
+	transition: all 1s;
 }
 
 .menuSearch {

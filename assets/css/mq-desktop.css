@@ -39,35 +39,37 @@ header nav {
 	transition: all .5s;
 }
 
-.hamburgerIcon {
-	/*display: none;*/
+/* pojemnik na hamburger menu*/
+header .hamburgerIcon {
+	display: none;
 	float: right;
 	width: 50px;
 	height: 50px;
 	cursor: pointer;
 	background: gray;
-	transition: all .2s easy-out;
 }
 
-.iconBar {
+header .iconBar {
 	margin: 0 auto;
-	width: 38px;
+	width: 40px;
 	height: 6px;
 	margin-top: 8px;
 	border-radius: 3px;
 	background: white;
+	transition: all .15s ease-out;
 }
 
-.one.showMenu{
-  	transform: translateX(2px) translateY(14px) rotate(45deg);
+/* animacje belek w hamburger menu */
+header .first.showMenu{
+  	transform: translateY(14px) rotate(45deg);
 }
 
-.two.showMenu{
+header .second.showMenu{
 	display: none;
 }
 
-.third.showMenu{
-	transform: translateX(2px) rotate(-45deg);
+header .third.showMenu{
+	transform: rotate(-45deg);
 }
 
 header #logo {

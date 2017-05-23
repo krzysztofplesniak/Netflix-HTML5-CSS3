@@ -1,22 +1,27 @@
 window.addEventListener("load", function() {
 	
 // Icona hamburger-menu animowana 
+    // pojemnik na icone hamburger menu
 	var hamburgerIcon = document.querySelector('.hamburgerIcon');
+
+	// 3 belki hamburgera
 	var iconBar = document.querySelectorAll('.iconBar');
-	var menuItems =  document.querySelector('.menuItems');
+
+	var menuItems = document.querySelector('.menuItems');
 
 	hamburgerIcon.addEventListener('click', function () {
 			iconBar[0].classList.toggle('showMenu');
 			iconBar[1].classList.toggle('showMenu');
 			iconBar[2].classList.toggle('showMenu');
-			if (menuItems.style.display = "block") {
-				menuItems.style.display = "none";
-				console.log('none');
-			} 
-			if (menuItems.style.display = "none") {
-				menuItems.style.display = "block";
-				console.log('block');
-			}
+			
+			if (menuItems.style.height == "") {
+					menuItems.style.height = "auto";
+					menuItems.style.opacity = 1;
+				 }
+			else {
+					menuItems.style.height = "";
+					menuItems.style.opacity = 0;
+			}		
 			
 		}
 	);

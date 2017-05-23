@@ -7,7 +7,7 @@ header {
 header #logo {
 	float: none;
 }
-	
+
 header ul li {
 	float: none;
 	width: 100%;
@@ -20,8 +20,15 @@ header ul li:hover {
 	border-bottom: none;
 }
 
-.menuItems {
-	display: none;	
+header .hamburgerIcon {
+	display: block;
+}	
+
+/*menu nie ma , dopiero po anciśniecu klawisza hamburger-menu pojawia się */
+header .menuItems {
+	height: 0px;
+	opacity: 0;
+	transition: all 1s;
 }
 
 .menuSearch {

@@ -20,6 +20,10 @@ header ul li:hover {
 	border-bottom: none;
 }
 
+.menuItems {
+	display: none;	
+}
+
 .menuSearch {
 	width: 100%;
 	padding: 0.3rem 0.5rem 0rem;

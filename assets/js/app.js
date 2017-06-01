@@ -53,9 +53,9 @@ window.addEventListener("load", function() {
 		
 		var pageY = window.pageYOffset;
 		var pageWidth = window.outerWidth;
-		console.log(pageWidth);
+		
 		if (pageWidth > 1300) {
-			console.log("scroll");
+		
 			if (pageY > 125) {
 				header.style.height = "100px";
 				navi.style.marginTop = "0px";

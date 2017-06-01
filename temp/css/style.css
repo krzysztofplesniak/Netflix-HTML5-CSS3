@@ -6,13 +6,12 @@
 	padding: 0px;
 	border: 0px;
 	color: white;
-	background: black;	
 	font-size: 15px;
 	font-family: Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
 }
 .container {
-	width: 95%;
+	width: 90%;
 	max-width: 1800px;
 	margin: 0 auto;
 	overflow: hidden;
@@ -21,7 +20,9 @@
 header {
 	height: 140px;
 	width: 100%;
-	position: fixed; /*header zafiksowany do belki górnej przy przewijaniu ekranu w dół*/
+	background: black;	
+	position: fixed; 
+	/*header zafiksowany do belki górnej przy przewijaniu ekranu w dół*/
 	z-index: 100;
 	border-bottom: red 4px solid;
 	overflow: hidden;
@@ -128,18 +129,22 @@ header ul li a {
 }
 /* ======= sekcja HeroImage z dużą grafika w tle */
 #heroImage {
-	background: url(../../assets/img/background.jpg) no-repeat fixed 0 100px; 
-	background-size: cover;
-	padding: 8rem 0 3rem;
 	height: auto;
+	width: 100%;
+	position: relative;
+	top: 140px;
+	background: url(../../assets/img/background.jpg) no-repeat fixed 0px 90px; 
+	background-size: cover;
+	padding: 5.5rem 0 4rem;
 }
 /* ======= sekcja descriptionBox z opisem filmu */
 .descriptionBox {
-	width: 75%;
+	width: 100%;
 	height: auto;
-	opacity: .7;
 	padding: 1rem;
-	margin-left: 1rem;
+	margin: 1rem;
+	background: black;	
+	opacity: .8;
 	overflow: hidden;
 }
 .descriptionBox h1 {
@@ -209,8 +214,10 @@ header ul li a {
 }
 /* =======   sekcja scrollDown icony z FontAwesome umieszczone na dole strony pierwszej */
 #scrollDown {
+	position: relative;
+	top: 140px;
+	background: black;	
 	text-align: center;
-	
 }
 #scrollDown a {
 	text-decoration: none;
@@ -245,9 +252,11 @@ header ul li a {
 }
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 #videoSection {
-	max-width: 1700px;
-	margin: 0 auto;
 	height: auto;
+	width: 100%;
+	background: black;	
+	position: relative;
+	top: 140px;
 }
 .videoBoxes {
 	position: relative;  /*to jest dla klawisza PLAY w tagu "i"*/ 

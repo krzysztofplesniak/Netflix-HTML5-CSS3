@@ -1,4 +1,4 @@
-window.addEventListener("load", function() {
+window.addEventListener('load', function() {
 	
 // Icona hamburger-menu animowana 
     // pojemnik na icone hamburger menu
@@ -15,11 +15,11 @@ window.addEventListener("load", function() {
 			iconBar[2].classList.toggle('showMenu');
 			
 			if (menuItems.style.height == "") {
-					menuItems.style.height = "auto";
+					menuItems.style.height = 'auto';
 					menuItems.style.opacity = 1;
 				 }
 			else {
-					menuItems.style.height = "";
+					menuItems.style.height = '';
 					menuItems.style.opacity = 0;
 			}		
 			
@@ -36,9 +36,9 @@ window.addEventListener("load", function() {
 	showMoreText.addEventListener('click', showTextDescription); 
 
 	function showTextDescription() {
-		hiddenText[0].style.display = "inline-block";
-		hiddenText[1].style.display = "inline-block";
-		showMoreText.style.display = "none";
+		hiddenText[0].style.display = 'inline-block';
+		hiddenText[1].style.display = 'inline-block';
+		showMoreText.style.display = 'none';
 	}	
 
 // Blok kodu animacja zmiany wysokosci ekrany przy scrolowaniu myszą
@@ -47,7 +47,7 @@ window.addEventListener("load", function() {
 	var header = document.getElementById('header');
 	var navi = document.getElementById('navi');
 
-	window.addEventListener("scroll", scrollPage);
+	window.addEventListener('scroll', scrollPage);
 	
 	function scrollPage() {
 		
@@ -57,11 +57,11 @@ window.addEventListener("load", function() {
 		if (pageWidth > 1300) {
 		
 			if (pageY > 125) {
-				header.style.height = "100px";
-				navi.style.marginTop = "0px";
+				header.style.height = '100px';
+				navi.style.marginTop = '0px';
 			} else {
-				header.style.height = "140px";
-				navi.style.marginTop = "20px";
+				header.style.height = '140px';
+				navi.style.marginTop = '20px';
 			}
 		}
 	}	

@@ -33,6 +33,7 @@ header ul li a {
 }
 
 #heroImage {
+	top: 0px;
 	padding: 2rem 0 3rem;
 }
 
@@ -84,4 +85,9 @@ header ul li a {
 	height: 4vw;
 	line-height: 3.5vw;
 	font-size: 1.1rem;
+}
+
+
+#videoSection {
+	top: 0px;
 }

@@ -12,6 +12,7 @@
 	font-family: Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
 }
+
 .container {
 	width: 95%;
 	max-width: 1800px;
@@ -20,6 +21,7 @@
 }
 
 /* ======= sekcja Header z menu na górze i logo Netflixa */
+
 
 header {
 	height: 140px;
@@ -148,10 +150,11 @@ header ul li a {
 /* ======= sekcja HeroImage z dużą grafika w tle */
 
 #heroImage {
+	height: auto;
+	width: 100%;
 	background: url(../../assets/img/background.jpg) no-repeat fixed 0 100px; 
 	background-size: cover;
 	padding: 8rem 0 3rem;
-	height: auto;
 }
 
 /* ======= sekcja descriptionBox z opisem filmu */
@@ -246,7 +249,6 @@ header ul li a {
 
 #scrollDown {
 	text-align: center;
-	
 }
 
 #scrollDown a {
@@ -279,9 +281,8 @@ header ul li a {
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 #videoSection {
-	max-width: 1700px;
-	margin: 0 auto;
 	height: auto;
+	width: 100%;
 }
 
 .videoBoxes {

@@ -21,8 +21,7 @@ header {
 	height: 140px;
 	width: 100%;
 	background: black;	
-	position: fixed; 
-	/*header zafiksowany do belki górnej przy przewijaniu ekranu w dół*/
+	position: fixed; /*header zafiksowany do belki górnej przy przewijaniu ekranu w dół*/
 	z-index: 100;
 	border-bottom: red 4px solid;
 	overflow: hidden;
@@ -32,15 +31,24 @@ header {
 	obsługa w JS w funkcji scrollPage()*/
 }
 header nav {
-	margin-top: 20px;
+	margin-top: 30px;
 	transition: all .5s;
 }
-/* pojemnik na hamburger menu*/
+header #logo {
+	float: left;
+	width: 310px; 
+	height: 90px;
+	background: url(../../assets/img/netflix.png) no-repeat; 
+	background-size: cover;
+	cursor: pointer;
+}
+/* hamburger menu*/
 header .hamburgerIcon {
 	display: none;
 	float: right;
 	width: 50px;
 	height: 50px;
+	margin: 10px 15px;
 	cursor: pointer;
 }
 header .iconBar {
@@ -64,65 +72,72 @@ header .third.showMenu{
 	-webkit-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
-header #logo {
-	float: left;
-	width: 310px; 
-	height: 90px;
-	margin: 5px;
-	background: url(../../assets/img/netflix.png) no-repeat; 
-	background-size: cover;
-	cursor: pointer;
-}
-header ul {
+header ul.menuItems {
+	margin-top: 25px;
 	float: right;
-	margin: 30px 0;
+	height: 50px;
 	list-style: none;
 	overflow: hidden;
 }
 header ul li {
 	float: left;
-	padding: .5rem 2vw;
+	height: 47px;
+	margin: 0 5px;
 	text-align: center;
-	height: 40px;
 }
 header ul li:hover {
 	border-bottom: 3px solid red;
 	transition: border-bottom .2s ease-out;
 }
 header ul li a {
+	display: block;
+	height: 100%;
+	padding: 5px 15px;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 1.3rem;
 	text-decoration: none;
 	letter-spacing: 1px;
 }
 /*efekt rozsuwania pola Szukaj po najechaniu myszką*/
-.menuSearch  {
+.menuSearch {
 	width: 150px;
-	height: 40px;
-	margin: 0 auto;
-	padding: .5rem .5rem;
+	margin: 0 5px;
+}
+.menuSearch .smallBox {
+	display: block;
+	height: 100%;
+	padding: 0px 15px;
+	text-align: right;
+	box-sizing: border-box;
 }
 .menuSearch .smallBox i {
  	margin-right: 15px;
+    font-size: 2.5rem;
 }
-.menuSearch .smallBox {
-	text-align: right;
-	color: red;	
-	font-size: 1.3rem;
+.menuSearch .smallBoxInput {
+    font-size: 1.3rem;
+    color: red;	
+    position: relative;
+    top: -8px;
 }
 .menuSearch:hover .smallBox{
 	display: none; 
 }
 .menuSearch .expandedBox {
-	display: none; 
+	display: none;
+	height: 100%;
+	padding: 20px; 
 	font-size: 1.3rem;	
 	text-align: right;
+	box-sizing: border-box;
+	position: relative;
+    top: -15px;
 }
 .menuSearch:hover .expandedBox {
 	display: block; 
 }
 .menuSearch:hover {
-	width: 350px;
+	width: 300px;
 	border: 2px solid white;
 	transition: linear width .5s;
 	box-sizing: border-box;
@@ -133,16 +148,15 @@ header ul li a {
 	width: 100%;
 	position: relative;
 	top: 140px;
-	background: url(../../assets/img/background.jpg) no-repeat fixed 0px 90px; 
+	background: url(../../assets/img/background.jpg) no-repeat fixed 0px 70px; 
 	background-size: cover;
-	padding: 5.5rem 0 4rem;
+	padding: 5.5rem 0 2rem;
 }
 /* ======= sekcja descriptionBox z opisem filmu */
 .descriptionBox {
 	width: 100%;
 	height: auto;
-	padding: 1rem;
-	margin: 1rem;
+	padding: 1rem 2rem;
 	background: black;	
 	opacity: .8;
 	overflow: hidden;
@@ -190,8 +204,8 @@ header ul li a {
 .descriptionBox .button {
 	float: left;
 	width: 300px;
+	margin: 2rem 4rem 2rem 1rem;
 	padding: 1rem;
-	margin: 1rem;
 	border-radius: 5px;
 	cursor: pointer;
 	letter-spacing: 1.5px;
@@ -201,7 +215,6 @@ header ul li a {
 }
 .descriptionBox .btn1 {
 	background: rgba(255,255,255,0.25);
-	margin: 1rem 4rem 1rem 1rem;
 }
 .descriptionBox .btn2 {
 	background: rgba(255,0,0,1);
@@ -261,7 +274,7 @@ header ul li a {
 .videoBoxes {
 	position: relative;  /*to jest dla klawisza PLAY w tagu "i"*/ 
 	float: left;  /* w tutku był (dipslay: inline-block) i powododował ze były odstępy międzye div'ami. Trzeba było zastosowac trik z() font-size: 0px)*/
-	height: 24vw;
+	height: 25vw;
 	width: 16%;
 	margin: 10px 2%;
 	opacity: 0.5; 
@@ -281,6 +294,7 @@ header ul li a {
 }
 .videoBoxes:hover i {
 	display: inline-block;
+	background: black;
 }
 .videoBoxes:hover {
 	opacity: 1; 
@@ -292,7 +306,7 @@ header ul li a {
 	font-size: 1.2rem;	
 	font-weight: 400;
 	position: relative;
-	top: 1.5vw;
+	top: 1.4vw;
 }
 .videoBoxes span {
 	font-size: 1.5rem;
@@ -318,27 +332,34 @@ header ul li a {
 
 }
 @media (max-width: 1280px){
-
 /* ======== MEDIA QUERIES 1280PX =======*/
-
-header ul li {
-	padding: .5rem 10px;
-}
+.container {
+	width: 95%;
+}	
 
 .menuSearch:hover {
 	width: 200px;
 }
 
+.videoBoxes  {
+	height: 28vw;
+}
+
 .videoBoxes p {
-	font-size: 1rem;	
-	top: .8vw;
+	font-size: 1.1rem;	
+	font-weight: 400;
+	top: 1vw;
 }
 
 .videoBoxes i {
 	font-size: 1.5rem;
 }
 
-/* dla tej rodzielczosci to jest zbedne */
+.videoBoxes img  {
+	height: 23vw;
+}
+
+/* dla mniejszych rozdzielczości scrool na dół jest zbedny */
 #scrollDown {
 	display: none;
 }
@@ -352,6 +373,7 @@ header {
 
 header nav {
 	margin-top: 0px;
+
 }
 
 header #logo {
@@ -359,23 +381,26 @@ header #logo {
 	margin: 10px auto 0px;
 }
 
-header ul {
+header ul.menuItems {
 	float: none;
 	width: 80%;
+	height: 100px;
 	margin: 0 auto;
+	padding: 0px;
 }
 
 header ul li {
 	width: 25%;
-	padding: 0.75rem 0.5rem;
-}
-
-header ul li:hover a {
-	color: red;
+	margin: 0px;
 }
 
 header ul li a {
-	font-size: 1.4rem;
+    padding: 10px 5px;
+    height: 100%;
+} 
+
+header ul li:hover a {
+	color: red;
 }
 
 #heroImage {
@@ -385,11 +410,22 @@ header ul li a {
 
 .menuSearch {
 	width: 100%;
+    margin: 0px;
 }
- 
+
 .menuSearch .smallBox {
 	text-align: center;
 	font-size: 1.4rem;
+	padding: 10px 50px;
+}
+
+.menuSearch .expandedBox {
+   	padding: 15px 50px;
+   	top: -2px;
+}
+
+.menuSearch .smallBoxInput {
+    top: -8px;
 }
 
 .menuSearch:hover .expandedBox {
@@ -400,28 +436,23 @@ header ul li a {
 	width: 100%;
 }
 
-.descriptionBox {
-	width: 96%;
-	margin: 0 2%; 
-}
-
 .descriptionBox .button {
 	width: 250px;
 	font-size: 1.2rem;
 }
 
 .videoBoxes  {
-	height: 30vw;
+	height: 36vw;
 	width: 21%;
 }
 
 .videoBoxes p {
 	font-size: 1rem;
-	top: .9vw;
+	top: 1vw;
 }
 
 .videoBoxes img  {
-	height: 25vw;
+	height: 30vw;
 }
 
 .videoBoxes i {
@@ -449,18 +480,20 @@ header ul li {
 	height: 50px;
 }
 
+header ul.menuItems {
+	width: 95%;
+}
+
 .menuSearch {
 	height: 50px;
-	padding: .5rem .5rem;	
 }
 
 .menuSearch .smallBox i {
  	margin-right: 5px;
 }
 
-.descriptionBox {
-	width: 96%;
-	margin: 0 2%; 
+.descriptionBox {	
+	padding: 1rem;	
 }
 
 .descriptionBox h1 {
@@ -492,7 +525,7 @@ header ul li {
 }
 
 .videoBoxes  {
-	height: 40vw;
+	height: 49vw;
 	width: 29%;
 }
 
@@ -510,26 +543,33 @@ header ul li {
 }
 
 .videoBoxes img  {
-	height: 35vw;
+	height: 40vw;
 }
 }
 @media (max-width: 480px){
 
 /*  Media queries 480px*/
 
+.container {
+	width: 95%;
+}
+
 header {
 	height: auto;
 }
 
 header #logo {
-	float: none;
+	float: left;
+	width: 240px; 
+	height: 70px;
+	margin: 5px;
+	background-size: 240px 70px;
 }
 
 header ul li {
 	float: none;
 	width: 100%;
-	height: 55px;
-	padding: 1.25rem 0.5rem;
+	padding: 0rem;
 	border-top: 2px solid #333;
 }
 
@@ -539,10 +579,12 @@ header ul li:hover {
 
 header .hamburgerIcon {
 	display: block;
+	margin: 15px 25px 0 0;
 }	
 
-/*menu nie ma , dopiero po anciśniecu klawisza hamburger-menu pojawia się */
-header .menuItems {
+
+/*menu nie ma, dopiero po naciśnięciu klawisza hamburger-menu pojawia się */
+header ul.menuItems {
 	height: 0px;
 	opacity: 0;
 	transition: all 1s;
@@ -550,22 +592,28 @@ header .menuItems {
 
 .menuSearch {
 	width: 100%;
-	padding: 0.3rem 0.5rem 0rem;
+	/*padding: 1rem 0.5rem 0rem;*/
+}
+.menuSearch .smallBox {
+	padding: 0px 50px;
+}
+.menuSearch .smallBoxInput {
+    top: 0px;
 }
 
 .menuSearch .smallBox i {
  	margin-right: 2px;
- 	font-size: 2.5rem;
+ 	position: relative;
+ 	top: 5px;
 }
 
 #heroImage {
 	width: 100%;
 	padding: 15px 0;
 }
-	
-.descriptionBox {
-	width: 96%;
-	margin: 0 2%;
+
+.descriptionBox {	
+	padding: .5rem;	
 }
 
 .descriptionBox h1 {
@@ -575,7 +623,7 @@ header .menuItems {
 .descriptionBox p {
 	margin: 15px 0 0 0;
 	font-size: 1rem;
-	line-height: 1.3rem;
+	/*line-height: 1.3rem;*/
 }
 
 .descriptionBox .showMoreText  {
@@ -599,7 +647,7 @@ header .menuItems {
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 .videoBoxes  {
-	height: 60vw;
+	height: 75vw;
 	width: 45%;
 }
 
@@ -612,12 +660,11 @@ header .menuItems {
 	left: 25%;
 	width: 50%;
 	height: 8vw;
-	line-height: 7vw;
 	font-size: 1rem;
 }
 
 .videoBoxes img  {
-	height: 55vw;
+	height: 60vw;
 }
 }
 @media (max-width: 350px){
@@ -626,23 +673,21 @@ header .menuItems {
 
 header ul li {
 	height: 50px;
-    padding: 1.1rem 0.5rem;
+  padding: 1.1rem 0.5rem;
 }
 
 header #logo {
-  	margin: 5px auto;
-  	width: 290px; 
-    background-size: 90vw 90px;
+  width: 205px; 
+  height: 60px;
+  background-size: 205px 60px;
 }
+
+header .hamburgerIcon {
+  margin: 12px 15px 0 0;
+} 
 
 #heroImage {
     padding: 5px 0;
-}
-
-.descriptionBox {
-	width: 98%;
-	margin: 0 1%;
-	padding: 5px;
 }
 
 .descriptionBox h1 {

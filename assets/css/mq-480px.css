@@ -1,18 +1,25 @@
 /*  Media queries 480px*/
 
+.container {
+	width: 95%;
+}
+
 header {
 	height: auto;
 }
 
 header #logo {
-	float: none;
+	float: left;
+	width: 240px; 
+	height: 70px;
+	margin: 5px;
+	background-size: 240px 70px;
 }
 
 header ul li {
 	float: none;
 	width: 100%;
-	height: 55px;
-	padding: 1.25rem 0.5rem;
+	padding: 0rem;
 	border-top: 2px solid #333;
 }
 
@@ -22,10 +29,12 @@ header ul li:hover {
 
 header .hamburgerIcon {
 	display: block;
+	margin: 15px 25px 0 0;
 }	
 
-/*menu nie ma , dopiero po anciśniecu klawisza hamburger-menu pojawia się */
-header .menuItems {
+
+/*menu nie ma, dopiero po naciśnięciu klawisza hamburger-menu pojawia się */
+header ul.menuItems {
 	height: 0px;
 	opacity: 0;
 	transition: all 1s;
@@ -33,22 +42,28 @@ header .menuItems {
 
 .menuSearch {
 	width: 100%;
-	padding: 0.3rem 0.5rem 0rem;
+	/*padding: 1rem 0.5rem 0rem;*/
+}
+.menuSearch .smallBox {
+	padding: 0px 50px;
+}
+.menuSearch .smallBoxInput {
+    top: 0px;
 }
 
 .menuSearch .smallBox i {
  	margin-right: 2px;
- 	font-size: 2.5rem;
+ 	position: relative;
+ 	top: 5px;
 }
 
 #heroImage {
 	width: 100%;
 	padding: 15px 0;
 }
-	
-.descriptionBox {
-	width: 96%;
-	margin: 0 2%;
+
+.descriptionBox {	
+	padding: .5rem;	
 }
 
 .descriptionBox h1 {
@@ -58,7 +73,7 @@ header .menuItems {
 .descriptionBox p {
 	margin: 15px 0 0 0;
 	font-size: 1rem;
-	line-height: 1.3rem;
+	/*line-height: 1.3rem;*/
 }
 
 .descriptionBox .showMoreText  {
@@ -82,7 +97,7 @@ header .menuItems {
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 .videoBoxes  {
-	height: 60vw;
+	height: 75vw;
 	width: 45%;
 }
 
@@ -95,10 +110,9 @@ header .menuItems {
 	left: 25%;
 	width: 50%;
 	height: 8vw;
-	line-height: 7vw;
 	font-size: 1rem;
 }
 
 .videoBoxes img  {
-	height: 55vw;
+	height: 60vw;
 }

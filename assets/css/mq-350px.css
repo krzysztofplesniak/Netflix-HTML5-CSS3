@@ -2,23 +2,21 @@
 
 header ul li {
 	height: 50px;
-    padding: 1.1rem 0.5rem;
+  padding: 1.1rem 0.5rem;
 }
 
 header #logo {
-  	margin: 5px auto;
-  	width: 290px; 
-    background-size: 90vw 90px;
+  width: 205px; 
+  height: 60px;
+  background-size: 205px 60px;
 }
+
+header .hamburgerIcon {
+  margin: 12px 15px 0 0;
+} 
 
 #heroImage {
     padding: 5px 0;
-}
-
-.descriptionBox {
-	width: 98%;
-	margin: 0 1%;
-	padding: 5px;
 }
 
 .descriptionBox h1 {

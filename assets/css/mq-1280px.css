@@ -1,23 +1,31 @@
 /* ======== MEDIA QUERIES 1280PX =======*/
-
-header ul li {
-	padding: .5rem 10px;
-}
+.container {
+	width: 95%;
+}	
 
 .menuSearch:hover {
 	width: 200px;
 }
 
+.videoBoxes  {
+	height: 28vw;
+}
+
 .videoBoxes p {
-	font-size: 1rem;	
-	top: .8vw;
+	font-size: 1.1rem;	
+	font-weight: 400;
+	top: 1vw;
 }
 
 .videoBoxes i {
 	font-size: 1.5rem;
 }
 
-/* dla tej rodzielczosci to jest zbedne */
+.videoBoxes img  {
+	height: 23vw;
+}
+
+/* dla mniejszych rozdzielczości scrool na dół jest zbedny */
 #scrollDown {
 	display: none;
 }

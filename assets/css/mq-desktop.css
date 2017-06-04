@@ -171,10 +171,10 @@ header ul li a {
 	height: auto;
 	width: 100%;
 	position: relative;
-	top: 100px;
+	top: 120px;
 	background: url(../../assets/img/background.jpg) no-repeat fixed 0px 70px; 
 	background-size: cover;
-	padding: 5.5rem 0 2rem;
+	padding: 5.5rem 0;
 }
 
 /* ======= sekcja descriptionBox z opisem filmu */
@@ -267,10 +267,12 @@ header ul li a {
 /* =======   sekcja scrollDown icony z FontAwesome umieszczone na dole strony pierwszej */
 
 #scrollDown {
+	display: block;
 	position: relative;
-	top: 100px;
+	top: 120px;
 	background: black;	
 	text-align: center;
+	height: 80px;
 }
 
 #scrollDown a {
@@ -288,8 +290,8 @@ header ul li a {
 }
 
 @keyframes arrow {
-    0%   {color:white; left:0px; top: 0px;}
-    100% {color:red; left:0px; top: 15px;}
+    0%   {color:white; left:0px; top: -5px;}
+    100% {color:red; left:0px; top: 10px;}
 }
 
 #scrollDown span {

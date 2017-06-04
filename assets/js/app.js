@@ -45,6 +45,7 @@ window.addEventListener('load', function() {
 	// złapanie elementu header i nav w celu zmiany płynnej wysokości o 40px podczas scrolowania ekranu w dół
 	var header = document.getElementById('header');
 	var navi = document.getElementById('navi');
+	var scrollDown = document.querySelector('#scrollDown');
 
 	// złapanie zdarzenia scrolowania myszą
 	window.addEventListener('scroll', scrollPage);
@@ -56,13 +57,18 @@ window.addEventListener('load', function() {
 		//dla ekranów większych niż tablety i smartfony
 		if (pageWidth > 1300) {
 		
-			if (pageY > 170) { // gdy ekran zjedzie o więcej jak 125px to zmniejsz wysokosc headera o 40px  
+			if (pageY > 125) { // gdy ekran zjedzie o więcej jak 125px to zmniejsz wysokosc headera o 40px  
 				header.style.height = '100px';
 				navi.style.marginTop = '5px';
-			} else {
+				scrollDown.style.display = 'none';
+			}	
+			else {
 				header.style.height = '120px';
 				navi.style.marginTop = '15px';
+				scrollDown.style.display = 'block';
 			}
+
+			
 		}
 	};	
 
@@ -116,5 +122,6 @@ window.addEventListener('load', function() {
 
  	
   }
+ 
  
 }) 

@@ -6,7 +6,6 @@ header {
 
 header nav {
 	margin-top: 0px;
-
 }
 
 header #logo {
@@ -19,7 +18,7 @@ header ul.menuItems {
 	width: 80%;
 	height: 100px;
 	margin: 0 auto;
-	padding: 0px;
+/*	padding: 0px;*/
 }
 
 header ul li {
@@ -28,8 +27,8 @@ header ul li {
 }
 
 header ul li a {
-    padding: 10px 5px;
-    height: 100%;
+    /*padding: 10px 5px;
+    height: 100%;*/
 } 
 
 header ul li:hover a {

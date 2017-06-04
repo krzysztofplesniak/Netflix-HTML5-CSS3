@@ -31,7 +31,7 @@ header {
 	obsługa w JS w funkcji scrollPage()*/
 }
 header nav {
-	margin-top: 30px;
+	margin-top: 15px;
 	transition: all .5s;
 }
 header #logo {
@@ -82,17 +82,20 @@ header ul.menuItems {
 header ul li {
 	float: left;
 	height: 47px;
-	margin: 0 5px;
+	width: 120px;
+	margin-left: 10px;
 	text-align: center;
+	box-sizing: border-box;
 }
 header ul li:hover {
 	border-bottom: 3px solid red;
 	transition: border-bottom .2s ease-out;
 }
 header ul li a {
+	border: 1px solid yellow;
 	display: block;
 	height: 100%;
-	padding: 5px 15px;
+	line-height: 3rem;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 1.3rem;
 	text-decoration: none;
@@ -147,7 +150,7 @@ header ul li a {
 	height: auto;
 	width: 100%;
 	position: relative;
-	top: 140px;
+	top: 100px;
 	background: url(../../assets/img/background.jpg) no-repeat fixed 0px 70px; 
 	background-size: cover;
 	padding: 5.5rem 0 2rem;
@@ -228,7 +231,7 @@ header ul li a {
 /* =======   sekcja scrollDown icony z FontAwesome umieszczone na dole strony pierwszej */
 #scrollDown {
 	position: relative;
-	top: 140px;
+	top: 100px;
 	background: black;	
 	text-align: center;
 }
@@ -269,7 +272,7 @@ header ul li a {
 	width: 100%;
 	background: black;	
 	position: relative;
-	top: 140px;
+	top: 100px;
 }
 .videoBoxes {
 	position: relative;  /*to jest dla klawisza PLAY w tagu "i"*/ 
@@ -373,7 +376,6 @@ header {
 
 header nav {
 	margin-top: 0px;
-
 }
 
 header #logo {
@@ -386,7 +388,7 @@ header ul.menuItems {
 	width: 80%;
 	height: 100px;
 	margin: 0 auto;
-	padding: 0px;
+/*	padding: 0px;*/
 }
 
 header ul li {
@@ -395,8 +397,8 @@ header ul li {
 }
 
 header ul li a {
-    padding: 10px 5px;
-    height: 100%;
+    /*padding: 10px 5px;
+    height: 100%;*/
 } 
 
 header ul li:hover a {
@@ -471,17 +473,12 @@ header ul li:hover a {
 }
 @media (max-width: 768px){
 /* ======== MEDIA QUERIES 768PX =======*/
-header ul {
-	width: 100%;
-	margin: 0 0;
+header ul.menuItems {
+	width: 95%;
 }
 
 header ul li {
 	height: 50px;
-}
-
-header ul.menuItems {
-	width: 95%;
 }
 
 .menuSearch {

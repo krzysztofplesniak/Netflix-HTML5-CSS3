@@ -1,15 +1,10 @@
 /* ======== MEDIA QUERIES 768PX =======*/
-header ul {
-	width: 100%;
-	margin: 0 0;
+header ul.menuItems {
+	width: 95%;
 }
 
 header ul li {
 	height: 50px;
-}
-
-header ul.menuItems {
-	width: 95%;
 }
 
 .menuSearch {

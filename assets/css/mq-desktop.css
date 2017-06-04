@@ -37,7 +37,7 @@ header {
 }
 
 header nav {
-	margin-top: 30px;
+	margin-top: 15px;
 	transition: all .5s;
 }
 
@@ -94,8 +94,10 @@ header ul.menuItems {
 header ul li {
 	float: left;
 	height: 47px;
-	margin: 0 5px;
+	width: 120px;
+	margin-left: 10px;
 	text-align: center;
+	box-sizing: border-box;
 }
 
 header ul li:hover {
@@ -104,9 +106,10 @@ header ul li:hover {
 }
 
 header ul li a {
+	border: 1px solid yellow;
 	display: block;
 	height: 100%;
-	padding: 5px 15px;
+	line-height: 3rem;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 1.3rem;
 	text-decoration: none;
@@ -170,7 +173,7 @@ header ul li a {
 	height: auto;
 	width: 100%;
 	position: relative;
-	top: 140px;
+	top: 100px;
 	background: url(../../assets/img/background.jpg) no-repeat fixed 0px 70px; 
 	background-size: cover;
 	padding: 5.5rem 0 2rem;
@@ -267,7 +270,7 @@ header ul li a {
 
 #scrollDown {
 	position: relative;
-	top: 140px;
+	top: 100px;
 	background: black;	
 	text-align: center;
 }
@@ -306,7 +309,7 @@ header ul li a {
 	width: 100%;
 	background: black;	
 	position: relative;
-	top: 140px;
+	top: 100px;
 }
 
 .videoBoxes {

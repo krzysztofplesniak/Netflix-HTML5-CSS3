@@ -5,21 +5,23 @@ window.addEventListener('load', function() {
 	var hamburgerIcon = document.querySelector('.hamburgerIcon');
 
 	// 3 belki hamburgera
-	var iconBar = document.querySelectorAll('.iconBar');
+	var iconBars = document.querySelectorAll('.iconBar');
 
-	var menuItems = document.querySelector('.menuItems');
+	var menuItems = document.getElementById('menuItems');
 
 	hamburgerIcon.addEventListener('click', function () {
-			iconBar[0].classList.toggle('showMenu');
-			iconBar[1].classList.toggle('showMenu');
-			iconBar[2].classList.toggle('showMenu');
+			iconBars.forEach(function(iconBar, index) {
+				iconBar.classList.toggle('showMenu');
+
+				}
+			)
 			
 			if (menuItems.style.height == "") {
-					menuItems.style.height = 'auto';
+					menuItems.style.height = "300px";
 					menuItems.style.opacity = 1;
 				 }
 			else {
-					menuItems.style.height = '';
+					menuItems.style.height = "";
 					menuItems.style.opacity = 0;
 			}		
 			
@@ -41,30 +43,63 @@ window.addEventListener('load', function() {
 		showMoreText.style.display = 'none';
 	}	
 
-// Blok kodu animacja zmiany wysokosci ekrany przy scrolowaniu myszą
+// Blok kodu scrolowanie myszą = zwiększenie wysokości headera 
 
-	// złapanie elemnetu header i nav w celu zmiany płynnej wysokości o 40px podczas scrolowania ekranu w dół
+	// złapanie elementu header i nav w celu zmiany płynnej wysokości o 40px podczas scrolowania ekranu w dół
 	var header = document.getElementById('header');
 	var navi = document.getElementById('navi');
 
+	// złapanie zdarzenia scrolowania myszą
 	window.addEventListener('scroll', scrollPage);
 	
 	function scrollPage() {
 		
 		var pageY = window.pageYOffset;
 		var pageWidth = window.outerWidth;
-		
+		//dla ekranów większych niż tablety i smartfony
 		if (pageWidth > 1300) {
 		
-			if (pageY > 125) {
+			if (pageY > 170) { // gdy ekran zjedzie o więcej jak 125px to zmniejsz wysokosc headera o 40px  
 				header.style.height = '100px';
-				navi.style.marginTop = '0px';
+				navi.style.marginTop = '5px';
 			} else {
-				header.style.height = '140px';
-				navi.style.marginTop = '20px';
+				header.style.height = '120px';
+				navi.style.marginTop = '15px';
 			}
 		}
-	}	
- 	
+	};	
+
+// Blok kodu zmiany wysokości headera i wielkości czcionek przy najechaniu myszą
+
+	// złapanie elemenetów li>a 
+	var menuItems = document.querySelectorAll('.menuItems a');
 	
+	//złapanie zdarzenia polegającego na najechaniu i opuszczeniu hedera	
+	// header.addEventListener('mouseenter', headerExpand);
+	// header.addEventListener('mouseleave', headerExpand);
+
+	function headerExpand(e) {
+		var pageWidth = window.outerWidth;
+		
+
+		if  ((e.type == "mouseenter") && (pageWidth > 1300)) {
+				console.log('YES');	
+				header.style.height = '120px'; // zwiększ wyokośc hedaera do 140px 
+				navi.style.marginTop = '15px'; // zwiększ  margin-top elelementów w hedaer navi = logo + ul
+				menuItems.forEach(function(menuItem, index) {
+					menuItem.style.fontSize = "1.5rem"; // zwiększ  wielkości czcionek	
+				})
+				
+			}
+
+		if ((e.type == "mouseleave") && (pageWidth > 1300)) {
+				header.style.height = '100px';
+				navi.style.marginTop = '5px';  
+				menuItems.forEach(function(menuItem, index) {
+					menuItem.style.fontSize = "1.3rem"; 
+				})
+			}	
+		
+		
+	};
 }) 

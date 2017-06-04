@@ -137,7 +137,7 @@ header ul li a {
     font-size: 1.3rem;
     color: red;	
     position: relative;
-    top: -8px;
+    top: -2px;
 }
 
 .menuSearch:hover .smallBox{
@@ -152,7 +152,7 @@ header ul li a {
 	text-align: right;
 	box-sizing: border-box;
 	position: relative;
-    top: -15px;
+    top: -10px;
 }
 
 .menuSearch:hover .expandedBox {

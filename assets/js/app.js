@@ -6,11 +6,9 @@ window.addEventListener('load', function() {
 
 	// 3 belki hamburgera
 	var iconBars = document.querySelectorAll('.iconBar');
-
 	var menuItems = document.querySelector('.menuItems');
 
 	hamburgerIcon.addEventListener('click', function () {
-		
 
 			iconBars.forEach(function(iconBar) {
 				iconBar.classList.toggle('showMenu');
@@ -82,7 +80,7 @@ window.addEventListener('load', function() {
 		
 
 		if  ((e.type == "mouseenter") && (pageWidth > 1300)) {
-				header.style.height = '120px'; // zwiększ wyokośc hedaera do 140px 
+				header.style.height = '120px'; // zwiększ wysokość hedaera do 140px 
 				navi.style.marginTop = '15px'; // zwiększ  margin-top elelementów w hedaer navi = logo + ul
 				menuATags.forEach(function(menuATag, index) {
 					menuATag.style.fontSize = "1.4rem"; // zwiększ  wielkości czcionek	
@@ -100,4 +98,23 @@ window.addEventListener('load', function() {
 		
 		
 	};
+
+// Blok kodu zmiany wysokości headera przy zmianie szerokości ekranu
+  window.addEventListener('resize', WindowReSize);
+
+  function WindowReSize() {
+	var pageWidth = window.outerWidth;
+
+	if ((pageWidth > 480) && (pageWidth < 1024)){
+		menuItems.style.opacity = 1;
+		menuItems.style.height = "210px";
+	}
+	else {
+		menuItems.style.opacity = 1;
+		menuItems.style.height = "";	
+	} 
+
+ 	
+  }
+ 
 }) 

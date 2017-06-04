@@ -7,17 +7,17 @@ window.addEventListener('load', function() {
 	// 3 belki hamburgera
 	var iconBars = document.querySelectorAll('.iconBar');
 
-	var menuItems = document.getElementById('menuItems');
+	var menuItems = document.querySelector('.menuItems');
 
 	hamburgerIcon.addEventListener('click', function () {
-			iconBars.forEach(function(iconBar, index) {
-				iconBar.classList.toggle('showMenu');
+		
 
-				}
-			)
+			iconBars.forEach(function(iconBar) {
+				iconBar.classList.toggle('showMenu');
+			});
 			
 			if (menuItems.style.height == "") {
-					menuItems.style.height = "300px";
+					menuItems.style.height = "250px";
 					menuItems.style.opacity = 1;
 				 }
 			else {
@@ -27,7 +27,6 @@ window.addEventListener('load', function() {
 			
 		}
 	);
-
 
 // Blok kodu obsługujacy anhora "Czytaj więcej"  
 
@@ -72,22 +71,21 @@ window.addEventListener('load', function() {
 // Blok kodu zmiany wysokości headera i wielkości czcionek przy najechaniu myszą
 
 	// złapanie elemenetów li>a 
-	var menuItems = document.querySelectorAll('.menuItems a');
+	var menuATags = document.querySelectorAll('.menuItems a');
 	
 	//złapanie zdarzenia polegającego na najechaniu i opuszczeniu hedera	
-	// header.addEventListener('mouseenter', headerExpand);
-	// header.addEventListener('mouseleave', headerExpand);
+	header.addEventListener('mouseenter', headerExpand);
+	header.addEventListener('mouseleave', headerExpand);
 
 	function headerExpand(e) {
 		var pageWidth = window.outerWidth;
 		
 
 		if  ((e.type == "mouseenter") && (pageWidth > 1300)) {
-				console.log('YES');	
 				header.style.height = '120px'; // zwiększ wyokośc hedaera do 140px 
 				navi.style.marginTop = '15px'; // zwiększ  margin-top elelementów w hedaer navi = logo + ul
-				menuItems.forEach(function(menuItem, index) {
-					menuItem.style.fontSize = "1.5rem"; // zwiększ  wielkości czcionek	
+				menuATags.forEach(function(menuATag, index) {
+					menuATag.style.fontSize = "1.4rem"; // zwiększ  wielkości czcionek	
 				})
 				
 			}
@@ -95,8 +93,8 @@ window.addEventListener('load', function() {
 		if ((e.type == "mouseleave") && (pageWidth > 1300)) {
 				header.style.height = '100px';
 				navi.style.marginTop = '5px';  
-				menuItems.forEach(function(menuItem, index) {
-					menuItem.style.fontSize = "1.3rem"; 
+				menuATags.forEach(function(menuATag) {
+					menuATag.style.fontSize = "1.3rem"; 
 				})
 			}	
 		

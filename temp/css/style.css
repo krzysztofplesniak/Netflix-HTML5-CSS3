@@ -85,14 +85,12 @@ header ul li {
 	width: 120px;
 	margin-left: 10px;
 	text-align: center;
-	box-sizing: border-box;
 }
 header ul li:hover {
 	border-bottom: 3px solid red;
 	transition: border-bottom .2s ease-out;
 }
 header ul li a {
-	border: 1px solid yellow;
 	display: block;
 	height: 100%;
 	line-height: 3rem;

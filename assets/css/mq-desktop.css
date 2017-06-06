@@ -37,15 +37,16 @@ header {
 }
 
 header nav {
-	margin-top: 15px;
+	margin-top: 20px;
 	transition: all .5s;
 }
+
 
 header #logo {
 	float: left;
 	width: 310px; 
 	height: 90px;
-	background: url(../../assets/img/netflix.png) no-repeat; 
+	background: url(./dist/img/netflix.png) no-repeat; 
 	background-size: cover;
 	cursor: pointer;
 }
@@ -172,7 +173,7 @@ header ul li a {
 	width: 100%;
 	position: relative;
 	top: 120px;
-	background: url(../../assets/img/background.jpg) no-repeat fixed 0px 70px; 
+	background: url(./dist/img/background.jpg) no-repeat fixed 0px 70px; 
 	background-size: cover;
 	padding: 5.5rem 0;
 }
@@ -357,6 +358,7 @@ header ul li a {
 .videoBoxes span {
 	font-size: 1.5rem;
 }
+
 .videoBoxes i {
 	display: none;
 	position: absolute;
@@ -377,5 +379,4 @@ header ul li a {
 
 .fa-play-circle:before{
 	margin-right: 10px;
-
 }

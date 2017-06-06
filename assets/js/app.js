@@ -22,9 +22,9 @@ window.addEventListener('load', function() {
 					menuItems.style.height = "";
 					menuItems.style.opacity = 0;
 			}		
-			
 		}
 	);
+
 
 // Blok kodu obsługujacy anhora "Czytaj więcej"  
 
@@ -57,7 +57,7 @@ window.addEventListener('load', function() {
 		//dla ekranów większych niż tablety i smartfony
 		if (pageWidth > 1300) {
 		
-			if (pageY > 125) { // gdy ekran zjedzie o więcej jak 125px to zmniejsz wysokosc headera o 40px  
+			if (pageY > 75) { // gdy ekran zjedzie o więcej jak 125px to zmniejsz wysokosc headera o 40px  
 				header.style.height = '100px';
 				navi.style.marginTop = '5px';
 				scrollDown.style.display = 'none';
@@ -67,7 +67,6 @@ window.addEventListener('load', function() {
 				navi.style.marginTop = '15px';
 				scrollDown.style.display = 'block';
 			}
-
 			
 		}
 	};	
@@ -101,8 +100,6 @@ window.addEventListener('load', function() {
 					menuATag.style.fontSize = "1.3rem"; 
 				})
 			}	
-		
-		
 	};
 
 // Blok kodu zmiany wysokości headera przy zmianie szerokości ekranu

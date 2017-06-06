@@ -88,14 +88,12 @@ header ul li:hover a {
 }
 
 .videoBoxes i {
-	top: 13vw;
 	left: 25%;
-	width: 50%;
-	height: 4vw;
-	line-height: 3.5vw;
-	font-size: 1.1rem;
+	width: 55%;
+	height: 5vw;
+	line-height: 4.5vw;
+	font-size: 1.2rem;
 }
-
 
 #videoSection {
 	top: 0px;

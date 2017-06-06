@@ -12,6 +12,7 @@
 	box-sizing: border-box;
 }
 
+
 .container {
 	width: 90%;
 	max-width: 1800px;
@@ -46,7 +47,7 @@ header #logo {
 	float: left;
 	width: 310px; 
 	height: 90px;
-	background: url(./dist/img/netflix.png) no-repeat; 
+	background: url(/dist/img/netflix.png) no-repeat; 
 	background-size: cover;
 	cursor: pointer;
 }
@@ -173,7 +174,7 @@ header ul li a {
 	width: 100%;
 	position: relative;
 	top: 120px;
-	background: url(./dist/img/background.jpg) no-repeat fixed 0px 70px; 
+	background: url(/dist/img/background.jpg) no-repeat fixed 0px 70px; 
 	background-size: cover;
 	padding: 5.5rem 0;
 }
@@ -362,16 +363,16 @@ header ul li a {
 .videoBoxes i {
 	display: none;
 	position: absolute;
-	top: 9vw;
-	left: 20%;
-	width: 60%;
+	top: 37%;
+	left: 27%;
+	width: 45%;
 	height: 3vw;
-	border: 2px solid white;
-	border-radius: 25px;
-	opacity: .7;
-	font-size: 1.8rem;
-	text-align: center;
 	line-height: 3vw; /*centrowanie napisu z ikona w obrebie obwódki */
+	border: 2px solid white;
+	border-radius: 30px;
+	opacity: .7;
+	font-size: 1.5rem;
+	text-align: center;
 	cursor: pointer;
 }
 

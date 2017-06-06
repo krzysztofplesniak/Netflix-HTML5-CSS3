@@ -106,11 +106,10 @@ header ul.menuItems {
 }
 
 .videoBoxes i {
-	top: 25vw;
 	left: 25%;
 	width: 50%;
-	height: 8vw;
-	font-size: 1rem;
+	height: 9vw;
+	line-height: 8vw;
 }
 
 .videoBoxes img  {

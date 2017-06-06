@@ -47,7 +47,7 @@ header ul li {
 	margin: .75rem .5rem;
 }
 
-.videoBoxes  {
+.videoBoxes {
 	height: 49vw;
 	width: 29%;
 }
@@ -57,12 +57,11 @@ header ul li {
 }
 
 .videoBoxes i {
-	top: 17vw;
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 	height: 6vw;
-	line-height: 5vw;
-	width: 70%;
-	left: 15%;
+	line-height: 6vw;
+	width: 60%;
+	left: 20%;
 }
 
 .videoBoxes img  {

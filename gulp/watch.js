@@ -37,6 +37,6 @@ gulp.task('watch', function() {
 });
 
 gulp.task('cssInject', ['styles'], function() {
-	 return gulp.src('./temp/css/style.css')
+	 return gulp.src('./dist/css/style.css')
 	 .pipe(browserSync.stream());
 });

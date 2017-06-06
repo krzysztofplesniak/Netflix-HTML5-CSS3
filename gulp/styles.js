@@ -18,8 +18,6 @@ gulp.task('styles', function() {
 					autoprefixer({browserslist: 
 						["> 3%","last 3 versions"],cascade: false})
 				  ]))
-	.pipe(uncss({html: ['index.html']}))
-	.pipe(cleanCss())
 	.pipe(gulp.dest('./dist/css/'));
 });
 
@@ -48,4 +46,11 @@ gulp.task('minifyIMG', function() {
 	.pipe(imagemin())
 	.pipe(gulp.dest('./dist/img/'));
 	
+});
+
+gulp.task('build', ['styles','minifyIMG','htmlMin','uglifyJS'], function() {
+	return gulp.src('./dist/css/style.css')
+	.pipe(uncss({html: ['index.html']}))
+	.pipe(cleanCss())
+	.pipe(gulp.dest('./dist/css/'));
 });

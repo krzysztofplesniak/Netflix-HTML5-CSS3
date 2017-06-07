@@ -1,8 +1,9 @@
 /* ======== GŁÓWNY PLIK CSS Z ROZMIARAMI DLA DUŻYCH EKRANÓW PONAD 1280PX =======*/
+
 /* ======= resety CSS */
 
 * {
-	margin: 0px;
+	margin: 0pX	
 	padding: 0px;
 	border: 0px;
 	color: white;

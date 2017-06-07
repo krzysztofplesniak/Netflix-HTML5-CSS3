@@ -9,11 +9,19 @@ nestedCss = require('postcss-nested'),
 mkNestedCss = require('postcss-to-nest'),
 cssUnused = require('gulp-uncss'),
 cssClean = require('gulp-clean-css'),
-jshint = require('gulp-jshint'),
+plumberCss = require('gulp-plumber'), 
 jsUglify = require('gulp-uglify'),
+jshint = require('gulp-jshint'),
 imageMin = require('gulp-imagemin'),
 htmlMin = require('gulp-htmlmin'),
-del = require ('del');
+del = require ('del'),
+gutil = require('gulp-util'); // do wykrywania błędów i ich lepszego opisywania w sposób czytelny
+
+
+// $.uglify().on('error', function(err) {
+// 	gutil.log(gutil.colors.red('[Error]'), err.toString());
+// 	this.emit('end');
+// })
 
 var path = {
 		dist:   'dist/',
@@ -34,10 +42,6 @@ gulp.task('watch', function() {
 
 // 3 watchery: 1-plik index.html  2-pliki css 3-pliki JavaScript 
 // jedna komenada minifikacji plików graficznych wykonywana tylko raz ręcznie
-
-	// watch('./assets/img/*.{jpg,jpeg,png,gif}', function() {
-	// 	gulp.start('minifyIMG');	 	
-	// });
 
 	browserSync.init({
 		notify: false,
@@ -64,7 +68,6 @@ gulp.task('watch', function() {
 	 	gulp.start('cssinject');
 	 	browserSync.reload();	 	
 	});	
-
 });
 
 gulp.task('cssinject', ['stylescss'], function() {
@@ -77,6 +80,7 @@ gulp.task('stylescss', function() {
 	return gulp.src(path.cssinname)
 	.pipe(postCss([cssImport, cssVars, nestedCss, 
 		          autoprefixer({browserslist: ["> 3%","last 3 versions"],cascade: false})]))
+	.pipe(plumberCss())
 	.pipe(gulp.dest(path.cssout));
 });
 
@@ -88,16 +92,19 @@ gulp.task('mknestedcss', function () {
 });
 
 // task odpowiedzialny za analizę skryptów JS
-gulp.task('jshint',['jsuglify'], function() {
+gulp.task('jshint', ['jsuglify'], function() {
   return gulp.src(path.jsin)
     .pipe(jshint())
-    .pipe(jshint.reporter('default'))
+    .pipe(jshint.reporter('jshint-stylish'))
 });
 
 //minimalizacja JS app.js
 gulp.task('jsuglify', function() {
 	return gulp.src(path.jsin)
 	.pipe(jsUglify())
+	.on('error', function (err) { 
+		gutil.log(gutil.colors.red('[Error]'), err.toString());
+	})
 	.pipe(gulp.dest(path.jsout));
 });
 
@@ -108,6 +115,7 @@ gulp.task('htmlmin', function() {
 	.pipe(htmlMin({
 		sortAttributes: true,
 		sortClassName: true,
+		removeComments: true,
 		collapseWhitespace : true
 	}))
 	.pipe(gulp.dest(path.htmlout))
@@ -120,9 +128,9 @@ gulp.task('imagemin', function() {
 	.pipe(gulp.dest(path.imgout))
 });
 
-// do builda skopiowanie wszystkich fontów do katalgou produkcyjnego
+// raks dla build'a -> skopiowanie wszystkich fontów do katalgu produkcyjnego DIST
 gulp.task('fontscopy', function() {
-	return gulp.src('src/fonts/*.*')	
+	return gulp.src('src/fonts/**/*.*')	
 	.pipe(gulp.dest('dist/fonts/'));
 });
 

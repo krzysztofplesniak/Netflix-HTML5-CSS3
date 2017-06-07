@@ -11,7 +11,8 @@ cssUnused = require('gulp-uncss'),
 cssClean = require('gulp-clean-css'),
 jsUglify = require('gulp-uglify'),
 imageMin = require('gulp-imagemin'),
-htmlMin = require('gulp-htmlmin');
+htmlMin = require('gulp-htmlmin'),
+del = require ('del');
 
 var path = {
 		dist:   'dist/',
@@ -110,14 +111,25 @@ gulp.task('imagemin', function() {
 	return gulp.src(path.imgin)
 	.pipe(imageMin())
 	.pipe(gulp.dest(path.imgout));
-	
 });
+
+gulp.task('fontscopy', function() {
+	return gulp.src('src/fonts/*.*')	
+	.pipe(gulp.dest('dist/fonts/'));
+});
+
+// skasowanie całe j zawartosci katalogu distr przed utworzeniem nowej aplikacji
+gulp.task('del', function() {
+	return 	del(['dist'])
+	.then(console.log('Katalog >dist< skasowany'));
+});
+
 
 //  -----------  całościowy build projektu  -----------------
 
 //ze wględu na złożonosc czsową skrytpów cssUnused i cssClean
 // wrzuciłem jej tutaj wykonywane tylko raz   
-gulp.task('build', ['stylescss','imagemin','htmlmin','jsuglify'], function() {
+gulp.task('build', ['del','stylescss','imagemin','htmlmin','jsuglify', 'fontscopy'], function() {
 	return gulp.src(path.cssin)
 	.pipe(cssUnused({html: path.htmlin}))
 	.pipe(cssClean())

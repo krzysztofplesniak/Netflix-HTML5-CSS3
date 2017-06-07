@@ -9,19 +9,14 @@ nestedCss = require('postcss-nested'),
 mkNestedCss = require('postcss-to-nest'),
 cssUnused = require('gulp-uncss'),
 cssClean = require('gulp-clean-css'),
-plumberCss = require('gulp-plumber'), 
 jsUglify = require('gulp-uglify'),
 jshint = require('gulp-jshint'),
 imageMin = require('gulp-imagemin'),
 htmlMin = require('gulp-htmlmin'),
 del = require ('del'),
+plumber = require('gulp-plumber'), // do wykrywania błędów w CSS
 gutil = require('gulp-util'); // do wykrywania błędów i ich lepszego opisywania w sposób czytelny
 
-
-// $.uglify().on('error', function(err) {
-// 	gutil.log(gutil.colors.red('[Error]'), err.toString());
-// 	this.emit('end');
-// })
 
 var path = {
 		dist:   'dist/',
@@ -78,9 +73,10 @@ gulp.task('cssinject', ['stylescss'], function() {
 // taski do CSS'a
 gulp.task('stylescss', function() {
 	return gulp.src(path.cssinname)
+	.pipe(plumber())
 	.pipe(postCss([cssImport, cssVars, nestedCss, 
 		          autoprefixer({browserslist: ["> 3%","last 3 versions"],cascade: false})]))
-	.pipe(plumberCss())
+	.pipe(plumber.stop())
 	.pipe(gulp.dest(path.cssout));
 });
 

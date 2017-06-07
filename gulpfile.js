@@ -96,9 +96,10 @@ gulp.task('jsuglify', function() {
 });
 
 // task odpowiedzialny za analizę skryptów JS
-gulp.task('lint', function() {
-    return gulp.src(path.jsin)
-        .pipe(jshint());
+gulp.task('jshint', function() {
+  return gulp.src(path.jsin)
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
 });
 
 // nimalizacja pliku index.html
@@ -116,7 +117,7 @@ gulp.task('htmlmin', function() {
 gulp.task('imagemin', function() {
 	return gulp.src(path.imgin)
 	.pipe(imageMin())
-	.pipe(gulp.dest(path.imgout));
+	.pipe(gulp.dest(path.imgout))
 });
 
 // do builda skopiowanie wszystkich fontów do katalgou produkcyjnego

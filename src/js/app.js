@@ -14,7 +14,7 @@ window.addEventListener('load', function() {
 				iconBar.classList.toggle('showMenu');
 			});
 			
-			if (menuItems.style.height == "") {
+			if (menuItems.style.height === "") {
 					menuItems.style.height = "250px";
 					menuItems.style.opacity = 1;
 				 }
@@ -53,7 +53,7 @@ window.addEventListener('load', function() {
 	function scrollPage() {
 		
 		var pageY = window.pageYOffset;
-		var pageWidth = window.outerWidth;
+		var paeWidth = window.outerWidth;
 		//dla ekranów większych niż tablety i smartfony
 		if (pageWidth > 1300) {
 		
@@ -69,7 +69,7 @@ window.addEventListener('load', function() {
 			}
 			
 		}
-	};	
+	}	
 
 // Blok kodu zmiany wysokości headera i wielkości czcionek przy najechaniu myszą
 
@@ -89,7 +89,7 @@ window.addEventListener('load', function() {
 				navi.style.marginTop = '15px'; // zwiększ  margin-top elelementów w hedaer navi = logo + ul
 				menuATags.forEach(function(menuATag, index) {
 					menuATag.style.fontSize = "1.4rem"; // zwiększ  wielkości czcionek	
-				})
+				});
 				
 			}
 
@@ -98,9 +98,9 @@ window.addEventListener('load', function() {
 				navi.style.marginTop = '5px';  
 				menuATags.forEach(function(menuATag) {
 					menuATag.style.fontSize = "1.3rem"; 
-				})
+				});
 			}	
-	};
+	}
 
 // Blok kodu zmiany wysokości headera przy zmianie szerokości ekranu
   window.addEventListener('resize', WindowReSize);
@@ -121,4 +121,4 @@ window.addEventListener('load', function() {
   }
  
  
-}) 
+}); 

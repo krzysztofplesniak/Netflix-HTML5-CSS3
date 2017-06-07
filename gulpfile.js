@@ -10,6 +10,7 @@ autoprefixer = require('autoprefixer'),
 cssUnused = require('gulp-uncss'),
 cssClean = require('gulp-clean-css'),
 jsUglify = require('gulp-uglify'),
+jshint = require('gulp-jshint'),
 imageMin = require('gulp-imagemin'),
 htmlMin = require('gulp-htmlmin'),
 del = require ('del');
@@ -94,6 +95,11 @@ gulp.task('jsuglify', function() {
 	.pipe(gulp.dest(path.jsout));
 });
 
+// task odpowiedzialny za analizę skryptów JS
+gulp.task('lint', function() {
+    return gulp.src(path.jsin)
+        .pipe(jshint());
+});
 
 // nimalizacja pliku index.html
 gulp.task('htmlmin', function() {
@@ -113,6 +119,7 @@ gulp.task('imagemin', function() {
 	.pipe(gulp.dest(path.imgout));
 });
 
+// do builda skopiowanie wszystkich fontów do katalgou produkcyjnego
 gulp.task('fontscopy', function() {
 	return gulp.src('src/fonts/*.*')	
 	.pipe(gulp.dest('dist/fonts/'));
@@ -120,8 +127,8 @@ gulp.task('fontscopy', function() {
 
 // skasowanie całe j zawartosci katalogu distr przed utworzeniem nowej aplikacji
 gulp.task('del', function() {
-	return 	del(['dist'])
-	.then(console.log('Katalog >dist< skasowany'));
+	return 	del([path.dist])
+	.then(console.log('Katalog produkcyjny >dist< skasowany'));
 });
 
 
@@ -129,7 +136,7 @@ gulp.task('del', function() {
 
 //ze wględu na złożonosc czsową skrytpów cssUnused i cssClean
 // wrzuciłem jej tutaj wykonywane tylko raz   
-gulp.task('build', ['del','stylescss','imagemin','htmlmin','jsuglify', 'fontscopy'], function() {
+gulp.task('build', ['del','stylescss','imagemin','htmlmin','jsuglify','fontscopy'], function() {
 	return gulp.src(path.cssin)
 	.pipe(cssUnused({html: path.htmlin}))
 	.pipe(cssClean())

@@ -25,6 +25,7 @@
     "gulp-htmlmin": "^3.0.0",
     "gulp-htmlreplace": "^1.0.2",
     "gulp-imagemin": "^3.3.0",
+    "gulp-jshint": "^2.0.4",
     "gulp-postcss": "^6.4.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0",
@@ -33,6 +34,7 @@
     "gulp-watch": "^4.3.11",
     "postcss-import": "^9.1.0",
     "postcss-nested": "^1.0.1",
-    "postcss-simple-vars": "^3.1.0"
+    "postcss-simple-vars": "^3.1.0",
+    "postcss-to-nest": "^1.0.0"
   }
 }

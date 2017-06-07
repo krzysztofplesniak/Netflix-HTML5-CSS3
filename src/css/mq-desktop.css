@@ -1,5 +1,4 @@
 /* ======== GŁÓWNY PLIK CSS Z ROZMIARAMI DLA DUŻYCH EKRANÓW PONAD 1280PX =======*/
-
 /* ======= resety CSS */
 
 * {
@@ -11,7 +10,6 @@
 	font-family: Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
 }
-
 
 .container {
 	width: 90%;
@@ -47,7 +45,7 @@ header #logo {
 	float: left;
 	width: 310px; 
 	height: 90px;
-	background: url(/dist/img/netflix.png) no-repeat; 
+	background: url(../img/netflix.png) no-repeat; 
 	background-size: cover;
 	cursor: pointer;
 }
@@ -174,7 +172,7 @@ header ul li a {
 	width: 100%;
 	position: relative;
 	top: 120px;
-	background: url(/dist/img/background.jpg) no-repeat fixed 0px 70px; 
+	background: url(../img/background.jpg) no-repeat fixed 0px 70px; 
 	background-size: cover;
 	padding: 5.5rem 0;
 }

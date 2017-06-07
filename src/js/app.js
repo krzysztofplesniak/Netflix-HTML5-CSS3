@@ -23,7 +23,7 @@ window.addEventListener('load', function() {
 					menuItems.style.opacity = 0;
 			}		
 		}
-	);
+	)
 
 
 // Blok kodu obsługujacy anhora "Czytaj więcej"  
@@ -89,7 +89,7 @@ window.addEventListener('load', function() {
 				navi.style.marginTop = '15px'; // zwiększ  margin-top elelementów w hedaer navi = logo + ul
 				menuATags.forEach(function(menuATag, index) {
 					menuATag.style.fontSize = "1.4rem"; // zwiększ  wielkości czcionek	
-				});
+				})
 				
 			}
 
@@ -98,7 +98,7 @@ window.addEventListener('load', function() {
 				navi.style.marginTop = '5px';  
 				menuATags.forEach(function(menuATag) {
 					menuATag.style.fontSize = "1.3rem"; 
-				});
+				})
 			}	
 	}
 

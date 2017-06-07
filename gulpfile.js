@@ -1,16 +1,16 @@
 var gulp = require('gulp'),
 watch = require('gulp-watch'),
 browserSync = require('browser-sync').create(),
+autoprefixer = require('autoprefixer'),
 postCss = require('gulp-postcss'),
 cssImport = require('postcss-import'),
 cssVars = require('postcss-simple-vars'),
 nestedCss = require('postcss-nested'),
 mkNestedCss = require('postcss-to-nest'),
-autoprefixer = require('autoprefixer'),
 cssUnused = require('gulp-uncss'),
 cssClean = require('gulp-clean-css'),
-jsUglify = require('gulp-uglify'),
 jshint = require('gulp-jshint'),
+jsUglify = require('gulp-uglify'),
 imageMin = require('gulp-imagemin'),
 htmlMin = require('gulp-htmlmin'),
 del = require ('del');
@@ -55,7 +55,7 @@ gulp.task('watch', function() {
 
 	// watcher plików JS
 	watch(path.jsin, function() {
-		gulp.start('jsuglify');
+		gulp.start('jshint');
 		browserSync.reload();	 	
 	});
 
@@ -80,12 +80,18 @@ gulp.task('stylescss', function() {
 	.pipe(gulp.dest(path.cssout));
 });
 
-
 // taki bajer, przeróbka plików z wcięciami 
 gulp.task('mknestedcss', function () {
     return gulp.src(path.cssin)
     .pipe(postCss([require('postcss-to-nest')]))
     .pipe(gulp.dest(path.cssout));
+});
+
+// task odpowiedzialny za analizę skryptów JS
+gulp.task('jshint',['jsuglify'], function() {
+  return gulp.src(path.jsin)
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
 });
 
 //minimalizacja JS app.js
@@ -95,12 +101,6 @@ gulp.task('jsuglify', function() {
 	.pipe(gulp.dest(path.jsout));
 });
 
-// task odpowiedzialny za analizę skryptów JS
-gulp.task('jshint', function() {
-  return gulp.src(path.jsin)
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-});
 
 // nimalizacja pliku index.html
 gulp.task('htmlmin', function() {

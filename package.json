@@ -34,6 +34,7 @@
     "gulp-uncss": "^1.0.6",
     "gulp-watch": "^4.3.11",
     "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
     "jshit": "0.0.1",
     "postcss-import": "^9.1.0",
     "postcss-nested": "^1.0.1",

@@ -14,6 +14,7 @@ jshint = require('gulp-jshint'),
 imageMin = require('gulp-imagemin'),
 htmlMin = require('gulp-htmlmin'),
 del = require ('del'),
+runSequence = require('run-sequence'),
 plumber = require('gulp-plumber'), // do wykrywania błędów w CSS
 gutil = require('gulp-util'); // do wykrywania błędów i ich lepszego opisywania w sposób czytelny
 
@@ -27,7 +28,7 @@ var path = {
 		jsout:  'dist/js/',
 		imgin:  'src/img/*.{jpg,jpeg,png,gif}',
 		imgout: 'dist/img/',
-		htmlin: 'src/index.html',	
+		htmlin: 'index.html',	
 		htmlout:'dist/',
 		cssinname:  'src/css/style.css',
 	}
@@ -41,7 +42,7 @@ gulp.task('watch', function() {
 	browserSync.init({
 		notify: false,
 	 	server: {
-	 		baseDir: path.src
+	 		baseDir: path.dist
 	 	}
 	 });
 
@@ -82,7 +83,7 @@ gulp.task('stylescss', function() {
 
 // taki bajer, przeróbka plików z wcięciami 
 gulp.task('mknestedcss', function () {
-    return gulp.src(path.cssin)
+    return gulp.src(path.cssinname)
     .pipe(postCss([require('postcss-to-nest')]))
     .pipe(gulp.dest(path.cssout));
 });
@@ -141,9 +142,13 @@ gulp.task('del', function() {
 
 //ze wględu na złożonosc czsową skrytpów cssUnused i cssClean
 // wrzuciłem jej tutaj wykonywane tylko raz   
-gulp.task('build', ['del','stylescss','imagemin','htmlmin','jsuglify','fontscopy'], function() {
-	return gulp.src(path.cssin)
+gulp.task('build', function() {
+    runSequence('del',['stylescss','imagemin','htmlmin','jshint','fontscopy']);
+	
+	return gulp.src(path.cssinname)
 	.pipe(cssUnused({html: path.htmlin}))
 	.pipe(cssClean())
 	.pipe(gulp.dest(path.cssout));
 });
+
+

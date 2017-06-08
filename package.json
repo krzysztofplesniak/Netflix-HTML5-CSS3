@@ -41,6 +41,7 @@
     "postcss-import": "^9.1.0",
     "postcss-nested": "^1.0.1",
     "postcss-simple-vars": "^3.1.0",
-    "postcss-to-nest": "^1.0.0"
+    "postcss-to-nest": "^1.0.0",
+    "run-sequence": "^1.2.2"
   }
 }

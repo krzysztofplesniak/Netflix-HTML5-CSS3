@@ -3,6 +3,15 @@
 	width: 95%;
 }	
 
+header ul li {
+	width: 115px;
+	margin-left: 0px;
+}	
+
+header ul li {
+	font-size: 1.2rem;
+}
+
 .menuSearch:hover {
 	width: 200px;
 }

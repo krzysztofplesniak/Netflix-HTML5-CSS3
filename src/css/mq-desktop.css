@@ -12,6 +12,7 @@
 	box-sizing: border-box;
 }
 
+
 .container {
 	width: 90%;
 	max-width: 1800px;
@@ -23,7 +24,6 @@
 
 
 header {
-	/*height: 120px;*/
 	height: auto;
 	width: 100%;
 	background: black;	
@@ -41,10 +41,9 @@ header nav {
 	height: 100px;
 	margin: 15px 0px;
 	transition: all .5s;
-	border: 1px solid yellow;
-	overflow: hidden;
 }
 
+/*gdy scrollowanie w dół lub opuszczenie header'a to ma się pomiejszyc */
 .headerSmall {
 	margin: 5px 0px;
 }
@@ -277,7 +276,7 @@ header ul li a {
 #scrollDown {
 	display: block;
 	position: relative;
-	top: 120px;
+	top: 100px;
 	background: black;	
 	text-align: center;
 	height: 80px;

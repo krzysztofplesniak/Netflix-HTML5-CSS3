@@ -1,11 +1,11 @@
 /* ======== MEDIA QUERIES 1024PX =======*/
 header {
-	height: 210px;
 	position: static; 	/*hedaer nie będize od tej pory na sztywno zafiksowany do belki górnej przy przewijaniu ekranu w dół*/
 }
 
 header nav {
-	margin-top: 0px;
+	height: 200px;
+	margin: 0px;
 }
 
 header #logo {

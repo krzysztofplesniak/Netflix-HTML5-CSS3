@@ -16,9 +16,8 @@ window.addEventListener('load', function() {
 		});
 		
 		menuItems.classList.toggle('showMenuItems');
+	});
 	
-		);
-	}
 
 // Blok kodu obsługujacy anhora "Czytaj więcej"  
 

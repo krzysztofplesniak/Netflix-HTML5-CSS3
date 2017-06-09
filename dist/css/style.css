@@ -18,7 +18,6 @@
 }
 /* ======= sekcja Header z menu na górze i logo Netflixa */
 header {
-	/*height: 120px;*/
 	height: auto;
 	width: 100%;
 	background: black;	
@@ -35,9 +34,8 @@ header nav {
 	height: 100px;
 	margin: 15px 0px;
 	transition: all .5s;
-	border: 1px solid yellow;
-	overflow: hidden;
 }
+/*gdy scrollowanie w dół lub opuszczenie header'a to ma się pomiejszyc */
 .headerSmall {
 	margin: 5px 0px;
 }
@@ -237,7 +235,7 @@ header ul li a {
 #scrollDown {
 	display: block;
 	position: relative;
-	top: 120px;
+	top: 100px;
 	background: black;	
 	text-align: center;
 	height: 80px;
@@ -346,6 +344,15 @@ header ul li a {
 	width: 95%;
 }	
 
+header ul li {
+	width: 115px;
+	margin-left: 0px;
+}	
+
+header ul li {
+	font-size: 1.2rem;
+}
+
 .menuSearch:hover {
 	width: 200px;
 }
@@ -376,12 +383,12 @@ header ul li a {
 @media (max-width: 1024px){
 /* ======== MEDIA QUERIES 1024PX =======*/
 header {
-	height: 210px;
 	position: static; 	/*hedaer nie będize od tej pory na sztywno zafiksowany do belki górnej przy przewijaniu ekranu w dół*/
 }
 
 header nav {
-	margin-top: 0px;
+	height: 200px;
+	margin: 0px;
 }
 
 header #logo {
@@ -580,7 +587,6 @@ header .hamburgerIcon {
 	display: block;
 	margin: 15px 25px 0 0;
 }	
-
 
 /*menu nie ma, dopiero po naciśnięciu klawisza hamburger-menu pojawia się */
 header ul {

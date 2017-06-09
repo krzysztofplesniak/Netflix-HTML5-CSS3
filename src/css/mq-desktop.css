@@ -179,7 +179,7 @@ header ul li a {
 	width: 100%;
 	position: relative;
 	top: 100px;
-	background: url(../img/background.jpg) no-repeat fixed 0px 70px; 
+	background: url(../img/background.jpg) no-repeat fixed 0px 40px; 
 	background-size: cover;
 	padding: 5.5rem 0;
 }

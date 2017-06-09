@@ -8,6 +8,11 @@ header {
 	height: auto;
 }
 
+header nav {
+	height: auto;
+	margin: 0px 0px;
+}
+
 header #logo {
 	float: left;
 	width: 240px; 
@@ -34,16 +39,21 @@ header .hamburgerIcon {
 
 
 /*menu nie ma, dopiero po naciśnięciu klawisza hamburger-menu pojawia się */
-header ul.menuItems {
+header ul {
 	height: 0px;
 	opacity: 0;
 	transition: all 1s;
 }
 
+.showMenuItems {
+	height: 250px;
+	opacity: 1;
+}
+
 .menuSearch {
 	width: 100%;
-	
 }
+
 .menuSearch .smallBox {
 	padding: 0px 50px;
 }

@@ -13,23 +13,17 @@ header #logo {
 	margin: 10px auto 0px;
 }
 
-header ul.menuItems {
+header ul {
 	float: none;
 	width: 80%;
 	height: 100px;
 	margin: 0 auto;
-/*	padding: 0px;*/
 }
 
 header ul li {
 	width: 25%;
 	margin: 0px;
 }
-
-header ul li a {
-    /*padding: 10px 5px;
-    height: 100%;*/
-} 
 
 header ul li:hover a {
 	color: red;

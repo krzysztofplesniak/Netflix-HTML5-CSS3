@@ -23,7 +23,8 @@
 
 
 header {
-	height: 140px;
+	/*height: 120px;*/
+	height: auto;
 	width: 100%;
 	background: black;	
 	position: fixed; /*header zafiksowany do belki górnej przy przewijaniu ekranu w dół*/
@@ -37,10 +38,16 @@ header {
 }
 
 header nav {
-	margin-top: 20px;
+	height: 100px;
+	margin: 15px 0px;
 	transition: all .5s;
+	border: 1px solid yellow;
+	overflow: hidden;
 }
 
+.headerSmall {
+	margin: 5px 0px;
+}
 
 header #logo {
 	float: left;
@@ -72,19 +79,19 @@ header .iconBar {
 }
 
 /* animacje belek w hamburger menu */
-header .first.showMenu{
+header .first.changeHambIcon{
   	transform: translateY(14px) rotate(45deg);
 }
 
-header .second.showMenu{
+header .second.changeHambIcon{
 	display: none;
 }
 
-header .third.showMenu{
+header .third.changeHambIcon{
 	transform: rotate(-45deg);
 }
 
-header ul.menuItems {
+header ul {
 	margin-top: 25px;
 	float: right;
 	height: 50px;
@@ -172,7 +179,7 @@ header ul li a {
 	height: auto;
 	width: 100%;
 	position: relative;
-	top: 120px;
+	top: 100px;
 	background: url(../img/background.jpg) no-repeat fixed 0px 70px; 
 	background-size: cover;
 	padding: 5.5rem 0;

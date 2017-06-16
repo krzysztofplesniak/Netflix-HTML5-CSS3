@@ -8,9 +8,9 @@ window.addEventListener('load', function() {
 		iconBars = document.querySelectorAll('.iconBar'), 			// 3 belki hamburgera
 		menuItems = document.querySelector('header ul'),  			// całe menu czyli hamburger icon i pozycje w menu
 		showMoreText = document.querySelector('.showMoreText'), 
-		hiddenText = document.querySelectorAll('.hiddenText'), 
-		pageY = window.pageYOffset,
-		pageWidth = window.outerWidth;
+		hiddenText = document.querySelectorAll('.hiddenText'); 
+
+	var pageY, pageWidth;
 	
 // Icona hamburger-menu animowana 
     	
@@ -38,15 +38,18 @@ window.addEventListener('load', function() {
 	window.addEventListener('scroll', scrollPage); 			// złapanie zdarzenia scrolowania myszą
 	
 	function scrollPage() {
-			
+		pageY = window.pageYOffset;
+		pageWidth = window.outerWidth;
+				
 		if (pageWidth > 1280) {								// dla ekranów większych niż tablety i smartfony
 		
 			if (pageY > 75) { 								// gdy nastąpi pierwszy scroll myszką to..
-					header.classList.add("headerSmall");
+					header.classList.add('headerSmall');
 					scrollDown.style.display = 'none';  	// scrollDown znika
+		
 			}	
 			else {
-					header.classList.remove("headerSmall");
+					header.classList.remove('headerSmall');
 					scrollDown.style.display = 'block';
 			}
 		}
@@ -58,12 +61,13 @@ window.addEventListener('load', function() {
 	header.addEventListener('mouseleave', headerExpand);
 	
 	function headerExpand(e) {
-		console.log('1');
-		if  ((e.type == "mouseenter") && (pageWidth > 1300))
-				header.classList.remove("headerSmall");
+
+		if  ((e.type == 'mouseenter') && (pageWidth > 1300)) {
+				header.classList.remove('headerSmall');
+			}	
 			
-		if ((e.type == "mouseleave") && (pageWidth > 1300)) {
-	   			header.classList.add("headerSmall");
+		if ((e.type == 'mouseleave') && (pageWidth > 1300)) {
+	   			header.classList.add('headerSmall');
 			}	
 	}
 }); 

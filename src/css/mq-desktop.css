@@ -18,7 +18,8 @@
 		max-width: 1800px;
 		margin: 0 auto;
 		overflow: hidden;
-		border: 2px dotted yellow;
+		border: 1px solid yellow;
+	
 	}	
 
 	/* ======= sekcja Header z menu na górze i logo Netflixa */
@@ -186,14 +187,12 @@
 
 	}
 
-	#video {
+	#videoBackground {
 		min-height: 900px;
-		/*min-height: 100%;*/
 		min-width: 100%;
 		height: auto;
 		width: auto;
 		opacity: 0.9;
-
 	}
 
 	/* ======= sekcja descriptionBox z opisem filmu */
@@ -339,12 +338,12 @@
 		float: left;  /* w tutku był (dipslay: inline-block) i powododował ze były odstępy międzye div'ami. Trzeba było zastosowac trik z() font-size: 0px)*/
 		height: 25vw;
 		width: 16%;
-		margin: 10px 2%;
+		margin: 2%;
 		opacity: 0.5; 
 		border-radius: 5px;
 		border-bottom: 3px solid red;
 	}
-
+	
 	.videoBoxes:hover img{
 		border: 4px solid black; 
 		transition: border .1s;

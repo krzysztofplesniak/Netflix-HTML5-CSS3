@@ -24,7 +24,7 @@ var path = {
 		src:    'src/',
 		cssin:  'src/css/*.css',
 		cssout: 'dist/css/',
-		jsin:   'src/js/app.js',
+		jsin:   'src/js/*.js',
 		jsout:  'dist/js/',
 		imgin:  'src/img/*.{jpg,jpeg,png,gif}',
 		imgout: 'dist/img/',
@@ -125,10 +125,15 @@ gulp.task('imagemin', function() {
 	.pipe(gulp.dest(path.imgout))
 });
 
-// raks dla build'a -> skopiowanie wszystkich fontów do katalgu produkcyjnego DIST
-gulp.task('fontscopy', function() {
-	return gulp.src('src/fonts/**/*.*')	
-	.pipe(gulp.dest('dist/fonts/'));
+// task dla build'a -> skopiowanie fontów awesome, video-js.min.css oraz plików video do katalogu produkcyjnego DIST
+gulp.task('copy', function() {
+	gulp.src('src/css/fonts/*.*')	
+	.pipe(gulp.dest('dist/css/fonts/'));
+	gulp.src('src/css/video.js/*.*')	
+	.pipe(gulp.dest('dist/css/video.js/'));
+	gulp.src('src/video/*.*')	
+	.pipe(gulp.dest('dist/video/'));
+	return true;
 });
 
 // skasowanie całe j zawartosci katalogu distr przed utworzeniem nowej aplikacji
@@ -143,12 +148,10 @@ gulp.task('del', function() {
 //ze wględu na złożonosc czsową skrytpów cssUnused i cssClean
 // wrzuciłem jej tutaj wykonywane tylko raz   
 gulp.task('build', function() {
-    runSequence('del',['stylescss','imagemin','htmlmin','jshint','fontscopy']);
+    runSequence('del',['stylescss','imagemin','htmlmin','jshint','copy']);
 	
 	return gulp.src(path.cssinname)
 	.pipe(cssUnused({html: path.htmlin}))
 	.pipe(cssClean())
 	.pipe(gulp.dest(path.cssout));
 });
-
-

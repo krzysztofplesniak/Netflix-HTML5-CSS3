@@ -1,5 +1,6 @@
 window.addEventListener('load', function() {
 
+
 // ---------- Zmienne  -----------//
 
 	var scrollDown = document.querySelector('#scrollDown'),
@@ -11,7 +12,6 @@ window.addEventListener('load', function() {
 		hiddenText = document.querySelectorAll('.hiddenText'); 
 
 	var pageY, pageWidth;
-
 	
 // Icona hamburger-menu animowana 
     	
@@ -71,4 +71,6 @@ window.addEventListener('load', function() {
 	   			header.classList.add('headerSmall');
 			}	
 	}
+
+
 }); 

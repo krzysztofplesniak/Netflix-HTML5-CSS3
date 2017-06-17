@@ -1,1 +1,1 @@
-var video=videojs("videoBackground");console.log(videojs),console.log(video),video.ready(function(){setTimeout(function(){video.play()},3e3)});
+var video=videojs("videoBackground");video.ready(function(){setTimeout(function(){video.play(),video.volume(.5)},3e3)});

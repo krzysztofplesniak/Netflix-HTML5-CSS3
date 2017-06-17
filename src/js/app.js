@@ -1,6 +1,5 @@
 window.addEventListener('load', function() {
 
-
 // ---------- Zmienne  -----------//
 
 	var scrollDown = document.querySelector('#scrollDown'),

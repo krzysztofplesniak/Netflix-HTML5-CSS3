@@ -129,8 +129,8 @@ gulp.task('imagemin', function() {
 gulp.task('copy', function() {
 	gulp.src('src/css/fonts/*.*')	
 	.pipe(gulp.dest('dist/css/fonts/'));
-	gulp.src('src/css/video.js/*.*')	
-	.pipe(gulp.dest('dist/css/video.js/'));
+	gulp.src('src/css/videojs/*.*')	
+	.pipe(gulp.dest('dist/css/videojs/'));
 	gulp.src('src/video/*.*')	
 	.pipe(gulp.dest('dist/video/'));
 	return true;

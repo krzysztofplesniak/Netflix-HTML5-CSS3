@@ -3,14 +3,15 @@ window.addEventListener('load', function() {
 // ---------- Zmienne  -----------//
 
 	var scrollDown = document.querySelector('#scrollDown'),
-		header = document.querySelector('header nav'),
 		hamburgerIcon = document.querySelector('.hamburgerIcon'),	// pojemnik na icone hamburger menu
 		iconBars = document.querySelectorAll('.iconBar'), 			// 3 belki hamburgera
 		menuItems = document.querySelector('header ul'),  			// całe menu czyli hamburger icon i pozycje w menu
+		header = document.querySelector('header nav'),
 		showMoreText = document.querySelector('.showMoreText'), 
 		hiddenText = document.querySelectorAll('.hiddenText'); 
 
 	var pageY, pageWidth;
+
 	
 // Icona hamburger-menu animowana 
     	

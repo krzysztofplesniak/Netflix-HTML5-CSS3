@@ -30,6 +30,7 @@ header ul li:hover a {
 }
 
 #heroImage {
+	height: 850px;
 	top: 0px;
 	padding: 2rem 0 3rem;
 }

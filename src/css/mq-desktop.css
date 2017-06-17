@@ -1,388 +1,403 @@
-/* ======== GŁÓWNY PLIK CSS Z ROZMIARAMI DLA DUŻYCH EKRANÓW PONAD 1280PX =======*/
+	/* ======== GŁÓWNY PLIK CSS Z ROZMIARAMI DLA DUŻYCH EKRANÓW PONAD 1280PX =======*/
 
-/* ======= resety CSS */
+	/* ======= resety CSS */
 
-* {
-	margin: 0px;	
-	padding: 0px;
-	border: 0px;
-	color: white;
-	font-size: 15px;
-	font-family: Helvetica, Arial, sans-serif;
-	box-sizing: border-box;
-}
-
-
-.container {
-	width: 90%;
-	max-width: 1800px;
-	margin: 0 auto;
-	overflow: hidden;
-}
-
-/* ======= sekcja Header z menu na górze i logo Netflixa */
+	* {
+		margin: 0px;	
+		padding: 0px;
+		border: 0px;
+		color: white;
+		font-size: 15px;
+		font-family: Helvetica, Arial, sans-serif;
+		box-sizing: border-box;
+	}
 
 
-header {
-	height: auto;
-	width: 100%;
-	background: black;	
-	position: fixed; /*header zafiksowany do belki górnej przy przewijaniu ekranu w dół*/
-	z-index: 100;
-	border-bottom: red 4px solid;
-	overflow: hidden;
-	box-sizing: border-box;
-	transition: all .4s; 
-	/* transition daje efekt zmniejszania wysokosci się nawigacji podczas scrolowania myszki w dół
-	obsługa w JS w funkcji scrollPage()*/
-}
+	.container {
+		width: 90%;
+		max-width: 1800px;
+		margin: 0 auto;
+		overflow: hidden;
+		border: 2px dotted yellow;
+	}	
 
-header nav {
-	height: 100px;
-	margin: 15px 0px;
-	transition: all .5s;
-}
+	/* ======= sekcja Header z menu na górze i logo Netflixa */
 
-/*gdy scrollowanie w dół lub opuszczenie header'a to ma się pomiejszyc */
-.headerSmall {
-	margin: 5px 0px;
-}
 
-header #logo {
-	float: left;
-	width: 310px; 
-	height: 90px;
-	background: url(../img/netflix.png) no-repeat; 
-	background-size: cover;
-	cursor: pointer;
-}
+	header {
+		height: auto;
+		width: 100%;
+		background: black;	
+		position: fixed; /*header zafiksowany do belki górnej przy przewijaniu ekranu w dół*/
+		z-index: 100;
+		border-bottom: red 4px solid;
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all .4s; 
+		/* transition daje efekt zmniejszania wysokosci się nawigacji podczas scrolowania myszki w dół
+		obsługa w JS w funkcji scrollPage()*/
+	}
 
-/* hamburger menu*/
-header .hamburgerIcon {
-	display: none;
-	float: right;
-	width: 50px;
-	height: 50px;
-	margin: 10px 15px;
-	cursor: pointer;
-}
+	header nav {
+		height: 100px;
+		margin: 15px 0px;
+		transition: all .5s;
+	}
 
-header .iconBar {
-	margin: 0 auto;
-	width: 40px;
-	height: 6px;
-	margin-top: 8px;
-	border-radius: 3px;
-	background: white;
-	transition: all .15s ease-out;
-}
+	/*gdy scrollowanie w dół lub opuszczenie header'a to ma się pomiejszyc */
+	.headerSmall {
+		margin: 5px 0px;
+	}
 
-/* animacje belek w hamburger menu */
-header .first.changeHambIcon{
-  	transform: translateY(14px) rotate(45deg);
-}
+	header #logo {
+		float: left;
+		width: 310px; 
+		height: 90px;
+		background: url(../img/netflix.png) no-repeat; 
+		background-size: cover;
+		cursor: pointer;
+	}
 
-header .second.changeHambIcon{
-	display: none;
-}
+	/* hamburger menu*/
+	header .hamburgerIcon {
+		display: none;
+		float: right;
+		width: 50px;
+		height: 50px;
+		margin: 10px 15px;
+		cursor: pointer;
+	}
 
-header .third.changeHambIcon{
-	transform: rotate(-45deg);
-}
+	header .iconBar {
+		margin: 0 auto;
+		width: 40px;
+		height: 6px;
+		margin-top: 8px;
+		border-radius: 3px;
+		background: white;
+		transition: all .15s ease-out;
+	}
 
-header ul {
-	margin-top: 25px;
-	float: right;
-	height: 50px;
-	list-style: none;
-	overflow: hidden;
-}
+	/* animacje belek w hamburger menu */
+	header .first.changeHambIcon{
+	  	transform: translateY(14px) rotate(45deg);
+	}
 
-header ul li {
-	float: left;
-	height: 47px;
-	width: 120px;
-	margin-left: 10px;
-	text-align: center;
-}
+	header .second.changeHambIcon{
+		display: none;
+	}
 
-header ul li:hover {
-	border-bottom: 3px solid red;
-	transition: border-bottom .2s ease-out;
-}
+	header .third.changeHambIcon{
+		transform: rotate(-45deg);
+	}
 
-header ul li a {
-	display: block;
-	height: 100%;
-	line-height: 3rem;
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 1.3rem;
-	text-decoration: none;
-	letter-spacing: 1px;
-}
+	header ul {
+		margin-top: 25px;
+		float: right;
+		height: 50px;
+		list-style: none;
+		overflow: hidden;
+	}
 
-/*efekt rozsuwania pola Szukaj po najechaniu myszką*/
-.menuSearch {
-	width: 150px;
-	margin: 0 5px;
-}
+	header ul li {
+		float: left;
+		height: 47px;
+		width: 120px;
+		margin-left: 10px;
+		text-align: center;
+	}
 
-.menuSearch .smallBox {
-	display: block;
-	height: 100%;
-	padding: 0px 15px;
-	text-align: right;
-	box-sizing: border-box;
-}
+	header ul li:hover {
+		border-bottom: 3px solid red;
+		transition: border-bottom .2s ease-out;
+	}
 
-.menuSearch .smallBox i {
- 	margin-right: 15px;
-    font-size: 2.5rem;
-}
+	header ul li a {
+		display: block;
+		height: 100%;
+		line-height: 3rem;
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 1.3rem;
+		text-decoration: none;
+		letter-spacing: 1px;
+	}
 
-.menuSearch .smallBoxInput {
-    font-size: 1.3rem;
-    color: red;	
-    position: relative;
-    top: -2px;
-}
+	/*efekt rozsuwania pola Szukaj po najechaniu myszką*/
+	.menuSearch {
+		width: 150px;
+		margin: 0 5px;
+	}
 
-.menuSearch:hover .smallBox{
-	display: none; 
-}
+	.menuSearch .smallBox {
+		display: block;
+		height: 100%;
+		padding: 0px 15px;
+		text-align: right;
+		box-sizing: border-box;
+	}
 
-.menuSearch .expandedBox {
-	display: none;
-	height: 100%;
-	padding: 20px; 
-	font-size: 1.3rem;	
-	text-align: right;
-	box-sizing: border-box;
-	position: relative;
-    top: -10px;
-}
+	.menuSearch .smallBox i {
+	 	margin-right: 15px;
+	    font-size: 2.5rem;
+	}
 
-.menuSearch:hover .expandedBox {
-	display: block; 
-}
+	.menuSearch .smallBoxInput {
+	    font-size: 1.3rem;
+	    color: red;	
+	    position: relative;
+	    top: -2px;
+	}
 
-.menuSearch:hover {
-	width: 300px;
-	border: 2px solid white;
-	transition: linear width .5s;
-	box-sizing: border-box;
-}
-/* ======= sekcja HeroImage z dużą grafika w tle */
+	.menuSearch:hover .smallBox{
+		display: none; 
+	}
 
-#heroImage {
-	height: auto;
-	width: 100%;
-	position: relative;
-	top: 100px;
-	background: url(../img/background.jpg) no-repeat fixed 0px 40px; 
-	background-size: cover;
-	padding: 5.5rem 0;
-}
+	.menuSearch .expandedBox {
+		display: none;
+		height: 100%;
+		padding: 20px; 
+		font-size: 1.3rem;	
+		text-align: right;
+		box-sizing: border-box;
+		position: relative;
+	    top: -10px;
+	}
 
-/* ======= sekcja descriptionBox z opisem filmu */
+	.menuSearch:hover .expandedBox {
+		display: block; 
+	}
 
-.descriptionBox {
-	width: 100%;
-	height: auto;
-	padding: 1rem 2rem;
-	background: black;	
-	opacity: .8;
-	overflow: hidden;
-}
+	.menuSearch:hover {
+		width: 300px;
+		border: 2px solid white;
+		transition: linear width .5s;
+		box-sizing: border-box;
+	}
+	/* ======= sekcja HeroImage z dużą grafika w tle */
 
-.descriptionBox h1 {
-	font-size: 3rem;
-	font-weight: 700;
-	line-height: 3rem;
-	margin: 2rem 0;
-}
+	#heroImage {
+		/*width: 100%;*/
+		height: 775px;
+		position: relative;
+		top: 0px;
+		/*background: url(../img/background.jpg) no-repeat fixed 0px 40px; 
+		background-size: cover;
+		padding: 5.5rem 0;*/
 
-.descriptionBox h2 {
-	color: red;
-	font-size: 1.5rem;
-	font-weight: 700;
-	letter-spacing: 0.2px;
-	margin: 0 0 1.5rem;
-}
+	}
 
-.descriptionBox h3 {
-	font-size: 1.3rem;
-	font-weight: 200;
-	margin: 0 0 .2rem;
-}
+	#video {
+		min-height: 900px;
+		/*min-height: 100%;*/
+		min-width: 100%;
+		height: auto;
+		width: auto;
+		opacity: 0.9;
 
-.descriptionBox h4 {
-	font-size: 1.1rem;
-	font-weight: 400;
-	margin: 0 0 1.5rem;
-}
+	}
 
-.descriptionBox h4 span {
-	color: red;
-	font-size: 1.1rem;
-	font-weight: 700;
-}
+	/* ======= sekcja descriptionBox z opisem filmu */
 
-.descriptionBox p {
-	font-family: 'Lato';
-	text-align: justify;
-	font-size: 1.2rem;
-	margin: .75rem 0;
-}
+	.descriptionBox {
+		width: 90%;
+		margin: 0 auto;
+		height: auto;
+		padding: 1rem;
+		background: black;	
+		opacity: .8;
+		position: absolute;
+		top: 150px;
+		overflow: hidden;
+	}
 
-.descriptionBox .showMoreText {
-	display: none;
-	margin-top: 20px;
-	font-size: 1.2rem;
-	font-weight: 700;
-}
+	.descriptionBox h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 3rem;
+		margin: 2rem 0;
+	}
 
-.descriptionBox .button {
-	float: left;
-	width: 300px;
-	margin: 2rem 4rem 2rem 1rem;
-	padding: 1rem;
-	border-radius: 5px;
-	cursor: pointer;
-	letter-spacing: 1.5px;
-	font-size: 1.3rem;
-	text-align: center;
-	box-sizing: border-box;
-}
+	.descriptionBox h2 {
+		color: red;
+		font-size: 1.5rem;
+		font-weight: 700;
+		letter-spacing: 0.2px;
+		margin: 0 0 1.5rem;
+	}
 
-.descriptionBox .btn1 {
-	background: rgba(255,255,255,0.25);
-}
+	.descriptionBox h3 {
+		font-size: 1.3rem;
+		font-weight: 200;
+		margin: 0 0 .2rem;
+	}
 
-.descriptionBox .btn2 {
-	background: rgba(255,0,0,1);
-}
+	.descriptionBox h4 {
+		font-size: 1.1rem;
+		font-weight: 400;
+		margin: 0 0 1.5rem;
+	}
 
-.descriptionBox .btn1:hover {
-	background: rgba(255,255,255,0.1);
-}
+	.descriptionBox h4 span {
+		color: red;
+		font-size: 1.1rem;
+		font-weight: 700;
+	}
 
-.descriptionBox .btn2:hover {
-	background: rgba(255,0,0,0.6);
-}
+	.descriptionBox p {
+		font-family: 'Lato';
+		text-align: justify;
+		font-size: 1.2rem;
+		margin: .75rem 0;
+	}
 
-/* =======   sekcja scrollDown icony z FontAwesome umieszczone na dole strony pierwszej */
+	.descriptionBox .showMoreText {
+		display: none;
+		margin-top: 20px;
+		font-size: 1.2rem;
+		font-weight: 700;
+	}
 
-#scrollDown {
-	display: block;
-	position: relative;
-	top: 100px;
-	background: black;	
-	text-align: center;
-	height: 80px;
-}
+	.descriptionBox .button {
+		float: left;
+		width: 300px;
+		margin: 2rem 4rem 2rem 1rem;
+		padding: 1rem;
+		border-radius: 5px;
+		cursor: pointer;
+		letter-spacing: 1.5px;
+		font-size: 1.3rem;
+		text-align: center;
+		box-sizing: border-box;
+	}
 
-#scrollDown a {
-	text-decoration: none;
-}
+	.descriptionBox .btn1 {
+		background: rgba(255,255,255,0.25);
+	}
 
-#scrollDown i {
-	font-size: 450%;
-	margin-right: 20px; 
-	position: relative;
-    animation-name: arrow;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: easy-in;
-}
+	.descriptionBox .btn2 {
+		background: rgba(255,0,0,1);
+	}
 
-@keyframes arrow {
-    0%   {color:white; left:0px; top: -5px;}
-    100% {color:red; left:0px; top: 10px;}
-}
+	.descriptionBox .btn1:hover {
+		background: rgba(255,255,255,0.1);
+	}
 
-#scrollDown span {
-	color: white;
-	font-size: 1.3rem;
-	position: relative;
-	top: -15px;
-	letter-spacing: 1.3px;
-}
+	.descriptionBox .btn2:hover {
+		background: rgba(255,0,0,0.6);
+	}
 
-/* ======= sekcja videoSection z kafelkami filmowymi ======= */
+	/* =======   sekcja scrollDown icony z FontAwesome umieszczone na dole strony pierwszej */
 
-#videoSection {
-	height: auto;
-	width: 100%;
-	background: black;	
-	position: relative;
-	top: 100px;
-}
+	#scrollDown {
+		display: block;
+		position: relative;
+		top: 120px;
+		background: black;	
+		text-align: center;
+		height: 80px;
+	}
 
-.videoBoxes {
-	position: relative;  /*to jest dla klawisza PLAY w tagu "i"*/ 
-	float: left;  /* w tutku był (dipslay: inline-block) i powododował ze były odstępy międzye div'ami. Trzeba było zastosowac trik z() font-size: 0px)*/
-	height: 25vw;
-	width: 16%;
-	margin: 10px 2%;
-	opacity: 0.5; 
-	border-radius: 5px;
-	border-bottom: 3px solid red;
-}
+	#scrollDown a {
+		text-decoration: none;
+	}
 
-.videoBoxes:hover img{
-	border: 4px solid black; 
-	transition: border .1s;
-}
+	#scrollDown i {
+		font-size: 450%;
+		margin-right: 20px; 
+		position: relative;
+	    animation-name: arrow;
+	    animation-duration: 2s;
+	    animation-iteration-count: infinite;
+	    animation-timing-function: easy-in;
+	}
 
-.videoBoxes img  {
-	width: 100%;
-	height: 20vw;
-	object-fit: cover;
-	border-radius: 7px; 
-}
+	@keyframes arrow {
+	    0%   {color:white; left:0px; top: -5px;}
+	    100% {color:red; left:0px; top: 10px;}
+	}
 
-.videoBoxes:hover i {
-	display: inline-block;
-	background: black;
-}
+	#scrollDown span {
+		color: white;
+		font-size: 1.3rem;
+		position: relative;
+		top: -15px;
+		letter-spacing: 1.3px;
+	}
 
-.videoBoxes:hover {
-	opacity: 1; 
-}
+	/* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
-.videoBoxes p {
-	text-align: center;
-	font-family: 'Lato', sans-serif;
-	color: white; 
-	font-size: 1.2rem;	
-	font-weight: 400;
-	position: relative;
-	top: 1.4vw;
-}
+	#videoSection {
+		height: auto;
+		width: 100%;
+		background: black;	
+		position: relative;
+		top: 120px;
+	}
 
-.videoBoxes span {
-	font-size: 1.5rem;
-}
+	.videoBoxes {
+		position: relative;  /*to jest dla klawisza PLAY w tagu "i"*/ 
+		float: left;  /* w tutku był (dipslay: inline-block) i powododował ze były odstępy międzye div'ami. Trzeba było zastosowac trik z() font-size: 0px)*/
+		height: 25vw;
+		width: 16%;
+		margin: 10px 2%;
+		opacity: 0.5; 
+		border-radius: 5px;
+		border-bottom: 3px solid red;
+	}
 
-.videoBoxes i {
-	display: none;
-	position: absolute;
-	top: 37%;
-	left: 27%;
-	width: 45%;
-	height: 3vw;
-	line-height: 3vw; /*centrowanie napisu z ikona w obrebie obwódki */
-	border: 2px solid white;
-	border-radius: 30px;
-	opacity: .7;
-	font-size: 1.5rem;
-	text-align: center;
-	cursor: pointer;
-}
+	.videoBoxes:hover img{
+		border: 4px solid black; 
+		transition: border .1s;
+	}
 
-/*odstep między ikoną trójkat symbolizująca kalwisz Play a napisem PLAY */
+	.videoBoxes img  {
+		width: 100%;
+		height: 20vw;
+		object-fit: cover;
+		border-radius: 7px; 
+	}
 
-.fa-play-circle:before{
-	margin-right: 10px;
-}
+	.videoBoxes:hover i {
+		display: inline-block;
+		background: black;
+	}
+
+	.videoBoxes:hover {
+		opacity: 1; 
+	}
+
+	.videoBoxes p {
+		text-align: center;
+		font-family: 'Lato', sans-serif;
+		color: white; 
+		font-size: 1.2rem;	
+		font-weight: 400;
+		position: relative;
+		top: 1.4vw;
+	}
+
+	.videoBoxes span {
+		font-size: 1.5rem;
+	}
+
+	.videoBoxes i {
+		display: none;
+		position: absolute;
+		top: 37%;
+		left: 27%;
+		width: 45%;
+		height: 3vw;
+		line-height: 3vw; /*centrowanie napisu z ikona w obrebie obwódki */
+		border: 2px solid white;
+		border-radius: 30px;
+		opacity: .7;
+		font-size: 1.5rem;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	/*odstep między ikoną trójkat symbolizująca kalwisz Play a napisem PLAY */
+
+	.fa-play-circle:before{
+		margin-right: 10px;
+	}

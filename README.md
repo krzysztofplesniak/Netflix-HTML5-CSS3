@@ -11,7 +11,7 @@ Wykorzytane technologie:
  - responsywność dla 6 stopni od 350px do 1280px dla trybu portrait i landscape,
  - JSON baza z ID do pózniejszego odpytania bazy IMDB,
  - Ajax zapytania do bazy IMDB z obsługą błędów, za pomocą prywatnego api-key 
- - GULP do poprawy kodu, minifikacji, łączenia, tłumacz subkodu SASS wiele innych, jednym słowem automatyzacje niezbedne dla FRontowca,   
+ - GULP pluginy do: poprawy kodu JSHint , HTMLHINT, minifikacja CSS i HTML, łączenia plików w jeden, tłumacz subkodu SASS oraz wiele innych, jednym słowem automatyzacje niezbedne dla FRontowca,   
  - bibloteki zewnętrzne: IMDB-API , Video.JS, Modal-Video-JS
  
 Sukcesywnie będę dodawał

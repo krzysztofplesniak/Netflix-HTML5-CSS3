@@ -150,7 +150,6 @@ gulp.task('del', function() {
 	.then(console.log('Katalog produkcyjny >dist< skasowany'));
 });
 
-
 //  -----------  całościowy build projektu  -----------------
 
 //ze wględu na złożonosc czsową skrytpów cssUnused i cssClean

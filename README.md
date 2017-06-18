@@ -1,16 +1,17 @@
-Prosta strona użyciem HTM5, CSS3 i JS. Aplikacja wyglada jak Netflix, dzięki której można oglądać filmy z bazy OMDB. 
+http://krzysztofplesniak.github.io
+Opis działania apliikacji 
+Aplikacja wyglądem przypominająca Netflix z użyciem HTML5, CSS3 i JS. Filmy zaciągane są z bazy OMDB/IMDB.  
+Filmy są losowo wybierane do pokazania w tle, z puli 10 filmów zapisanych w pliku JSON. W nim są identyfikatory potrzebne do bazy w celu pobrania danych tj. poster, url z trailerem, rok produkcji, aktorzy, reżyser, nagrody  itp. 
+Trailery filmów można przeglądać z pola "Szukaj" w menu, po naciśnięciu klawisza PLAY bezpośrednio z listy kafelek z filmami na dole lub zobaczyć jeden proponowany film w sekcji głównej heroImage. Menu "Szukaj" podpowiada dobrane do wpisywanego ciągu znaków tytuły filmów. Opis filmu wraz możliwością oglądania filmu jest realizowany w oknie typu modal.  Kontrola       
 
-Użyłem: 
-================
- - tagi semantyczne z HTML5 (header, nav, section)
- - 6 MQ od 320px do 1280px z róznym wyglądem menu za każdym razem i z dostosowującą się wielkością kafelek z filmami
- - kilka efektów z użyciem JS 
-   1. menu Header zwija się lekko gdy przewijamy ekran do dołu
-   2. hamburger menu z fajnym klawiszem animujacym do znaku X
-   3. kalwisz "Szukaj" rozwija się po najechaniu w belkę do wpisywania tytułu filmu 
-
+Wykorzytane technologie: 
+ - responsywność dla 6 stopni od 350px do 1280px dla trybu portrait i landscape,
+ - JSON baza z ID do pózniejszego odpytania bazy IMDB,
+ - Ajax zapytania do bazy IMDB z obsługą błędów, za pomocą prywatnego api-key 
+ - GULP do poprawy kodu, minifikacji, łączenia, używanai w kodzie SASS itp jednym słowem automatyzacje niezbedne dla FRontowca,   
+ - bibloteki zewnętrzne: IMDB-API , Video.JS, Modal-Video--JS
  
-Do zrobienia
+Sukcesywnie będę dodawał
 -------------------------------------------------------
 1. BEM i SASS dla lepszej organizacji i czytelności. Aby nie rozwalać projektu jeszcze nie przerobiłem jego z wykorzystaniem SASS'a i nie ponazywałem inaczej klas zgodnie z BEM. Mały projekt, a odczuwam już dyskomfort w tym spaghetii. 
 

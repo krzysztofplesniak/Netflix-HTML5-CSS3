@@ -1,4 +1,6 @@
 http://krzysztofplesniak.github.io
+
+
 Opis działania apliikacji 
 Aplikacja wyglądem przypominająca Netflix z użyciem HTML5, CSS3 i JS. Filmy zaciągane są z bazy OMDB/IMDB.  
 Filmy są losowo wybierane do pokazania w tle, z puli 10 filmów zapisanych w pliku JSON. W nim są identyfikatory potrzebne do bazy w celu pobrania danych tj. poster, url z trailerem, rok produkcji, aktorzy, reżyser, nagrody  itp. 

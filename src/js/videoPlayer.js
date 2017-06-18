@@ -4,6 +4,6 @@ video.ready(function(){
 	 
 	 setTimeout(function(){
 	 	video.play();
-	 	video.volume(0.5); 	
-	 }, 3000);
+	 	video.volume(0); 	
+	 }, 2000);
 });

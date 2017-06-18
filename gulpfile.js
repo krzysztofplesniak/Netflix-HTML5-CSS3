@@ -13,12 +13,14 @@ jsUglify = require('gulp-uglify'),
 jshint = require('gulp-jshint'),
 imageMin = require('gulp-imagemin'),
 htmlMin = require('gulp-htmlmin'),
+htmlhint = require('gulp-htmlhint'),
 del = require ('del'),
 runSequence = require('run-sequence'),
 plumber = require('gulp-plumber'), // do wykrywania błędów w CSS
 gutil = require('gulp-util'); // do wykrywania błędów i ich lepszego opisywania w sposób czytelny
 
 
+ 
 var path = {
 		dist:   'dist/',
 		src:    'src/',
@@ -108,7 +110,13 @@ gulp.task('jsuglify', function() {
 
 // nimalizacja pliku index.html
 gulp.task('htmlmin', function() {
+	
 	return gulp.src(path.htmlin)
+	.pipe(htmlhint('.htmlhintrc'))
+    .pipe(htmlhint.reporter('htmlhint-stylish'))
+    .pipe(htmlhint.failReporter({    // task do błędów składniowych HTML'a
+         supress: true
+    }))
 	.pipe(htmlMin({
 		sortAttributes: true,
 		sortClassName: true,

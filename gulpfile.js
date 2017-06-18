@@ -112,7 +112,7 @@ gulp.task('jsuglify', function() {
 gulp.task('htmlmin', function() {
 	
 	return gulp.src(path.htmlin)
-	.pipe(htmlhint('.htmlhintrc'))
+	.pipe(htmlhint())
     .pipe(htmlhint.reporter('htmlhint-stylish'))
     .pipe(htmlhint.failReporter({    // task do błędów składniowych HTML'a
          supress: true

@@ -12,7 +12,6 @@
 		box-sizing: border-box;
 	}
 
-
 	.container {
 		width: 90%;
 		max-width: 1800px;
@@ -114,11 +113,14 @@
 	header ul li a {
 		display: block;
 		height: 100%;
-		line-height: 3rem;
 		font-family: Helvetica, Arial, sans-serif;
 		font-size: 1.3rem;
 		text-decoration: none;
 		letter-spacing: 1px;
+		/*line-height: 3rem;*/
+		
+		position: relative;
+		top: 125px;
 	}
 
 	/*efekt rozsuwania pola Szukaj po najechaniu myszką*/
@@ -175,7 +177,6 @@
 	/* ======= sekcja HeroImage z dużą grafika w tle */
 
 	#heroImage {
-		
 		height: 775px;
 		position: relative;
 		top: 0px;
@@ -186,15 +187,7 @@
 
 	}
 
-	/*#videoBackground {
-		min-height: 900px;
-		min-width: 100%;
-		height: auto;
-		width: auto;
-		opacity: 0.9;
-	}*/
-	
-	.video-js, .vjs-tech {
+	/*.video-js, .vjs-tech {
 		min-height: 900px;
 		min-width: 100%;
 		height: auto;
@@ -203,20 +196,27 @@
 	    position: absolute;
     	top: 100px;
     	left: 0;
+	}*/
+
+	#videoBackground {
+		min-height: 900px;
+		min-width: 100%;
+		height: auto;
+		width: auto;
+		opacity: 0.9;
 	}
-
-    	/* ======= sekcja descriptionBox z opisem filmu */
-
+	
+	/* ======= sekcja descriptionBox z opisem filmu */
 
 	.descriptionBox {
-		width: 90%;
 		margin: 0 auto;
 		height: auto;
-		padding: 1rem;
+		padding: .5rem;
 		background: black;	
 		opacity: 0.8;
 		position: absolute;
 		top: 200px;
+		left: 50px;
 		overflow: hidden;
 	}
 
@@ -345,9 +345,9 @@
 	}
 
 	.videoBoxes {
-		position: relative;  /*to jest dla klawisza PLAY w tagu "i"*/ 
-		float: left;  /* w tutku był (dipslay: inline-block) i powododował ze były odstępy międzye div'ami. Trzeba było zastosowac trik z() font-size: 0px)*/
-		height: 25vw;
+		position: relative;  /* to jest dla klawisza PLAY w tagu "i"*/ 
+		float: left;  
+		height: auto;
 		width: 16%;
 		margin: 2%;
 		opacity: 0.5; 
@@ -362,7 +362,7 @@
 
 	.videoBoxes img  {
 		width: 100%;
-		height: 20vw;
+		height: auto;
 		object-fit: cover;
 		border-radius: 7px; 
 	}
@@ -375,7 +375,12 @@
 	.videoBoxes:hover {
 		opacity: 1; 
 	}
+	
 
+	.filmTitle {
+		position: relative;
+		
+	}
 	.videoBoxes p {
 		text-align: center;
 		font-family: 'Lato', sans-serif;
@@ -383,7 +388,10 @@
 		font-size: 1.2rem;	
 		font-weight: 400;
 		position: relative;
-		top: 1.4vw;
+		/*top: 1px;*/
+		border: 1px solid yellow;
+		top: 1%;
+		/*transform: translateY(-50%);*/
 	}
 
 	.videoBoxes span {

@@ -1,9 +1,9 @@
-var video = videojs('videoBackground');
+// var video = videojs('videoBackground');
 
-video.ready(function(){
+// video.ready(function(){
 	 
-	 setTimeout(function(){
-	 	video.play();
-	 	video.volume(0); 	
-	 }, 2000);
-});
+// 	 setTimeout(function(){
+// 	 	video.play();
+// 	 	video.volume(0); 	
+// 	 }, 2000);
+// });

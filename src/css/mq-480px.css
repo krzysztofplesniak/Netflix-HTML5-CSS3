@@ -106,7 +106,7 @@ header ul {
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 .videoBoxes  {
-	height: 75vw;
+	/*height: 75vw;*/
 	width: 46%;
 }
 
@@ -122,5 +122,5 @@ header ul {
 }
 
 .videoBoxes img  {
-	height: 60vw;
+	/*height: 62.5vw;*/
 }

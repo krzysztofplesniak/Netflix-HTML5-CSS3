@@ -48,7 +48,7 @@ header ul li {
 }
 
 .videoBoxes {
-	height: 49vw;
+	/*height: 49vw;*/
 	width: 29%;
 }
 
@@ -65,5 +65,5 @@ header ul li {
 }
 
 .videoBoxes img  {
-	height: 40vw;
+	/*height: 41vw;*/
 }

@@ -13,9 +13,9 @@ header ul li {
 	width: 200px;
 }
 
-.videoBoxes  {
+/*.videoBoxes  {
 	height: 28vw;
-}
+}*/
 
 .videoBoxes p {
 	font-size: 1.1rem;	
@@ -27,10 +27,10 @@ header ul li {
 	font-size: 1.5rem;
 }
 
-.videoBoxes img  {
+/*.videoBoxes img  {
 	height: 23vw;
 }
-
+*/
 /* dla mniejszych rozdzielczości scrool na dół jest zbedny */
 #scrollDown {
 	display: none;

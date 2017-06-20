@@ -1,21 +1,23 @@
-Prosta strona użyciem HTM5, CSS3 i JS. Aplikacja wyglada jak Netflix, dzięki której można oglądać filmy z bazy OMDB. 
+Link do hostingu -> http://krzysztofplesniak.github.io
 
-Użyłem: 
-================
- - tagi semantyczne z HTML5 (header, nav, section)
- - 6 MQ od 320px do 1280px z róznym wyglądem menu za każdym razem i z dostosowującą się wielkością kafelek z filmami
- - kilka efektów z użyciem JS 
-   1. menu Header zwija się lekko gdy przewijamy ekran do dołu
-   2. hamburger menu z fajnym klawiszem animujacym do znaku X
-   3. kalwisz "Szukaj" rozwija się po najechaniu w belkę do wpisywania tytułu filmu 
+Opis działania aplikacji 
+---------------------------
+Aplikacja wyglądem przypominająca Netflix z użyciem HTML5, CSS3 i JS. Filmy zaciągane są z bazy OMDB/IMDB.  
+Filmy są losowo wybierane do pokazania w tle, z puli 10 filmów zapisanych w pliku JSON. W nim są identyfikatory potrzebne do bazy w celu pobrania danych tj. poster, url z trailerem, rok produkcji, aktorzy, reżyser, nagrody  itp. 
+Trailery filmów można przeglądać z pola "Szukaj" w menu, po naciśnięciu klawisza PLAY bezpośrednio z listy kafelek z filmami na dole lub zobaczyć jeden proponowany film w sekcji głównej heroImage. Menu "Szukaj" podpowiada dobrane do wpisywanego ciągu znaków tytuły filmów. Opis filmu wraz możliwością oglądania filmu jest realizowany w oknie typu modal. Kontrola filmu spoczywa na biblotekach zewętrznych obsługujących tag <video> i wyświetląjących film w modalu.      
 
+Wykorzytane technologie: 
+-------------------------
+ - responsywność dla 6 stopni od 350px do 1280px dla trybu portrait i landscape,
+ - JSON baza z ID do pózniejszego odpytania bazy IMDB,
+ - Ajax zapytania do bazy IMDB z obsługą błędów, za pomocą prywatnego api-key 
+ - GULP pluginy do: poprawy kodu JSHint , HTMLHINT, minifikacja CSS i HTML, łączenia plików w jeden, tłumacz subkodu SASS oraz wiele innych, jednym słowem automatyzacje niezbedne dla FRontowca,   
+ - bibloteki zewnętrzne: IMDB-API , Video.JS, Modal-Video-JS
  
-Do zrobienia
--------------------------------------------------------
+Sukcesywnie będę dodawał
+-------------------------
 1. BEM i SASS dla lepszej organizacji i czytelności. Aby nie rozwalać projektu jeszcze nie przerobiłem jego z wykorzystaniem SASS'a i nie ponazywałem inaczej klas zgodnie z BEM. Mały projekt, a odczuwam już dyskomfort w tym spaghetii. 
-
 2. Podzielić projekt na pliki CSS, gdzie każdy będzie odpowiadał za jakiś fragment funcjonalny np. layout  osobo, moduły osobno. To razem z  BEM i z SASS jest całkiem ciekawe podeście, ale też rozwali projekt zanim to przerobię.     
-
 3. Zapytania Ajaxsowe do bazy OMDB (baza z filmami www.omdbapi.com, niestety Netflix nie udostepnia API) 
       Wpisywanie tytułu filmu w pole Szukaj 
       Za każdym nowym znakiem będzie pokazywać się lista 5 filmów pasujących do słowa wpisanego.  

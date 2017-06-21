@@ -34,7 +34,7 @@ header ul li:hover {
 
 header .hamburgerIcon {
 	display: block;
-	margin: 15px 25px 0 0;
+	margin: 15px 20px 0 0;
 }	
 
 /*menu nie ma, dopiero po naciśnięciu klawisza hamburger-menu pojawia się */
@@ -97,4 +97,7 @@ header ul {
 .videoBoxes {
 	height: 72vw;
 	width: 46%;
+}
+.videoBoxes p {
+	top: 93%;
 }

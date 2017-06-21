@@ -295,7 +295,7 @@ header ul li a {
 	}
 .videoBoxes {
 		float: left;  
-		height: 19.5vw;
+		height: 21vw;
 		width: 12.5%;
 		margin: 2%;
 		opacity: 0.6; 
@@ -316,7 +316,7 @@ header ul li a {
 		text-align: center;
 		font-family: 'Lato', sans-serif;
 		color: white; 
-		font-size: 1.1rem;	
+		font-size: 1.3rem;	
 		font-weight: 400;
 		position: absolute;
 		top: 91%;

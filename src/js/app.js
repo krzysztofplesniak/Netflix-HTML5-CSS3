@@ -41,7 +41,7 @@ window.addEventListener('load', function() {
 		pageY = window.pageYOffset;
 		pageWidth = window.outerWidth;
 				
-		if (pageWidth > 1280) {								// dla ekranów większych niż tablety i smartfony
+		if (pageWidth > 1024) {								// dla ekranów większych niż tablety i smartfony
 		
 			if (pageY > 75) { 								// gdy nastąpi pierwszy scroll myszką to..
 					header.classList.add('headerSmall');
@@ -63,11 +63,11 @@ window.addEventListener('load', function() {
 	function headerExpand(e) {
 
 		if  ((e.type == 'mouseenter') && (pageWidth > 1300)) {
-				header.classList.remove('headerSmall');
+				header.classList.add('headerBig');
 			}	
 			
 		if ((e.type == 'mouseleave') && (pageWidth > 1300)) {
-	   			header.classList.add('headerSmall');
+	   			header.classList.remove('headerBig');
 			}	
 	}
 

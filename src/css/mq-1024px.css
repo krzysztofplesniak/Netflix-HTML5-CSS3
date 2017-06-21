@@ -30,9 +30,11 @@ header ul li:hover a {
 }
 
 #heroImage {
-	height: 850px;
 	top: 0px;
-	padding: 2rem 0 3rem;
+}
+
+.descriptionBox {	
+	margin: 10px;
 }
 
 .menuSearch {
@@ -69,17 +71,13 @@ header ul li:hover a {
 }
 
 .videoBoxes  {
-	/*height: 37vw;*/
+	height: 32vw;
 	width: 21%;
 }
 
 .videoBoxes p {
 	font-size: 1rem;
-	top: 1vw;
-}
-
-.videoBoxes img  {
-	/*height: 31vw;*/
+	top: 15px;
 }
 
 .videoBoxes i {
@@ -93,3 +91,7 @@ header ul li:hover a {
 #videoSection {
 	top: 0px;
 }
+
+/*.videoBoxes img  {
+	height: 31vw;
+}*/

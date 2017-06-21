@@ -66,14 +66,10 @@ header ul {
  	top: 5px;
 }
 
-#heroImage {
+/*#heroImage {
 	width: 100%;
 	padding: 15px 0;
-}
-
-.descriptionBox {	
-	padding: .5rem;	
-}
+}*/
 
 .descriptionBox h1 {
 	font-size: 2.5rem;
@@ -82,7 +78,6 @@ header ul {
 .descriptionBox p {
 	margin: 15px 0 0 0;
 	font-size: 1rem;
-	/*line-height: 1.3rem;*/
 }
 
 .descriptionBox .showMoreText  {
@@ -102,16 +97,15 @@ header ul {
 	margin: 1rem 5%;
 }
 
-
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 .videoBoxes  {
-	/*height: 75vw;*/
+	height: 71vw;
 	width: 46%;
 }
 
 .videoBoxes p {
-	top: 4vw;	
+	top: 12px;
 }
 
 .videoBoxes i {

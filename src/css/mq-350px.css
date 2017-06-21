@@ -33,7 +33,11 @@ header .hamburgerIcon {
   margin: 0.75rem 5%;
 }
 
+.videoBoxes  {
+  height: 75vw;
+}
+
 .videoBoxes p {
-  top: 3vw;
+  top: 20px;
   font-size: 1rem;
 }

@@ -41,6 +41,7 @@ gulp.task('watch', function() {
 // 3 watchery: 1-plik index.html  2-pliki css 3-pliki JavaScript 
 // jedna komenada minifikacji plików graficznych wykonywana tylko raz ręcznie
 
+	// gdzie domyślnie działa  BrowserSync
 	browserSync.init({
 		notify: false,
 	 	server: {
@@ -54,14 +55,13 @@ gulp.task('watch', function() {
 		browserSync.reload();	 	
 	});
 
-
 	// watcher plików JS
 	watch(path.jsin, function() {
 		gulp.start('jshint');
 		browserSync.reload();	 	
 	});
 
-		// watcher plików CSS
+	// watcher plików CSS
 	watch(path.cssin, function() {
 	 	gulp.start('cssinject');
 	 	browserSync.reload();	 	
@@ -83,7 +83,7 @@ gulp.task('stylescss', function() {
 	.pipe(gulp.dest(path.cssout));
 });
 
-// taki bajer, przeróbka plików z wcięciami 
+// taki bajer, przeróbka plików z wcięciami SASSowymi
 gulp.task('mknestedcss', function () {
     return gulp.src(path.cssinname)
     .pipe(postCss([require('postcss-to-nest')]))
@@ -144,7 +144,7 @@ gulp.task('copy', function() {
 	return true;
 });
 
-// skasowanie całe j zawartosci katalogu distr przed utworzeniem nowej aplikacji
+// skasowanie całej zawartości katalogu DIST przed utworzeniem nowej aplikacji
 gulp.task('del', function() {
 	return 	del([path.dist])
 	.then(console.log('Katalog produkcyjny >dist< skasowany'));
@@ -153,7 +153,7 @@ gulp.task('del', function() {
 //  -----------  całościowy build projektu  -----------------
 
 //ze wględu na złożonosc czsową skrytpów cssUnused i cssClean
-// wrzuciłem jej tutaj wykonywane tylko raz   
+// wrzuciłem jej tutaj wykonywane tylko raz  przy buildzie projektu 
 gulp.task('build', function() {
     runSequence('del',['stylescss','imagemin','htmlmin','jshint','copy']);
 	

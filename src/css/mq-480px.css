@@ -72,7 +72,7 @@ header ul {
 }*/
 
 .descriptionBox h1 {
-	font-size: 2.5rem;
+	font-size: 2rem;
 }
 
 .descriptionBox p {
@@ -100,12 +100,8 @@ header ul {
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 .videoBoxes  {
-	height: 71vw;
+	height: 72vw;
 	width: 46%;
-}
-
-.videoBoxes p {
-	top: 12px;
 }
 
 .videoBoxes i {

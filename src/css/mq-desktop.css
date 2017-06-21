@@ -17,7 +17,7 @@
 		max-width: 1800px;
 		margin: 0 auto;
 		overflow: hidden;
-		/*border: 1px solid yellow;*/
+/*		border: 3px solid white;*/
 	}	
 
 	/* ======= sekcja Header z menu na górze i logo Netflixa */
@@ -40,7 +40,7 @@
 	header nav {
 		height: 100px;
 		margin: 5px 0px;
-		transition: all .5s;
+		transition: all .3s;
 	}
 
 	/*gdy scrollowanie w dół lub opuszczenie header'a to ma się pomiejszyc */
@@ -52,6 +52,7 @@
 		float: left;
 		width: 310px; 
 		height: 90px;
+		margin: 5px 0;
 		background: url(../img/netflix.png) no-repeat; 
 		background-size: cover;
 		cursor: pointer;
@@ -198,13 +199,15 @@
 	/* ======= sekcja descriptionBox z opisem filmu */
 
 	.descriptionBox {
-		margin: 75px 30px;
+		margin: 30px 0;
+		padding: 15px;
 		height: auto;
 		position: relative;
 		top: 0;
 		z-index: 2;	
 		background: black;	
 		opacity: 0.8;
+		overflow: hidden;
 	}
 
 	.descriptionBox h1 {
@@ -336,7 +339,7 @@
 		height: 19.5vw;
 		width: 12.5%;
 		margin: 2%;
-		opacity: 0.5; 
+		opacity: 0.6; 
 		border-radius: 5px;
 		border-bottom: 3px solid red;
 		position: relative;  /* to jest dla klawisza PLAY w tagu "i"*/ 
@@ -350,24 +353,29 @@
 	}
 	
 	.videoBoxes p {
+		width: 100%;
+		display: inline-block; 
 		text-align: center;
 		font-family: 'Lato', sans-serif;
 		color: white; 
 		font-size: 1.1rem;	
 		font-weight: 400;
-		position: relative;
-		top: 19px;
-		transform: translateY(-50%);
+		position: absolute;
+		top: 91%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		/*border: 1px solid yellow; */
 	}
+	
 
 	.videoBoxes:hover img{
 		transition: border .1s;
-		border: 3px solid black;
+		border: 3px solid  black;
 	}
 
 	.videoBoxes:hover i {
 		display: inline-block;
-		background: black;
+		opacity: 1;
 	}
 
 	.videoBoxes:hover {
@@ -379,28 +387,29 @@
 	}
 
 	.videoBoxes i {
-		display: none;
+		/*display: none;*/
+		background: white;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		color: black;		
+
 		position: absolute;
-		top: 37%;
-		left: 27%;
-		width: 45%;
-		height: 3vw;
-		line-height: 3vw; /*centrowanie napisu z ikona w obrebie obwódki */
+		top: 45%;
+		left: 50%;
+		transform: translate(-50%,-50%);
 		border: 2px solid white;
-		border-radius: 30px;
-		opacity: .7;
-		font-size: 1.5rem;
-		text-align: center;
-		cursor: pointer;
-	}
-
-	/*odstep między ikoną trójkat symbolizująca kalwisz Play a napisem PLAY */
-
-	.fa-play-circle:before{
-		margin-right: 10px;
-	}
-
-	.filmTitle {
-		position: relative;
 		
+		opacity: .5;
+		cursor: pointer;
+		font-size: 7.5rem;
+		/*text-align: center;*/
+	}
+
+	/* pozycjonowanie trójkata symbolizującego klawisz Play */
+	.fa-play-circle:before{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
 	}

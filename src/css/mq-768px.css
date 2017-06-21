@@ -16,7 +16,7 @@ header ul li {
 }
 
 .descriptionBox h1 {
-	font-size: 2.75rem;
+	font-size: 2.5rem;
 }
 
 .descriptionBox h2 {
@@ -38,18 +38,14 @@ header ul li {
 }
 
 .descriptionBox .button {
-	width: 200px;
+	width: 45%;
 	padding: 1rem 0rem;
-	margin: .75rem .5rem;
+	margin: 1.5rem 2.5%;
 }
 
 .videoBoxes {
 	height: 45vw;
 	width: 29%;
-}
-
-.videoBoxes p {
-	top: 17px;
 }
 
 .videoBoxes i {

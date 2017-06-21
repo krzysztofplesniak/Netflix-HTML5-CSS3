@@ -35,25 +35,23 @@ window.addEventListener('load', function() {
 
 // Blok kodu scrolowanie myszą = zwiększenie wysokości headera 
 	
-	window.addEventListener('scroll', scrollPage); 			// złapanie zdarzenia scrolowania myszą
+	// window.addEventListener('scroll', scrollPage);
 	
-	function scrollPage() {
-		pageY = window.pageYOffset;
-		pageWidth = window.outerWidth;
-				
-		if (pageWidth > 1024) {								// dla ekranów większych niż tablety i smartfony
+	// function scrollPage() {
+	// 					
+	// 	if (pageWidth > 1280) {								
 		
-			if (pageY > 75) { 								// gdy nastąpi pierwszy scroll myszką to..
-					header.classList.add('headerSmall');
-					scrollDown.style.display = 'none';  	// scrollDown znika
+	// 		if (pageY > 75) { 								
+	// 				header.classList.add('headerBig');
+	// 				scrollDown.style.display = 'none';  	
 		
-			}	
-			else {
-					header.classList.remove('headerSmall');
-					scrollDown.style.display = 'block';
-			}
-		}
-	}	
+	// 		}	
+	// 		else {
+	// 				header.classList.remove('headerBig');
+	// 				scrollDown.style.display = 'block';
+	// 		}
+	// 	}
+	// }	
 
 // Blok kodu zmiany wysokości headera po najechaniu myszką 
 	
@@ -61,14 +59,16 @@ window.addEventListener('load', function() {
 	header.addEventListener('mouseleave', headerExpand);
 	
 	function headerExpand(e) {
-
-		if  ((e.type == 'mouseenter') && (pageWidth > 1300)) {
-				header.classList.add('headerBig');
-			}	
-			
-		if ((e.type == 'mouseleave') && (pageWidth > 1300)) {
-	   			header.classList.remove('headerBig');
-			}	
+			pageWidth = window.outerWidth;
+		
+			if  ((e.type == 'mouseenter') && (pageWidth > 1300)) {
+					header.classList.add('headerBig');
+					console.log(0);
+				}	
+				
+			if ((e.type == 'mouseleave') && (pageWidth > 1300)) {
+		   			header.classList.remove('headerBig');
+				}	
 	}
 
 

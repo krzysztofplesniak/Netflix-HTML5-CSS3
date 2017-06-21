@@ -22,14 +22,13 @@ header {
 		height: auto;
 		width: 100%;
 		background: black;	
-		position: fixed; /*header zafiksowany do belki górnej przy przewijaniu ekranu w dół*/
+		position: fixed; 		/*header zafiksowany do belki górnej przy przewijaniu ekranu w dół*/
 		z-index: 100;
 		border-bottom: red 4px solid;
 		overflow: hidden;
 		box-sizing: border-box;
-		transition: all .4s; 
-		/* transition daje efekt zmniejszania wysokosci się nawigacji podczas scrolowania myszki w dół
-		obsługa w JS w funkcji scrollPage()*/
+		transition: all .4s;	/* transition daje efekt zmniejszania wysokosci się nawigacji podczas scrolowania myszki w dół
+									obsługa w JS w funkcji scrollPage()*/
 	}
 header nav {
 		height: 100px;
@@ -333,6 +332,7 @@ header ul li a {
 .videoBoxes:hover i {
 		display: inline-block;
 		opacity: 1;
+		color: black;
 	}
 .videoBoxes:hover {
 		opacity: 1; 
@@ -342,23 +342,15 @@ header ul li a {
 	}
 .videoBoxes i {
 		/*display: none;*/
-		background: white;
-		width: 60px;
-		height: 60px;
-		border-radius: 50%;
-		color: black;		
-
 		position: absolute;
 		top: 45%;
 		left: 50%;
 		-webkit-transform: translate(-50%,-50%);
 		transform: translate(-50%,-50%);
-		border: 2px solid white;
-		
 		opacity: .5;
 		cursor: pointer;
-		font-size: 7.5rem;
-		/*text-align: center;*/
+		font-size: 5rem;
+		color: white;		
 	}
 /* pozycjonowanie trójkata symbolizującego klawisz Play */
 .fa-play-circle:before{
@@ -406,18 +398,10 @@ header ul li a {
 	font-weight: 400;
 }
 
-.videoBoxes i {
-	font-size: 1.5rem;
-}
-
 /* dla mniejszych rozdzielczości scrool na dół jest zbedny */
 #scrollDown {
 	display: none;
 }
-
-/*.videoBoxes img  {
-	height: 23vw;
-}*/
 }
 @media (max-width: 1024px){
 /* ======== MEDIA QUERIES 1024PX =======*/
@@ -503,21 +487,9 @@ header ul li:hover a {
 	font-size: 1rem;
 }
 
-.videoBoxes i {
-	left: 25%;
-	width: 55%;
-	height: 5vw;
-	line-height: 4.5vw;
-	font-size: 1.2rem;
-}
-
 #videoSection {
 	top: 0px;
 }
-
-/*.videoBoxes img  {
-	height: 31vw;
-}*/
 }
 @media (max-width: 768px){
 /* ======== MEDIA QUERIES 768PX =======*/
@@ -569,18 +541,6 @@ header ul li {
 	height: 45vw;
 	width: 29%;
 }
-
-.videoBoxes i {
-	font-size: 1.2rem;
-	height: 6vw;
-	line-height: 6vw;
-	width: 60%;
-	left: 20%;
-}
-
-/*.videoBoxes img  {
-	height: 41vw;
-}*/
 }
 @media (max-width: 480px){
 
@@ -652,11 +612,6 @@ header ul {
  	top: 5px;
 }
 
-/*#heroImage {
-	width: 100%;
-	padding: 15px 0;
-}*/
-
 .descriptionBox h1 {
 	font-size: 2rem;
 }
@@ -685,20 +640,9 @@ header ul {
 
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
-.videoBoxes  {
+.videoBoxes {
 	height: 72vw;
 	width: 46%;
-}
-
-.videoBoxes i {
-	left: 25%;
-	width: 50%;
-	height: 9vw;
-	line-height: 8vw;
-}
-
-.videoBoxes img  {
-	/*height: 62.5vw;*/
 }
 }
 @media (max-width: 350px){

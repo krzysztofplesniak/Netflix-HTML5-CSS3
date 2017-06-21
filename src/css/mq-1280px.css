@@ -34,15 +34,7 @@ header ul li a {
 	font-weight: 400;
 }
 
-.videoBoxes i {
-	font-size: 1.5rem;
-}
-
 /* dla mniejszych rozdzielczości scrool na dół jest zbedny */
 #scrollDown {
 	display: none;
 }
-
-/*.videoBoxes img  {
-	height: 23vw;
-}*/

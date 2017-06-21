@@ -66,11 +66,6 @@ header ul {
  	top: 5px;
 }
 
-/*#heroImage {
-	width: 100%;
-	padding: 15px 0;
-}*/
-
 .descriptionBox h1 {
 	font-size: 2rem;
 }
@@ -99,18 +94,7 @@ header ul {
 
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
-.videoBoxes  {
+.videoBoxes {
 	height: 72vw;
 	width: 46%;
-}
-
-.videoBoxes i {
-	left: 25%;
-	width: 50%;
-	height: 9vw;
-	line-height: 8vw;
-}
-
-.videoBoxes img  {
-	/*height: 62.5vw;*/
 }

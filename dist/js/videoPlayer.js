@@ -1,0 +1,1 @@
+window.addEventListener("load",function(){function o(o){var n;return n=Math.floor(14*Math.random()),console.log("2"+o),o[n]}function n(o){console.log("displayDescriptionBox "+o),$(".filmTitle").text("Netflix prezentuje: "+o.title)}!function(){var t;$.getJSON("src/omdb_id.json").then(function(e){console.log("1"),n(t=o(e))})}()});

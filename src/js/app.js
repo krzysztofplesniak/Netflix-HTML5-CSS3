@@ -33,6 +33,23 @@ window.addEventListener('load', function() {
 		showMoreText.style.display = 'none';
 	}	
 
+// Blok kodu zmiany wysokości headera po najechaniu myszką 
+	
+	header.addEventListener('mouseenter', headerExpand);   // złapanie zdarzenia polegającego na najechaniu i opuszczeniu hedera	
+	header.addEventListener('mouseleave', headerExpand);
+	
+	function headerExpand(e) {
+			pageWidth = window.outerWidth;
+		
+			if  ((e.type == 'mouseenter') && (pageWidth > 1300)) {
+					header.classList.add('headerBig');
+				}	
+				
+			if ((e.type == 'mouseleave') && (pageWidth > 1300)) {
+		   			header.classList.remove('headerBig');
+				}	
+	}
+
 // Blok kodu scrolowanie myszą = zwiększenie wysokości headera 
 	
 	// window.addEventListener('scroll', scrollPage);
@@ -52,24 +69,6 @@ window.addEventListener('load', function() {
 	// 		}
 	// 	}
 	// }	
-
-// Blok kodu zmiany wysokości headera po najechaniu myszką 
-	
-	header.addEventListener('mouseenter', headerExpand);   // złapanie zdarzenia polegającego na najechaniu i opuszczeniu hedera	
-	header.addEventListener('mouseleave', headerExpand);
-	
-	function headerExpand(e) {
-			pageWidth = window.outerWidth;
-		
-			if  ((e.type == 'mouseenter') && (pageWidth > 1300)) {
-					header.classList.add('headerBig');
-					console.log(0);
-				}	
-				
-			if ((e.type == 'mouseleave') && (pageWidth > 1300)) {
-		   			header.classList.remove('headerBig');
-				}	
-	}
 
 
 }); 

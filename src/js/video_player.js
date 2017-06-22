@@ -23,7 +23,7 @@ window.addEventListener('load', function() {
 		
 		var DescriptionPart1, DescriptionPart2, Title, Poster, Director, Genre, Year, Runtime;
 		
-		$.getJSON('http://www.omdbapi.com/?i='+ movieID +'&apikey=3a2d81a4')
+		$.getJSON('https://www.omdbapi.com/?i='+ movieID +'&apikey=3a2d81a4')
 			.then(function(data) {
 				Title = data.Title;
 				DescriptionPart1 = data.Plot; 	

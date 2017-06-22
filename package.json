@@ -41,6 +41,7 @@
     "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1",
     "jshit": "0.0.1",
+    "live-reload": "^1.1.0",
     "postcss-import": "^9.1.0",
     "postcss-nested": "^1.0.1",
     "postcss-simple-vars": "^3.1.0",

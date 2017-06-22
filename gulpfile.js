@@ -44,8 +44,12 @@ gulp.task('watch', function() {
 	// gdzie domyślnie działa  BrowserSync
 	browserSync.init({
 		notify: false,
-	 	server: {
-	 		baseDir: './'
+		server: {
+	 		baseDir: './',
+	 		middleware: function (req, res, next) {
+	            res.setHeader('Access-Control-Allow-Origin', '*');
+	            next();
+        	}
 	 	}
 	 });
 

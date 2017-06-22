@@ -26,8 +26,9 @@ window.addEventListener('load', function() {
 // Blok kodu obsługujacy anhora "Czytaj więcej"  
 
 	showMoreText.addEventListener('click', showTextDescription); // event nałsuchujący kliknięcia na klawisz 
- 															 //	"Czytaj więcej" który odsłoni część tekstu dla małych MQ 
+ 															     //	"Czytaj więcej" który odsłoni część tekstu dla małych MQ 
 	function showTextDescription() {
+		console.log(1);
 		hiddenText[0].style.display = 'inline-block';
 		hiddenText[1].style.display = 'inline-block';
 		showMoreText.style.display = 'none';

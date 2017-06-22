@@ -53,25 +53,36 @@
 	
 	<section id="heroImage">
 		<div class="container">
-			<div class="descriptionBox">		
-				<h1>Zobacz premiery filmowe</h1>
-				<h2>OGLĄDAJ WSZĘDZIE. ANULUJ W KAŻDEJ CHWILI</h2>
-				<h3 class="filmTitle"></h3>
-				<h3 class="filmDirector"></h3>
-				<h4 class="filmGenre"></h4>
-				<h4>Rok produkcji: <span class="filmYear"></span></h4>
-				<h4>Czas trwania: <span class="filmRuntime"></span></h4>
-				
-				
-				<p class="filmDescriptionP1"></p> 
-				<p class="showMoreText">Czytaj więcej</p>
-				<p class="hiddenText filmDescriptionP2"></p>
-				
+			<div class="descriptionBox">
 
-				<div class="btn1 button">Podgląd filmu</div>
-				<div class="btn2 button">Poster</div>
+				<div class="descriptionBoxDetail">
+					<h1>Zobacz premiery filmowe</h1>
+					<h2>OGLĄDAJ WSZĘDZIE. ANULUJ W KAŻDEJ CHWILI</h2>
+					<h3>Netflix prezentuje:  <span class="filmTitle"></span></h3>
+					<h3>Reżyser:  <span class="filmDirector"></span></h3>
+					<h4>Typ filmu:  <span class="filmGenre"></span></h4>
+					<h4>Rok produkcji:  <span class="filmYear"></span></h4>
+					<h4>Czas trwania:  <span class="filmRuntime"></span></h4>
+					
+					<div class="filmDescBox">
+						<p>Opis filmu: </p> 
+						<div class="filmDescriptionP1"></div>
+						<div class="filmDescriptionP2 hiddenText"></div>
+					</div> 
+					<p class="showMoreText">Czytaj więcej</p>
+				</div>		
+				
+				<img class="filmPoster">
+				<a href="http://www.gazeta.pl" id="watchMovie">
+					<div class="button btnWatchVideo">Podgląd filmu</div>
+				</a>
+				<a href="http://www.imdb.com" id="readAboutFilm">
+					<div class="button btnMoreAbout">Zobacz więcej...</div>
+				</a>
 			</div>	 
+
 		</div>
+
 		<video  id="videoBackground" 
 				loop>
 		   	<source src="dist/video/darkknight.mp4" type="video/mp4">
@@ -143,6 +154,7 @@
 		</div>	
 		
 	</div> 
+
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://vjs.zencdn.net/6.1.0/video.js"></script>
 	<script src="src/js/video_player.js"></script>

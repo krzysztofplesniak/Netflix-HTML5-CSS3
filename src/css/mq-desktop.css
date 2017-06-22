@@ -7,17 +7,19 @@
 		padding: 0px;
 		border: 0px;
 		color: white;
+		text-decoration: none;
 		font-size: 15px;
 		font-family: Helvetica, Arial, sans-serif;
 		box-sizing: border-box;
 	}
 
+	
 	.container {
 		width: 90%;
 		max-width: 1800px;
 		margin: 0 auto;
 		overflow: hidden;
-/*		border: 3px solid white;*/
+		/*border: 3px solid white;*/
 	}	
 
 	/* ======= sekcja Header z menu na górze i logo Netflixa */
@@ -198,14 +200,32 @@
 
 	.descriptionBox {
 		margin: 30px 0;
-		padding: 15px;
 		height: auto;
-		position: relative;
-		top: 0;
-		z-index: 2;	
 		background: black;	
 		opacity: 0.8;
 		overflow: hidden;
+		z-index: 2;	
+		position: relative;
+		top: 0;
+	}
+	
+	.descriptionBoxDetail {
+		border: 1px solid yellow;
+		width: 70%;
+		padding: 15px;
+	}
+	
+	.descriptionBox .filmPoster	{
+		width: 25%;
+		height: auto;
+		max-height: 500px; /*dzięki 4 wartością min i max Poster świetnie się skaluje i nie jest nigdy za mały i za duży */
+		min-width: 400px;
+		min-height: 300px;
+		min-width: 240px;
+		position: absolute;
+		top: 50%;
+		right: 2.5%;
+		transform: translateY(-50%);
 	}
 
 	.descriptionBox h1 {
@@ -226,25 +246,40 @@
 	.descriptionBox h3 {
 		font-size: 1.5rem;
 		font-weight: 200;
-		margin: 0 0 .2rem;
+		margin: .2rem 0;
 	}
 
 	.descriptionBox h4 {
 		font-size: 1.3rem;
-		font-weight: 400;
-		margin: 0 0 1.5rem;
+		font-weight: 200;
+		margin: 1rem 0 0;
 	}
-
-	.descriptionBox h4 span {
+	
+	.descriptionBox span {
 		color: red;
 		font-weight: 700;
+		font-size: 1.3rem;
+	}
+	
+	.descriptionBox .filmDescBox p {
+		font-size: 1.3rem;
+		font-weight: 200;
+		margin: 1.3rem 0;
 	}
 
-	.descriptionBox p {
+	/*niestety mus by bo jest gap jedna spacja miedzye dwoma tekstami */
+	.descriptionBox .filmDescBox {
+		font-size: 0;
+	}
+
+	.descriptionBox .filmDescriptionP1, 
+	.descriptionBox .filmDescriptionP2 {
+		color: white;
+		font-weight: 300;
 		font-family: 'Lato';
 		text-align: justify;
-		font-size: 1.2rem;
-		margin: .75rem 0;
+		font-size: 1.4rem;
+		display: inline;
 	}
 
 	.descriptionBox .showMoreText {
@@ -267,19 +302,19 @@
 		box-sizing: border-box;
 	}
 
-	.descriptionBox .btn1 {
+	.descriptionBox .btnWatchVideo {
 		background: rgba(255,255,255,0.25);
 	}
 
-	.descriptionBox .btn2 {
+	.descriptionBox .btnMoreAbout {
 		background: rgba(255,0,0,1);
 	}
 
-	.descriptionBox .btn1:hover {
+	.descriptionBox .btnWatchVideo:hover {
 		background: rgba(255,255,255,0.1);
 	}
 
-	.descriptionBox .btn2:hover {
+	.descriptionBox .btnMoreAbout:hover {
 		background: rgba(255,0,0,0.6);
 	}
 

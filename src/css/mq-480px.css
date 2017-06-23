@@ -94,10 +94,10 @@ header ul {
 
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
-.videoBoxes {
+.videoBox {
 	height: 72vw;
 	width: 46%;
 }
-.videoBoxes p {
+.videoBox p {
 	top: 93%;
 }

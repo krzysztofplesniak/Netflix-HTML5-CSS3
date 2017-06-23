@@ -1,95 +1,128 @@
 
 window.addEventListener('load', function() {
 	
-	// wysołanie bloku kodu do obsługi bazy OMDB 
+	//  wywołanie bloku kodu do obsługi video: 
+	//	1. randomMovies() - wylosowane jednego filmu, 
+	//	2. displayDescriptionBox() - odwołania do baza OMDB, 
+	//	3. displayVideoBoxes() - wyświetlenie danych filmów
+
 	initMovies();
 
-	// funkcja która wszystko spaja w całosc
 	function initMovies() {
 
 		var randomMovie;
-		// pobranie polecanych filmów które sa zaczytywane z lokalnego pliku JSON
+		// pobranie polecanych filmów, które są zaczytywane z lokalnego pliku JSON
   		$.getJSON('src/omdb_id.json')
 			.then(function(data) {
 				
-			    randomMovie = randomMovies(data.movies); 
-			   	displayDescriptionBox(randomMovie);
-				displayVideoBoxes(data.movies);
+			    randomMovie = randomMovies(data.movies);	// wylosowanie jednego filmu z sposród 20 z pliku JSON
+			   	displayDescriptionBox(randomMovie);			// wyświetlenie danych w HTML losowego filmu
+				displayVideoBoxes(data.movies);				// wysietlenie posterów i tytułów filmów w sekcji Videosection
 
-				// DO ZROBIENIA !!!!!!!!!!!! zabranie tego wylosowanego filmu z listy 
-
+				// !!! DO ZROBIENIA wykasowanie z tablicy wylosowanego filmu 
 			});
  		}	
 	
-	// pobranie reszty danych tj. tytuł, rok, reżyser itp... dla filmów z pliku JSON, na bazie zapytania do bazy OMDB z wykorzystaniem id zeskładowanego w plik
+	// pobranie rozszerzonej ilości danych o jednym filmie tj. tytuł, rok, reżyser,
+	// rok, aktorzy itp...na bazie zapytania do bazy OMDB z wykorzystaniem
+	// id z plik JSON
 	function getMoviesFromOMDB(movieID) {
 		
-		var DescriptionPart1, DescriptionPart2, Title, Poster, Director, Genre, Year, Runtime;
+		var MovieDetails = new Object();
 		
-		$.getJSON('https://www.omdbapi.com/?i='+ movieID +'&apikey=3a2d81a4')
-			.then(function(data) {
+		$.ajax({
+			url: 'https://www.omdbapi.com/?i='+ movieID +'&apikey=3a2d81a4',
+			type:'GET',
+        	dataType:'json',
+        	async: false,
+        	success: function(data){
+            	
+            	MovieDetails.Title = data.Title;
+				MovieDetails.DescriptionPart1 = data.Plot; 	
+				MovieDetails.Director = data.Director;			
+				MovieDetails.Genre = data.Genre;
+				MovieDetails.Year = data.Year;
+				MovieDetails.Runtime = data.Runtime;
+				MovieDetails.Poster = data.Poster;
+				MovieDetails.Writer = data.Writer;
+				MovieDetails.Actors = data.Actors;
+				MovieDetails.Awards = data.Awards;
+				MovieDetails.Rating = data.imdbRating;
 
-				Title = data.Title;
-				DescriptionPart1 = data.Plot; 	
-				Director = data.Director;			
-				Genre = data.Genre;
-				Year = data.Year;
-				Runtime = data.Runtime;
-				Poster = data.Poster;
+				if (MovieDetails.DescriptionPart1.length > 400) {
+						MovieDetails.DescriptionPart1 = data.Plot.slice(0,400);
+						MovieDetails.DescriptionPart2 = data.Plot.slice(400,data.Plot.length);
+				} 
+				else {
+						MovieDetails.DescriptionPart2 = '';
+				}
+				// console.log('OMDB ',data.Title);
+			}
+			
+        });
+		
+        return  MovieDetails; // przekazanie obiektu na zewnątrz danymi do wybranego filmem 
+			
+	}
+	
 
-				if (DescriptionPart1.length > 400) {
-						DescriptionPart1 = data.Plot.slice(0,400);
-						DescriptionPart2 = data.Plot.slice(400,data.Plot.length);
-					} 
-				else 
-					{
-						DescriptionPart2 = '';
-					}
+	// wyświetlenie jednego wybranego filmu w descirptionBOX 
+	function displayDescriptionBox(randomMovie) {
+			
+		// zapytanie AJAX'owe do bazy OMBd z użyciem unikalne ID filmu na bazie wylosowanego filmu.
+		// randomMovie ma jedną ze składowych randomMovieID, która jest unikalnym ID w bazie OMDb,
+		// wykorzystanym do odpytania bazy o więcej danych o tym filmie
 
-				$('.filmTitle').text(Title);
-				$('.filmDescriptionP1').text(DescriptionPart1);
-				$('.filmDescriptionP2').text(DescriptionPart2);
-			    $('.filmGenre').text(Genre);
-			    $('.filmDirector').text(Director);
-			    $('.filmYear').text(Year);
-			    $('.filmRuntime').text(Runtime);
-			    $('.filmPoster').attr('src', Poster);
-			    $('#readAboutFilm').attr('href', "http://www.imdb.com/title/"+ movieID +"/");
-			});	
+		var movieDetails = getMoviesFromOMDB(randomMovie.id);
+
+		// wklejenie w strukture HTML danych o wybranym losowym filmie
+		$('.filmTitle').text(movieDetails.Title);
+		$('.filmDescriptionP1').text(movieDetails.DescriptionPart1);
+		$('.filmDescriptionP2').text(movieDetails.DescriptionPart2);
+	    $('.filmGenre').text(movieDetails.Genre);
+	    $('.filmDirector').text(movieDetails.Director);
+	    $('.filmYear').text(movieDetails.Year);
+	    $('.filmRuntime').text(movieDetails.Runtime);
+		$('.filmWriter').text(movieDetails.Writer);
+		$('.filmActors').text(movieDetails.Actors);
+		$('.filmAwards').text(movieDetails.Awards);
+		$('.filmRating').text(movieDetails.Rating);
+		$('.filmPoster').attr('src',movieDetails.Poster);
+	    $('#readAboutFilm').attr('href', "http://www.imdb.com/title/"+ randomMovie.id +"/");
+	}
+	
+	// wyświetlenie pozostałych filmów w tzw. kafelkach videoBox,
+	// tytuł & poster ze zdjęciem z filmu
+	function displayVideoBoxes(movie) {
+		
+		var outputHtml, movieDetails;
+
+		for (i=0; i < movie.length; i++) {
+			movieDetails = getMoviesFromOMDB(movie[i].id);
+
+			outputHtml ="";
+			outputHtml += '<div class="videoBox">';
+			outputHtml += '<img src="'+ movieDetails.Poster +'">';
+			outputHtml += '<i class="fa fa-play-circle"></i>';
+			outputHtml += '<p>'+ movieDetails.Title +'</p>';
+			outputHtml += '</div>';
+
+			$('.videoBoxes').append(outputHtml);
+		
+			// console.log('DISPLAY ', i +' '+ movieDetails.Title);
+	
+		}
 	}
 
-	// wybranie losowo jednego filmu z listy 15 filmów 
+	// wybranie losowo jednego filmu z listy 20 filmów 
 	function randomMovies(movies) {
 	
-		var randomMovie = Math.floor(Math.random() * 15);
-	
-		// console.log('2 random' + movies[randomMovie]);
-		return movies[randomMovie];
-	}
-
-	// wyświetlenie jednego wybranego filmu w roszeszonym formacie w descirptionBOX 
-	function displayDescriptionBox(movie) {
-		
-		// console.log('displayDescriptionBox ' + movie.id);
-
-		$('.filmTitle').text('Netflix prezentuje: ' + movie.title);		
-
-		// zapytanie AJAX'owe do bazy OMBd na bazie randomMovie.id czyli unikalnego ID filmów
-		getMoviesFromOMDB(movie.id);
-	}
-	
-	// wyświetlenie pozostałych filmów w tzw. kafelkach videoBox, tj. tylko poster tytuł i po kliknięciu na kafelek film moze dzięki temu się wysietlic
-	function displayVideoBoxes(movies) {
-	
-		// console.log('displayVideoBoxes' + movies);
-
-		for (i=0; i< movies.length; i++) {
-			// console.log('film -> ', movies[i].title);
-		}
+		var randomMovie = Math.floor(Math.random() * 20);
+				
+		return movies[randomMovie];  // zwracany jest jeden filmów z listy 20 
 	}
 	
 });
-
 
 // var video = videojs('videoBackground');
 

@@ -24,12 +24,12 @@ header ul li a {
 	width: 200px;
 }
 
-.videoBoxes {
+.videoBox {
 	width: 16%;
 	height: 25.5vw;
 }
 
-.videoBoxes p {
+.videoBox p {
 	font-size: 1.1rem;	
 	font-weight: 400;
 }

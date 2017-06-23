@@ -12,8 +12,7 @@
 	</head>
 <body>
 	
-	<!--  sekcja Header menu lewe i prawe wraz z logo -->
-
+	<!--  sekcja Header: logo & menu -->
 	<header id="header">
 		<div class="container">
 			<nav id="navi">
@@ -21,7 +20,7 @@
 				<!-- grafika Netflixa CSS -->
 				<div id="logo"></div>	
 
-				<!-- ikona hamburger menu -->
+				<!-- ikona Hamburger-menu -->
 				<div class="hamburgerIcon">
 					<div class="iconBar first"></div>
 					<div class="iconBar second"></div>
@@ -29,7 +28,7 @@
 				</div>	
 				
 				<ul>
-					<!-- Pierwsza pozycja w menu "Szukaj"  -->
+					<!-- Pierwsza pozycja w menu input "Szukaj"  -->
 					<li class="menuSearch">
 						<div class="smallBox">
 							<i class="fa fa-search"></i>
@@ -49,8 +48,7 @@
 		</div>
 	</header>
 
-	<!--  sekcja Hero Image -->
-	
+	<!--  sekcja HeroImage: pokazanie szczegółowych danych o wybranym filmie -->
 	<section id="heroImage">
 		<div class="container">
 			<div class="descriptionBox">
@@ -58,12 +56,19 @@
 				<div class="descriptionBoxDetail">
 					<h1>Zobacz premiery filmowe</h1>
 					<h2>OGLĄDAJ WSZĘDZIE. ANULUJ W KAŻDEJ CHWILI</h2>
-					<h3>Netflix prezentuje:  <span class="filmTitle"></span></h3>
+
+					<h3>Netflix prezentuje:  <span class="filmTitle"></span></h3>  <!-- każdy element jest wypełniany przez funckję pobierajaca dane AJAXowe -->
+					<h3>Typ filmu:  <span class="filmGenre"></span></h3>
 					<h3>Reżyser:  <span class="filmDirector"></span></h3>
-					<h4>Typ filmu:  <span class="filmGenre"></span></h4>
+					<h3>Scenariusz:  <span class="filmWriter"></span></h3>
+					<h3>Aktorzy:  <span class="filmActors"></span></h3>
+
+					<h4>Nominacje & nagrody: <span class="filmAwards"></span></h4>
+					<h4>Rating & nagrody: <span class="filmRating"></span></h4>
 					<h4>Rok produkcji:  <span class="filmYear"></span></h4>
 					<h4>Czas trwania:  <span class="filmRuntime"></span></h4>
 					
+					<!-- opis filmu filmDescriptionP2 pojawia się dla małcyh ekranów	 -->
 					<div class="filmDescBox">
 						<p>Opis filmu: </p> 
 						<div class="filmDescriptionP1"></div>
@@ -72,24 +77,32 @@
 					<p class="showMoreText">Czytaj więcej</p>
 				</div>		
 				
-				<img class="filmPoster">
-				<a href="http://www.gazeta.pl" id="watchMovie">
+				<!-- Poster ze zdjęciem z filmu  -->
+				<div class="filmBox">
+					<img class="filmPoster">
+				</div>
+				
+				<!-- 2 buttony -->
+				<a href="http://www.gazeta.pl" id="watchMovie" target="_blank">
 					<div class="button btnWatchVideo">Podgląd filmu</div>
 				</a>
-				<a href="http://www.imdb.com" id="readAboutFilm">
+
+				<a href="http://www.imdb.com" id="readAboutFilm" target="_blank">
 					<div class="button btnMoreAbout">Zobacz więcej...</div>
 				</a>
 			</div>	 
 
 		</div>
-
+		
+		<!-- video w tle pod sekcja Descripyion/HeroImage -->
 		<video  id="videoBackground" 
-				loop>
+				loop
+			>
 		   	<source src="dist/video/darkknight.mp4" type="video/mp4">
 		</video>	
 	</section>
-	<!--  sekcja klawisza "Scroll Down" przewijającego do kafelek z filmami   -->
 
+	<!--  sekcja klawisza "ScrollDown" przewijającego do kafelek z filmami   -->
 	<section id="scrollDown">
 		<a href="#videoSection">
 			<i class="fa fa-angle-double-down"></i>
@@ -97,62 +110,12 @@
 		</a>	
 	</section>
 
-	<!--  sekcja VIDEO -> kafelki z filmami video  -->
-
+	<!--  sekcja videoSection z VIDEO kafelkami  -->
 	<div id="videoSection">
-		<div class="container">
-			<div class="videoBoxes">
-				<img src="dist/img/Witamy_na_hawajach.jpg">
-				<i class="fa fa-play-circle"></i>
-				<p>Witamy Na Hawajach</p>
-			</div>
-			<div class="videoBoxes">
-				<img src="dist/img/HowDoYouNow.jpg">
-				<i class="fa fa-play-circle"></i>
-				<p>Skąd wiesz?</p>	
-			</div>
-			<div class="videoBoxes">
-				<img src="dist/img/We_Were_Soldiers.jpg">
-				<i class="fa fa-play-circle"></i>
-				<p>Byliśmy żołnierzami</p>
-			</div>
-			<div class="videoBoxes">
-				<img src="dist/img/The_Siege_of_Jadotville.jpg">
-				<i class="fa fa-play-circle"></i>
-				<p>The Siege of Jadotville</p>
-			</div>
-			<div class="videoBoxes">
-				<img src="dist/img/TearsOfTheSun.jpg">
-				<i class="fa fa-play-circle"></i>
-				<p>Łzy słońca</p>
-			</div>
-			<div class="videoBoxes">
-				<img src="dist/img/W_dobrym_starym_stylu.jpg">
-				<i class="fa fa-play-circle"></i>
-				<p>W starym dobrym stylu</p>
-			</div>
-			<div class="videoBoxes">
-				<img src="dist/img/Orange_Is_the_New_Black.jpg">
-				<i class="fa fa-play-circle"></i>
-				<p>Orange Is the New Black</p>
-			</div>
-			<div class="videoBoxes">
-				<img src="dist/img/House_of_Cards.jpg">
-				<i class="fa fa-play-circle"></i>
-				<p>House of Cards</p>
-			</div>
-			<div class="videoBoxes">
-				<img src="dist/img/Timeless.jpg">
-				<i class="fa fa-play-circle"></i>
-				<p>Timeless</p>
-			</div>
-			<div class="videoBoxes">
-				<img src="dist/img/Stranger_Things.jpg">
-				<i class="fa fa-play-circle"></i>
-				<p>Stranger Things</p>
-			</div>
+		<div class="container videoBoxes">
+			<!-- tutaj wkładane są przez funckję displayVideoBoxes()
+			kafelki z video klasa "videoBox"  -->
 		</div>	
-		
 	</div> 
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

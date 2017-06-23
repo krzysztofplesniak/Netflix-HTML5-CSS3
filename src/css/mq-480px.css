@@ -72,7 +72,7 @@ header ul {
 
 .descriptionBox p {
 	margin: 15px 0 0 0;
-	font-size: 1rem;
+	font-size: 1.2rem;
 }
 
 .descriptionBox .showMoreText  {
@@ -98,6 +98,7 @@ header ul {
 	height: 72vw;
 	width: 46%;
 }
+
 .videoBox p {
 	top: 93%;
 }

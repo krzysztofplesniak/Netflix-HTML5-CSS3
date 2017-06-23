@@ -20,16 +20,16 @@ header ul li {
 }
 
 .descriptionBox h2 {
-	font-size: 1.25rem;
-	margin: .5rem 0 .5rem;
+	font-size: 1.5rem;
+	margin: 1rem 0;
 }
 
 .descriptionBox h3 {
-	font-size: 1rem;
+	font-size: 1.3rem;
 }
 
 .descriptionBox h4 {
-	font-size: 0.9rem;
+	font-size: 1.25rem;
 }
 
 .descriptionBox p {
@@ -43,7 +43,25 @@ header ul li {
 	margin: 1.5rem 2.5%;
 }
 
-.videoBoxes {
+.descriptionBoxDetail {
+	width: 100%;
+	padding: 15px;
+}
+
+.descriptionBox .filmBox {
+	width: 100%;
+	height: auto;
+	max-height: 300px; 
+	max-width: 200px;
+	min-height: 250px;
+	min-width: 167px;
+	position: relative;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.videoBox {
 	height: 46vw;
 	width: 29%;
 }

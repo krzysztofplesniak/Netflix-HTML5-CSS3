@@ -149,6 +149,10 @@ window.addEventListener('load', function() {
 });
 
 // var video = videojs('videoBackground');
+var video = document.getElementById('videoBackground');
+	video.addEventListener('loadstart',function(){
+		video.play();
+	},false);
 
 	// video.ready(function(){
 		 

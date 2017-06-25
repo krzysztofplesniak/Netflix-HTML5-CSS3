@@ -8,7 +8,8 @@ window.addEventListener('load', function() {
 		menuItems = document.querySelector('header ul'),  			// całe menu czyli hamburger icon i pozycje w menu
 		header = document.querySelector('header nav'),
 		showMoreText = document.querySelector('.showMoreText'), 
-		hiddenText = document.querySelectorAll('.hiddenText'); 
+		hiddenText = document.querySelector('.hiddenText');
+		
 
 	var pageY, pageWidth;
 	
@@ -23,16 +24,40 @@ window.addEventListener('load', function() {
 	});
 	
 
-// Blok kodu obsługujacy anhora "Czytaj więcej"  
+// Blok kodu obsługujacy kliknęcie w "Czytaj więcej"  
 
 	showMoreText.addEventListener('click', showTextDescription); // event nałsuchujący kliknięcia na klawisz 
  															     //	"Czytaj więcej" który odsłoni część tekstu dla małych MQ 
 	function showTextDescription() {
-		console.log(1);
-		hiddenText[0].style.display = 'inline-block';
-		hiddenText[1].style.display = 'inline-block';
-		showMoreText.style.display = 'none';
+		if (hiddenText.value !== 0) {
+			hiddenText.style.display = 'inline-block';
+			showMoreText.style.display = 'none';
+		}	
 	}	
+
+
+// Blok kodu obsługujący różne funkcje, gdy ekran się zmniejszy 
+	
+	window.addEventListener('resize', showTextReadMore); 
+ 	
+	function showTextReadMore() {
+		pageWidth = window.outerWidth;
+		
+	// chowanie napis u"Czytaj więcej"  
+		if ((pageWidth < 480) && (hiddenText.innerText.length === 0)) {
+				showMoreText.style.display = 'block';
+			}	
+	
+	// kontrola ilości,  Aby zawsze wyśietlała się pełna liczba video-kafelek w linii  
+
+		if ((pageWidth > 768) && (pageWidth < 1024)) {
+				var a = document.querySelector('.videoBox').offsetHeight;
+				var b = (6*a);
+				document.querySelector('#videoSection').style.height = b;
+				var c = document.querySelector('#videoSection').offsetHeight;
+				console.log(a,' ',b,' ',c);
+			}	
+	}
 
 // Blok kodu zmiany wysokości headera po najechaniu myszką 
 	

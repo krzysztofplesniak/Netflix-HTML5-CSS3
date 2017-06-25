@@ -15,6 +15,23 @@ header ul li {
  	margin-right: 5px;
 }
 
+.descriptionBoxDetail {
+	width: 100%;
+}
+
+.descriptionBox .filmBox {
+/*	width: 25%;
+	height: auto;*/
+	max-height: 350px; 
+	max-width: 236px;
+	min-height: 300px;
+	min-width: 202.5px;
+	position: relative;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
 .descriptionBox h1 {
 	font-size: 2.5rem;
 }
@@ -41,24 +58,6 @@ header ul li {
 	width: 45%;
 	padding: 1rem 0rem;
 	margin: 1.5rem 2.5%;
-}
-
-.descriptionBoxDetail {
-	width: 100%;
-	padding: 15px;
-}
-
-.descriptionBox .filmBox {
-	width: 100%;
-	height: auto;
-	max-height: 300px; 
-	max-width: 200px;
-	min-height: 250px;
-	min-width: 167px;
-	position: relative;
-	top: 10px;
-	left: 50%;
-	transform: translateX(-50%);
 }
 
 .videoBox {

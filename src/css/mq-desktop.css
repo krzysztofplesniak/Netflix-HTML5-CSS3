@@ -235,7 +235,7 @@
 		top: 50%;
 		right: 2.5%;
 		transform: translateY(-50%);
-		background: url(../img/favicon.png) no-repeat; 
+		background: url(../img/favicon.png) no-repeat center; 
 		background-size: cover;
 	}
 
@@ -379,6 +379,7 @@
 		background: black;	
 		position: relative;
 		top: 110px;
+		overflow: hidden;
 	}
 
 	.videoBox {

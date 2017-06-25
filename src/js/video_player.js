@@ -4,9 +4,10 @@ window.addEventListener('load', function() {
 	//  wywołanie bloku kodu do obsługi video: 
 	//	1. randomMovies() - wylosowane jednego filmu, 
 	//	2. displayDescriptionBox() - odwołania do baza OMDB, 
-	//	3. displayVideoBoxes() - wyświetlenie danych filmów
+	//	3. displayVideoBoxes() - wyświetlenie danych filmów,
 
 	initMovies();
+	eventListenerVideoBox();
 
 	function initMovies() {
 
@@ -14,7 +15,7 @@ window.addEventListener('load', function() {
 		// pobranie polecanych filmów, które są zaczytywane z lokalnego pliku JSON
   		$.getJSON('src/omdb_id.json')
 			.then(function(data) {
-				
+
 			    randomMovie = randomMovies(data.movies);	// wylosowanie jednego filmu z sposród 20 z pliku JSON
 			   	displayDescriptionBox(randomMovie);			// wyświetlenie danych w HTML losowego filmu
 				displayVideoBoxes(data.movies);				// wysietlenie posterów i tytułów filmów w sekcji Videosection
@@ -96,11 +97,14 @@ window.addEventListener('load', function() {
 	function displayVideoBoxes(movie) {
 		
 		var outputHtml, movieDetails;
-
+	
 		for (i=0; i < movie.length; i++) {
+			
+			// pobranie rozszerzonych danych o filmie z zewnetrznej bazy OMDb 
+			// w zmnienniej movie są tylko podstawowe dane tj. url, id, poster, tytuł i opis
 			movieDetails = getMoviesFromOMDB(movie[i].id);
-
-			outputHtml ="";
+		
+			outputHtml = '';
 			outputHtml += '<div class="videoBox">';
 			outputHtml += '<img src="'+ movieDetails.Poster +'">';
 			outputHtml += '<i class="fa fa-play-circle"></i>';
@@ -110,7 +114,7 @@ window.addEventListener('load', function() {
 			$('.videoBoxes').append(outputHtml);
 		
 			// console.log('DISPLAY ', i +' '+ movieDetails.Title);
-	
+		
 		}
 	}
 
@@ -118,10 +122,30 @@ window.addEventListener('load', function() {
 	function randomMovies(movies) {
 	
 		var randomMovie = Math.floor(Math.random() * 20);
-				
+		// console.log('randomMovie ', i +' '+ movieDetails.Title);		
 		return movies[randomMovie];  // zwracany jest jeden filmów z listy 20 
 	}
+
+	// funkcja obsługująca nasłuch na kliknięcie kafelka filmem 
+	function eventListenerVideoBox () {
+		console.log('eventListenerVideoBox');
+        // eventy na kaflach 
+		// event na Szukaj
+		// event na buttonie "Pokaż film" 
+
+		searchInput();
+		displayMovie(filmURL);
+	}
 	
+	// modal wyświetleniem z traialem filmu
+	function displayMovie(movieUrl) {
+		console.log('displayMovie', movieUrl);
+	}
+	
+	// obsługa klawisza "Szukaj"
+	function searchInput() {
+		console.log('searchInput');
+	}
 });
 
 // var video = videojs('videoBackground');

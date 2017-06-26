@@ -30,13 +30,16 @@
 				<ul>
 					<!-- Pierwsza pozycja w menu input "Szukaj"  -->
 					<li class="menuSearch">
+
 						<div class="smallBox">
 							<i class="fa fa-search"></i>
 							<span class="smallBoxInput">Szukaj</span>
 						</div> 
+						
 						 <!-- Po najechaniu myszką pojawia się inny napis "Wpisz film"  
 						 Rozsuwa się obwódka wokół napisu w lewo   -->
-						<div class="expandedBox">Wpisz film</div>
+						<input class="expandedBox" type="text" value="Wpisz film">
+
 					</li>
 					<li><a href="#">Przeglądaj</a></li>
 					<li><a href="#">Dzieci</a></li>	
@@ -95,13 +98,10 @@
 		</div>
 		
 		<!-- video w tle pod sekcja Descripyion/HeroImage -->
-		<video  id="videoBackground" loop>
-		   	<!-- <source src="dist/video/darkknight.mp4" type="video/mp4"> -->
+		<video id="videoBackground" poster="">
+			<source src="" type="video/mp4">
+	   	</video>	
 
-		   	<source src="http://mirror.cessen.com/blender.org/peach/trailer/trailer_iphone.m4v">
-			<!-- <source src="http://dl1.webmfiles.org/big-buck-bunny_trailer.webm" type="video/webm">
-			<source src="http://download.blender.org/peach/trailer/trailer_1080p.ogg" type="video/ogg"> -->
-		</video>	
 	</section>
 
 	<!--  sekcja klawisza "ScrollDown" przewijającego do kafelek z filmami   -->

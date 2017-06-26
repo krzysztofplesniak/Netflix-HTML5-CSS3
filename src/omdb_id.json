@@ -1,129 +1,124 @@
 	{
 		"movies": [
 					{
+						"title": "Nietykalni",
+						"id": "tt1675434",
+						"url": "https://www.cda.pl/video/91392510",
+						"description": "In Paris, the aristocratic and intellectual Philippe is a quadriplegic millionaire who is interviewing candidates for the position of his carer, with his red-haired secretary Magalie. Out of the blue, the rude African Driss cuts the line of candidates and brings a document from the Social Security and asks Phillipe to sign it to prove that he is seeking a job position so he can receive his unemployment benefit. Philippe challenges Driss, offering him a trial period of one month to gain experience helping him. Then Driss can decide whether he would like to stay with him or not. Driss accepts the challenge and moves to the mansion, changing the boring life of Phillipe and his employees."
+					},
+					{
+						"title": "Zycie jest piekne",
+						"id": "tt0118799",
+						"url": "https://www.cda.pl/video/6329669",
+						"description": "In 1930s Italy, a carefree Jewish book keeper named Guido starts a fairy tale life by courting and marrying a lovely woman from a nearby city. Guido and his wife have a son and live happily together until the occupation of Italy by German forces. In an attempt to hold his family together and help his son survive the horrors of a Jewish Concentration Camp, Guido imagines that the Holocaust is a game and that the grand prize for winning is a tank."
+					},
+					{
 						"title": "Witamy na Hawajach",
 						"id": "tt1243974",
-						"url": "http://www.imdb.com/video/imdb/vi1661251097/imdb/single?format=720p",
+						"url": "http://www.imdb.com/video/imdb/vi1661251097/imdb/single?format=720p&autoplay=true",
 						"description": "A celebrated military contractor returns to the site of his greatest career triumphs - the US Space program in Honolulu, Hawaii - and reconnects with a long-ago love while unexpectedly falling for the hard-charging Air Force watchdog assigned to him."
 					},
 					{
 						"title": "Skąd wiesz?",
 						"id": "tt1341188",
-						"url": "http://www.imdb.com/video/imdb/vi3436250649/imdb/single?format=720p",
+						"url": "http://www.imdb.com/video/imdb/vi3436250649/imdb/single?format=720p&autoplay=true",
 						"description": "Star softball player, Lisa, has just been cut from the national team; Scholarly business man, George, has just been indicted from his father's company. With everything that they know in their lives taken from them, Lisa and George attempt to find romance. Lisa's potential boyfriend, Matty, however, is as clueless and perpetually single as they come, and George's girlfriend just dumped him. A chance hook-up through mutual friends, Lisa and George may be able to form a friendship, or more, that can help them climb out of the piles of lemons that life has handed to them."
 					},
 					{
 						"title": "Matrix",
 						"id": "tt0133093",
-						"url": "http://www.imdb.com/video/imdb/vi1032782617/imdb/single",
+						"url": "http://www.imdb.com/video/imdb/vi1032782617/imdb/single&autoplay=true",
 						"description": "Thomas A. Anderson is a man living two lives. By day he is an average computer programmer and by night a hacker known as Neo. Neo has always questioned his reality, but the truth is far beyond his imagination. Neo finds himself targeted by the police when he is contacted by Morpheus, a legendary computer hacker branded a terrorist by the government. Morpheus awakens Neo to the real world, a ravaged wasteland where most of humanity have been captured by a race of machines that live off of the humans' body heat and electrochemical energy and who imprison their minds within an artificial reality known as the Matrix. As a rebel against the machines, Neo must return to the Matrix and confront the agents: super-powerful computer programs devoted to snuffing out Neo and the entire human rebellion"
-					},
-					{
-						"title": "Zycie jest piekne",
-						"id": "tt0118799",
-						"url": "",
-						"description": "In 1930s Italy, a carefree Jewish book keeper named Guido starts a fairy tale life by courting and marrying a lovely woman from a nearby city. Guido and his wife have a son and live happily together until the occupation of Italy by German forces. In an attempt to hold his family together and help his son survive the horrors of a Jewish Concentration Camp, Guido imagines that the Holocaust is a game and that the grand prize for winning is a tank."
 					},
 					{
 						"title": "Interstellar",
 						"id": "tt0816692",
-						"url": "http://www.imdb.com/video/imdb/vi1586278169/imdb/single?format=720p",
+						"url": "http://www.imdb.com/video/imdb/vi1586278169/imdb/single?format=720p&autoplay=true",
 						"description": "Earth's future has been riddled by disasters, famines, and droughts. There is only one way to ensure mankind's survival: Interstellar travel. A newly discovered wormhole in the far reaches of our solar system allows a team of astronauts to go where no man has gone before, a planet that may have the right environment to sustain human life."
 					},
 					{
 						"title": "W starym dobrym stylu",
 						"id": "tt2568862",
-						"url": "http://www.imdb.com/video/imdb/vi1590670873/imdb/single?format=1080p",
+						"url": "http://www.imdb.com/video/imdb/vi1590670873/imdb/single?format=1080p&autoplay=true",
 						"description": "A reboot of the 1979 movie that was directed by Martin Brest and featured George Burns, Art Carney, and Lee Strasberg. Three seniors, who are living social security check to check and even reduced to eating dog food at times, decide they have had enough. So, they plan to rob a bank...problem is, they don't even know how to handle a gun! A social commentary on growing old in America and what we are sometimes driven to, due to circumstances."
 					},
 					{
 						"title": "Orange Is the New Black",
 						"id": "tt2372162",
-						"url": "http://www.imdb.com/video/imdb/vi1251522841/imdb/single?format=720p",
-						"description": "Convicted of a decade old crime of transporting drug money to an ex-girlfriend, normally law abiding Piper Chapman is sentenced to a year and a half behind bars to face the reality of how life changing prison can really be.",
-	"simplePlot": "Convicted of a decade old crime of transporting drug money to an ex-girlfriend, normally law abiding Piper Chapman is sentenced to a year and a half behind bars to face the reality of how life changing prison can really be."
+						"url": "http://www.imdb.com/video/imdb/vi1251522841/imdb/single?format=720p&autoplay=true",
+						"description": "Convicted of a decade old crime of transporting drug money to an ex-girlfriend, normally law abiding Piper Chapman is sentenced to a year and a half behind bars to face the reality of how life changing prison can really be."
 					},
 					{
 						"title": "House of Cards",
 						"id": "tt1856010",
-						"url": "http://www.imdb.com/video/imdb/vi128891161/imdb/single?format=720p",
-						"description": "Majority House Whip Francis Underwood takes you on a long journey as he exacts his vengeance on those he feels wronged him - that is, his own cabinet members including the President of the United States himself. Dashing, cunning, methodical and vicious, Frank Underwood along with his equally manipulative yet ambiguous wife, Claire take Washington by storm through climbing the hierarchical ladder to power in this Americanized recreation of the BBC series of the same name.",
-	"simplePlot": "A Congressman works with his equally conniving wife to exact revenge on the people who betrayed him."
+						"url": "http://www.imdb.com/video/imdb/vi128891161/imdb/single?format=720p&autoplay=true",
+						"description": "Majority House Whip Francis Underwood takes you on a long journey as he exacts his vengeance on those he feels wronged him - that is, his own cabinet members including the President of the United States himself. Dashing, cunning, methodical and vicious, Frank Underwood along with his equally manipulative yet ambiguous wife, Claire take Washington by storm through climbing the hierarchical ladder to power in this Americanized recreation of the BBC series of the same name."
 					},
 					{
 						"title": "Timeless",
 						"id": "tt5511582",
-						"url": "http://www.imdb.com/video/imdb/vi599504409/imdb/single?format=720p",
+						"url": "http://www.imdb.com/video/imdb/vi599504409/imdb/single?format=720p&autoplay=true",
 						"description": "An unlikely trio travel through time in order to battle unknown criminals and protect history as we know it."
 					},
 					{
 						"title": "Stranger Things",
 						"id": "tt4574334",
-						"url": "http://www.imdb.com/video/imdb/vi1678292505/imdb/single?format=1080p",
+						"url": "http://www.imdb.com/video/imdb/vi1678292505/imdb/single?format=1080p&autoplay=true",
 						"description": "In a small town where everyone knows everyone, a peculiar incident starts a chain of events that leads to the disappearance of a child - which begins to tear at the fabric of an otherwise peaceful community. Dark government agencies and seemingly malevolent supernatural forces converge on the town while a few locals begin to understand that there's more going on than meets the eye"
 					},
 					{
 						"title": "Władca pierścieni: Powrót króla",
 						"id": "tt0167260",
-						"url": "http://www.imdb.com/video/imdb/vi2073101337/imdb/single?format=720p",
+						"url": "http://www.imdb.com/video/imdb/vi2073101337/imdb/single?format=720p&autoplay=true",
 						"description": "The final confrontation between the forces of good and evil fighting for control of the future of Middle-earth. Hobbits: Frodo and Sam reach Mordor in their quest to destroy the \"one ring\", while Aragorn leads the forces of good against Sauron's evil army at the stone city of Minas Tirith."
 					},
 					{
 						"title": "Linia życia (Flatliners)",
 						"id": "tt2039338",
-						"url": "http://www.imdb.com/video/imdb/vi1591982361/imdb/single?format=1080p",
+						"url": "http://www.imdb.com/video/imdb/vi1591982361/imdb/single?format=1080p&autoplay=true",
 						"description": "Medical students experiment on \"near death\" experiences that involve past tragedies until the dark consequences begin to jeopardize their lives."
 					},
 					{
 						"title": "Happy Death Day",
 						"id": "tt5308322",
-						"url": "http://www.imdb.com/video/imdb/vi468105497/imdb/single?format=1080p",
+						"url": "http://www.imdb.com/video/imdb/vi468105497/imdb/single?format=1080p&autoplay=true",
 						"description": "Teen must relive the same day over and over again until she figures out who is trying to kill her and why."
 					},
 					{
 						"title": "Transparent",
 						"id": "tt3502262",
-						"url": "http://www.imdb.com/video/imdb/vi4054363929/imdb/single?format=720p",
+						"url": "http://www.imdb.com/video/imdb/vi4054363929/imdb/single?format=720p&autoplay=true",
 						"description": "An L.A. family with serious boundary issues have their past and future unravel when a dramatic admission causes everyone's secrets to spill out."
 					},
 					{
 						"title": "Incepcja",
 						"id": "tt1375666",
-						"url": "http://www.imdb.com/video/imdb/vi4219471385/imdb/single?format=720p",
+						"url": "http://www.imdb.com/video/imdb/vi4219471385/imdb/single?format=720p&autoplay=true",
 						"description": "Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable. Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible - inception. Instead of the perfect heist, Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea but to plant one. If they succeed, it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems to predict their every move. An enemy that only Cobb could have seen coming."
 					},
 					{
 						"title": "Milczenie owiec ",
 						"id": "tt0102926",
-						"url": "http://www.imdb.com/video/imdb/vi1140457753/imdb/single",
+						"url": "http://www.imdb.com/video/imdb/vi1140457753/imdb/single&autoplay=true",
 						"description": "FBI trainee Clarice Starling works hard to advance her career, including trying to hide or put behind her West Virginia roots, of which if some knew would automatically classify her as being backward or white trash. After graduation, she aspires to work in the agency's Behavioral Science Unit under the leadership of Jack Crawford. While she is still a trainee, Crawford does ask her to question Dr. Hannibal Lecter, a psychiatrist imprisoned thus far for eight years in maximum security isolation for being a serial killer, he who cannibalized his victims. Clarice is able to figure out the assignment is to pick Lecter's brains to help them solve another serial murder case, that of someone coined by the media as Buffalo Bill who has so far killed five victims, all located in the eastern US, all young women who are slightly overweight especially around the hips, all who were drowned in natural bodies of water, and all who were stripped of large swaths of skin. She also figures that Crawford..."
 					},
 					{
 						"title": "Pulp Fiction",
 						"id": "tt0110912",
-						"url": "http://www.imdb.com/video/imdb/vi2620371481/imdb/single?format=720p",
-						"description": "Jules Winnfield () and Vincent Vega () are two hit men who are out to retrieve a suitcase stolen from their employer, mob boss Marsellus Wallace (). Wallace has also asked Vincent to take his wife Mia () out a few days later when Wallace himself will be out of town. Butch Coolidge () is an aging boxer who is paid by Wallace to lose his fight. The lives of these seemingly unrelated people are woven together comprising of a series of funny, bizarre and uncalled-for incidents.",
-	"simplePlot": "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption."
+						"url": "http://www.imdb.com/video/imdb/vi2620371481/imdb/single?format=720p&autoplay=true",
+						"description": "Jules Winnfield () and Vincent Vega () are two hit men who are out to retrieve a suitcase stolen from their employer, mob boss Marsellus Wallace (). Wallace has also asked Vincent to take his wife Mia () out a few days later when Wallace himself will be out of town. Butch Coolidge () is an aging boxer who is paid by Wallace to lose his fight. The lives of these seemingly unrelated people are woven together comprising of a series of funny, bizarre and uncalled-for incidents."
 					},
 					{
 						"title": "Skazani na Shawshank",
 						"id": "tt0111161",
-						"url": "http://www.imdb.com/video/imdb/vi3877612057/imdb/single?format=SD",
-						"description": "Chronicles the experiences of a formerly successful banker as a prisoner in the gloomy jailhouse of Shawshank after being found guilty of a crime he did not commit. The film portrays the man's unique way of dealing with his new, torturous life; along the way he befriends a number of fellow prisoners, most notably a wise long-term inmate named Red.",
-	"simplePlot": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency"
+						"url": "http://www.imdb.com/video/imdb/vi3877612057/imdb/single?format=SD&autoplay=true",
+						"description": "Chronicles the experiences of a formerly successful banker as a prisoner in the gloomy jailhouse of Shawshank after being found guilty of a crime he did not commit. The film portrays the man's unique way of dealing with his new, torturous life; along the way he befriends a number of fellow prisoners, most notably a wise long-term inmate named Red."
 					},
 					{
 						"title": "Siedem (Se7en)",
 						"id": "tt0114369",
-						"url": "http://www.imdb.com/video/imdb/vi4135977241/imdb/single",
-						"description": "A film about two homicide detectives' ( and ( desperate hunt for a serial killer who justifies his crimes as absolution for the world's ignorance of the Seven Deadly Sins. The movie takes us from the tortured remains of one victim to the next as the sociopathic \"John Doe\" () sermonizes to Detectives Somerset and Mills -- one sin at a time. The sin of Gluttony comes first and the murderer's terrible capacity is graphically demonstrated in the dark and subdued tones characteristic of film noir. The seasoned and cultured but jaded Somerset researches the Seven Deadly Sins in an effort to understand the killer's modus operandi while the bright but green and impulsive Detective Mills (Pitt) scoffs at his efforts to get inside the mind of a killer...",
-	"simplePlot": "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives."
-					},
-					{
-						"title": "Nietykalni",
-						"id": "tt1675434",
-						"url": "",
-						"description": "In Paris, the aristocratic and intellectual Philippe is a quadriplegic millionaire who is interviewing candidates for the position of his carer, with his red-haired secretary Magalie. Out of the blue, the rude African Driss cuts the line of candidates and brings a document from the Social Security and asks Phillipe to sign it to prove that he is seeking a job position so he can receive his unemployment benefit. Philippe challenges Driss, offering him a trial period of one month to gain experience helping him. Then Driss can decide whether he would like to stay with him or not. Driss accepts the challenge and moves to the mansion, changing the boring life of Phillipe and his employees."
+						"url": "http://www.imdb.com/video/imdb/vi4135977241/imdb/single&autoplay=true",
+						"description": "A film about two homicide detectives' ( and ( desperate hunt for a serial killer who justifies his crimes as absolution for the world's ignorance of the Seven Deadly Sins. The movie takes us from the tortured remains of one victim to the next as the sociopathic \"John Doe\" () sermonizes to Detectives Somerset and Mills -- one sin at a time. The sin of Gluttony comes first and the murderer's terrible capacity is graphically demonstrated in the dark and subdued tones characteristic of film noir. The seasoned and cultured but jaded Somerset researches the Seven Deadly Sins in an effort to understand the killer's modus operandi while the bright but green and impulsive Detective Mills (Pitt) scoffs at his efforts to get inside the mind of a killer..."
 					}
 				]
 	}	

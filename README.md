@@ -2,13 +2,13 @@ Link do hostingu -> http://krzysztofplesniak.github.io
 
 Opis działania aplikacji 
 ---------------------------
-Aplikacja wyglądem przypominająca Netflix z użyciem HTML5, CSS3 i JS. Filmy zaciągane są z bazy OMDB/IMDB.  
-Filmy są losowo wybierane do pokazania w tle. Strona pokazuje zdjecia i opisy filmu za każdym razem inne. Zmiana losowa za każdym nowym otworzeniem sesji przeglądarki.  Aplikacja korzysta z pliku JSON, gdzie są zapisane dane do 20 filmów. 
-W pliku są obiekty, które zawierają ID, potrzebne do odpytania bazy w celu pobrania rozszerzonych danych tj. poster, url z trailerem, rok produkcji, aktorzy, reżyser, nagrody itp. 
-Trailery filmów można zobaczyć klikając na button "Podgląd filmu" (losowy film), lub wyszukując własny tutuł wpisujac go w polu input "Szukaj" w menu. Dodatkowo, można po naciśnięciu ikonki PLAY (lista z filmami na dole) zobaczyć inne domyślne proponowane filmy.
-Menu "Szukaj" podpowiada odnalezione w bazie OMDB tytuły filmów, dobrane do wpisywanego ciągu znaków. 
-Opis dokładny filmu wraz możliwością oglądania filmu jest realizowany w oknie typu modal (przyszłość). 
-Kontrola filmu spoczywa na biblotekach zewętrznych obsługujących tag <video> i wyświetląjących film w modalu (przyszłość).      
+- Aplikacja wyglądem przypominająca Netflix z użyciem HTML5, CSS3 i JS. Filmy zaciągane są z bazy OMDB/IMDB.  
+- Filmy są losowo wybierane do pokazania w tle. Strona pokazuje zdjecia i opisy filmu za każdym razem inne. Zmiana losowa za każdym nowym otworzeniem sesji przeglądarki.  Aplikacja korzysta z pliku JSON, gdzie są zapisane dane do 20 filmów. 
+- W pliku są obiekty, które zawierają ID, potrzebne do odpytania bazy w celu pobrania rozszerzonych danych tj. poster, url z trailerem, rok produkcji, aktorzy, reżyser, nagrody itp. 
+- Trailery filmów można zobaczyć klikając na button "Podgląd filmu" (losowy film), lub wyszukując własny tutuł wpisujac go w polu input "Szukaj" w menu. Dodatkowo, można po naciśnięciu ikonki PLAY (lista z filmami na dole) zobaczyć inne domyślne proponowane filmy.
+- Menu "Szukaj" podpowiada odnalezione w bazie OMDB tytuły filmów, dobrane do wpisywanego ciągu znaków. 
+- Opis dokładny filmu wraz możliwością oglądania filmu jest realizowany w oknie typu modal (przyszłość). 
+- Kontrola filmu spoczywa na biblotekach zewętrznych obsługujących tag <video> i wyświetląjących film w modalu (przyszłość).      
 
 
 Wykorzytane technologie: 

@@ -57,7 +57,7 @@ Sukcesywnie będę dodawał
 4. Ulepszona funcjonalnośc Inputu "Szukaj". Z każdym nowym wpisanym znakiem będzie powiązane odpytanie bazy i pokazywana będzie lista 5 filmów pasujących do słowa wpisanego.        
 5. Odtwarzanie video z trailerem filmu po naciśniecu klawisza PLAY. Do rozwiązania problem braku możliwości pokazania trailerów z uzyskanego URLa z bazy. On nie jest mp4 tylko linkime do serwisu IMDB Baza z filmami www.omdbapi.com, niestety Netflix nie udostepnia API) 
 6. Podstrona "Przeglądaj" i "Dzieci" - zaczytanie kilku filmów nowości lub tylko dla dzieci 
-7. Modal z logowaniem 
-      weryfikacja danych wpisywanych w fomularzu z wyrażeniami regularnymi
-      dane zapamiętywane przez przeglądarkę. Przy tworzeniu "usera" skrypy sprawdza, czy taki login lub email już wystepuje
+7. Modal z logowaniem:
+ - weryfikacja danych wpisywanych w fomularzu z wyrażeniami regularnymi
+ - dane zapamiętywane przez przeglądarkę. Przy tworzeniu "usera" skrypy sprawdza, czy taki login lub email już wystepuje
 

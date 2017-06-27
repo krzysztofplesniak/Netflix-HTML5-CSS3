@@ -53,12 +53,14 @@ Nauka wyniesiona z projektu na podstawie popełnionych błędów
  
 Sukcesywnie będę dodawał
 -------------------------
+1. Poprawa kodu AJAX'owego: dodanie obsługi blędów, poprawa callback heel, zamiana na promise lub modyfikacja callback'ów
+2. Modularyzacja JS: lepsza organizacja kodu poprzez likwidację powtórzeń, wydzielenie bloków kodu, kontrola scope itp.
 1. BEM i SASS dla lepszej organizacji i czytelności. Aby nie rozwalać projektu jeszcze nie przerobiłem jego z wykorzystaniem SASS'a i nie ponazywałem inaczej klas zgodnie z BEM. Mały projekt, a odczuwam już dyskomfort w tym spaghetii. 
 2. Podzielić projekt na pliki CSS, gdzie każdy będzie odpowiadał za jakiś fragment funcjonalny np. layout  osobo, moduły osobno. To razem z  BEM i z SASS jest całkiem ciekawe podeście, ale też rozwali projekt zanim to przerobię.     
 3. Zapytania Ajaxsowe do bazy OMDB z wykorzystanime dedykowanej bibloteki https://www.npmjs.com/package/omdb
-4. Ulepszona funcjonalnośc Inputu "Szukaj". Z każdym nowym wpisanym znakiem będzie powiązane odpytanie bazy i pokazywana będzie lista 5 filmów pasujących do słowa wpisanego.        
-5. Odtwarzanie video z trailerem filmu po naciśniecu klawisza PLAY. Do rozwiązania problem braku możliwości pokazania trailerów z uzyskanego URLa z bazy. On nie jest mp4 tylko linkime do serwisu IMDB Baza z filmami www.omdbapi.com, niestety Netflix nie udostepnia API) 
-6. Podstrona "Przeglądaj" i "Dzieci" - zaczytanie kilku filmów nowości lub tylko dla dzieci 
+4. Ulepszona funcjonalność inputu "Szukaj". Z każdym nowym wpisanym znakiem będzie powiązane odpytanie bazy i pokazywana będzie lista 5 filmów pasujących do słowa wpisanego.        
+5. Odtwarzanie video z trailerem filmu po naciśniecu klawisza PLAY. Do rozwiązania problem braku możliwości pokazania trailerów z uzyskanego URL'a z bazy. On nie jest plikiem MP4, tylko linkiem do serwisu IMDB. Baza z filmami www.omdbapi.com, niestety nie ma takowego w API, aNetflix nie udostepnia wogóle API. 
+6. Podstrona "Przeglądaj" i "Dzieci" - zaczytanie kilku nowości filmowych lub filmów dedkowanych dla dzieci. 
 7. Modal z logowaniem:
  - weryfikacja danych wpisywanych w fomularzu z wyrażeniami regularnymi
  - dane zapamiętywane przez przeglądarkę. Przy tworzeniu "usera" skrypy sprawdza, czy taki login lub email już wystepuje

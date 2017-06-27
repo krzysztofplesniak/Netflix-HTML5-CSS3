@@ -35,7 +35,7 @@ Nauka wyniesiona z projektu na podstawie popełnionych błędów
  - Spojrzenie swieżym okiem na kod po czasie pozwala znacząco poprawić efektywności uprościć kod, 
  - Po czasie lepiej rozwiązałem problem centrowania elementu Ikony PLAY względem rodzica
 3. Używanie na codzień automatów korygujących składnię i wykrywających błędy: JS & MTML hinty z GULPEM
-  Prostę błedy jak niedomknięcie tagu />, błedna kolejność plików JS, nie skasowany komentarz */ w CSS, wykrycie znaku porównania == zamiast przypisania = itp 
+  - Prostę błedy jak: niedomknięcie tagu />, błędna kolejność plików JS, nie skasowany komentarz */ w CSS, wykrycie znaku porównania == zamiast przypisania = itp 
  - Inny przykład do zastosowanie dwóch prostych metod classList.add & classList.remove, które wydatnie zmniejszyły ilości kodu JS do obsługi MQ. 
  - Nie do przejścia był problem inline'jnowego wstawiania przez JS wartości, które później przeważają nad innymi wartościami wpisanymi bezśporednio w CSS.
 4. W projekcie wstępnie używałem zamienie margin i padding. Ale po czasie wyraźnie rozgraniczyłem ich użycie. Zamiast margin często lepszy pading. Przykładowo dla znacznika <a> w menu, jest teraz tylko padding i dodatkowo posiada on ceche elementu blokowego z 100% szerokoscią elementu rodzica.

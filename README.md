@@ -2,25 +2,26 @@ Link do hostingu -> http://krzysztofplesniak.github.io
 
 Opis działania aplikacji 
 ---------------------------
-- aplikacja wyglądem przypominająca Netflix z użyciem HTML5, CSS3 i JS. Filmy zaciągane są z bazy OMDB/IMDB.  
+- aplikacja wyglądem przypominająca Netflix z użyciem HTML5, CSS3 i JS.
+- filmy zaciągane są z bazy OMDB/IMDB.  
 - filmy są losowo wybierane do pokazania w tle. 
-- strona pokazuje zdjecia i opisy filmu za każdym razem inne. Zmiana losowa za każdym nowym otworzeniem sesji przeglądarki. 
+- strona za każdym razem pokazuje inne zdjecia i opisy filmu. Zmiana losowa z każdą nową sesją przeglądarki. 
 - aplikacja korzysta z pliku JSON, gdzie są zapisane dane do 20 filmów (id, url, opis i tytuł). 
-- w pliku są obiekty, które zawierają ID, potrzebne do odpytania bazy w celu pobrania rozszerzonych danych tj. poster, url z trailerem, rok produkcji, aktorzy, reżyser, nagrody itp. 
+- w pliku są obiekty, które zawierają ID, potrzebne do odpytania bazy OMDb w celu pobrania rozszerzonych danych tj. poster, url z trailerem, rok produkcji, aktorzy, reżyser, nagrody itp. 
 - trailery filmów można zobaczyć klikając na button "Podgląd filmu" (losowy film), lub wyszukując własny tutuł wpisujac go w polu input "Szukaj" w menu. 
-- dodatkowo, można po naciśnięciu ikonki PLAY (lista z filmami na dole) zobaczyć inne domyślne proponowane filmy.
-- menu "Szukaj" podpowiada odnalezione w bazie OMDB tytuły filmów, dobrane do wpisywanego ciągu znaków. 
+- dodatkowo, można po naciśnięciu ikonki PLAY na liście z filmami na dole (kafelki), zobaczyć inne domyślne proponowane filmy.
+- menu "Szukaj" podpowiada odnalezione w bazie OMDB tytuły filmów, dobrane do wpisywanego ciągu znaków (allmost done). 
 - opis dokładny filmu wraz możliwością oglądania filmu jest realizowany w oknie typu modal (przyszłość). 
-- kontrola filmu spoczywa na biblotekach zewętrznych obsługujących tag <video> i wyświetląjących film w modalu (przyszłość).      
+- kontrola filmu spoczywa na biblotekach zewętrznych obsługujących tag <video> i wyświetlających film w modalu (przyszłość).      
 
 
 Wykorzytane technologie: 
 -------------------------
  - responsywność dla 6 stopni od 350px do 1280px dla trybu portrait i landscape.
- - JSON plik z ID filmów potrzebnytch do późniejszego odpytania bazy OMDb.
+ - JSON plik z ID filmów potrzebnych do późniejszego odpytania bazy OMDb.
  - Ajax'owe zapytania do bazy OMDb, za pomocą prywatnego api-key. 
  - GULP pluginy: poprawa kodu JSHint , HTMLHINT, minifikacja CSS i HTML, łączenia plików w jeden, tłumacz subkodu SASS oraz wiele innych, jednym słowem automatyzacje niezbędne dla FRONT-owca.   
- - bibloteki zewn. do wyśietlania video: Video.JS, Modal-Video-JS (przyszłość).
+ - bibloteki zewn. do wyświetlania video: Video.JS, Modal-Video-JS (przyszłość).
  - odpytanie bazy OMDb odbywa się za pomoca biblotek z NPM'a (przyszłość).
  
  

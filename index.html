@@ -86,7 +86,7 @@
 				</div>		
 						
 				<!-- 2 buttony -->
-				<a href="http://www.gazeta.pl" id="watchMovie" target="_blank">
+				<a href="http://github.com/krzysztofplesniak" id="watchMovie" target="_blank">
 					<div class="button btnWatchVideo">Podgląd filmu</div>
 				</a>
 
@@ -98,7 +98,7 @@
 		</div>
 		
 		<!-- video w tle pod sekcja Descripyion/HeroImage -->
-		<video id="videoBackground" poster="">
+		<video id="videoBackground" autoplay poster="">
 			<source src="" type="video/mp4">
 	   	</video>	
 
@@ -106,17 +106,23 @@
 
 	<!--  sekcja klawisza "ScrollDown" przewijającego do kafelek z filmami   -->
 	<section id="scrollDown">
-		<a href="#videoSection">
+		<div id="scrollDownBox">
+			<p>Zobacz najnowsze filmy</p>
 			<i class="fa fa-angle-double-down"></i>
-			<span>Zobacz najnowsze filmy</span>
-		</a>	
+		</div>	
 	</section>
 
 	<!--  sekcja videoSection z VIDEO kafelkami  -->
 	<div id="videoSection">
 		<div class="container videoBoxes">
-			<!-- tutaj wkładane są przez funckję displayVideoBoxes()
-			kafelki z video klasa "videoBox"  -->
+			<!-- tutaj  displayVideoBoxes() dodaje z video klasa "videoBox"  -->
+
+			<!-- TEMPLATE VideoBox 
+			    <div class="videoBox">
+				<img src="dist/img/Timeless.jpg">
+				<i class="fa fa-play-circle"></i>
+				<p>Timeless</p>
+			</div> -->
 		</div>	
 	</div> 
 

@@ -188,7 +188,7 @@ header ul li a {
 		margin: 30px 0;
 		height: auto;
 		background: black;	
-		opacity: 0.8;
+		opacity: .9;
 		overflow: hidden;
 		z-index: 2;	
 		position: relative;
@@ -200,11 +200,11 @@ header ul li a {
 	}
 .descriptionBoxDetail {
 		width: 70%;
-		padding: 15px;
+		padding: 35px;
 	}
 .descriptionBox .filmPoster	{
 		width: 100%;
-		height: 100%;
+		height: auto;
 	}
 .descriptionBox .filmBox {
 		width: 25%;
@@ -218,8 +218,7 @@ header ul li a {
 		right: 2.5%;
 		-webkit-transform: translateY(-50%);
 		transform: translateY(-50%);
-		background: url(../img/favicon.png) no-repeat center; 
-		background-size: cover;
+		
 	}
 .descriptionBox h1 {
 		font-size: 3rem;
@@ -302,43 +301,48 @@ header ul li a {
 	}
 /* =======   sekcja scrollDown icony z FontAwesome umieszczone na dole strony pierwszej */
 #scrollDown {
-		display: block;
+		/*display: block;*/
+		height: 100px; 
 		position: relative;
 		top: 110px;
 		background: black;	
-		text-align: center;
-		height: 80px; 
 	}
-#scrollDown a {
-		text-decoration: none;
+#scrollDownBox {
+		position: absolute;
+		left: 50%;
+		top: 10px;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		text-align: center;
+		cursor: pointer;
+		/*border: 2px solid red;*/
 	}
 #scrollDown i {
-		font-size: 450%;
-		margin-right: 20px; 
-		position: relative;
-	    -webkit-animation-name: arrow;
-	    animation-name: arrow;
+		display: inline-block;
+		width: 100%;
+		font-size: 400%;
+		-webkit-animation-name: arrow;
+		animation-name: arrow;
 	    -webkit-animation-duration: 2s;
 	    animation-duration: 2s;
 	    -webkit-animation-iteration-count: infinite;
 	    animation-iteration-count: infinite;
 	    -webkit-animation-timing-function: easy-in;
 	    animation-timing-function: easy-in;
+	    position: relative; /*dla keyferames niezbedne*/
 	}
 @-webkit-keyframes arrow {
-	    0%   {color:white; left:0px; top: -5px;}
-	    100% {color:red; left:0px; top: 10px;}
+	    0%   {color:white; left:0px; top: -10px;}
+	    100% {color:red; left:0px; top: 0px;}
 	}
 @keyframes arrow {
-	    0%   {color:white; left:0px; top: -5px;}
-	    100% {color:red; left:0px; top: 10px;}
+	    0%   {color:white; left:0px; top: -10px;}
+	    100% {color:red; left:0px; top: 0px;}
 	}
-#scrollDown span {
+#scrollDown p {
 		color: white;
 		font-size: 1.3rem;
-		position: relative;
-		top: -15px;
-		letter-spacing: 1.3px;
+		letter-spacing: 1.5px;
 	}
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 #videoSection {
@@ -360,11 +364,11 @@ header ul li a {
 		position: relative;  /* to jest dla klawisza PLAY w tagu "i"*/ 
 	}
 .videoBox img  {
+		height: 17.16vw;
 		width: 100%;
-		height: auto;
-		-o-object-fit: cover;
-		object-fit: cover;
 		border-radius: 7px; 
+		/*object-fit: cover;*/
+		/*border: 3px solid  red;*/
 	}
 .videoBox p {
 		width: 100%;
@@ -375,7 +379,7 @@ header ul li a {
 		font-size: 1.3rem;	
 		font-weight: 400;
 		position: absolute;
-		top: 91%;
+		top: 90%;
 		left: 50%;
 		-webkit-transform: translate(-50%,-50%);
 		transform: translate(-50%,-50%);
@@ -397,22 +401,20 @@ header ul li a {
 .videoBox i {
 		display: none;
 		position: absolute;
-		top: 45%;
+		top: 40%; /*dlaczego 40% a nie 50% bo pozycjonowane wzgledem elementu videBox a nie IMG a własnie nad IMG nma byc w połowie*/
 		left: 50%;
-		-webkit-transform: translate(-50%,-50%);
-		transform: translate(-50%,-50%);
-		opacity: .7;
+		-webkit-transform: translate(-50%,-40%);
+		transform: translate(-50%,-40%);
 		cursor: pointer;
 		font-size: 5rem;
 		color: white;		
 	}
 /* pozycjonowanie trójkata symbolizującego klawisz Play */
 .fa-play-circle:before{
-		position: absolute;
+		/*position: absolute;
 		top: 50%;
 		left: 50%;
-		-webkit-transform: translate(-50%,-50%);
-		transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);*/
 	}
 /* video-film w modalu */
 .showModal {

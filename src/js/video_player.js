@@ -265,6 +265,7 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 		});	
 	}
 
+
 	// var video = videojs('videoBackground');
 	// video.ready(function(){
 		 

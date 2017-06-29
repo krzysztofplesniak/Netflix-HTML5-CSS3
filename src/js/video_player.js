@@ -21,22 +21,27 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 	
 	
 	function initMovies() {
-		var randomMovie;
+		var randomMovie, movies;
 		// pobranie polecanych filmów, które są zaczytywane z lokalnego pliku JSON
   		$.getJSON('src/omdb_id.json')
-			.then(function(data) {
+			.then(function(response) {
 
 				//  wywołanie bloku kodu inicjacji video: 
-					
-			    randomMovie = randomMovies(data.movies);	// wylosowanie jednego filmu z sposród 20 z pliku JSON
-			   	displayDescriptionBox(randomMovie);			// wyświetlenie danych w HTML losowego filmu
-				displayVideoBoxes(data.movies);				// wysietlenie posterów i tytułów filmów w sekcji Videosection
+				moviesArray	= response.movies;
+			    randomMovie = randomMovies();						// wylosowanie jednego filmu z sposród 20 z pliku JSON
+			    // console.log('1 - > pierwsze wywołanie', moviesArray[randomMovie]);
+			   	displayDescriptionBox(moviesArray[randomMovie],'JSON');	// wyświetlenie danych losowego filmu w descriptionBox
+			   	displayVideoBoxes(moviesArray);						// wysietlenie posterów i tytułów filmów w sekcji Videosection
 
 				// !!! DO ZROBIENIA wykasowanie z tablicy wylosowanego filmu 
 			});
  		}	
 	
-	
+	// wybranie losowo jednego filmu z listy 20 filmów 
+	function randomMovies() {
+		return Math.floor(Math.random() * 20);  // zwracany jest wylosowany numer z zakresu
+	}
+
 	// pobranie rozszerzonej ilości danych o jednym filmie tj. tytuł, rok, reżyser,
 	// rok, aktorzy itp...na bazie zapytania do bazy OMDB z wykorzystaniem
 	// id z plik JSON
@@ -50,15 +55,14 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 		
 
 		if (type === 'ID') { 
-				request = '?i='
+				request = '?i=';
 			}
 		else if (type === 'Title') {
-				request = '?t='
+				request = '?t=';
 			}
 
 		requestURl = baseUrl + request + requestedData + apiKey;
-		console.log(requestURl);
-
+		
 		$.ajax({
 			url: requestURl,
 			type:'GET',
@@ -69,20 +73,23 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
         		}
         });
         
-        return movieDetails
+        return movieDetails;
     }
 
 	
 	// wyświetlenie jednego wybranego filmu w descirptionBOX 
-	function displayDescriptionBox(movieToDisplay) {
-	var movieDetails;
+	function displayDescriptionBox(movieToDisplay, source) {
+	
+		var movieDetails;
 
 		// zapytanie AJAX'owe do bazy OMBd z użyciem unikalne ID filmu na bazie wylosowanego filmu.
 		// randomMovie ma jedną ze składowych randomMovieID, która jest unikalnym ID w bazie OMDb,
 		// wykorzystanym do odpytania bazy o więcej danych o tym filmie
-
-		movieDetails = searchMovie('ID', movieToDisplay.id);
-
+		console.log('przed', movieToDisplay);
+		if (source === 'JSON') {movieDetails = searchMovie('ID', movieToDisplay.id);}
+		else if (source === 'OMDB') {movieDetails = searchMovie('ID', movieToDisplay.imdbID);}	
+		
+		console.log('po', movieDetails);
 		// wklejenie w HTML descriptionBox o wybranym losowym filmie
 
 		$('.filmTitle').text(movieDetails.Title);
@@ -152,11 +159,7 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 		
 	}
 
-	// wybranie losowo jednego filmu z listy 20 filmów 
-	function randomMovies(movies) {
-		return movies[Math.floor(Math.random() * 20)];  // zwracany jest jeden filmów z listy 20 
-	}
-
+	
 	// funkcja obsługująca nasłuch na elementy związane z Video 
 	function eventListenerVideoBox() {
 
@@ -215,7 +218,8 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 				
 		// wywołanie AJAX'owego zapytania do bazy 
     	movieDetails = searchMovie('Title', movieTitle);
-    	displayDescriptionBox(movieDetails);
+    	console.log('2 - > Search Input', movieDetails);
+    	displayDescriptionBox(movieDetails,'OMDB');
 		
 	}
 

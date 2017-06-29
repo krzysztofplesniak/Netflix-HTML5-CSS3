@@ -110,12 +110,13 @@ header ul li a {
 .menuSearch {
 		width: 150px;
 		margin: 0 5px;
+		cursor: pointer;
 	}
 /*najechanie myszą na input "Szukaj" */
-.mouseenter {   
+.mouseSearchClick {   
 		width: 300px;
 		border: 2px solid white;
-		transition: linear width .5s;
+		/*transition: linear width .5s;*/
 		box-sizing: border-box;
 	}
 .menuSearch .smallBox {
@@ -149,7 +150,8 @@ header ul li a {
 	    background: black;
 	    outline: none;
 	}
-/*.menuSearch:hover .smallBox{
+/*
+	.menuSearch:hover .smallBox{
 		display: none; 
 	}
 
@@ -162,7 +164,8 @@ header ul li a {
 		border: 2px solid white;
 		transition: linear width .5s;
 		box-sizing: border-box;
-	}*/
+	}
+	*/
 /* ======= sekcja HeroImage z dużą grafika w tle */
 #heroImage {
 		/*background: url(../img/background.jpg) no-repeat fixed 0px 70px; 
@@ -201,7 +204,8 @@ header ul li a {
 .descriptionBoxDetail {
 		width: 70%;
 		padding: 35px;
-		border: 1px solid yellow;
+/*		border: 1px solid yellow;*/
+
 	}
 .descriptionBox .filmPoster	{
 		width: 100%;
@@ -219,7 +223,7 @@ header ul li a {
 		right: 2.5%;
 		-webkit-transform: translateY(-50%);
 		transform: translateY(-50%);
-		border: 1px solid yellow;
+/*		border: 1px solid yellow;*/
 	}
 .descriptionBox h1 {
 		font-size: 3rem;

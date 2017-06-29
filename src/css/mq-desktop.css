@@ -126,13 +126,14 @@
 	.menuSearch {
 		width: 150px;
 		margin: 0 5px;
+		cursor: pointer;
 	}
 	
 	/*najechanie myszą na input "Szukaj" */
-	.mouseenter {   
+	.mouseSearchClick {   
 		width: 300px;
 		border: 2px solid white;
-		transition: linear width .5s;
+		/*transition: linear width .5s;*/
 		box-sizing: border-box;
 	}
 
@@ -171,7 +172,8 @@
 	    outline: none;
 	}
 
-	/*.menuSearch:hover .smallBox{
+	/*
+	.menuSearch:hover .smallBox{
 		display: none; 
 	}
 
@@ -184,7 +186,8 @@
 		border: 2px solid white;
 		transition: linear width .5s;
 		box-sizing: border-box;
-	}*/
+	}
+	*/
 
 
 	/* ======= sekcja HeroImage z dużą grafika w tle */
@@ -231,7 +234,8 @@
 	.descriptionBoxDetail {
 		width: 70%;
 		padding: 35px;
-		border: 1px solid yellow;
+/*		border: 1px solid yellow;*/
+
 	}
 	
 	.descriptionBox .filmPoster	{
@@ -250,7 +254,7 @@
 		top: 50%;
 		right: 2.5%;
 		transform: translateY(-50%);
-		border: 1px solid yellow;
+/*		border: 1px solid yellow;*/
 	}
 
 	.descriptionBox h1 {

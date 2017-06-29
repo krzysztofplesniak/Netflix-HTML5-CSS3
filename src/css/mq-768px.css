@@ -17,11 +17,11 @@ header ul li {
 
 .descriptionBoxDetail {
 	width: 100%;
+	padding: 15px;
 }
 
 .descriptionBox .filmBox {
-/*	width: 25%;
-	height: auto;*/
+    width: 100%;
 	max-height: 350px; 
 	max-width: 236px;
 	min-height: 300px;
@@ -64,3 +64,7 @@ header ul li {
 	height: 46vw;
 	width: 29%;
 }
+
+.videoBox img  {
+	height: 39.5vw;
+}	

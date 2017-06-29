@@ -95,6 +95,10 @@ header ul {
 	width: 46%;
 }
 
+.videoBox img  {
+	height: 63.25vw;
+}	
+
 .videoBox p {
 	top: 93%;
 }

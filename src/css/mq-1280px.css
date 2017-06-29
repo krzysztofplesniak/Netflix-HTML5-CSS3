@@ -29,6 +29,10 @@ header ul li a {
 	height: 25.5vw;
 }
 
+.videoBox img  {
+	height: 22vw;
+}	
+
 .videoBox p {
 	font-size: 1.1rem;	
 	font-weight: 400;

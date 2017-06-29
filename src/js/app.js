@@ -11,7 +11,7 @@ window.addEventListener('load', function() {
 		showMoreText = document.querySelector('.showMoreText'), 
 		hiddenText = document.querySelector('.hiddenText');
 	
-	var pageY, pageWidth;
+	var pageY, pageWidth, elementOffset;
 	
 // Icona hamburger-menu animowana 
     	
@@ -98,8 +98,11 @@ window.addEventListener('load', function() {
 
 	scrollDownBox.addEventListener('click', function() {
 		
+		pageWidth = window.outerWidth;
 		pageY = window.pageYOffset;
-		window.scrollBy(0, 760 - pageY); 
+		elementOffset = scrollDown.offsetTop;
+		
+		window.scrollBy(0, elementOffset - pageY - 105); 
 		// ten myk z odejmowaniem jest niezbedny, bo zależy mi na dokładnym pokazaniu sekcji VideoSection
 		// wycentrowanej pionowo bo gdy lekko przesunąc okno w dół i kolejno kliknąc w strzałkę to kafle będą ucinane 
 	});	

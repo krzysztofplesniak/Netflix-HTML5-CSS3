@@ -75,7 +75,12 @@ header ul li:hover a {
 .videoBox {
 	height: 33vw;
 	width: 21%;
+	margin: 2%;
 }
+
+.videoBox img  {
+	height: 28.8vw;
+}	
 
 .videoBox p {
 	font-size: 1rem;

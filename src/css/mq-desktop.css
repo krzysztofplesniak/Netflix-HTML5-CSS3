@@ -231,6 +231,7 @@
 	.descriptionBoxDetail {
 		width: 70%;
 		padding: 35px;
+		border: 1px solid yellow;
 	}
 	
 	.descriptionBox .filmPoster	{
@@ -239,7 +240,7 @@
 	}
 
 	.descriptionBox .filmBox {
-		width: 25%;
+		width: 30%;
 		height: auto;
 		max-height: 500px; /*dzięki 4 wartością min i max Poster świetnie się skaluje i nie jest nigdy za mały i za duży */
 		max-width: 335px;
@@ -249,7 +250,7 @@
 		top: 50%;
 		right: 2.5%;
 		transform: translateY(-50%);
-		
+		border: 1px solid yellow;
 	}
 
 	.descriptionBox h1 {
@@ -350,7 +351,7 @@
 
 	#scrollDown {
 		/*display: block;*/
-		height: 100px; 
+		height: 85px; 
 		position: relative;
 		top: 110px;
 		background: black;	
@@ -397,13 +398,14 @@
 		position: relative;
 		top: 110px;
 		overflow: hidden;
+/*		border: 1px solid yellow;*/
 	}
 
 	.videoBox {
 		float: left;  
 		height: 21vw;
 		width: 12.5%;
-		margin: 2%;
+		margin: 1% 2%;
 		opacity: 0.7; 
 		border-radius: 5px;
 		border-bottom: 3px solid red;
@@ -424,10 +426,10 @@
 		text-align: center;
 		font-family: 'Lato', sans-serif;
 		color: white; 
-		font-size: 1.3rem;	
+		font-size: 1.2rem;	
 		font-weight: 400;
 		position: absolute;
-		top: 90%;
+		top: 92%;
 		left: 50%;
 		transform: translate(-50%,-50%);
 		/*border: 1px solid yellow; */
@@ -451,23 +453,17 @@
 	}
 
 	.videoBox i {
-		display: none;
+		/*display: none;*/
 		position: absolute;
 		top: 40%; /*dlaczego 40% a nie 50% bo pozycjonowane wzgledem elementu videBox a nie IMG a własnie nad IMG nma byc w połowie*/
 		left: 50%;
 		transform: translate(-50%,-40%);
 		cursor: pointer;
 		font-size: 5rem;
-		color: white;		
+		color: white;	
+	
 	}
 
-	/* pozycjonowanie trójkata symbolizującego klawisz Play */
-	.fa-play-circle:before{
-		/*position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);*/
-	}
 	
 	/* video-film w modalu */
 	.showModal {

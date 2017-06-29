@@ -201,13 +201,14 @@ header ul li a {
 .descriptionBoxDetail {
 		width: 70%;
 		padding: 35px;
+		border: 1px solid yellow;
 	}
 .descriptionBox .filmPoster	{
 		width: 100%;
 		height: auto;
 	}
 .descriptionBox .filmBox {
-		width: 25%;
+		width: 30%;
 		height: auto;
 		max-height: 500px; /*dzięki 4 wartością min i max Poster świetnie się skaluje i nie jest nigdy za mały i za duży */
 		max-width: 335px;
@@ -218,7 +219,7 @@ header ul li a {
 		right: 2.5%;
 		-webkit-transform: translateY(-50%);
 		transform: translateY(-50%);
-		
+		border: 1px solid yellow;
 	}
 .descriptionBox h1 {
 		font-size: 3rem;
@@ -302,7 +303,7 @@ header ul li a {
 /* =======   sekcja scrollDown icony z FontAwesome umieszczone na dole strony pierwszej */
 #scrollDown {
 		/*display: block;*/
-		height: 100px; 
+		height: 85px; 
 		position: relative;
 		top: 110px;
 		background: black;	
@@ -352,12 +353,13 @@ header ul li a {
 		position: relative;
 		top: 110px;
 		overflow: hidden;
+/*		border: 1px solid yellow;*/
 	}
 .videoBox {
 		float: left;  
 		height: 21vw;
 		width: 12.5%;
-		margin: 2%;
+		margin: 1% 2%;
 		opacity: 0.7; 
 		border-radius: 5px;
 		border-bottom: 3px solid red;
@@ -376,10 +378,10 @@ header ul li a {
 		text-align: center;
 		font-family: 'Lato', sans-serif;
 		color: white; 
-		font-size: 1.3rem;	
+		font-size: 1.2rem;	
 		font-weight: 400;
 		position: absolute;
-		top: 90%;
+		top: 92%;
 		left: 50%;
 		-webkit-transform: translate(-50%,-50%);
 		transform: translate(-50%,-50%);
@@ -399,7 +401,7 @@ header ul li a {
 		font-size: 1.5rem;
 	}
 .videoBox i {
-		display: none;
+		/*display: none;*/
 		position: absolute;
 		top: 40%; /*dlaczego 40% a nie 50% bo pozycjonowane wzgledem elementu videBox a nie IMG a własnie nad IMG nma byc w połowie*/
 		left: 50%;
@@ -407,14 +409,8 @@ header ul li a {
 		transform: translate(-50%,-40%);
 		cursor: pointer;
 		font-size: 5rem;
-		color: white;		
-	}
-/* pozycjonowanie trójkata symbolizującego klawisz Play */
-.fa-play-circle:before{
-		/*position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);*/
+		color: white;	
+	
 	}
 /* video-film w modalu */
 .showModal {
@@ -458,6 +454,10 @@ header ul li a {
 	width: 16%;
 	height: 25.5vw;
 }
+
+.videoBox img  {
+	height: 22vw;
+}	
 
 .videoBox p {
 	font-size: 1.1rem;	
@@ -547,7 +547,12 @@ header ul li:hover a {
 .videoBox {
 	height: 33vw;
 	width: 21%;
+	margin: 2%;
 }
+
+.videoBox img  {
+	height: 28.8vw;
+}	
 
 .videoBox p {
 	font-size: 1rem;
@@ -577,11 +582,11 @@ header ul li {
 
 .descriptionBoxDetail {
 	width: 100%;
+	padding: 15px;
 }
 
 .descriptionBox .filmBox {
-/*	width: 25%;
-	height: auto;*/
+    width: 100%;
 	max-height: 350px; 
 	max-width: 236px;
 	min-height: 300px;
@@ -624,6 +629,10 @@ header ul li {
 .videoBox {
 	height: 46vw;
 	width: 29%;
+}
+
+.videoBox img  {
+	height: 39.5vw;
 }
 }
 @media (max-width: 480px){
@@ -724,6 +733,10 @@ header ul {
 	height: 72vw;
 	width: 46%;
 }
+
+.videoBox img  {
+	height: 63.25vw;
+}	
 
 .videoBox p {
 	top: 93%;

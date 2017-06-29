@@ -2,6 +2,7 @@
 window.addEventListener('load', function() {
 
 var btnWatchVideo = document.querySelector('.btnWatchVideo'),
+	btnShowIMDB = document.querySelector('.btnShowIMDB'),
 	menuSearch = document.querySelector('.menuSearch'),
 	expandedBox  = document.querySelector('.expandedBox'),
 	smallBox = document.querySelector('.smallBox');
@@ -103,7 +104,10 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 		$('.filmActors').text(movieDetails.Actors);
 		$('.filmRating').text(movieDetails.Arating);
 		$('.filmPoster').attr('src',movieDetails.Poster);
-	    $('#readAboutFilm').attr('href', "http://www.imdb.com/title/"+ movieToDisplay.id +"/");
+
+		// podmianka w butonach atrybutu data-url potrzebnego pózniej do otworzenia filmu lub strony IMDB z tym filmem 
+		$('.btnWatchVideo').attr('data-url', movieToDisplay.url);
+	    $('.btnShowIMDB').attr('data-url', "http://www.imdb.com/title/"+ movieDetails.imdbID +"/");
 
 	    // wklejenie w tag <video> danych filmu, kóry ma sie wyśietlic w tle
 	    $('#videoBackground').attr('poster',movieDetails.Poster);
@@ -173,7 +177,15 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 		
 		// event na buttonie "Pokaż film" 
 		btnWatchVideo.addEventListener('click', function() {
-			displayMovie('URL');
+			// displayMovie('$('.btnWatchVideo').attr('data-url')');
+			console.log('Pokaż film', $('.btnWatchVideo').attr('data-url'));
+			window.open($('.btnWatchVideo').attr('data-url'));
+	  	});
+		
+		// event na buttonie "Zobacz więcej" 
+		btnShowIMDB.addEventListener('click', function() {
+			console.log('Zobacz więcej na IMDB', $('.btnShowIMDB').attr('data-url'));
+			window.open($('.btnShowIMDB').attr('data-url'));
 		});
 
 		// event kliknięcia na input "Szukaj"

@@ -295,13 +295,13 @@ header ul li a {
 .descriptionBox .btnWatchVideo {
 		background: rgba(255,255,255,0.25);
 	}
-.descriptionBox .btnMoreAbout {
+.descriptionBox .btnShowIMDB {
 		background: rgba(255,0,0,1);
 	}
 .descriptionBox .btnWatchVideo:hover {
 		background: rgba(255,255,255,0.1);
 	}
-.descriptionBox .btnMoreAbout:hover {
+.descriptionBox .btnShowIMDB:hover {
 		background: rgba(255,0,0,0.6);
 	}
 /* =======   sekcja scrollDown icony z FontAwesome umieszczone na dole strony pierwszej */

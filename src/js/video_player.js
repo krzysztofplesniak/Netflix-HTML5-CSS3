@@ -96,11 +96,12 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 		// $('.filmDescriptionP2').text(movieDetails.descriptionPart2);
 	    $('.filmGenre').text(movieDetails.Genre);
 	    $('.filmDirector').text(movieDetails.Director);
-	    $('.filmYear').text(movieDetails.Year);
-	    $('.filmRuntime').text(movieDetails.Runtime);
-		$('.filmWriter').text(movieDetails.Writer);
-		$('.filmActors').text(movieDetails.Actors);
-		$('.filmRating').text(movieDetails.Arating);
+	    $('.filmWriter').text(movieDetails.Writer);
+	    $('.filmActors').text(movieDetails.Actors);
+	    $('.filmAwards').text(movieDetails.Awards);
+		$('.filmRating').text(movieDetails.imdbRating);
+		$('.filmYear').text(movieDetails.Year);
+		$('.filmRuntime').text(movieDetails.Runtime);
 		$('.filmPoster').attr('src',movieDetails.Poster);
 
 		// podmianka w butonach atrybutu data-url potrzebnego pózniej do otworzenia filmu lub strony IMDB z tym filmem 
@@ -147,7 +148,7 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 			$('.videoBoxes').append(outputHtml);
 		
 		}
-		setVideoRows(4); // pokazanie ograniczonej liczby wierszy w zależności od szerokości ekranu
+		setVideoRows(4); // pokazanie ograniczonej liczby wierszy
 
 		// dodanie taga <video> do kafelka z filmem
 			// var modal = document.querySelector('.showModal');
@@ -199,9 +200,12 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 		menuSearch.addEventListener('keyup', function(event) {
 				
 			if (event.which == 13 || event.keyCode == 13) {
-				searchInput(expandedBox.value);
 				scrollViewTo('#heroImage');
-
+				searchInput(expandedBox.value);
+				smallBox.style.display = 'block';
+				expandedBox.style.display = 'none';
+				menuSearch.classList.remove('mouseSearchClick');
+				expandedBox.value = 'Wpisz film';	
 			}
 						
 		});	

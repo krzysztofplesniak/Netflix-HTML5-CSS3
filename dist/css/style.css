@@ -31,14 +31,14 @@ header {
 		/*transition: all 0.4s;	*/
 	}
 header nav {
-		height: 100px;
-		margin: 5px 0px;
+		height: 90px;
+		margin: 0px;
 		transition: all ease-out 0.3s;   /* transition daje efekt zmniejszania wysokosci się nawigacji podczas scrolowania myszki w dół
-									obsługa w JS w funkcji scrollPage()*/
+											obsługa w JS w funkcji scrollPage()*/
 	}
 /*gdy scrollowanie w dół lub opuszczenie header'a to ma się pomiejszyc */
 .headerBig {
-		margin: 15px 0px;
+		margin: 12px 0px;
 	}
 header #logo {
 		float: left;
@@ -115,7 +115,6 @@ header ul li a {
 	}
 /*najechanie myszą na input "Szukaj" */
 .mouseSearchClick {  
-
 		width: 300px;
 		border: 2px solid white;
 	}
@@ -174,7 +173,7 @@ header ul li a {
 		width: 100%;
 		overflow: hidden;
 		position: relative;
-		top: 110px;
+		top: 100px;
 	}
 #videoBackground {
 		min-height: 100%;
@@ -188,7 +187,7 @@ header ul li a {
 	}
 /* ======= sekcja descriptionBox z opisem filmu */
 .descriptionBox {
-		margin: 30px 0;
+		margin: 20px 0;
 		height: auto;
 		background: black;	
 		opacity: .9;
@@ -204,7 +203,7 @@ header ul li a {
 .descriptionBoxDetail {
 		width: 50%;
 		padding: 20px;
-	/*	border: 1px solid yellow;*/
+		/*border: 1px solid yellow;*/
 	}
 .descriptionBox .filmPoster	{
 		width: 100%;
@@ -222,7 +221,6 @@ header ul li a {
 		right: 2.5%;
 		-webkit-transform: translateY(-50%);
 		transform: translateY(-50%);
-		
 	}
 .descriptionBox h1 {
 		font-size: 3rem;
@@ -309,16 +307,15 @@ header ul li a {
 	}
 /* =======   sekcja scrollDown icony z FontAwesome umieszczone na dole strony pierwszej */
 #scrollDown {
-		/*display: block;*/
 		height: 85px; 
 		position: relative;
-		top: 110px;
+		top: 100px;
 		background: black;	
 	}
 #scrollDownBox {
 		position: absolute;
 		left: 50%;
-		top: 10px;
+		top: 5px;
 		-webkit-transform: translateX(-50%);
 		transform: translateX(-50%);
 		text-align: center;
@@ -356,31 +353,23 @@ header ul li a {
 #videoSection {
 		height: auto;
 		width: 100%;
+		padding: 1% 1%;
 		background: black;	
 		position: relative;
-		top: 110px;
+		top: 100px;
 		overflow: hidden;
+		/*border: 1px solid yellow; */
 	}
-/*#videoSectionHeight3 {
-		height: 700px;
-	}	
-
-	#videoSectionHeight4 {
-		height: 950px;
-	}	
-
-	#videoSectionHeight5 {
-		height: 1200px;
-	}*/
 .videoBox {
 		float: left;  
-		height: 21vw;
+		height: 20vw;
 		width: 12.5%;
 		margin: 1% 2%;
-		opacity: 0.7; 
+		opacity: 0.5; 
 		border-radius: 5px;
 		border-bottom: 3px solid red;
 		position: relative;  /* to jest dla klawisza PLAY w tagu "i"*/ 
+		/*border: 1px solid yellow; */
 	}
 .videoBox img  {
 		height: 17.16vw;
@@ -395,7 +384,7 @@ header ul li a {
 		text-align: center;
 		font-family: 'Lato', sans-serif;
 		color: white; 
-		font-size: 1.2rem;	
+		font-size: 1.1rem;	
 		font-weight: 400;
 		position: absolute;
 		top: 92%;
@@ -418,7 +407,7 @@ header ul li a {
 		font-size: 1.5rem;
 	}
 .videoBox i {
-		/*display: none;*/
+		display: none;
 		position: absolute;
 		top: 40%; /*dlaczego 40% a nie 50% bo pozycjonowane wzgledem elementu videBox a nie IMG a własnie nad IMG nma byc w połowie*/
 		left: 50%;
@@ -479,7 +468,7 @@ header ul li a {
 }	
 
 .videoBox p {
-	font-size: 1.1rem;	
+	font-size: 1rem;	
 	font-weight: 400;
 }
 
@@ -522,10 +511,6 @@ header ul li:hover a {
 
 #heroImage {
 	top: 0px;
-}
-
-.descriptionBox {	
-	margin: 10px 0;
 }
 
 .descriptionBox .filmBox {
@@ -573,18 +558,14 @@ header ul li:hover a {
 }
 
 .videoBox {
-	height: 33vw;
-	width: 21%;
-	margin: 2%;
+	height: 32vw;
+	width: 21%;	
 }
 
 .videoBox img  {
 	height: 28.8vw;
 }	
 
-.videoBox p {
-	font-size: 1rem;
-}
 
 #videoSection {
 	top: 0px;
@@ -658,12 +639,16 @@ header ul li {
 }
 
 .videoBox {
-	height: 46vw;
+	height: 45vw;
 	width: 29%;
 }
 
 .videoBox img  {
 	height: 39.5vw;
+}	
+
+.videoBox p {
+	font-size: .9rem;
 }
 }
 @media (max-width: 480px){
@@ -765,7 +750,7 @@ header ul {
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 .videoBox {
-	height: 72vw;
+	height: 71vw;
 	width: 46%;
 }
 
@@ -775,6 +760,7 @@ header ul {
 
 .videoBox p {
 	top: 93%;
+	font-size: .8rem;
 }
 }
 @media (max-width: 350px){
@@ -814,10 +800,10 @@ header .hamburgerIcon {
 }
 
 .videoBox  {
-  height: 75vw;
+  height: 74vw;
 }
 
 .videoBox p {
-  font-size: 1rem;
+  font-size: .7rem;
 }
 }

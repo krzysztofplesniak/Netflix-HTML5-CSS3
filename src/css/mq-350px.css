@@ -33,9 +33,9 @@ header .hamburgerIcon {
 }
 
 .videoBox  {
-  height: 75vw;
+  height: 74vw;
 }
 
 .videoBox p {
-  font-size: 1rem;
+  font-size: .7rem;
 }

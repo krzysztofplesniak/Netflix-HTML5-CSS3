@@ -33,10 +33,6 @@ header ul li:hover a {
 	top: 0px;
 }
 
-.descriptionBox {	
-	margin: 10px 0;
-}
-
 .descriptionBox .filmBox {
 	width: 45%;
 	max-height: 450px; 
@@ -82,18 +78,14 @@ header ul li:hover a {
 }
 
 .videoBox {
-	height: 33vw;
-	width: 21%;
-	margin: 2%;
+	height: 32vw;
+	width: 21%;	
 }
 
 .videoBox img  {
 	height: 28.8vw;
 }	
 
-.videoBox p {
-	font-size: 1rem;
-}
 
 #videoSection {
 	top: 0px;

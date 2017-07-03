@@ -89,12 +89,10 @@
 		
 			if  ((e.type == 'mouseenter') && (pageWidth > 1300)) {
 					header.classList.add('headerBig');
-
-				}	
-				
+			}	
 			else if ((e.type == 'mouseleave') && (pageWidth > 1300)) {
 		   			header.classList.remove('headerBig');
-				}	
+			}	
 	}
 
 //Blok kodu obsługi ekranu gdy nastapi scrolowanie myszą 
@@ -107,7 +105,7 @@
 		pageYScroll = window.scrollY;
 
 	//zanik sekcji ScrollDown
-		if ((pageWidth > 1280) && (pageYScroll > 75)) {
+		if (pageYScroll > 75) {
 				scrollDown.style.display = 'none';  	
 		}	
 		else {
@@ -119,7 +117,7 @@
 			
 			setVideoRows(7);
 			console.log('setVideoRows = 7');
-				} 
+		} 
 
 	}
 
@@ -132,17 +130,17 @@
 // Uniwersalna funcja do przeskoku w dane miejsce ekranu po #id lub po nazwie klasy 
 	function scrollViewTo(element) {
 		
-		// pageYOffset			-> punkt górny o tyle przesunietu wzgledem poczatku documentu 
-		// elementOffset		-> w tym miesjcu znajduje się element 
 		// scroolToY			-> o tyle przesuń ekran wynik odejmowania 
+		// pageYOffset			-> punkt górny o tyle przesunietu wzgledem poczatku documentu 
+		// elementOffset		-> w tym miejscu znajduje się element 
 		// headerFixedPosition	-> o tyle trzeba wszystko skorygowac bo heder belka jest zawsze przzypięta do ekranu
 
 		pageYOffset = window.pageYOffset;
 		var elementOffset = $(element).offset().top;
 		var headerFixedPosition = 105;
 
-		//wyliczenie skoku o ile 
-		// kiedyś dodoa bardziej płynne przejście
-		var scrollToY = elementOffset - pageYOffset - headerFixedPosition;
+		// kiedyś doda bardziej płynne przejście
+		var scrollToY = elementOffset - pageYOffset - headerFixedPosition - 85;
+		console.log(pageYOffset);
 		window.scrollBy(0, scrollToY); 
 	}

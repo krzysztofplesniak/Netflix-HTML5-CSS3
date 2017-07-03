@@ -64,10 +64,14 @@ header ul li {
 }
 
 .videoBox {
-	height: 46vw;
+	height: 45vw;
 	width: 29%;
 }
 
 .videoBox img  {
 	height: 39.5vw;
 }	
+
+.videoBox p {
+	font-size: .9rem;
+}

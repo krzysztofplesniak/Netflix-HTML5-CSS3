@@ -95,7 +95,7 @@ header ul {
 /* ======= sekcja videoSection z kafelkami filmowymi ======= */
 
 .videoBox {
-	height: 72vw;
+	height: 71vw;
 	width: 46%;
 }
 
@@ -105,4 +105,5 @@ header ul {
 
 .videoBox p {
 	top: 93%;
+	font-size: .8rem;
 }

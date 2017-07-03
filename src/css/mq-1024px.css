@@ -81,11 +81,13 @@ header ul li:hover a {
 	height: 32vw;
 	width: 21%;	
 }
+.videoBox p {
+	top: 95%;
+}	
 
 .videoBox img  {
 	height: 28.8vw;
 }	
-
 
 #videoSection {
 	top: 0px;

@@ -14,18 +14,19 @@
 	var pageYOffset, pageWidth, numberOfRows, sectionHeight;
 	
 // Icona hamburger-menu animowana 
-    	
-	hamburgerIcon.addEventListener('click', function () {
+	hamburgerIcon.addEventListener('click', function() {
+		hamburgerMenu();
+	});
+	
+	function hamburgerMenu() {
 		iconBars.forEach(function(iconBar) {
 				iconBar.classList.toggle('changeHambIcon');
 			}
 		);
 		menuItems.classList.toggle('showMenuItems');
-	});
+	}
 	
-
 // Blok kodu obsługujacy kliknęcie w "Czytaj więcej"  
-
 	showMoreText.addEventListener('click', showTextDescription); // event nałsuchujący kliknięcia na klawisz 
  															     //	"Czytaj więcej" który odsłoni część tekstu dla małych MQ 
 	function showTextDescription() {

@@ -32,9 +32,8 @@ header {
 	}
 header nav {
 		height: 90px;
-		margin: 0px;
-		transition: all ease-out 0.3s;   /* transition daje efekt zmniejszania wysokosci się nawigacji podczas scrolowania myszki w dół
-											obsługa w JS w funkcji scrollPage()*/
+		margin: 0px; 
+		transition: all ease-out 0.3s;   
 	}
 /*gdy scrollowanie w dół lub opuszczenie header'a to ma się pomiejszyc */
 .headerBig {
@@ -149,22 +148,6 @@ header ul li a {
 	    background: black;
 	    outline: none;
 	}
-/*
-	.menuSearch:hover .smallBox{
-		display: none; 
-	}
-
-	.menuSearch:hover .expandedBox {
-		display: block; 
-	}
-
-	.menuSearch .hover {
-		width: 300px;
-		border: 2px solid white;
-		transition: linear width .5s;
-		box-sizing: border-box;
-	}
-	*/
 /* ======= sekcja HeroImage z dużą grafika w tle */
 #heroImage {
 		/*background: url(../img/background.jpg) no-repeat fixed 0px 70px; 
@@ -387,7 +370,7 @@ header ul li a {
 		font-size: 1.1rem;	
 		font-weight: 400;
 		position: absolute;
-		top: 92%;
+		top: 93%;
 		left: 50%;
 		-webkit-transform: translate(-50%,-50%);
 		transform: translate(-50%,-50%);
@@ -561,11 +544,13 @@ header ul li:hover a {
 	height: 32vw;
 	width: 21%;	
 }
+.videoBox p {
+	top: 95%;
+}	
 
 .videoBox img  {
 	height: 28.8vw;
 }	
-
 
 #videoSection {
 	top: 0px;
@@ -759,8 +744,8 @@ header ul {
 }	
 
 .videoBox p {
-	top: 93%;
-	font-size: .8rem;
+	top: 95%;
+	font-size: .9rem;
 }
 }
 @media (max-width: 350px){
@@ -801,9 +786,5 @@ header .hamburgerIcon {
 
 .videoBox  {
   height: 74vw;
-}
-
-.videoBox p {
-  font-size: .7rem;
 }
 }

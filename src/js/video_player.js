@@ -147,7 +147,7 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 			$('.videoBoxes').append(outputHtml);
 		
 		}
-		controlVideoBox(); // pokazanie ograniczonje liczby wierszy w zależności od szerokości ekranu
+		setVideoRows(4); // pokazanie ograniczonej liczby wierszy w zależności od szerokości ekranu
 
 		// dodanie taga <video> do kafelka z filmem
 			// var modal = document.querySelector('.showModal');

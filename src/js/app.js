@@ -9,7 +9,7 @@
 		showMoreText = document.querySelector('.showMoreText'), 
 		hiddenText = document.querySelector('.hiddenText'),
 		videoSection = $("#videoSection"),
-		videoBox = $(".videoBoxes");
+		videoBoxes = $(".videoBoxes");
 	
 	var pageYOffset, pageWidth, numberOfRows, sectionHeight;
 	
@@ -38,20 +38,22 @@
 
 
 // Blok kodu obsługujący różne funkcje, gdy zmniejsza się szerokośc ekranu
-	window.addEventListener('resize', controlVideoBox); 
+	window.addEventListener('resize', setVideoRows); 
 	
-	function controlVideoBox() {
+	function setVideoRows(numberOfRows) {
 				
-		numberOfRows= 5;
 		pageWidth = window.outerWidth;
-		
+		if (isNan(numberOfRows)) {
+			numberOfRows = 5;
+			console.log('Nie liczba', numberOfRows);		
+		}	
+
 		//kontrola ilości wierszy z kafelkami video, wyświetlanych w videoSection		
 		// numberOfRow -> ilosc wierszy z kafelkami (ustalona domyślnie na 5) 
 		// sectionHeight -> mnożnik sectionHeight używamy do ograniczenia  widzialnej części videoSection o wyliczony procent
 		// w bazie jest 45 filmów, dla 1280px i 6 kafelek w wierszu maksymalnie będize mozna zobaczyc 8 wierszy 
 		// my chcemy zawsze tylko 5 wierszy widocznych, czyli bierzemy tylko częśc wysokości 5/8 z 8 dostepnych wierszy, czyli 62,5%
 		
-
 		if (pageWidth > 1280) {
 				sectionHeight = numberOfRows/Math.ceil(45/6);
 				}			
@@ -68,7 +70,7 @@
 				sectionHeight = numberOfRows/Math.ceil(45/2);
 				}		
 		// obliczenie jaka będize widoczna częśc videoSection
-		videoSection.height($(".videoBoxes").height()*sectionHeight);
+		videoSection.height(videoBoxes.height() * sectionHeight);
 					
 		// schowanie napisu "Czytaj więcej"  
 		if ((pageWidth < 480) && (hiddenText.innerText.length === 0)) {
@@ -95,22 +97,31 @@
 				}	
 	}
 
-//Blok kodu scrolowanie myszą = zanik sekcji ScrollDown
+//Blok kodu obsługi ekranu gdy nastapi scrolowanie myszą 
 	
 	window.addEventListener('scroll', scrollPage);
 	
 	function scrollPage() {
 		
 		pageWidth = window.outerWidth;
-		pageYOffset = window.pageYOffset;
+		pageYScroll = window.scrollY;
 
-		if ((pageWidth > 1280) && (pageYOffset> 75)) { 								
+	//zanik sekcji ScrollDown
+		if ((pageWidth > 1280) && (pageYScroll > 75)) {
 				scrollDown.style.display = 'none';  	
-			}	
+		}	
 		else {
 				scrollDown.style.display = 'block';
-			}
 		}
+		
+	//doczytanie dynamiczne wiekszej liczby wierszy z filmami
+		if (pageYScroll > (videoSection.position().top + 0.5*videoSection.height())){
+			
+			setVideoRows(7);
+			console.log('setVideoRows = 7');
+				} 
+
+	}
 
 //Blok kodu obsługi kliknięcia na strzałkę przy krawędzi dolnej ekranu w sekcji #scrollDown
 

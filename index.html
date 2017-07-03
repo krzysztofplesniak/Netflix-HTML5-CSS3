@@ -30,7 +30,6 @@
 				<ul>
 					<!-- Pierwsza pozycja w menu input "Szukaj"  -->
 					<li class="menuSearch">
-
 						<div class="smallBox">
 							<i class="fa fa-search"></i>
 							<span class="smallBoxInput">Szukaj</span>
@@ -39,8 +38,8 @@
 						 <!-- Po kliknięciu  pojawia się inny napis "Wpisz film"  
 						 Rozsuwa się obwódka wokół napisu w lewo   -->
 						<input class="expandedBox" type="text" value="Wpisz film">
-
 					</li>
+					
 					<li><a href="#">Przeglądaj</a></li>
 					<li><a href="#">Dzieci</a></li>	
 					<li><a href="#">Wiadomości</a></li>	
@@ -65,7 +64,7 @@
 					<h1>Zobacz premiery filmowe</h1>
 					<h2>OGLĄDAJ WSZĘDZIE. ANULUJ W KAŻDEJ CHWILI</h2>
 					
-					<h3>Netflix prezentuje:  <span class="filmTitle"></span></h3>  <!-- każdy element jest wypełniany przez funckję pobierajaca dane AJAXowe -->
+					<h3><span class="filmTitle"></span></h3>  <!-- każdy element jest wypełniany przez funckję pobierajaca dane AJAXowe -->
 					<h3>Typ filmu:  <span class="filmGenre"></span></h3>
 					<h3>Reżyser:  <span class="filmDirector"></span></h3>
 					<h3>Scenariusz:  <span class="filmWriter"></span></h3>
@@ -86,7 +85,7 @@
 				</div>		
 						
 				<!-- 2 buttony -->
-				<div class="button btnWatchVideo" data-url="http://www.imdb.com">Podgląd filmu</div>
+				<div class="button btnWatchVideo" data-url="https://github.com/krzysztofplesniak">Podgląd filmu</div>
 				<div class="button btnShowIMDB" data-url="http://www.imdb.com">Zobacz więcej...</div>
 				
 			</div>	 
@@ -119,14 +118,21 @@
 				<i class="fa fa-play-circle"></i>
 				<p>Timeless</p>
 			</div> -->
+
+		
 		</div>	
 	</div> 
+	<div class="modalBox">
+		<video class="videoInModal">
+			<source src="" type="video/mp4">
+	   	</video>
+	</div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<!-- <script src="https://vjs.zencdn.net/6.1.0/video.js"></script> -->
-	<script src="src/js/video_player.js"></script>
 	<script src="src/js/app.js"></script>
-
-
+	<script src="src/js/video_player.js"></script>
+	
+	
 </body>
 </html>

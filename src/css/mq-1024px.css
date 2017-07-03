@@ -37,6 +37,15 @@ header ul li:hover a {
 	margin: 10px 0;
 }
 
+.descriptionBox .filmBox {
+	width: 45%;
+	max-height: 450px; 
+	max-width: 300px;
+}
+
+.descriptionBoxDetail {
+	width: 55%;
+}		
 .menuSearch {
 	width: 100%;
     margin: 0px;

@@ -28,13 +28,13 @@ header {
 		border-bottom: red 4px solid;
 		overflow: hidden;
 		box-sizing: border-box;
-		transition: all .4s;	/* transition daje efekt zmniejszania wysokosci się nawigacji podczas scrolowania myszki w dół
-									obsługa w JS w funkcji scrollPage()*/
+		/*transition: all 0.4s;	*/
 	}
 header nav {
 		height: 100px;
 		margin: 5px 0px;
-		transition: all .3s;
+		transition: all ease-out 0.3s;   /* transition daje efekt zmniejszania wysokosci się nawigacji podczas scrolowania myszki w dół
+									obsługa w JS w funkcji scrollPage()*/
 	}
 /*gdy scrollowanie w dół lub opuszczenie header'a to ma się pomiejszyc */
 .headerBig {
@@ -95,7 +95,7 @@ header ul li {
 	}
 header ul li:nth-child(n+2):hover { /*ale rzeżba ale działa :nth-child(n+2) znaczy ze wszystkie elementy od numeru 2 */
 		border-bottom: 3px solid red;
-		transition: border-bottom .2s ease-out;
+		transition: border-bottom 0.15s;
 	}
 header ul li a {
 		display: block;
@@ -111,13 +111,13 @@ header ul li a {
 		width: 150px;
 		margin: 0 5px;
 		cursor: pointer;
+		box-sizing: border-box;
 	}
 /*najechanie myszą na input "Szukaj" */
-.mouseSearchClick {   
+.mouseSearchClick {  
+
 		width: 300px;
 		border: 2px solid white;
-		/*transition: linear width .5s;*/
-		box-sizing: border-box;
 	}
 .menuSearch .smallBox {
 		display: block;
@@ -202,20 +202,19 @@ header ul li a {
 		color: lightgrey;
 	}
 .descriptionBoxDetail {
-		width: 70%;
-		padding: 35px;
-/*		border: 1px solid yellow;*/
-
+		width: 50%;
+		padding: 20px;
+	/*	border: 1px solid yellow;*/
 	}
 .descriptionBox .filmPoster	{
 		width: 100%;
 		height: auto;
 	}
 .descriptionBox .filmBox {
-		width: 30%;
+		width: 50%;
 		height: auto;
-		max-height: 500px; /*dzięki 4 wartością min i max Poster świetnie się skaluje i nie jest nigdy za mały i za duży */
-		max-width: 335px;
+		max-height: 600px; /*dzięki 4 wartością min i max Poster świetnie się skaluje i nie jest nigdy za mały i za duży */
+		max-width: 402px;
 		min-height: 300px;
 		min-width: 200px;
 		position: absolute;
@@ -223,7 +222,7 @@ header ul li a {
 		right: 2.5%;
 		-webkit-transform: translateY(-50%);
 		transform: translateY(-50%);
-/*		border: 1px solid yellow;*/
+		
 	}
 .descriptionBox h1 {
 		font-size: 3rem;
@@ -255,6 +254,10 @@ header ul li a {
 		color: red;
 		font-weight: 700;
 		font-size: 1.2rem;
+	}
+.descriptionBox .filmTitle {
+		color: white;
+		font-size: 3vw;
 	}
 .descriptionBox .filmDescBox p {
 		font-size: 1.3rem;
@@ -357,8 +360,18 @@ header ul li a {
 		position: relative;
 		top: 110px;
 		overflow: hidden;
-/*		border: 1px solid yellow;*/
 	}
+/*#videoSectionHeight3 {
+		height: 700px;
+	}	
+
+	#videoSectionHeight4 {
+		height: 950px;
+	}	
+
+	#videoSectionHeight5 {
+		height: 1200px;
+	}*/
 .videoBox {
 		float: left;  
 		height: 21vw;
@@ -414,17 +427,19 @@ header ul li a {
 		cursor: pointer;
 		font-size: 5rem;
 		color: white;	
-	
 	}
 /* video-film w modalu */
-.showModal {
+.modalBox {
 		display: none;
-		position: absolute;
-		top: 100px;
-		left: 100px;
-		width: 800px;
-		height: 535px;
-		background: green;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: black;
+		opacity: .9;
+		z-index: 999;
+		/*margin: 2%;*/
 	}
 @media (max-width: 1280px){
 
@@ -513,6 +528,15 @@ header ul li:hover a {
 	margin: 10px 0;
 }
 
+.descriptionBox .filmBox {
+	width: 45%;
+	max-height: 450px; 
+	max-width: 300px;
+}
+
+.descriptionBoxDetail {
+	width: 55%;
+}		
 .menuSearch {
 	width: 100%;
     margin: 0px;
@@ -577,7 +601,7 @@ header ul li {
 }
 
 .menuSearch {
-	height: 50px;
+	height: 55px;
 }
 
 .menuSearch .smallBox i {
@@ -591,13 +615,12 @@ header ul li {
 
 .descriptionBox .filmBox {
     width: 100%;
-	max-height: 350px; 
-	max-width: 236px;
-	min-height: 300px;
-	min-width: 202.5px;
+	max-height: 400px; 
+	max-width: 268px;
 	position: relative;
 	top: 10px;
 	left: 50%;
+	/*right: auto;*/
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
@@ -622,6 +645,10 @@ header ul li {
 .descriptionBox p {
 	font-size: 1.1rem;
 	line-height: 1.6rem;
+}
+
+.descriptionBox .filmTitle {
+	font-size: 7vw;
 }
 
 .descriptionBox .button {
@@ -716,6 +743,10 @@ header ul {
 .descriptionBox p {
 	margin: 15px 0 0 0;
 	font-size: 1.2rem;
+}
+
+.descriptionBox .filmTitle {
+	font-size: 12vw;
 }
 
 .descriptionBox .hiddenText  {

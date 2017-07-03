@@ -1,6 +1,4 @@
 
-window.addEventListener('load', function() {
-
 var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 	btnShowIMDB = document.querySelector('.btnShowIMDB'),
 	menuSearch = document.querySelector('.menuSearch'),
@@ -16,43 +14,43 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 		//	5. randomMovies() - wylosowane jednego filmu, 
 		//	6. displayDescriptionBox() - odwołania do baza OMDB, 
 		//	7. displayVideoBoxes() - wyświetlenie danych filmów,
-
+	
 	initMovies();
 	eventListenerVideoBox();
 	
 	
 	function initMovies() {
-		var randomMovie, movies;
+		var randomMovie;
+
 		// pobranie polecanych filmów, które są zaczytywane z lokalnego pliku JSON
   		$.getJSON('src/omdb_id.json')
 			.then(function(response) {
 
-				//  wywołanie bloku kodu inicjacji video: 
 				moviesArray	= response.movies;
-			    randomMovie = randomMovies();						// wylosowanie jednego filmu z sposród 20 z pliku JSON
+			    randomMovie = randomMovies();						// wylosowanie jednego filmu z pliku JSON
 			    // console.log('1 - > pierwsze wywołanie', moviesArray[randomMovie]);
 			   	displayDescriptionBox(moviesArray[randomMovie],'JSON');	// wyświetlenie danych losowego filmu w descriptionBox
-			   	displayVideoBoxes(moviesArray);						// wysietlenie posterów i tytułów filmów w sekcji Videosection
+			   	displayVideoBoxes(moviesArray);						// wyświetlenie posterów i tytułów filmów w sekcji Videosection
 
 				// !!! DO ZROBIENIA wykasowanie z tablicy wylosowanego filmu 
 			});
  		}	
 	
-	// wybranie losowo jednego filmu z listy 20 filmów 
+
+	// wybranie losowo jednego filmu z listy 45 filmów 
 	function randomMovies() {
-		return Math.floor(Math.random() * 20);  // zwracany jest wylosowany numer z zakresu
+		return Math.floor(Math.random() * 45);  // zwracany jest wylosowany numer z zakresu
 	}
+
 
 	// pobranie rozszerzonej ilości danych o jednym filmie tj. tytuł, rok, reżyser,
 	// rok, aktorzy itp...na bazie zapytania do bazy OMDB z wykorzystaniem
 	// id z plik JSON
 	function searchMovie(type, requestedData) {
 	
-	var movieDetails, requestUrl;
-
-		var request,
-			baseUrl = 'https://www.omdbapi.com/',
-			apiKey = '&apikey=3a2d81a4';
+	var movieDetails, requestUrl, request,
+		baseUrl = 'https://www.omdbapi.com/',
+		apiKey = '&apikey=3a2d81a4';
 		
 
 		if (type === 'ID') { 
@@ -70,14 +68,14 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
         	dataType:'json',
         	async: false,
         	success: function (response) {
-        	 	movieDetails = response;	
-        		}
+        	 	movieDetails = response;
+        	}
         });
-        
+
         return movieDetails;
+               
     }
 
-	
 	// wyświetlenie jednego wybranego filmu w descirptionBOX 
 	function displayDescriptionBox(movieToDisplay, source) {
 	
@@ -86,13 +84,13 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 		// zapytanie AJAX'owe do bazy OMBd z użyciem unikalne ID filmu na bazie wylosowanego filmu.
 		// randomMovie ma jedną ze składowych randomMovieID, która jest unikalnym ID w bazie OMDb,
 		// wykorzystanym do odpytania bazy o więcej danych o tym filmie
-		console.log('przed', movieToDisplay);
-		if (source === 'JSON') {movieDetails = searchMovie('ID', movieToDisplay.id);}
-		else if (source === 'OMDB') {movieDetails = searchMovie('ID', movieToDisplay.imdbID);}	
-		
-		console.log('po', movieDetails);
-		// wklejenie w HTML descriptionBox o wybranym losowym filmie
 
+	    if (source === 'JSON') {movieDetails = searchMovie('ID', movieToDisplay.id);}
+		else if (source === 'OMDB') {movieDetails = searchMovie('ID', movieToDisplay.imdbID);}	
+ 		
+		console.log('id -->', movieToDisplay.id);
+				
+		// wklejenie danych w descriptionBox losowego filmu
 		$('.filmTitle').text(movieDetails.Title);
 		$('.filmDescriptionP1').text(movieDetails.Plot);
 		// $('.filmDescriptionP2').text(movieDetails.descriptionPart2);
@@ -111,10 +109,9 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 
 	    // wklejenie w tag <video> danych filmu, kóry ma sie wyśietlic w tle
 	    $('#videoBackground').attr('poster',movieDetails.Poster);
-	    $('#videoBackground').children().attr('src', movieToDisplay.url);
-	    
+	    $('#videoBackground').children().attr('src', movieToDisplay.url);	
+		
 	    // console.log($('#videoBackground').children().attr('src'));
-	    
 	    // var video1 = document.querySelector('#videoBackground');
 	    // var video2 = videojs('videoBackground');
 	    // video2.ready(function(){
@@ -125,8 +122,8 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 
 		// video.addEventListener('loadstart', function(){
 		// });
-
-	}
+	} 
+	
 	
 	// wyświetlenie pozostałych filmów w tzw. kafelkach videoBox,
 	// tytuł & poster ze zdjęciem z filmu
@@ -135,7 +132,7 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 		var outputHtml, movieDetails;
 	
 		for ( i=0; i < movieToDisplay.length; i++) {
-			
+		
 			// pobranie rozszerzonych danych o filmie z zewnetrznej bazy OMDb 
 			// w zmnienniej movie są tylko podstawowe dane tj. url, id, poster, tytuł i opis
 			movieDetails = searchMovie('ID', movieToDisplay[i].id);
@@ -150,6 +147,7 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 			$('.videoBoxes').append(outputHtml);
 		
 		}
+		controlVideoBox(); // pokazanie ograniczonje liczby wierszy w zależności od szerokości ekranu
 
 		// dodanie taga <video> do kafelka z filmem
 			// var modal = document.querySelector('.showModal');
@@ -163,28 +161,17 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 		
 	}
 
-	
 	// funkcja obsługująca nasłuch na elementy związane z Video 
 	function eventListenerVideoBox() {
 
-		// event reakcja na naciśnięcie klawisza PLAY
-		// var videoPlay = document.querySelector('.fa-play-circle');
-		// videoPlay.addEventListener('click', function() {
-		// 	console.log('naciśnięto PLAY');
-		// 	displayMovie('URL');
-		// });
-
-		
+				
 		// event na buttonie "Pokaż film" 
 		btnWatchVideo.addEventListener('click', function() {
-			// displayMovie('$('.btnWatchVideo').attr('data-url')');
-			console.log('Pokaż film', $('.btnWatchVideo').attr('data-url'));
 			window.open($('.btnWatchVideo').attr('data-url'));
 	  	});
 		
 		// event na buttonie "Zobacz więcej" 
 		btnShowIMDB.addEventListener('click', function() {
-			console.log('Zobacz więcej na IMDB', $('.btnShowIMDB').attr('data-url'));
 			window.open($('.btnShowIMDB').attr('data-url'));
 		});
 
@@ -213,16 +200,27 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 				
 			if (event.which == 13 || event.keyCode == 13) {
 				searchInput(expandedBox.value);
-	    	}
+				scrollViewTo('#heroImage');
+
+			}
 						
 		});	
+		
+		logo = document.querySelector('#logo');
+		logo.addEventListener('click', function() {
+			
+			var modal = document.querySelector('.modalBox');
+			modal.style.display = 'block';
+			var url = ($('.btnWatchVideo').attr('data-url'));
+			var video = document.querySelector('.videoInModal');
+		
+	         $('.videoInModal').attr('src', url);		
+    	    // video.play();
+						
+		});		
 	}
 	
-	// modal z trailerem filmu
-	function displayMovie(movieUrl) {
-		console.log(movieUrl);
-	}
-	
+		
 	// obsługa klawisza "Szukaj"
 	function searchInput(movieTitle) {
 
@@ -230,9 +228,7 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 				
 		// wywołanie AJAX'owego zapytania do bazy 
     	movieDetails = searchMovie('Title', movieTitle);
-    	console.log('2 - > Search Input', movieDetails);
-    	displayDescriptionBox(movieDetails,'OMDB');
-		
+       	displayDescriptionBox(movieDetails,'OMDB');
 	}
 
 
@@ -243,4 +239,3 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 	// 	 	// video.play();
 	// 	 	video.volume(0); 	
 	// 	 }, 2000);
-});

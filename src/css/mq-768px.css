@@ -8,7 +8,7 @@ header ul li {
 }
 
 .menuSearch {
-	height: 50px;
+	height: 55px;
 }
 
 .menuSearch .smallBox i {
@@ -22,13 +22,12 @@ header ul li {
 
 .descriptionBox .filmBox {
     width: 100%;
-	max-height: 350px; 
-	max-width: 236px;
-	min-height: 300px;
-	min-width: 202.5px;
+	max-height: 400px; 
+	max-width: 268px;
 	position: relative;
 	top: 10px;
 	left: 50%;
+	/*right: auto;*/
 	transform: translateX(-50%);
 }
 
@@ -52,6 +51,10 @@ header ul li {
 .descriptionBox p {
 	font-size: 1.1rem;
 	line-height: 1.6rem;
+}
+
+.descriptionBox .filmTitle {
+	font-size: 7vw;
 }
 
 .descriptionBox .button {

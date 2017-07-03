@@ -44,11 +44,11 @@
 	function setVideoRows(numberOfRows) {
 				
 		pageWidth = window.outerWidth;
-		if (isNan(numberOfRows)) {
+		
+		if (isNaN(numberOfRows)) {
 			numberOfRows = 5;
-			console.log('Nie liczba', numberOfRows);		
 		}	
-
+		console.log(numberOfRows);		
 		//kontrola ilości wierszy z kafelkami video, wyświetlanych w videoSection		
 		// numberOfRow -> ilosc wierszy z kafelkami (ustalona domyślnie na 5) 
 		// sectionHeight -> mnożnik sectionHeight używamy do ograniczenia  widzialnej części videoSection o wyliczony procent
@@ -113,11 +113,10 @@
 				scrollDown.style.display = 'block';
 		}
 		
-	//doczytanie dynamiczne wiekszej liczby wierszy z filmami
+	// dynamiczne doczytanie większej liczby wierszy z filmami
 		if (pageYScroll > (videoSection.position().top + 0.5*videoSection.height())){
-			
-			setVideoRows(7);
-			console.log('setVideoRows = 7');
+			setVideoRows(7);			
+			console.log('siedem');
 		} 
 
 	}

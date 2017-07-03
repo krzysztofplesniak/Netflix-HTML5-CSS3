@@ -88,7 +88,7 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 	    if (source === 'JSON') {movieDetails = searchMovie('ID', movieToDisplay.id);}
 		else if (source === 'OMDB') {movieDetails = searchMovie('ID', movieToDisplay.imdbID);}	
  		
-		console.log('id -->', movieToDisplay.id);
+		// console.log('id -->', movieToDisplay.id);
 				
 		// wklejenie danych w descriptionBox losowego filmu
 		$('.filmTitle').text(movieDetails.Title);
@@ -195,9 +195,9 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 				
 			if (event.which == 13 || event.keyCode == 13) {
 				scrollViewTo('#heroImage');
-				menuSearchDisplay('hide');
 				hamburgerMenu();
 				searchInput(expandedBox.value);
+				menuSearchDisplay('hide');
 			}
 						
 		});	

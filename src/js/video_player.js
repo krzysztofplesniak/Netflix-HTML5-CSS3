@@ -164,7 +164,6 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 
 	// funkcja obsługująca nasłuch na elementy związane z Video 
 	function eventListenerVideoBox() {
-
 				
 		// event na buttonie "Pokaż film" 
 		btnWatchVideo.addEventListener('click', function() {
@@ -181,31 +180,23 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 			expandedBox.value = '';
 		});
 		
-		// event kliknięcia na input "Szukaj"
-		menuSearch.addEventListener('mouseenter', function() {
-			smallBox.style.display = 'none';
-			expandedBox.style.display = 'block';
-			menuSearch.classList.add('mouseSearchClick');
-			expandedBox.value = 'Wpisz film';
+		// event najechania na input "Szukaj"
+		menuSearch.addEventListener('mouseenter', function () {
+			menuSearchDisplay('show');
 		});
 
-		// event opuszczenia input "Szukaj"
+		// event opuszczenia inputu "Szukaj"
 		menuSearch.addEventListener('mouseleave', function() {
-			smallBox.style.display = 'block';
-			expandedBox.style.display = 'none';
-			menuSearch.classList.remove('mouseSearchClick');
-			expandedBox.value = 'Wpisz film';	
+			menuSearchDisplay('hide');
 		});
-
+		
+		// event naciśnięcia klawisza Enter
 		menuSearch.addEventListener('keyup', function(event) {
 				
 			if (event.which == 13 || event.keyCode == 13) {
 				scrollViewTo('#heroImage');
 				searchInput(expandedBox.value);
-				smallBox.style.display = 'block';
-				expandedBox.style.display = 'none';
-				menuSearch.classList.remove('mouseSearchClick');
-				expandedBox.value = 'Wpisz film';	
+				menuSearchDisplay(hide);
 			}
 						
 		});	
@@ -224,7 +215,24 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 		});		
 	}
 	
+	// funcja która pnaprzemiennie pokazuj i chowa elementy menuSearch
+	function menuSearchDisplay(option) {
 		
+		if (option == 'hide') {
+			smallBox.style.display = 'block';
+			expandedBox.style.display = 'none';
+			menuSearch.classList.remove('mouseSearchClick');
+		}	
+		
+		if (option == 'show') {
+			smallBox.style.display = 'none';
+			expandedBox.style.display = 'block';
+			menuSearch.classList.add('mouseSearchClick');
+		}
+		expandedBox.value = 'Wpisz film';
+	} 
+
+	
 	// obsługa klawisza "Szukaj"
 	function searchInput(movieTitle) {
 
@@ -234,7 +242,6 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
     	movieDetails = searchMovie('Title', movieTitle);
        	displayDescriptionBox(movieDetails,'OMDB');
 	}
-
 
 	// var video = videojs('videoBackground');
 	// video.ready(function(){

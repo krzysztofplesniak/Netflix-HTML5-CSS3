@@ -141,6 +141,5 @@
 
 		// kiedyś doda bardziej płynne przejście
 		var scrollToY = elementOffset - pageYOffset - headerFixedPosition - 85;
-		console.log(pageYOffset);
 		window.scrollBy(0, scrollToY); 
 	}

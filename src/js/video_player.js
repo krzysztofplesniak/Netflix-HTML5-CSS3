@@ -195,8 +195,9 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 				
 			if (event.which == 13 || event.keyCode == 13) {
 				scrollViewTo('#heroImage');
+				menuSearchDisplay('hide');
+				hamburgerMenu();
 				searchInput(expandedBox.value);
-				menuSearchDisplay(hide);
 			}
 						
 		});	

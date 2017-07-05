@@ -137,12 +137,12 @@ gulp.task('imagemin', function() {
 	.pipe(gulp.dest(path.imgout))
 });
 
-// task dla build'a -> skopiowanie fontów awesome, video-js.min.css oraz plików video do katalogu produkcyjnego DIST
+// task dla build'a -> skopiowanie fontów awesome, plików pakietu video.js do katalogu produkcyjnego DIST
 gulp.task('copy', function() {
 	gulp.src('src/css/fonts/*.*')	
 	.pipe(gulp.dest('dist/css/fonts/'));
-	gulp.src('src/css/videojs/*.*')	
-	.pipe(gulp.dest('dist/css/videojs/'));
+	gulp.src('src/videojs/*.*')	
+	.pipe(gulp.dest('dist/videojs/'));
 	gulp.src('src/video/*.*')	
 	.pipe(gulp.dest('dist/video/'));
 	return true;

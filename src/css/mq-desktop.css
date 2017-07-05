@@ -27,7 +27,8 @@
 		height: auto;
 		width: 100%;
 		background: black;	
-		position: fixed; 		/*header zafiksowany do belki górnej przy przewijaniu ekranu w dół*/
+		/*header zafiksowany do belki górnej przy przewijaniu ekranu w dół*/
+		position: fixed; 		
 		z-index: 100;
 		border-bottom: red 4px solid;
 		overflow: hidden;
@@ -392,7 +393,7 @@
 		height: 20vw;
 		width: 12.5%;
 		margin: 1% 2%;
-		opacity: 0.5; 
+		opacity: 0.6; 
 		border-radius: 5px;
 		border-bottom: 3px solid red;
 		position: relative;  /* to jest dla klawisza PLAY w tagu "i"*/ 
@@ -455,12 +456,35 @@
 	.modalBox {
 		display: none;
 		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: black;
-		opacity: .9;
+		top: 120px;
+		left: 20;
+		right: 20;
+		height: 600px;
+		width: 100%;
+		background: grey;
 		z-index: 999;
-		/*margin: 2%;*/
 	}
+
+	#videoModal {
+		height: 600px;
+		width: 100%;
+		border: 3px solid yellow;
+	}
+
+	#controlBox {
+		position: fixed;
+		top: 5;
+		left: 5;
+		width: 150px;
+		height: 80px;
+		background: black;
+		padding: 10px;
+		z-index: 200;
+		border: 1px solid yellow;
+	}
+	
+	#controlBox p {
+		color: red;
+		font-size: 20px;
+	}
+	

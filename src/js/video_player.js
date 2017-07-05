@@ -1,9 +1,8 @@
-
-var btnWatchVideo = document.querySelector('.btnWatchVideo'),
-	btnShowIMDB = document.querySelector('.btnShowIMDB'),
-	menuSearch = document.querySelector('.menuSearch'),
-	expandedBox  = document.querySelector('.expandedBox'),
-	smallBox = document.querySelector('.smallBox');
+	var btnWatchVideo = document.querySelector('.btnWatchVideo'),
+		btnShowIMDB = document.querySelector('.btnShowIMDB'),
+		menuSearch = document.querySelector('.menuSearch'),
+		expandedBox  = document.querySelector('.expandedBox'),
+		smallBox = document.querySelector('.smallBox');
 
 
 	//  najważniejsze funkcje 
@@ -105,13 +104,17 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 		$('.filmPoster').attr('src',movieDetails.Poster);
 
 		// podmianka w butonach atrybutu data-url potrzebnego pózniej do otworzenia filmu lub strony IMDB z tym filmem 
-		$('.btnWatchVideo').attr('data-url', movieToDisplay.url);
+		// $('.btnWatchVideo').attr('data-url', "http://www.youtube.com/watch?v=z_R04FgGvtw");
+		$('.btnWatchVideo').attr('data-video-id', "_KJHRF6RlTQ");
 	    $('.btnShowIMDB').attr('data-url', "http://www.imdb.com/title/"+ movieDetails.imdbID +"/");
 
 	    // wklejenie w tag <video> danych filmu, kóry ma sie wyśietlic w tle
 	    $('#videoBackground').attr('poster',movieDetails.Poster);
 	    $('#videoBackground').children().attr('src', movieToDisplay.url);	
 		
+		// wywołanie funcji z modułu modal-video-js ktora uruchomi po naciśnieciu klawisza film 
+		$(".btnWatchVideo").modalVideo();		
+
 	    // console.log($('#videoBackground').children().attr('src'));
 	    // var video1 = document.querySelector('#videoBackground');
 	    // var video2 = videojs('videoBackground');
@@ -164,11 +167,11 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 
 	// funkcja obsługująca nasłuch na elementy związane z Video 
 	function eventListenerVideoBox() {
-				
+		
 		// event na buttonie "Pokaż film" 
-		btnWatchVideo.addEventListener('click', function() {
-			window.open($('.btnWatchVideo').attr('data-url'));
-	  	});
+		// btnWatchVideo.addEventListener('click', function() {
+		// 	displayVideoModal($('.btnWatchVideo').attr('data-url'));
+	 //  	});
 		
 		// event na buttonie "Zobacz więcej" 
 		btnShowIMDB.addEventListener('click', function() {
@@ -202,18 +205,17 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
 						
 		});	
 		
-		logo = document.querySelector('#logo');
-		logo.addEventListener('click', function() {
-			
-			var modal = document.querySelector('.modalBox');
-			modal.style.display = 'block';
-			var url = ($('.btnWatchVideo').attr('data-url'));
-			var video = document.querySelector('.videoInModal');
-		
-	         $('.videoInModal').attr('src', url);		
-    	    // video.play();
-						
-		});		
+		// funkcja której zadaniem jest pokazanie modala po kliknięciu na button "Podgląd filmu" 
+		// z videofilmem który jest prezentowany w descriptionBox
+		function displayVideoModal(movieToDisplay){
+			var modalBox = document.querySelector('.modalBox'),
+			videoModal = $('#videoModal'),
+			video = videojs('videoModal');
+
+			modalBox.style.display = 'block';
+			videoModal.find('source').attr('src', movieToDisplay);
+		}
+	
 	}
 	
 	// funcja która pnaprzemiennie pokazuj i chowa elementy menuSearch
@@ -243,11 +245,3 @@ var btnWatchVideo = document.querySelector('.btnWatchVideo'),
     	movieDetails = searchMovie('Title', movieTitle);
        	displayDescriptionBox(movieDetails,'OMDB');
 	}
-
-	// var video = videojs('videoBackground');
-	// video.ready(function(){
-		 
-	// 	 setTimeout(function(){
-	// 	 	// video.play();
-	// 	 	video.volume(0); 	
-	// 	 }, 2000);

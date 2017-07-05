@@ -1,3 +1,4 @@
+
 	// ---------- Zmienne  -----------//
 
 	var scrollDown = document.querySelector('#scrollDown'),
@@ -38,17 +39,20 @@
 	}	 
 
 
-// Blok kodu obsługujący różne funkcje, gdy zmniejsza się szerokośc ekranu
+// Blok kodu obsługujący różne działania, gdy zmniejsza się szerokośc ekranu
 	window.addEventListener('resize', setVideoRows); 
 	
 	function setVideoRows(numberOfRows) {
 				
 		pageWidth = window.outerWidth;
 		
+		//jak nie jest zadany paramet ile ma byc wyświetlanych wierszy domyślnie nadaj 5 
 		if (isNaN(numberOfRows)) {
 			numberOfRows = 5;
 		}	
-		console.log(numberOfRows);		
+	
+	// kontrola ile ma
+
 		//kontrola ilości wierszy z kafelkami video, wyświetlanych w videoSection		
 		// numberOfRow -> ilosc wierszy z kafelkami (ustalona domyślnie na 5) 
 		// sectionHeight -> mnożnik sectionHeight używamy do ograniczenia  widzialnej części videoSection o wyliczony procent
@@ -70,10 +74,14 @@
 		if (pageWidth < 480) {
 				sectionHeight = numberOfRows/Math.ceil(45/2);
 				}		
-		// obliczenie jaka będize widoczna częśc videoSection
+	// Obliczenie jaka będzie widoczna częśc videoSection
+	// w funcji displayVideoBoxes() sa wyświetlane teraz 45 kafelki z filmami, ale 
+	// widac tylko cześc i właśnie tutaj jest obliczana czesc całkowita wyskości videSection
+	// tak aby cały kafelek dolny był widoczny łącznie z podpisem 
+
 		videoSection.height(videoBoxes.height() * sectionHeight);
 					
-		// schowanie napisu "Czytaj więcej"  
+	// Schowanie napisu "Czytaj więcej"  
 		if ((pageWidth < 480) && (hiddenText.innerText.length === 0)) {
 				showMoreText.style.display = 'block';
 			}		
@@ -88,15 +96,15 @@
 
 			pageWidth = window.outerWidth;
 		
-			if  ((e.type == 'mouseenter') && (pageWidth > 1300)) {
+			if  ((e.type == 'mouseenter') && (pageWidth > 1280)) {
 					header.classList.add('headerBig');
 			}	
-			else if ((e.type == 'mouseleave') && (pageWidth > 1300)) {
+			else if ((e.type == 'mouseleave') && (pageWidth > 1280)) {
 		   			header.classList.remove('headerBig');
 			}	
 	}
 
-//Blok kodu obsługi ekranu gdy nastapi scrolowanie myszą 
+//Blok kodu obsługi ekranu, gdy nastąpi scrolowanie myszą 
 	
 	window.addEventListener('scroll', scrollPage);
 	
@@ -105,23 +113,27 @@
 		pageWidth = window.outerWidth;
 		pageYScroll = window.scrollY;
 
-	//zanik sekcji ScrollDown
+	// zanik sekcji ScrollDown dla dużych ekranów stacjonarnych, gdy lekko przesuniesz scrollem myszki
 		if (pageYScroll > 75) {
-				scrollDown.style.display = 'none';  	
+			scrollDown.style.display = 'none';  	
 		}	
 		else {
-				scrollDown.style.display = 'block';
+			scrollDown.style.display = 'block';
 		}
-		
+	
 	// dynamiczne doczytanie większej liczby wierszy z filmami
-		if (pageYScroll > (videoSection.position().top + 0.5*videoSection.height())){
+	// jeżeli pozycja krawędzi górnej ekranu patrzac od góry 
+	// jest większa od pozycji w dokumencie sekcji videoSection + 30% jej wysokości  
+	// na chłopski rozum: jeżeli zeskrolujesz myszką na koniec ekranu sekcji videSection 
+	// to wtedy doczytaj więcej linii z kafelkami. 
+	// Parametr funcji setVideoRows() to jest właśnie ile mam by wyświetlanych wierszy z kaflami 			
+	
+		if (pageYScroll > (videoSection.position().top + 0.3*videoSection.height())){
 			setVideoRows(7);			
-			console.log('siedem');
 		} 
-
 	}
 
-//Blok kodu obsługi kliknięcia na strzałkę przy krawędzi dolnej ekranu w sekcji #scrollDown
+// Blok kodu obsługi kliknięcia na strzałkę w sekcji #scrollDown, na dole ekranu
 
 	scrollDownBox.addEventListener('click', function() {
 		scrollViewTo('#videoSection');

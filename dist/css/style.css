@@ -1,1 +1,813 @@
-@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Raleway:300,400,500,700|Roboto:300,400,500,700&amp;subset=latin-ext);*{margin:0;padding:0;border:0;color:#fff;text-decoration:none;font-size:15px;font-family:Helvetica,Arial,sans-serif;box-sizing:border-box}.container{width:90%;max-width:1800px;margin:0 auto;overflow:hidden}header{height:auto;width:100%;background:#000;position:fixed;z-index:100;border-bottom:red 4px solid;overflow:hidden;box-sizing:border-box}header nav{height:90px;margin:0;transition:all ease-out .3s}.headerBig{margin:12px 0}header #logo{float:left;width:310px;height:90px;margin:5px 0;background:url(../img/netflix.png) no-repeat;background-size:cover;cursor:pointer}header .hamburgerIcon{display:none;float:right;width:50px;height:50px;margin:10px 15px;cursor:pointer}header .iconBar{margin:0 auto;width:40px;height:6px;margin-top:8px;border-radius:3px;background:#fff;transition:all .15s ease-out}header .first.changeHambIcon{transform:translateY(14px) rotate(45deg)}header .second.changeHambIcon{display:none}header .third.changeHambIcon{transform:rotate(-45deg)}header ul{margin-top:25px;float:right;height:50px;list-style:none;overflow:hidden}header ul li{float:left;height:47px;width:120px;margin-left:10px;text-align:center}header ul li:nth-child(n+2):hover{border-bottom:3px solid red;transition:border-bottom .15s}header ul li a{display:block;height:100%;font-family:Helvetica,Arial,sans-serif;font-size:1.3rem;text-decoration:none;letter-spacing:1px;line-height:3rem}.menuSearch{width:150px;margin:0 5px;cursor:pointer;box-sizing:border-box}.mouseSearchClick{width:300px;border:2px solid #fff}.menuSearch .smallBox{display:block;height:100%;padding:0 15px;text-align:right;box-sizing:border-box}.menuSearch .smallBox i{margin-right:15px;font-size:2.5rem}.menuSearch .smallBoxInput{font-size:1.3rem;color:red;position:relative;top:-2px}.menuSearch .expandedBox{display:none;height:100%;width:100%;padding-right:10px;font-size:1.3rem;text-align:right;box-sizing:border-box;position:relative;top:0;color:#fff;background:#000;outline:0}#heroImage{height:auto;width:100%;overflow:hidden;position:relative;top:100px}#videoBackground{min-height:100%;min-width:100%;height:auto;width:auto;position:absolute;top:0;z-index:1;opacity:.9}.descriptionBox{margin:20px 0;height:auto;background:#000;opacity:.9;overflow:hidden;z-index:2;position:relative;top:0}.descriptionBox h3,.descriptionBox h4{color:#d3d3d3}.descriptionBoxDetail{width:50%;padding:20px}.descriptionBox .filmPoster{width:100%;height:auto}.descriptionBox .filmBox{width:50%;height:auto;max-height:600px;max-width:402px;min-height:300px;min-width:200px;position:absolute;top:50%;right:2.5%;transform:translateY(-50%)}.descriptionBox h1{font-size:3rem;font-weight:700;line-height:3rem;margin:1.5rem 0}.descriptionBox h2{color:red;font-size:1.8rem;font-weight:700;letter-spacing:.2px;margin:1.5rem 0}.descriptionBox h3{font-size:1.5rem;font-weight:200;margin:.4rem 0}.descriptionBox h4:first-of-type{margin-top:1.5rem}.descriptionBox h4{font-size:1.3rem;font-weight:200;margin:.2rem 0 0}.descriptionBox span{color:red;font-weight:700;font-size:1.2rem}.descriptionBox .filmTitle{color:#fff;font-size:3vw}.descriptionBox .filmDescBox p{font-size:1.3rem;font-weight:200;margin:1.5rem 0 .3rem}.descriptionBox .filmDescBox{font-size:0}.descriptionBox .filmDescriptionP1,.descriptionBox .filmDescriptionP2{color:#fff;font-weight:300;font-family:Lato;text-align:justify;font-size:1.4rem;display:inline}.descriptionBox .showMoreText{display:none;margin-top:20px;font-size:1.2rem;font-weight:700}.descriptionBox .button{float:left;width:300px;margin:2rem 4rem 2rem 1rem;padding:1rem;border-radius:5px;cursor:pointer;letter-spacing:1.5px;font-size:1.3rem;text-align:center;box-sizing:border-box}.descriptionBox .btnWatchVideo{background:rgba(255,255,255,.25)}.descriptionBox .btnShowIMDB{background:rgba(255,0,0,1)}.descriptionBox .btnWatchVideo:hover{background:rgba(255,255,255,.1)}.descriptionBox .btnShowIMDB:hover{background:rgba(255,0,0,.6)}#scrollDown{height:85px;position:relative;top:100px;background:#000}#scrollDownBox{position:absolute;left:50%;top:5px;transform:translateX(-50%);text-align:center;cursor:pointer}#scrollDown i{display:inline-block;width:100%;font-size:400%;animation-name:arrow;animation-duration:2s;animation-iteration-count:infinite;animation-timing-function:easy-in;position:relative}@keyframes arrow{0%{color:#fff;left:0;top:-10px}100%{color:red;left:0;top:0}}#scrollDown p{color:#fff;font-size:1.3rem;letter-spacing:1.5px}#videoSection{height:auto;width:100%;padding:1% 1%;background:#000;position:relative;top:100px;overflow:hidden}.videoBox{float:left;height:20vw;width:12.5%;margin:1% 2%;opacity:.6;border-radius:5px;border-bottom:3px solid red;position:relative}.videoBox img{height:17.16vw;width:100%;border-radius:7px}.videoBox p{width:100%;display:inline-block;text-align:center;font-family:Lato,sans-serif;color:#fff;font-size:1.1rem;font-weight:400;position:absolute;top:93%;left:50%;transform:translate(-50%,-50%)}.videoBox:hover img{transition:border .1s;border:3px solid #000}.videoBox:hover i{display:inline-block}.videoBox:hover{opacity:1}.videoBox span{font-size:1.5rem}.videoBox i{display:none;position:absolute;top:40%;left:50%;transform:translate(-50%,-40%);cursor:pointer;font-size:5rem;color:#fff}.modalBox{display:none;position:fixed;top:120px;left:20;right:20;height:600px;width:100%;background:grey;z-index:999}#videoModal{height:600px;width:100%;border:3px solid #ff0}#controlBox{position:fixed;top:5;left:5;width:150px;height:80px;background:#000;padding:10px;z-index:200;border:1px solid #ff0}#controlBox p{color:red;font-size:20px}@media (max-width:1280px){header ul li{width:105px;margin-left:0}header ul li{font-size:1.2rem}header #logo{width:280px;height:85px;margin:10px 0;background-size:280px 85px}header ul li a{font-size:1.2rem}.menuSearch:hover{width:200px}.videoBox{width:16%;height:25.5vw}.videoBox img{height:22vw}.videoBox p{font-size:1rem;font-weight:400}#scrollDown{display:none}}@media (max-width:1024px){header{position:static}header nav{height:200px;margin:0}header #logo{float:none;margin:10px auto 0}header ul{float:none;width:80%;height:100px;margin:0 auto}header ul li{width:25%;margin:0}header ul li:hover a{color:red}#heroImage{top:0}.descriptionBox .filmBox{width:45%;max-height:450px;max-width:300px}.descriptionBoxDetail{width:55%}.menuSearch{width:100%;margin:0}.menuSearch .smallBox{text-align:center;font-size:1.4rem;padding:10px 50px}.menuSearch .expandedBox{padding:15px 50px;top:0}.menuSearch .smallBoxInput{top:-8px}.menuSearch:hover .expandedBox{text-align:center}.menuSearch:hover{width:100%}.descriptionBox .button{font-size:1.2rem;width:40%;padding:1rem 0;margin:1.5rem 5%}.videoBox{height:32vw;width:21%}.videoBox p{top:95%}.videoBox img{height:28.8vw}#videoSection{top:0}}@media (max-width:768px){header ul{width:95%}header ul li{height:50px}.menuSearch{height:55px}.menuSearch .smallBox i{margin-right:5px}.descriptionBoxDetail{width:100%;padding:15px}.descriptionBox .filmBox{width:100%;max-height:400px;max-width:268px;position:relative;top:10px;left:50%;transform:translateX(-50%)}.descriptionBox h1{font-size:2.5rem}.descriptionBox h2{font-size:1.5rem;margin:1rem 0}.descriptionBox h3{font-size:1.3rem}.descriptionBox h4{font-size:1.25rem}.descriptionBox p{font-size:1.1rem;line-height:1.6rem}.descriptionBox .filmTitle{font-size:7vw}.descriptionBox .button{width:45%;padding:1rem 0;margin:1.5rem 2.5%}.videoBox{height:45vw;width:29%}.videoBox img{height:39.5vw}.videoBox p{font-size:.9rem}}@media (max-width:480px){.container{width:95%}header{height:auto}header nav{height:auto;margin:0 0}header #logo{float:left;width:240px;height:70px;margin:5px;background-size:240px 70px}header ul li{float:none;width:100%;padding:0;border-top:2px solid #333}header ul li:hover{border-bottom:none}header .hamburgerIcon{display:block;margin:15px 20px 0 0}header ul{height:0;opacity:0;transition:all 1s}.showMenuItems{height:250px;opacity:1}.menuSearch{width:100%}.menuSearch .smallBox{padding:0 50px}.menuSearch .smallBoxInput{top:0}.menuSearch .smallBox i{margin-right:2px;position:relative;top:5px}.descriptionBox h1{font-size:2rem}.descriptionBox p{margin:15px 0 0 0;font-size:1.2rem}.descriptionBox .filmTitle{font-size:12vw}.descriptionBox .hiddenText{display:none}.descriptionBox .showMoreText:hover{color:red}.descriptionBox .button{width:90%;margin:1rem 5%}.videoBox{height:71vw;width:46%}.videoBox img{height:63.25vw}.videoBox p{top:94%;font-size:.9rem}}@media (max-width:350px){header ul li{height:50px}header #logo{width:205px;height:60px;background-size:205px 60px}header .hamburgerIcon{margin:12px 10px}#heroImage{padding:5px 0}.descriptionBox h1{font-size:2rem;line-height:1.7rem}.descriptionBox h2{font-size:1rem}.descriptionBox .button{padding:.75rem 0;margin:.75rem 5%}.videoBox{height:74vw}}
+@import url("https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Raleway:300,400,500,700|Roboto:300,400,500,700&amp;subset=latin-ext");
+/* ======== GŁÓWNY PLIK CSS Z ROZMIARAMI DLA DUŻYCH EKRANÓW PONAD 1280PX =======*/
+/* ======= resety CSS */
+* {
+		margin: 0px;	
+		padding: 0px;
+		border: 0px;
+		color: white;
+		text-decoration: none;
+		font-size: 15px;
+		font-family: Helvetica, Arial, sans-serif;
+		box-sizing: border-box;
+	}
+.container {
+		width: 90%;
+		max-width: 1800px;
+		margin: 0 auto;
+		overflow: hidden;
+		/*border: 3px solid white;*/
+	}
+/* ======= sekcja Header z menu na górze i logo Netflixa */
+header {
+		height: auto;
+		width: 100%;
+		background: black;	
+		/*header zafiksowany do belki górnej przy przewijaniu ekranu w dół*/
+		position: fixed; 		
+		z-index: 100;
+		border-bottom: red 4px solid;
+		overflow: hidden;
+		box-sizing: border-box;
+		/*transition: all 0.4s;	*/
+	}
+header nav {
+		height: 90px;
+		margin: 0px; 
+		transition: all ease-out 0.3s;   
+	}
+/*gdy scrollowanie w dół lub opuszczenie header'a to ma się pomiejszyc */
+.headerBig {
+		margin: 12px 0px;
+	}
+header #logo {
+		float: left;
+		width: 310px; 
+		height: 90px;
+		margin: 5px 0;
+		background: url(../img/netflix.png) no-repeat; 
+		background-size: cover;
+		cursor: pointer;
+	}
+/* hamburger menu*/
+header .hamburgerIcon {
+		display: none;
+		float: right;
+		width: 50px;
+		height: 50px;
+		margin: 10px 15px;
+		cursor: pointer;
+	}
+header .iconBar {
+		margin: 0 auto;
+		width: 40px;
+		height: 6px;
+		margin-top: 8px;
+		border-radius: 3px;
+		background: white;
+		transition: all .15s ease-out;
+	}
+/* animacje belek w hamburger menu */
+header .first.changeHambIcon {
+	  	-webkit-transform: translateY(14px) rotate(45deg);
+	  	transform: translateY(14px) rotate(45deg);
+	}
+header .second.changeHambIcon {
+		display: none;
+	}
+header .third.changeHambIcon {
+		-webkit-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+header ul {
+		margin-top: 25px;
+		float: right;
+		height: 50px;
+		list-style: none;
+		overflow: hidden;
+	}
+header ul li {
+		float: left;
+		height: 47px;
+		width: 120px;
+		margin-left: 10px;
+		text-align: center;
+	}
+header ul li:nth-child(n+2):hover { /*ale rzeżba ale działa :nth-child(n+2) znaczy ze wszystkie elementy od numeru 2 */
+		border-bottom: 3px solid red;
+		transition: border-bottom 0.15s;
+	}
+header ul li a {
+		display: block;
+		height: 100%;
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 1.3rem;
+		text-decoration: none;
+		letter-spacing: 1px;
+		line-height: 3rem;
+	}
+/*efekt rozsuwania pola Szukaj po najechaniu myszką*/
+.menuSearch {
+		width: 150px;
+		margin: 0 5px;
+		cursor: pointer;
+		box-sizing: border-box;
+	}
+/*najechanie myszą na input "Szukaj" */
+.mouseSearchClick {  
+		width: 300px;
+		border: 2px solid white;
+	}
+.menuSearch .smallBox {
+		display: block;
+		height: 100%;
+		padding: 0px 15px;
+		text-align: right;
+		box-sizing: border-box;
+	}
+.menuSearch .smallBox i {
+	 	margin-right: 15px;
+	    font-size: 2.5rem;
+	}
+.menuSearch .smallBoxInput {
+	    font-size: 1.3rem;
+	    color: red;	
+	    position: relative;
+	    top: -2px;
+	}
+.menuSearch .expandedBox {
+		display: none;
+		height: 100%;
+		width: 100%;
+		padding-right: 10px; 
+		font-size: 1.3rem;	
+		text-align: right;
+		box-sizing: border-box;
+		position: relative;
+	    top: 0px;
+	    color: white;
+	    background: black;
+	    outline: none;
+	}
+/* ======= sekcja HeroImage z dużą grafika w tle */
+#heroImage {
+		/*background: url(../img/background.jpg) no-repeat fixed 0px 70px; 
+		background-size: cover;*/
+		height: auto;
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+		top: 100px;
+	}
+#videoBackground {
+		min-height: 100%;
+		min-width: 100%;
+		height: auto;
+		width: auto;
+		position: absolute;
+		top: 0;
+		z-index: 1;
+		opacity: 0.9;
+	}
+/* ======= sekcja descriptionBox z opisem filmu */
+.descriptionBox {
+		margin: 20px 0;
+		height: auto;
+		background: black;	
+		opacity: .9;
+		overflow: hidden;
+		z-index: 2;	
+		position: relative;
+		top: 0;
+	}
+.descriptionBox h3,
+	.descriptionBox h4 {
+		color: lightgrey;
+	}
+.descriptionBoxDetail {
+		width: 50%;
+		padding: 20px;
+		/*border: 1px solid yellow;*/
+	}
+.descriptionBox .filmPoster	{
+		width: 100%;
+		height: auto;
+	}
+.descriptionBox .filmBox {
+		width: 50%;
+		height: auto;
+		max-height: 600px; /*dzięki 4 wartością min i max Poster świetnie się skaluje i nie jest nigdy za mały i za duży */
+		max-width: 402px;
+		min-height: 300px;
+		min-width: 200px;
+		position: absolute;
+		top: 50%;
+		right: 2.5%;
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+.descriptionBox h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 3rem;
+		margin: 1.5rem 0;
+	}
+.descriptionBox h2 {
+		color: red;
+		font-size: 1.8rem;
+		font-weight: 700;
+		letter-spacing: 0.2px;
+		margin: 1.5rem 0;
+	}
+.descriptionBox h3 {
+		font-size: 1.5rem;
+		font-weight: 200;
+		margin: .4rem 0;
+	}
+.descriptionBox h4:first-of-type {
+		margin-top: 1.5rem;
+	}
+.descriptionBox h4 {
+		font-size: 1.3rem;
+		font-weight: 200;
+		margin: .2rem 0 0;
+	}
+.descriptionBox span {
+		color: red;
+		font-weight: 700;
+		font-size: 1.2rem;
+	}
+.descriptionBox .filmTitle {
+		color: white;
+		font-size: 3vw;
+	}
+.descriptionBox .filmDescBox p {
+		font-size: 1.3rem;
+		font-weight: 200;
+		margin: 1.5rem 0 .3rem;
+	}
+/*niestety mus by bo jest gap jedna spacja miedzye dwoma tekstami */
+.descriptionBox .filmDescBox {
+		font-size: 0;
+	}
+.descriptionBox .filmDescriptionP1, 
+	.descriptionBox .filmDescriptionP2 {
+		color: white;
+		font-weight: 300;
+		font-family: 'Lato';
+		text-align: justify;
+		font-size: 1.4rem;
+		display: inline;
+	}
+.descriptionBox .showMoreText {
+		display: none;
+		margin-top: 20px;
+		font-size: 1.2rem;
+		font-weight: 700;
+	}
+.descriptionBox .button {
+		float: left;
+		width: 300px;
+		margin: 2rem 4rem 2rem 1rem;
+		padding: 1rem;
+		border-radius: 5px;
+		cursor: pointer;
+		letter-spacing: 1.5px;
+		font-size: 1.3rem;
+		text-align: center;
+		box-sizing: border-box;
+	}
+.descriptionBox .btnWatchVideo {
+		background: rgba(255,255,255,0.25);
+	}
+.descriptionBox .btnShowIMDB {
+		background: rgba(255,0,0,1);
+	}
+.descriptionBox .btnWatchVideo:hover {
+		background: rgba(255,255,255,0.1);
+	}
+.descriptionBox .btnShowIMDB:hover {
+		background: rgba(255,0,0,0.6);
+	}
+/* =======   sekcja scrollDown icony z FontAwesome umieszczone na dole strony pierwszej */
+#scrollDown {
+		height: 85px; 
+		position: relative;
+		top: 100px;
+		background: black;	
+	}
+#scrollDownBox {
+		position: absolute;
+		left: 50%;
+		top: 5px;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		text-align: center;
+		cursor: pointer;
+		/*border: 2px solid red;*/
+	}
+#scrollDown i {
+		display: inline-block;
+		width: 100%;
+		font-size: 400%;
+		-webkit-animation-name: arrow;
+		animation-name: arrow;
+	    -webkit-animation-duration: 2s;
+	    animation-duration: 2s;
+	    -webkit-animation-iteration-count: infinite;
+	    animation-iteration-count: infinite;
+	    -webkit-animation-timing-function: easy-in;
+	    animation-timing-function: easy-in;
+	    position: relative; /*dla keyferames niezbedne*/
+	}
+@-webkit-keyframes arrow {
+	    0%   {color:white; left:0px; top: -10px;}
+	    100% {color:red; left:0px; top: 0px;}
+	}
+@keyframes arrow {
+	    0%   {color:white; left:0px; top: -10px;}
+	    100% {color:red; left:0px; top: 0px;}
+	}
+#scrollDown p {
+		color: white;
+		font-size: 1.3rem;
+		letter-spacing: 1.5px;
+	}
+/* ======= sekcja videoSection z kafelkami filmowymi ======= */
+#videoSection {
+		height: auto;
+		width: 100%;
+		padding: 1% 1%;
+		background: black;	
+		position: relative;
+		top: 100px;
+		overflow: hidden;
+		/*border: 1px solid yellow; */
+	}
+.videoBox {
+		float: left;  
+		height: 20vw;
+		width: 12.5%;
+		margin: 1% 2%;
+		opacity: 0.6; 
+		border-radius: 5px;
+		border-bottom: 3px solid red;
+		position: relative;  /* to jest dla klawisza PLAY w tagu "i"*/ 
+		/*border: 1px solid yellow; */
+	}
+.videoBox img  {
+		height: 17.16vw;
+		width: 100%;
+		border-radius: 7px; 
+		/*object-fit: cover;*/
+		/*border: 3px solid  red;*/
+	}
+.videoBox p {
+		width: 100%;
+		display: inline-block; 
+		text-align: center;
+		font-family: 'Lato', sans-serif;
+		color: white; 
+		font-size: 1.1rem;	
+		font-weight: 400;
+		position: absolute;
+		top: 93%;
+		left: 50%;
+		-webkit-transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
+		/*border: 1px solid yellow; */
+	}
+.videoBox:hover img{
+		transition: border .1s;
+		border: 3px solid  black;
+	}
+.videoBox:hover i {
+		display: inline-block;
+	}
+.videoBox:hover {
+		opacity: 1; 
+	}
+/*.videoBox span {
+		font-size: 1.5rem;
+	}*/
+.videoBox i {
+		display: none;
+		position: absolute;
+		top: 40%; /*dlaczego 40% a nie 50% bo pozycjonowane wzgledem elementu videBox a nie IMG a własnie nad IMG nma byc w połowie*/
+		left: 50%;
+		-webkit-transform: translate(-50%,-40%);
+		transform: translate(-50%,-40%);
+		cursor: pointer;
+		font-size: 5rem;
+		color: white;	
+	}
+/* video-film w modalu */
+.modalBox {
+		display: none;
+		position: fixed;
+		top: 120px;
+		left: 20;
+		right: 20;
+		width: 80%;
+		max-width: 640px;
+		height: 600px;
+		background: grey;
+		z-index: 999;
+	}
+.videoModal {
+		height: 800px;
+		width: 100%;
+		border: 3px solid yellow;
+	}
+/*	#controlBox {
+		position: fixed;
+		top: 5;
+		left: 5;
+		width: 150px;
+		height: 80px;
+		background: black;
+		padding: 10px;
+		z-index: 200;
+		border: 1px solid yellow;
+	}
+	
+	#controlBox p {
+		color: red;
+		font-size: 20px;
+	}
+*/
+@media (max-width: 1280px){
+
+/* ======== MEDIA QUERIES 1280PX =======*/
+
+header ul li {
+	width: 105px;
+	margin-left: 0px;
+	/*border: 1px solid yellow;*/
+}	
+
+header ul li {
+	font-size: 1.2rem;
+}
+
+header #logo {
+	width: 280px; 
+	height: 85px;
+	margin: 10px 0;
+	background-size: 280px 85px;
+}
+
+header ul li a {
+	font-size: 1.2rem;
+}
+.menuSearch:hover {
+	width: 200px;
+}
+
+.videoBox {
+	width: 16%;
+	height: 25.5vw;
+}
+
+.videoBox img  {
+	height: 22vw;
+}	
+
+.videoBox p {
+	font-size: 1rem;	
+	font-weight: 400;
+}
+
+/* dla mniejszych rozdzielczości scrool na dół jest zbedny */
+#scrollDown {
+	display: none;
+}
+}
+@media (max-width: 1024px){
+/* ======== MEDIA QUERIES 1024PX =======*/
+header {
+	position: static; 	/*hedaer nie będize od tej pory na sztywno zafiksowany do belki górnej przy przewijaniu ekranu w dół*/
+}
+
+header nav {
+	height: 200px;
+	margin: 0px;
+}
+
+header #logo {
+	float: none;
+	margin: 10px auto 0px;
+}
+
+header ul {
+	float: none;
+	width: 80%;
+	height: 100px;
+	margin: 0 auto;
+}
+
+header ul li {
+	width: 25%;
+	margin: 0px;
+}
+
+header ul li:hover a {
+	color: red;
+}
+
+#heroImage {
+	top: 0px;
+}
+
+.descriptionBox .filmBox {
+	width: 45%;
+	max-height: 450px; 
+	max-width: 300px;
+}
+
+.descriptionBoxDetail {
+	width: 55%;
+}		
+.menuSearch {
+	width: 100%;
+    margin: 0px;
+}
+
+.menuSearch .smallBox {
+	text-align: center;
+	font-size: 1.4rem;
+	padding: 10px 50px;
+}
+
+.menuSearch .expandedBox {
+   	padding: 15px 50px;
+   	top: 0px;
+}
+
+.menuSearch .smallBoxInput {
+    top: -8px;
+}
+
+.menuSearch:hover .expandedBox {
+	text-align: center;
+}
+
+.menuSearch:hover {
+	width: 100%;
+}
+
+.descriptionBox .button {
+	font-size: 1.2rem;
+	width: 40%;
+	padding: 1rem 0rem;
+	margin: 1.5rem 5%;
+}
+
+.videoBox {
+	height: 32vw;
+	width: 21%;	
+}
+.videoBox p {
+	top: 95%;
+}	
+
+.videoBox img  {
+	height: 28.8vw;
+}	
+
+#videoSection {
+	top: 0px;
+}
+}
+@media (max-width: 768px){
+/* ======== MEDIA QUERIES 768PX =======*/
+header ul {
+	width: 95%;
+}
+
+header ul li {
+	height: 50px;
+}
+
+.menuSearch {
+	height: 55px;
+}
+
+.menuSearch .smallBox i {
+ 	margin-right: 5px;
+}
+
+.descriptionBoxDetail {
+	width: 100%;
+	padding: 15px;
+}
+
+.descriptionBox .filmBox {
+    width: 100%;
+	max-height: 400px; 
+	max-width: 268px;
+	position: relative;
+	top: 10px;
+	left: 50%;
+	/*right: auto;*/
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.descriptionBox h1 {
+	font-size: 2.5rem;
+}
+
+.descriptionBox h2 {
+	font-size: 1.5rem;
+	margin: 1rem 0;
+}
+
+.descriptionBox h3 {
+	font-size: 1.3rem;
+}
+
+.descriptionBox h4 {
+	font-size: 1.25rem;
+}
+
+.descriptionBox p {
+	font-size: 1.1rem;
+	line-height: 1.6rem;
+}
+
+.descriptionBox .filmTitle {
+	font-size: 7vw;
+}
+
+.descriptionBox .button {
+	width: 45%;
+	padding: 1rem 0rem;
+	margin: 1.5rem 2.5%;
+}
+
+.videoBox {
+	height: 45vw;
+	width: 29%;
+}
+
+.videoBox img  {
+	height: 39.5vw;
+}	
+
+.videoBox p {
+	font-size: .9rem;
+}
+}
+@media (max-width: 480px){
+
+/*  Media queries 480px*/
+
+.container {
+	width: 95%;
+}
+
+header {
+	height: auto;
+}
+
+header nav {
+	height: auto;
+	margin: 0px 0px;
+}
+
+header #logo {
+	float: left;
+	width: 240px; 
+	height: 70px;
+	margin: 5px;
+	background-size: 240px 70px;
+}
+
+header ul li {
+	float: none;
+	width: 100%;
+	padding: 0rem;
+	border-top: 2px solid #333;
+}
+
+header ul li:hover {
+	border-bottom: none;
+}
+
+header .hamburgerIcon {
+	display: block;
+	margin: 15px 20px 0 0;
+}	
+
+/*menu nie ma, dopiero po naciśnięciu klawisza hamburger-menu pojawia się */
+header ul {
+	height: 0px;
+	opacity: 0;
+	transition: all 1s;
+}
+
+.showMenuItems {
+	height: 250px;
+	opacity: 1;
+}
+
+.menuSearch {
+	width: 100%;
+}
+
+.menuSearch .smallBox {
+	padding: 0px 50px;
+}
+.menuSearch .smallBoxInput {
+    top: 0px;
+}
+
+.menuSearch .smallBox i {
+ 	margin-right: 2px;
+ 	position: relative;
+ 	top: 5px;
+}
+
+.descriptionBox h1 {
+	font-size: 2rem;
+}
+
+.descriptionBox p {
+	margin: 15px 0 0 0;
+	font-size: 1.2rem;
+}
+
+.descriptionBox .filmTitle {
+	font-size: 12vw;
+}
+
+.descriptionBox .hiddenText  {
+	display: none;
+}
+
+.descriptionBox .showMoreText:hover {
+	color: red;
+}
+	
+.descriptionBox .button {
+	width: 90%;
+	margin: 1rem 5%;
+}
+
+/* ======= sekcja videoSection z kafelkami filmowymi ======= */
+
+.videoBox {
+	height: 71vw;
+	width: 46%;
+}
+
+.videoBox img  {
+	height: 63.25vw;
+}	
+
+.videoBox p {
+	top: 94%;
+	font-size: .9rem;
+}
+}
+@media (max-width: 350px){
+
+/*  Media queries 350px*/
+
+header ul li {
+	height: 50px;
+}
+
+header #logo {
+  width: 205px; 
+  height: 60px;
+  background-size: 205px 60px;
+}
+
+header .hamburgerIcon {
+  margin: 12px 10px;
+} 
+
+#heroImage {
+  padding: 5px 0;
+}
+
+.descriptionBox h1 {
+	font-size: 2rem;
+	line-height: 1.7rem;
+}
+
+.descriptionBox h2 {
+  font-size: 1rem;
+}
+
+.descriptionBox .button {
+  padding: .75rem 0rem;
+  margin: 0.75rem 5%;
+}
+
+.videoBox  {
+  height: 74vw;
+}
+}

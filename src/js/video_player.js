@@ -112,8 +112,8 @@
 	    $('#videoBackground').attr('poster',movieDetails.Poster);
 	    $('#videoBackground').children().attr('src', movieToDisplay.url);	
 		
-		// wywołanie funcji z modułu modal-video-js ktora uruchomi po naciśnieciu klawisza film 
-		$(".btnWatchVideo").modalVideo();		
+	// wywołanie funcji z modułu modal-video-js ktora uruchomi po naciśnieciu klawisza film 
+	// $(".btnWatchVideo").modalVideo();
 
 	    // console.log($('#videoBackground').children().attr('src'));
 	    // var video1 = document.querySelector('#videoBackground');
@@ -169,9 +169,9 @@
 	function eventListenerVideoBox() {
 		
 		// event na buttonie "Pokaż film" 
-		// btnWatchVideo.addEventListener('click', function() {
-		// 	displayVideoModal($('.btnWatchVideo').attr('data-url'));
-	 //  	});
+		btnWatchVideo.addEventListener('click', function() {
+			displayVideoModal($('.btnWatchVideo').attr('data-video-id'));
+	  	});
 		
 		// event na buttonie "Zobacz więcej" 
 		btnShowIMDB.addEventListener('click', function() {
@@ -209,7 +209,7 @@
 		// z videofilmem który jest prezentowany w descriptionBox
 		function displayVideoModal(movieToDisplay){
 			var modalBox = document.querySelector('.modalBox'),
-			videoModal = $('#videoModal'),
+			videoModal = $('.videoModal'),
 			video = videojs('videoModal');
 
 			modalBox.style.display = 'block';

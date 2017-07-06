@@ -437,9 +437,9 @@
 		opacity: 1; 
 	}
 
-	.videoBox span {
+	/*.videoBox span {
 		font-size: 1.5rem;
-	}
+	}*/
 
 	.videoBox i {
 		display: none;
@@ -459,19 +459,20 @@
 		top: 120px;
 		left: 20;
 		right: 20;
+		width: 80%;
+		max-width: 640px;
 		height: 600px;
-		width: 100%;
 		background: grey;
 		z-index: 999;
 	}
 
-	#videoModal {
-		height: 600px;
+	.videoModal {
+		height: 800px;
 		width: 100%;
 		border: 3px solid yellow;
 	}
 
-	#controlBox {
+/*	#controlBox {
 		position: fixed;
 		top: 5;
 		left: 5;
@@ -487,4 +488,4 @@
 		color: red;
 		font-size: 20px;
 	}
-	
+*/

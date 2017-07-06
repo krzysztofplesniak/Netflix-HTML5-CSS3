@@ -456,20 +456,20 @@
 	.modalBox {
 		display: none;
 		position: fixed;
-		top: 120px;
-		left: 20;
-		right: 20;
-		width: 80%;
-		max-width: 640px;
-		height: 600px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		height: auto;
+		width: 90%;
+		max-height: 720px;
+		max-width: 1280px;
 		background: grey;
 		z-index: 999;
 	}
 
-	.videoModal {
-		height: 800px;
+	#videoModal {
+		height: 100%;
 		width: 100%;
-		border: 3px solid yellow;
 	}
 
 /*	#controlBox {

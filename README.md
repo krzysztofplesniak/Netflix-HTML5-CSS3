@@ -2,7 +2,7 @@ Link do hostingu -> http://krzysztofplesniak.github.io
 
 Opis działania aplikacji 
 ---------------------------
-- aplikacja wyglądem przypominająca Netflix,
+- aplikacja wyglądem przypominająca Netflix,  i służąca do przegladania filmów,
 - filmy zaciągane są z bazy TMDb/OMDB,  
 - jedne z filmów jest losowo wybierany do pokazania w tle, 
 - strona za każdym razem pokazuje inne zdjecia i opisy filmu. Zmiana losowa z każdą nową sesją przeglądarki, 

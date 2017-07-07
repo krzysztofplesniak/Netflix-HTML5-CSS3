@@ -12,7 +12,6 @@
 		box-sizing: border-box;
 	}
 	
-
 	.container {
 		width: 90%;
 		max-width: 1800px;
@@ -179,17 +178,17 @@
 		width: 100%;
 		overflow: hidden;
 		position: relative;
-		top: 100px;
+		top: 100px;		
 	}
 
 	#videoBackground {
-		min-height: 100%;
-		min-width: 100%;
-		height: auto;
-		width: auto;
 		position: absolute;
-		top: 0;
+		top: 50%;
+		left: 50%;
 		z-index: 1;
+		transform: translate(-50%, -20%);
+		height: auto;
+		width: 100%;
 		opacity: 0.9;
 	}
 
@@ -201,7 +200,7 @@
 		background: black;	
 		opacity: .9;
 		overflow: hidden;
-		z-index: 2;	
+		z-index: 2;			/*ponad #videoBackground*/
 		position: relative;
 		top: 0;
 	}
@@ -437,10 +436,6 @@
 		opacity: 1; 
 	}
 
-	/*.videoBox span {
-		font-size: 1.5rem;
-	}*/
-
 	.videoBox i {
 		display: none;
 		position: absolute;
@@ -452,27 +447,43 @@
 		color: white;	
 	}
 	
-	/* video-film w modalu */
-	.modalBox {
-		display: none;
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
-		height: auto;
-		width: 90%;
-		max-height: 720px;
-		max-width: 1280px;
-		background: grey;
-		z-index: 999;
-	}
-
-	#videoModal {
-		height: 100%;
+	.modalBackground{
+		height: 100vh;
 		width: 100%;
 	}
 
-/*	#controlBox {
+	.videoContainer {
+		position: fixed;
+		z-index: -2;
+		opacity: 0;
+		top: 50%;
+		left: 50%;
+		height: auto;
+		width: 90%;
+		transform: translate(-50%,-50%);
+		max-height: 720px;
+		max-width: 1280px;		
+	}
+
+	/* video-film w modalu */
+	.openModal .videoContainer {
+		z-index: 999;
+		opacity: 1;
+	}
+		
+	.openModal {
+		z-index: 998;
+		background: rgba(00,0,0,0.85);
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		content: "";	
+	}
+
+	/*	
+	#controlBox {
 		position: fixed;
 		top: 5;
 		left: 5;
@@ -488,4 +499,4 @@
 		color: red;
 		font-size: 20px;
 	}
-*/
+	*/

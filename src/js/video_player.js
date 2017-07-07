@@ -207,13 +207,13 @@
 		
 		// funkcja której zadaniem jest pokazanie modala po kliknięciu na button "Podgląd filmu" 
 		// z videofilmem który jest prezentowany w descriptionBox
-		function displayVideoModal(movieToDisplay){
-			var modalBox = document.querySelector('.modalBox'),
-			videoModal = $('.videoModal'),
-			video = videojs('videoModal');
+		function displayVideoModal(movieToDisplay) {
 
-			modalBox.style.display = 'block';
-			videoModal.find('source').attr('src', movieToDisplay);
+			$('.modalBackground').addClass('openModal');
+			$('#videoModal').find('source').attr('src', 'https://www.youtube.com/watch?v=' + movieToDisplay);
+
+			// play filmu 
+			video = videojs('videoModal');
 		}
 	
 	}

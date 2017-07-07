@@ -2,29 +2,42 @@ Link do hostingu -> http://krzysztofplesniak.github.io
 
 Opis działania aplikacji 
 ---------------------------
-- aplikacja wyglądem przypominająca Netflix z użyciem HTML5, CSS3 i JS.
-- filmy zaciągane są z bazy OMDB/IMDB.  
-- filmy są losowo wybierane do pokazania w tle. 
-- strona za każdym razem pokazuje inne zdjecia i opisy filmu. Zmiana losowa z każdą nową sesją przeglądarki. 
-- aplikacja korzysta z pliku JSON, gdzie są zapisane dane do 20 filmów (id, url, opis i tytuł). 
-- w pliku są obiekty, które zawierają ID, potrzebne do odpytania bazy OMDb w celu pobrania rozszerzonych danych tj. poster, url z trailerem, rok produkcji, aktorzy, reżyser, nagrody itp. 
-- trailery filmów można zobaczyć klikając na button "Podgląd filmu" (losowy film), lub wyszukując własny tutuł wpisujac go w polu input "Szukaj" w menu. 
-- dodatkowo, można po naciśnięciu ikonki PLAY na liście z filmami na dole (kafelki), zobaczyć inne domyślne proponowane filmy.
-- menu "Szukaj" podpowiada odnalezione w bazie OMDB tytuły filmów, dobrane do wpisywanego ciągu znaków (allmost done). 
-- opis dokładny filmu wraz możliwością oglądania filmu jest realizowany w oknie typu modal (przyszłość). 
-- kontrola filmu spoczywa na biblotekach zewętrznych obsługujących tag <video> i wyświetlających film w modalu (przyszłość).      
+- aplikacja wyglądem przypominająca Netflix,
+- filmy zaciągane są z bazy TMDb/OMDB,  
+- jedne z filmów jest losowo wybierany do pokazania w tle, 
+- strona za każdym razem pokazuje inne zdjecia i opisy filmu. Zmiana losowa z każdą nową sesją przeglądarki, 
+- aplikacja korzysta z pliku JSON, gdzie są zapisane ID do 45 filmów, 
+- pobrane z pliku ID, służą do odpytania bazy TMDb, aby pobrać rozszerzone dane tj. poster, url z trailerem, rok produkcji, aktorzy, reżyser, nagrody itp. 
+- trailer filmu można zobaczyć klikając na button "Podgląd filmu" (losowy film),
+- input "Szukaj" w menu służy do wyszukania własnego tutuł filmu, 
+- w sekcji dolnej VideoSection są prezentowane pozostałe postery 44 filmów zeskładowanych w pliku JSON,
+- po naciśnięciu ikonki PLAY, na dole można także zobaczyć trailery tych filmów,
+- po naciśnięciu "Pokaż więcej" z IMDB można dowiedzieć się dokładnego opisi i także przeglądanć film . 
+- kontrola filmu częsciowo spoczywa na biblotece video.js obsługującej tag <video> a częściowo na własnej logide kontroli filmu
 
+Przewdziane dodatki w przyszłości 
+------------------------------------
+- modal: eventy, customizacja css od pakiet Video.js,
+- zmiana zapytań z bazy OMDb na TMDb: polskie opisy i trailery filmów,
+- podstrona "Więcej o filmie": prezentacja szczegółowa wybranego filmu,
+- podstrona "Przeglądaj" i "Dzieci" - zaczytanie kilku nowości filmowych lub filmów dedkowanych dla dzieci. 
+- obsługa przycisków PLAY: wyświetlanie filmów w sekcji które są w sekcji VideoSection,
+- input Szukaj: przy wpisywaniu w input, AJAX-owe podpowiedzi 5 pasujących tytułów filmów,
+- refaktryzacja kodu CSS/JS i modularyzacja JS: lepsza organizacja kodu poprzez likwidację powtórzeń, wydzielenie bloków kodu, kontrola scope itp.
+- SASS z BEM: przerobienie projektu, osiągniecie wiekszej czytelniości kodu CSS i otymalizacja kodu poprzez wyłapanie nadpisań.
+- podział projekt na pliki CSS, gdzie każdy będzie odpowiadał za jakiś fragment funcjonalny np. layout  osobo, moduły osobno. To razem z  BEM i z SASS jest całkiem ciekawe podeście, ale też rozwali projekt zanim to przerobię.     
+- obsługa błędów: AJAX'owe catch, asychnroniczne zapytania, brak plików, brak połączenia z baza, długi czas oczekiwania na dane,
+- odpytanie bazy TMDb z pomocą dedykowanej bibloteki https://www.npmjs.com/package/omdb
+- poprawa kodu AJAX'owego: dodanie obsługi blędów, poprawa callback heel, zamiana na promise lub modyfikacja callback'ów
 
 Wykorzytane technologie: 
 -------------------------
  - responsywność dla 6 stopni od 350px do 1280px dla trybu portrait i landscape.
  - JSON plik z ID filmów potrzebnych do późniejszego odpytania bazy OMDb.
- - Ajax'owe zapytania do bazy OMDb, za pomocą prywatnego api-key. 
+ - Ajax'owe zapytania do bazy TMDb, za pomocą prywatnego api-key. 
  - GULP pluginy: poprawa kodu JSHint , HTMLHINT, minifikacja CSS i HTML, łączenia plików w jeden, tłumacz subkodu SASS oraz wiele innych, jednym słowem automatyzacje niezbędne dla FRONT-owca.   
- - bibloteki zewn. do wyświetlania video: Video.JS, Modal-Video-JS (przyszłość).
- - odpytanie bazy OMDb odbywa się za pomoca biblotek z NPM'a (przyszłość).
- 
- 
+ - bibloteki zewn. do wyświetlania video: Video.JS (przyszłość).
+
 Nauka wyniesiona z projektu na podstawie popełnionych błędów 
 --------------------------------------------------------------
 1. Problem wielkości relatywnej VW. Okazuje się, że nie jest tak pieknie ja się wydaje, dlatego, że jest brak kontroli nad rozmiarem obrazków.   
@@ -49,20 +62,4 @@ Nauka wyniesiona z projektu na podstawie popełnionych błędów
  - wielokrotnie muszę wracać do kodu HTML, aby przypomnieć do czego służy pewna klasa, której nazwa może na początku przy nadawaniu jej nazwy coś znaczy, ale zatraca swoje jednoznnaczne znaczenie z czase. 
 - projekt zostanie przebudowany z BEM, aby zotymalizowac kod dla 6 rozdzielczości MQ. Szukanie w kodze czy selektor nie jest nadmiarowy jest męczace i prowadzi do błędów. 
 - wraz z użyciem BEM będę mógł szybciej pracować nad aplikacją oraz unikać problemów z nazewnictwem klas, kóre pomimo tego, że są opisowe to mało mówią o zachowaniu i funncji elementu w kodzie CSS/HTML. 
-
-
  
-Sukcesywnie będę dodawał
--------------------------
-1. Poprawa kodu AJAX'owego: dodanie obsługi blędów, poprawa callback heel, zamiana na promise lub modyfikacja callback'ów
-2. Modularyzacja JS: lepsza organizacja kodu poprzez likwidację powtórzeń, wydzielenie bloków kodu, kontrola scope itp.
-1. BEM i SASS dla lepszej organizacji i czytelności. Aby nie rozwalać projektu jeszcze nie przerobiłem jego z wykorzystaniem SASS'a i nie ponazywałem inaczej klas zgodnie z BEM. Mały projekt, a odczuwam już dyskomfort w tym spaghetii. 
-2. Podzielić projekt na pliki CSS, gdzie każdy będzie odpowiadał za jakiś fragment funcjonalny np. layout  osobo, moduły osobno. To razem z  BEM i z SASS jest całkiem ciekawe podeście, ale też rozwali projekt zanim to przerobię.     
-3. Zapytania Ajaxsowe do bazy OMDB z wykorzystanime dedykowanej bibloteki https://www.npmjs.com/package/omdb
-4. Ulepszona funcjonalność inputu "Szukaj". Z każdym nowym wpisanym znakiem będzie powiązane odpytanie bazy i pokazywana będzie lista 5 filmów pasujących do słowa wpisanego.        
-5. Odtwarzanie video z trailerem filmu po naciśniecu klawisza PLAY. Do rozwiązania problem braku możliwości pokazania trailerów z uzyskanego URL'a z bazy. On nie jest plikiem MP4, tylko linkiem do serwisu IMDB. Baza z filmami www.omdbapi.com, niestety nie ma takowego w API, aNetflix nie udostepnia wogóle API. 
-6. Podstrona "Przeglądaj" i "Dzieci" - zaczytanie kilku nowości filmowych lub filmów dedkowanych dla dzieci. 
-7. Modal z logowaniem:
- - weryfikacja danych wpisywanych w fomularzu z wyrażeniami regularnymi
- - dane zapamiętywane przez przeglądarkę. Przy tworzeniu "usera" skrypy sprawdza, czy taki login lub email już wystepuje
-

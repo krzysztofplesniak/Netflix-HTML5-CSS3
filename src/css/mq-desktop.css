@@ -473,7 +473,7 @@
 		
 	.openModal {
 		z-index: 998;
-		background: rgba(00,0,0,0.85);
+		background: rgba(00,0,0,0.8);
 		position: absolute;
 		top: 0;
 		left: 0;

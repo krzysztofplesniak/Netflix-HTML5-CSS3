@@ -32,13 +32,12 @@
 		border-bottom: red 4px solid;
 		overflow: hidden;
 		box-sizing: border-box;
-		/*transition: all 0.4s;	*/
 	}
 
 	header nav {
 		height: 90px;
 		margin: 0px; 
-		transition: all ease-out 0.3s;   
+		transition: all ease-out 0.2s;   
 	}
 
 	/*gdy scrollowanie w dół lub opuszczenie header'a to ma się pomiejszyc */
@@ -96,7 +95,7 @@
 		list-style: none;
 		overflow: hidden;
 	}
-
+	
 	header ul li {
 		float: left;
 		height: 47px;
@@ -131,7 +130,8 @@
 	/*najechanie myszą na input "Szukaj" */
 	.mouseSearchClick {  
 		width: 300px;
-		border: 2px solid white;
+		transition: width .15s;
+		
 	}
 
 	.menuSearch .smallBox {
@@ -164,8 +164,8 @@
 		box-sizing: border-box;
 		position: relative;
 	    top: 0px;
-	    color: white;
 	    background: black;
+	    border: 2px solid white;
 	    outline: none;
 	}
 
@@ -183,10 +183,10 @@
 
 	#videoBackground {
 		position: absolute;
-		top: 50%;
+		top: 0px;
 		left: 50%;
 		z-index: 1;
-		transform: translate(-50%, -20%);
+		transform: translateX(-50%);
 		height: auto;
 		width: 100%;
 		opacity: 0.9;
@@ -282,24 +282,24 @@
 		margin: 1.5rem 0 .3rem;
 	}
 
-	/*niestety mus by bo jest gap jedna spacja miedzye dwoma tekstami */
-	.descriptionBox .filmDescBox {
+	/*niestety mus by bo jest gap jedna spacja miedzy dwoma tekstami */
+	/*.descriptionBox .filmDescBox {
 		font-size: 0;
-	}
+	}*/
 
 	.descriptionBox .filmDescriptionP1, 
 	.descriptionBox .filmDescriptionP2 {
+		display: inline;
 		color: white;
 		font-weight: 300;
 		font-family: 'Lato';
 		text-align: justify;
 		font-size: 1.4rem;
-		display: inline;
 	}
 
 	.descriptionBox .showMoreText {
 		display: none;
-		margin-top: 20px;
+		margin-top: 25px;
 		font-size: 1.2rem;
 		font-weight: 700;
 	}
@@ -408,13 +408,13 @@
 		/*border: 3px solid  red;*/
 	}
 	
-	.videoBox p {
+	.videoBox p {7
 		width: 100%;
 		display: inline-block; 
 		text-align: center;
 		font-family: 'Lato', sans-serif;
 		color: white; 
-		font-size: 1.1rem;	
+		font-size: 1rem;	
 		font-weight: 400;
 		position: absolute;
 		top: 93%;
@@ -424,7 +424,7 @@
 	}
 	
 	.videoBox:hover img{
-		transition: border .1s;
+		transition: border .15s;
 		border: 3px solid  black;
 	}
 
@@ -447,41 +447,58 @@
 		color: white;	
 	}
 	
-	.modalBackground{
+	.modal {
 		height: 100vh;
 		width: 100%;
-	}
-
-	.videoContainer {
-		position: fixed;
-		z-index: -2;
-		opacity: 0;
-		top: 50%;
-		left: 50%;
-		height: auto;
-		width: 90%;
-		transform: translate(-50%,-50%);
-		max-height: 720px;
-		max-width: 1280px;		
-	}
-
-	/* video-film w modalu */
-	.openModal .videoContainer {
-		z-index: 999;
-		opacity: 1;
-	}
-		
-	.openModal {
-		z-index: 998;
-		background: rgba(00,0,0,0.8);
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
 		content: "";	
+		z-index: -2;
+		background: rgba(0,0,0,1);
 	}
 
+	.modal i {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		color: white;
+		z-index: 1000;
+	}
+
+	.modal i:hover {
+		color: #787878;
+		cursor: pointer;
+	}
+
+	.modalOpen {
+		z-index: 998;
+		background: rgba(0,0,0,0.8);
+	}
+
+	.videoContainer {
+		position: fixed;
+		height: auto;
+		width: 90%;
+		max-height: 720px;
+		max-width: 1280px;		
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		z-index: -2;
+		opacity: 0;
+		transition: opacity .5s;
+		outline: 3px solid #787878;
+	}
+
+	/* video-film w modalu */
+	.modalOpen .videoContainer {
+		z-index: 999;
+		opacity: 1;
+	}
+		
 	/*	
 	#controlBox {
 		position: fixed;

@@ -7,6 +7,10 @@ header ul li {
 	height: 50px;
 }
 
+header ul li:nth-child(n):hover {
+	border-bottom: none;
+}
+
 .menuSearch {
 	height: 55px;
 }
@@ -14,6 +18,7 @@ header ul li {
 .menuSearch .smallBox i {
  	margin-right: 5px;
 }
+
 
 .descriptionBoxDetail {
 	width: 100%;
@@ -73,5 +78,5 @@ header ul li {
 }	
 
 .videoBox p {
-	font-size: .9rem;
+	font-size: .8rem;
 }

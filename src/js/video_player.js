@@ -2,8 +2,10 @@
 		btnShowIMDB = document.querySelector('.btnShowIMDB'),
 		menuSearch = document.querySelector('.menuSearch'),
 		expandedBox  = document.querySelector('.expandedBox'),
-		smallBox = document.querySelector('.smallBox');
-
+		smallBox = document.querySelector('.smallBox'),
+		videoContainer = document.querySelector('.videoContainer'),
+		closeModal = document.querySelector('.fa-window-close-o');
+		
 
 	//  najważniejsze funkcje 
 		//	1. initMovies() - pokazanie opisu wybranego filmu w sekcji descriptionBox oraz wyświetlenie kafelek z video sekcja videoScetion
@@ -91,8 +93,8 @@
 				
 		// wklejenie danych w descriptionBox losowego filmu
 		$('.filmTitle').text(movieDetails.Title);
-		$('.filmDescriptionP1').text(movieDetails.Plot);
-		// $('.filmDescriptionP2').text(movieDetails.descriptionPart2);
+		$('.filmDescriptionP1').text(movieDetails.Plot.slice(0,100));
+		$('.filmDescriptionP2').text(movieDetails.Plot.slice(100,movieDetails.Plot.length));
 	    $('.filmGenre').text(movieDetails.Genre);
 	    $('.filmDirector').text(movieDetails.Director);
 	    $('.filmWriter').text(movieDetails.Writer);
@@ -110,8 +112,7 @@
 
 	    // wklejenie w tag <video> danych filmu, kóry ma sie wyśietlic w tle
 	    $('#videoBackground').attr('poster',movieDetails.Poster);
-	    $('#videoBackground').children().attr('src', movieToDisplay.url);	
-		
+	    	 
 	// wywołanie funcji z modułu modal-video-js ktora uruchomi po naciśnieciu klawisza film 
 	// $(".btnWatchVideo").modalVideo();
 
@@ -169,17 +170,17 @@
 	function eventListenerVideoBox() {
 		
 		// event na buttonie "Pokaż film" 
-		btnWatchVideo.addEventListener('click', function() {
+		btnWatchVideo.addEventListener('click', function () {
 			displayVideoModal($('.btnWatchVideo').attr('data-video-id'));
 	  	});
 		
 		// event na buttonie "Zobacz więcej" 
-		btnShowIMDB.addEventListener('click', function() {
+		btnShowIMDB.addEventListener('click', function () {
 			window.open($('.btnShowIMDB').attr('data-url'));
 		});
 
 		// event kliknięcia na input "Szukaj"
-		menuSearch.addEventListener('click', function() {
+		menuSearch.addEventListener('click', function () {
 			expandedBox.value = '';
 		});
 		
@@ -189,13 +190,13 @@
 		});
 
 		// event opuszczenia inputu "Szukaj"
-		menuSearch.addEventListener('mouseleave', function() {
+		menuSearch.addEventListener('mouseleave', function () {
 			menuSearchDisplay('hide');
 		});
 		
-		// event naciśnięcia klawisza Enter
-		menuSearch.addEventListener('keyup', function(event) {
-				
+		// event naciśnięcia klawisza Enter na inpucie "Szukaj"
+		menuSearch.addEventListener('keyup', function (event) {
+			
 			if (event.which == 13 || event.keyCode == 13) {
 				scrollViewTo('#heroImage');
 				hamburgerMenu();
@@ -203,40 +204,66 @@
 				menuSearchDisplay('hide');
 			}
 						
-		});	
+		});
+		
+		// event kliknięcia na modal co jest rózwnoznaczne z startem lub zatrzymaniem filmu PLAY/PAUSE 
+		// videoContainer.addEventListener('click', function () {
+		// 	if (video.playing) {
+		// 		video.pause;
+
+		// 	}
+		// 	else {
+		// 		video.play;
+		// 	}
+		// });
+
+		// event kliknięcia na punkt zamkniecia okna modal w prawym górnym rógu
+		closeModal.addEventListener('click', function () {
+			$('.modal').removeClass('modalOpen');	
+			video.pause();
+			console.log('STOP');
+		});
+		
 		
 		// funkcja której zadaniem jest pokazanie modala po kliknięciu na button "Podgląd filmu" 
 		// z videofilmem który jest prezentowany w descriptionBox
 		function displayVideoModal(movieToDisplay) {
 
-			$('.modalBackground').addClass('openModal');
+			$('.modal').addClass('modalOpen');
 			$('#videoModal').find('source').attr('src', 'https://www.youtube.com/watch?v=' + movieToDisplay);
 
 			// play filmu 
 			video = videojs('videoModal');
+			video.ready(function() {
+				video.currentTime(5);
+				video.play();
+  			});
+			
+			
 		}
 	
 	}
 	
-	// funcja która pnaprzemiennie pokazuj i chowa elementy menuSearch
+	// funkcja która naprzemiennie pokazuj i chowa elementy menuSearch
 	function menuSearchDisplay(option) {
-		
-		if (option == 'hide') {
-			smallBox.style.display = 'block';
-			expandedBox.style.display = 'none';
-			menuSearch.classList.remove('mouseSearchClick');
-		}	
 		
 		if (option == 'show') {
 			smallBox.style.display = 'none';
 			expandedBox.style.display = 'block';
 			menuSearch.classList.add('mouseSearchClick');
 		}
+
+		else if (option == 'hide') {
+			smallBox.style.display = 'block';
+			expandedBox.style.display = 'none';
+			menuSearch.classList.remove('mouseSearchClick');
+		}	
+				
 		expandedBox.value = 'Wpisz film';
 	} 
 
 	
-	// obsługa klawisza "Szukaj"
+	// obsługa inputa "Szukaj"
 	function searchInput(movieTitle) {
 
 		var movieDetails;

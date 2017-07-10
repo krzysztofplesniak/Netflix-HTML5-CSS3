@@ -36,10 +36,10 @@
 							<i class="fa fa-search"></i>
 							<span class="smallBoxInput">Szukaj</span>
 						</div> 
-						
+						<input class="expandedBox" type="text" value="Wpisz film">
 						 <!-- Po kliknięciu  pojawia się inny napis "Wpisz film"  
 						 Rozsuwa się obwódka wokół napisu w lewo   -->
-						<input class="expandedBox" type="text" value="Wpisz film">
+						
 					</li>
 					
 					<li><a href="#">Przeglądaj</a></li>
@@ -77,11 +77,11 @@
 					<h4>Rok produkcji:  <span class="filmYear"></span></h4>
 					<h4>Czas trwania:  <span class="filmRuntime"></span></h4>
 					
-					<!-- opis filmu filmDescriptionP2 pojawia się dla małcyh ekranów	 -->
+					<!-- opis filmu filmDescriptionP2 pojawia się dla małych ekranów	 -->
 					<div class="filmDescBox">
 						<p>Opis filmu: </p> 
-						<div class="filmDescriptionP1"></div>
-						<div class="filmDescriptionP2 hiddenText"></div>
+						<p class="filmDescriptionP1"></p>
+						<p class="filmDescriptionP2 hiddenText"></p>
 					</div> 
 					<p class="showMoreText">Czytaj więcej</p>
 				</div>		
@@ -123,8 +123,10 @@
 		</div>	
 	</div> 
 
-	<div class="modalBackground">
+	<div class="modal">
 		<div class="videoContainer">
+		<i class="fa fa-window-close-o fa-2x"></i>
+		 
 			<video  id="videoModal"
 					class="video-js vjs-big-play-centered vjs-default-skin vjs-16-9"
 					autoplay 

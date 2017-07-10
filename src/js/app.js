@@ -24,19 +24,8 @@
 				iconBar.classList.toggle('changeHambIcon');
 			}
 		);
-		menuItems.classList.toggle('showMenuItems');
+		menuItems.classList.toggle('showLargeMenu');
 	}
-	
-// Blok kodu obsługujacy kliknęcie w "Czytaj więcej"  
-	showMoreText.addEventListener('click', showTextDescription); // event nałsuchujący kliknięcia na klawisz 
- 															     //	"Czytaj więcej" który odsłoni część tekstu dla małych MQ 
-	function showTextDescription() {
-		
-		if (hiddenText.value !== 0) {
-			hiddenText.style.display = 'inline-block';
-			showMoreText.style.display = 'none';
-		}	
-	}	 
 
 
 // Blok kodu obsługujący różne działania, gdy zmniejsza się szerokośc ekranu
@@ -46,7 +35,7 @@
 				
 		pageWidth = window.outerWidth;
 		
-		//jak nie jest zadany paramet ile ma byc wyświetlanych wierszy domyślnie nadaj 5 
+		//jak nie jest zadany paramet ile ma by wyświetlanych wierszy domyślnie nadaj 5 
 		if (isNaN(numberOfRows)) {
 			numberOfRows = 5;
 		}	
@@ -81,11 +70,24 @@
 
 		videoSection.height(videoBoxes.height() * sectionHeight);
 					
-	// Schowanie napisu "Czytaj więcej"  
-		if ((pageWidth < 480) && (hiddenText.innerText.length === 0)) {
+	// Pokazanie napisu "Czytaj więcej" dla małych ekranów  
+		if ((pageWidth < 480) && (hiddenText.innerText.length !== 0)) {
 				showMoreText.style.display = 'block';
 			}		
 	}
+
+	
+// Blok kodu obsługujacy kliknęcie w "Czytaj więcej"  
+	showMoreText.addEventListener('click', showTextDescription); // event nałsuchujący kliknięcia na klawisz 
+ 															     //	"Czytaj więcej" który odsłoni część tekstu dla małych MQ 
+	function showTextDescription() {
+		
+		if (hiddenText.value !== 0) {
+			hiddenText.style.display = 'inline';
+			showMoreText.style.display = 'none';
+		}	
+	}	 
+
 
 // Blok kodu zmiany wysokości headera po najechaniu myszką 
 	

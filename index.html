@@ -8,7 +8,6 @@
 		<link rel="shortcut icon" href="dist/img/favicon.png" type="image/png" sizes="16x16">
 		<link rel="stylesheet" href="dist/css/fonts/font-awesome.min.css">
 		<link rel="stylesheet" href="dist/videojs/video-js.css">
-		<!-- <link rel="stylesheet" href="dist/videojs/modal-video.css"> -->
 		<link rel="stylesheet" href="dist/css/style.css"> <!-- wszystkie pliki z MediaQueries są importowane do jednego pliku style.css -->
 
 	</head>
@@ -123,11 +122,10 @@
 		</div>	
 	</div> 
 
-	<div class="modal">
-		<div class="videoContainer">
-		<i class="fa fa-window-close-o fa-2x"></i>
-		 
-			<video  id="videoModal"
+	<div class="modalBackground">
+		<div class="modalWindow">
+			<i class="fa fa-window-close-o fa-2x"></i>
+		 	<video  id="modalVideo"
 					class="video-js vjs-big-play-centered vjs-default-skin vjs-16-9"
 					autoplay 
 					preload="auto"
@@ -146,7 +144,6 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://vjs.zencdn.net/6.1.0/video.js"></script>
 	<script src="dist/videojs/videojs-youtube.js"></script>
-	<!-- <script src="dist/videojs/modal-video.js"></script> -->
 	<script src="src/js/app.js"></script>
 	<script src="src/js/video_player.js"></script>
 	

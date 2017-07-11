@@ -1,152 +1,151 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Netflix</title>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<link rel="shortcut icon" href="dist/img/favicon.png" type="image/png" sizes="16x16">
-		<link rel="stylesheet" href="dist/css/fonts/font-awesome.min.css">
-		<link rel="stylesheet" href="dist/videojs/video-js.css">
-		<!-- <link rel="stylesheet" href="dist/videojs/videojs.css"> -->
-		<link rel="stylesheet" href="dist/css/style.css"> <!-- wszystkie pliki z MediaQueries są importowane do jednego pliku style.css -->
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Netflix</title>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+			<meta name="viewport" content="width=device-width,initial-scale=1">
+			<link rel="shortcut icon" href="dist/img/favicon.png" type="image/png" sizes="16x16">
+			<link rel="stylesheet" href="dist/css/fonts/font-awesome.min.css">
+			<link rel="stylesheet" href="dist/videojs/video-js.css">
+			<link rel="stylesheet" href="dist/css/style.css"> <!-- wszystkie pliki z MediaQueries są importowane do jednego pliku style.css -->
 
-	</head>
-<body>
-	
-	<!--  sekcja Header: logo & menu -->
-	<header id="header">
-		<div class="container">
-			<nav id="navi">
-				
-				<!-- grafika Netflixa CSS -->
-				<div id="logo"></div>	
-
-				<!-- ikona Hamburger-menu -->
-				<div class="hamburgerIcon">
-					<div class="iconBar first"></div>
-					<div class="iconBar second"></div>
-					<div class="iconBar third"></div>	
-				</div>	
-				
-				<ul>
-					<!-- Pierwsza pozycja w menu input "Szukaj"  -->
-					<li class="menuSearch">
-						<div class="smallBox">
-							<i class="fa fa-search"></i>
-							<span class="smallBoxInput">Szukaj</span>
-						</div> 
-						<input class="expandedBox" type="text" value="Wpisz film">
-						 <!-- Po kliknięciu  pojawia się inny napis "Wpisz film"  
-						 Rozsuwa się obwódka wokół napisu w lewo   -->
-						
-					</li>
-					
-					<li><a href="#">Przeglądaj</a></li>
-					<li><a href="#">Dzieci</a></li>	
-					<li><a href="#">Wiadomości</a></li>	
-					<li><a href="#">Login</a></li>
-				</ul>
-
-			</nav>	
-		</div>
-	</header>
-	
-	<!--  sekcja HeroImage: pokazanie szczegółowych danych o wybranym filmie -->
-	<section id="heroImage">
-		<div class="container">
-			<div class="descriptionBox">
-
-				<div class="descriptionBoxDetail">
-					<!-- Poster ze zdjęciem z filmu  -->
-					<div class="filmBox">
-						<img class="filmPoster">
-					</div>
-					
-					<h1>Zobacz premiery filmowe</h1>
-					<h2>OGLĄDAJ WSZĘDZIE. ANULUJ W KAŻDEJ CHWILI</h2>
-					
-					<h3><span class="filmTitle"></span></h3>  <!-- każdy element jest wypełniany przez funckję pobierajaca dane AJAXowe -->
-					<h3>Typ filmu:  <span class="filmGenre"></span></h3>
-					<h3>Reżyser:  <span class="filmDirector"></span></h3>
-					<h3>Scenariusz:  <span class="filmWriter"></span></h3>
-					<h3>Aktorzy:  <span class="filmActors"></span></h3>
-
-					<h4>Nominacje & nagrody: <span class="filmAwards"></span></h4>
-					<h4>Rating & opinie: <span class="filmRating"></span></h4>
-					<h4>Rok produkcji:  <span class="filmYear"></span></h4>
-					<h4>Czas trwania:  <span class="filmRuntime"></span></h4>
-					
-					<!-- opis filmu filmDescriptionP2 pojawia się dla małych ekranów	 -->
-					<div class="filmDescBox">
-						<p>Opis filmu: </p> 
-						<p class="filmDescriptionP1"></p>
-						<p class="filmDescriptionP2 hiddenText"></p>
-					</div> 
-					<p class="showMoreText">Czytaj więcej</p>
-				</div>		
-						
-				<!-- 2 buttony -->
-				<div class="button btnWatchVideo" data-video-id="" >Podgląd filmu</div>
-				<div class="button btnShowIMDB" data-url="http://www.imdb.com">Zobacz więcej na IMDB</div>
-				
-			</div>	 
-
-		</div>
+		</head>
+	<body>
 		
-		<!-- video w tle pod sekcja Description/HeroImage -->
-		<video id="videoBackground" poster="">
-			<source src="">
-	   	</video>
+		<!--  sekcja Header: logo & menu -->
+		<header id="header">
+			<div class="container">
+				<nav id="navi">
+					
+					<!-- grafika Netflixa CSS -->
+					<div id="logo"></div>	
 
-	</section>
+					<!-- ikona Hamburger-menu -->
+					<div class="hamburgerIcon">
+						<div class="iconBar first"></div>
+						<div class="iconBar second"></div>
+						<div class="iconBar third"></div>	
+					</div>	
+					
+					<ul>
+						<!-- Pierwsza pozycja w menu input "Szukaj"  -->
+						<li class="menuSearch">
+							<div class="smallBox">
+								<i class="fa fa-search"></i>
+								<span class="smallBoxInput">Szukaj</span>
+							</div> 
+							<input class="expandedBox" type="text" value="Wpisz film">
+							 <!-- Po kliknięciu  pojawia się inny napis "Wpisz film"  
+							 Rozsuwa się obwódka wokół napisu w lewo   -->
+							
+						</li>
+						
+						<li><a href="#">Przeglądaj</a></li>
+						<li><a href="#">Dzieci</a></li>	
+						<li><a href="#">Wiadomości</a></li>	
+						<li><a href="#">Login</a></li>
+					</ul>
 
-	<!--  sekcja klawisza "ScrollDown" przewijającego do kafelek z video-filmami   -->
-	<section id="scrollDown">
-		<div id="scrollDownBox">
-			<p>Zobacz najnowsze filmy</p>
-			<i class="fa fa-angle-double-down"></i>
-		</div>	
-	</section>
+				</nav>	
+			</div>
+		</header>
+		
+		<!--  sekcja HeroImage: pokazanie szczegółowych danych o wybranym filmie -->
+		<section id="heroImage">
+			<div class="container">
+				<div class="descriptionBox">
 
-	<!--  sekcja videoSection z VIDEO kafelkami  -->
-	<div id="videoSection">
-		<div class="container videoBoxes">
-			<!-- klasa videoBoxes niezbedna, bo displayVideoBoxes() dodaje kafleki z video z klasą "videoBox"  -->
+					<div class="descriptionBoxDetail">
+						<!-- Poster ze zdjęciem z filmu  -->
+						<div class="filmBox">
+							<img class="filmPoster">
+						</div>
+						
+						<h1>Zobacz premiery filmowe</h1>
+						<h2>OGLĄDAJ WSZĘDZIE. ANULUJ W KAŻDEJ CHWILI</h2>
+						
+						<h3><span class="filmTitle"></span></h3>  <!-- każdy element jest wypełniany przez funckję pobierajaca dane AJAXowe -->
+						<h3>Typ filmu:  <span class="filmGenre"></span></h3>
+						<h3>Reżyser:  <span class="filmDirector"></span></h3>
+						<h3>Scenariusz:  <span class="filmWriter"></span></h3>
+						<h3>Aktorzy:  <span class="filmActors"></span></h3>
 
-			<!-- TEMPLATE VideoBox 
-			<div class="videoBox">
-				<img src="dist/img/Timeless.jpg">
-				<i class="fa fa-play-circle"></i>
-				<p>Timeless</p>
-			</div> -->
-		</div>	
-	</div> 
+						<h4>Nominacje & nagrody: <span class="filmAwards"></span></h4>
+						<h4>Rating & opinie: <span class="filmRating"></span></h4>
+						<h4>Rok produkcji:  <span class="filmYear"></span></h4>
+						<h4>Czas trwania:  <span class="filmRuntime"></span></h4>
+						
+						<!-- opis filmu filmDescriptionP2 pojawia się dla małych ekranów	 -->
+						<div class="filmDescBox">
+							<p>Opis filmu: </p> 
+							<p class="filmDescriptionP1"></p>
+							<p class="filmDescriptionP2 hiddenText"></p>
+						</div> 
+						<p class="showMoreText">Czytaj więcej</p>
+					</div>		
+							
+					<!-- 2 buttony -->
+					<div class="button btnWatchVideo" data-video-id="" >Podgląd filmu</div>
+					<div class="button btnShowIMDB" data-url="http://www.imdb.com">Zobacz więcej na IMDB</div>
+					
+				</div>	 
 
-	<div class="modalBackground">
-		<div class="modalWindow">
-			<i class="fa fa-window-close-o fa-2x"></i>
-		 	<video  id="modalVideo"
-					class="video-js vjs-big-play-centered vjs-default-skin vjs-16-9"
-					autoplay 
-					preload="auto"
-			  		controls>
-			  	<source src="" type="video/youtube">
-			</video>
+			</div>
+			
+			<!-- video w tle pod sekcja Description/HeroImage -->
+			<video id="videoBackground" poster="">
+				<source src="">
+		   	</video>
+
+		</section>
+
+		<!--  sekcja klawisza "ScrollDown" przewijającego do kafelek z video-filmami   -->
+		<section id="scrollDown">
+			<div id="scrollDownBox">
+				<p>Zobacz najnowsze filmy</p>
+				<i class="fa fa-angle-double-down"></i>
+			</div>	
+		</section>
+
+		<!--  sekcja videoSection z VIDEO kafelkami  -->
+		<div id="videoSection">
+			<div class="container videoBoxes">
+				<!-- klasa videoBoxes niezbedna, bo displayVideoBoxes() dodaje kafleki z video z klasą "videoBox"  -->
+
+				<!-- TEMPLATE VideoBox 
+				<div class="videoBox" data-video-id="">
+					<img src="dist/img/Timeless.jpg">
+					<i class="fa fa-play-circle"></i>
+					<p>Timeless</p>
+				</div> -->
+			</div>	
+		</div> 
+
+		<div class="modalBackground">
+			<div class="modalWindow">
+				<i class="fa fa-window-close-o fa-2x"></i>
+			 	<video  id="modalVideo"
+						class="video-js vjs-big-play-centered vjs-default-skin vjs-16-9"
+						autoplay 
+						preload="auto"
+				  		controls>
+				  	<source src="" type="video/youtube">
+				</video>
+			</div>
 		</div>
-	</div>
 
-	<!-- zamiast console.log - wyświetlanie wartości różnych zmiennych na ekranie 
-	<div id="controlBox">
-		<p id="p1"></p>
-		<p id="p2"></p>
-	</div> -->
+		<!-- zamiast console.log - wyświetlanie wartości różnych zmiennych na ekranie 
+		<div id="controlBox">
+			<p id="p1"></p>
+			<p id="p2"></p>
+		</div> -->
 
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="https://vjs.zencdn.net/6.1.0/video.js"></script>
-	<script src="dist/videojs/videojs-youtube.js"></script>
-	<script src="src/js/app.js"></script>
-	<script src="src/js/video_player.js"></script>
-	
-</body>
-</html>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="https://vjs.zencdn.net/6.1.0/video.js"></script>
+		<script src="dist/videojs/videojs-youtube.js"></script>
+		<script src="src/js/app.js"></script>
+		<script src="src/js/video_player.js"></script>
+		
+	</body>
+	</html>

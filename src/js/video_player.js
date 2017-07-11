@@ -4,11 +4,10 @@
 		expandedBox  = document.querySelector('.expandedBox'),
 		smallBox = document.querySelector('.smallBox'),
 		closeModal = document.querySelector('.fa-window-close-o'),
-		modalB = document.querySelector('body'),
+		videoContainer = document.querySelector('#videoSection .videoBoxes'),
 		modal = $('.modalBackground');
-		
-
 	
+	var player;				
 
 	//  najważniejsze funkcje 
 		//	1. initMovies() - pokazanie opisu wybranego filmu w sekcji descriptionBox oraz wyświetlenie kafelek z video sekcja videoScetion
@@ -31,8 +30,7 @@
 			.then(function(response) {
 
 				moviesArray	= response.movies;
-			    randomMovie = randomMovies();						// wylosowanie jednego filmu z pliku JSON
-			    // console.log('1 - > pierwsze wywołanie', moviesArray[randomMovie]);
+			    randomMovie = randomMovies(45);						// wylosowanie jednego filmu z pliku JSON
 			   	displayDescriptionBox(moviesArray[randomMovie],'JSON');	// wyświetlenie danych losowego filmu w descriptionBox
 			   	displayVideoBoxes(moviesArray);						// wyświetlenie posterów i tytułów filmów w sekcji Videosection
 
@@ -40,13 +38,11 @@
 			});
  		}	
 	
-
 	// wybranie losowo jednego filmu z listy 45 filmów 
-	function randomMovies() {
-		return Math.floor(Math.random() * 45);  // zwracany jest wylosowany numer z zakresu
+	function randomMovies(items) {
+		return Math.floor(Math.random() * items);  // zwracany jest wylosowany numer z zakresu
 	}
-
-
+	
 	// pobranie rozszerzonej ilości danych o jednym filmie tj. tytuł, rok, reżyser,
 	// rok, aktorzy itp...na bazie zapytania do bazy OMDB z wykorzystaniem
 	// id z plik JSON
@@ -129,7 +125,7 @@
 			movieDetails = searchMovie('ID', movieToDisplay[i].id);
 		
 			outputHtml = '';
-			outputHtml += '<div class="videoBox">';
+			outputHtml += '<div class="videoBox" data-video-id="4IM1XhTxPAE">';
 			outputHtml += '<img src="'+ movieDetails.Poster +'">';
 			outputHtml += '<i class="fa fa-play-circle"></i>';
 			outputHtml += '<p>'+ movieDetails.Title +'</p>';
@@ -152,96 +148,6 @@
 		
 	}
 
-	// funkcja obsługująca nasłuch na elementy związane z Video 
-	function eventListenerVideoBox() {
-		var player;		
-		
-		// event kliknięcia na input "Szukaj"
-		menuSearch.addEventListener('click', function () {
-			expandedBox.value = '';
-		});
-		
-		// event najechania na input "Szukaj"
-		menuSearch.addEventListener('mouseenter', function () {
-			menuSearchDisplay('show');
-		});
-
-		// event opuszczenia inputu "Szukaj"
-		menuSearch.addEventListener('mouseleave', function () {
-			menuSearchDisplay('hide');
-		});
-
-		// event na buttonie "Zobacz więcej" 
-		btnShowIMDB.addEventListener('click', function () {
-			window.open($('.btnShowIMDB').attr('data-url'));
-		});
-		
-		// event Enter na inpucie "Szukaj"
-		menuSearch.addEventListener('keyup', function (event) {
-			
-			if ((event.which || event.keyCode) == 13) {
-				scrollViewTo('#heroImage');
-				hamburgerMenu();
-				searchInput(expandedBox.value);
-				menuSearchDisplay('hide');			
-			}
-				
-		});
-		
-		// eventy: ESC & spacja, gdy wyświetlany jest trailer video
-		window.addEventListener('keydown', function (event) {
-			
-			if ((event.which || event.keyCode) == 27) {
-				modal.removeClass('modalOpen');
-				player.pause();
-			}
-			if ((event.which || event.keyCode) == 32) {
-
-				event.preventDefault();	
-
-				if (player.paused() === true) {
-					player.play();	
-				}	
-				else {
-					player.pause();
-				}
-			}
-			
-		});
-
-		// event kliknięcia na punkt zamkniecia okna modal w prawym górnym rógu
-		closeModal.addEventListener('click', function () {
-			modal.removeClass('modalOpen');
-			player.pause();
-		});
-
-		// po kliknięciu na button "Podgląd filmu", wyświetlany jest modal .modalWindow
-		// z videofilmem, ten sam co prezentowany w descriptionBox (jeden losowo wybrany film)
-		btnWatchVideo.addEventListener('click', function () {
-			
-			// pobranie ID filmu który jest zekładowany w 
-			// w atrybucie data-video-id buttona "Pokaż film"
-			var movieToDisplay = $('.btnWatchVideo').attr('data-video-id'); 
-						
-			modal.addClass('modalOpen');
-			$('#modalVideo').find('source').attr('src', 'https://www.youtube.com/watch?v=' + movieToDisplay);
-
-			//  zacznij odtwarzac trailer filmu, gdy player jest gotowy 
-			player = videojs('modalVideo');
-			player.ready( function() {
-				player.currentTime(5);
-				player.volume(0.5);
-				player.play();
-			});
-  		
-  			// event zakończenia filmu 
-			player.on('ended', function() {
-				modal.removeClass('modalOpen');
-			});
-		});
-				
-	}
-	
 	// funkcja która naprzemiennie pokazuj i chowa elementy menuSearch
 	function menuSearchDisplay(option) {
 		
@@ -259,7 +165,6 @@
 				
 		expandedBox.value = 'Wpisz film';
 	} 
-
 	
 	// obsługa inputa "Szukaj"
 	function searchInput(movieTitle) {
@@ -270,3 +175,114 @@
     	movieDetails = searchMovie('Title', movieTitle);
        	displayDescriptionBox(movieDetails,'OMDB');
 	}
+
+	// pokazanie Modalu na ekranie
+	function openVideoModal(movieToDisplay) {
+		modal.addClass('modalOpen');
+		$('#modalVideo')
+			.find('source')
+			.attr('src', 'https://www.youtube.com/watch?v=' + movieToDisplay);
+	}
+
+	// odtworzenie Video w Modalu
+	function playVideoInModal() {
+		player = videojs('modalVideo');
+		player.ready( function() {
+			player.currentTime(5);
+			player.volume(0.5);
+			player.play();
+		});
+  		
+  		// event zakończenia filmu 
+		player.on('ended', function() {
+			modal.removeClass('modalOpen');
+		});
+	}
+
+	// funkcja obsługująca nasłuch na elementy związane z Video 
+	function eventListenerVideoBox() {
+				
+		// event kliknięcia na input "Szukaj"
+		menuSearch.addEventListener('click', function () {
+			expandedBox.value = '';
+		});
+		
+		// event najechania na input "Szukaj"
+		menuSearch.addEventListener('mouseenter', function () {
+			menuSearchDisplay('show');
+		});
+
+		// event opuszczenia inputu "Szukaj"
+		menuSearch.addEventListener('mouseleave', function () {
+			menuSearchDisplay('hide');
+		});
+
+		// event Enter na inpucie "Szukaj"
+		menuSearch.addEventListener('keyup', function (event) {
+			
+			if ((event.which || event.keyCode) == 13) {
+				scrollViewTo('#heroImage');
+				hamburgerMenu();
+				searchInput(expandedBox.value);
+				menuSearchDisplay('hide');			
+			}
+		});
+		
+		// event na buttonie "Zobacz więcej" 
+		btnShowIMDB.addEventListener('click', function () {
+			window.open($('.btnShowIMDB').attr('data-url'));
+		});
+
+		// po kliknięciu na button "Podgląd filmu", wyświetlany jest modal .modalWindow
+		// z videofilmem, ten sam co prezentowany w descriptionBox (jeden losowo wybrany film)
+		btnWatchVideo.addEventListener('click', function () {
+				
+			// pobranie ID filmu który jest zapisany  w atrybucie data-video-id buttona "Pokaż film"	
+			var movieToDisplay = $('.btnWatchVideo').attr('data-video-id'); 
+
+			openVideoModal(movieToDisplay);											
+			playVideoInModal();			
+			
+		});
+
+		// eventy: ESC & spacja, gdy wyświetlany jest trailer video
+		window.addEventListener('keydown', function (event) {
+			
+			if ((event.which || event.keyCode) == 27) {
+				modal.removeClass('modalOpen');
+				player.pause();
+			}
+			if ((event.which || event.keyCode) == 32) {
+
+				if (player.paused() === true) {
+					player.play();	
+				}	
+				else {
+					player.pause();
+				}
+				event.preventDefault();	
+			}
+		});
+
+		// event kliknięcia na punkt zamkniecia okna modal w prawym górnym rógu
+		closeModal.addEventListener('click', function () {
+			modal.removeClass('modalOpen');
+			player.pause();
+		});
+
+		// po kliknięciu na kafelki pokazywany jest modal z filmem
+		videoContainer.addEventListener('click', function (event) {
+			var videoBox = event.target.parentNode;
+
+			if (videoBox.className == 'videoBox') {
+				
+				// pobranie ID filmu który jest zapisany  w atrybucie data-video-id buttona "Pokaż film"	
+				var movieToDisplay = videoBox.getAttribute('data-video-id'); 
+				
+				openVideoModal(movieToDisplay);
+				playVideoInModal();
+			}	
+			else console.log('poza');
+		});
+		
+	}	

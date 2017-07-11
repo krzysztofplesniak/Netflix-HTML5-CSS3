@@ -19,6 +19,15 @@ header ul li:nth-child(n):hover {
  	margin-right: 5px;
 }
 
+#videoBackground {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	min-height: 100%;
+	min-width: 100%;
+	height: auto;
+	width: auto;
+}
 
 .descriptionBoxDetail {
 	width: 100%;

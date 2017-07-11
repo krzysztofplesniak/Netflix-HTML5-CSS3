@@ -4,7 +4,9 @@
 		expandedBox  = document.querySelector('.expandedBox'),
 		smallBox = document.querySelector('.smallBox'),
 		closeModal = document.querySelector('.fa-window-close-o'),
+		modalB = document.querySelector('body'),
 		modal = $('.modalBackground');
+		
 
 	
 
@@ -90,8 +92,6 @@
 	    if (source === 'JSON') {movieDetails = searchMovie('ID', movieToDisplay.id);}
 		else if (source === 'OMDB') {movieDetails = searchMovie('ID', movieToDisplay.imdbID);}	
  		
-		// console.log('id -->', movieToDisplay.id);
-				
 		// wklejenie danych w descriptionBox losowego filmu
 		$('.filmTitle').text(movieDetails.Title);
 		$('.filmDescriptionP1').text(movieDetails.Plot.slice(0,100));
@@ -156,11 +156,6 @@
 	function eventListenerVideoBox() {
 		var player;		
 		
-		// event na buttonie "Zobacz więcej" 
-		btnShowIMDB.addEventListener('click', function () {
-			window.open($('.btnShowIMDB').attr('data-url'));
-		});
-
 		// event kliknięcia na input "Szukaj"
 		menuSearch.addEventListener('click', function () {
 			expandedBox.value = '';
@@ -175,6 +170,11 @@
 		menuSearch.addEventListener('mouseleave', function () {
 			menuSearchDisplay('hide');
 		});
+
+		// event na buttonie "Zobacz więcej" 
+		btnShowIMDB.addEventListener('click', function () {
+			window.open($('.btnShowIMDB').attr('data-url'));
+		});
 		
 		// event Enter na inpucie "Szukaj"
 		menuSearch.addEventListener('keyup', function (event) {
@@ -183,20 +183,21 @@
 				scrollViewTo('#heroImage');
 				hamburgerMenu();
 				searchInput(expandedBox.value);
-				menuSearchDisplay('hide');
+				menuSearchDisplay('hide');			
 			}
-						
+				
 		});
 		
-		// event ESC, gdy trailer video jest wyświetlane 
+		// eventy: ESC & spacja, gdy wyświetlany jest trailer video
 		window.addEventListener('keydown', function (event) {
-			event.preventDefault();
-
+			
 			if ((event.which || event.keyCode) == 27) {
 				modal.removeClass('modalOpen');
 				player.pause();
 			}
 			if ((event.which || event.keyCode) == 32) {
+
+				event.preventDefault();	
 
 				if (player.paused() === true) {
 					player.play();	
@@ -204,8 +205,8 @@
 				else {
 					player.pause();
 				}
-
 			}
+			
 		});
 
 		// event kliknięcia na punkt zamkniecia okna modal w prawym górnym rógu
@@ -221,10 +222,9 @@
 			// pobranie ID filmu który jest zekładowany w 
 			// w atrybucie data-video-id buttona "Pokaż film"
 			var movieToDisplay = $('.btnWatchVideo').attr('data-video-id'); 
-			var modalVideo = $('#modalVideo');
-			
+						
 			modal.addClass('modalOpen');
-			modalVideo.find('source').attr('src', 'https://www.youtube.com/watch?v=' + movieToDisplay);
+			$('#modalVideo').find('source').attr('src', 'https://www.youtube.com/watch?v=' + movieToDisplay);
 
 			//  zacznij odtwarzac trailer filmu, gdy player jest gotowy 
 			player = videojs('modalVideo');

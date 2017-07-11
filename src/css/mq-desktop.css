@@ -183,13 +183,13 @@
 
 	#videoBackground {
 		position: absolute;
+		z-index: 1;
+		opacity: 0.9;
 		top: 0px;
 		left: 50%;
-		z-index: 1;
 		transform: translateX(-50%);
 		height: auto;
 		width: 100%;
-		opacity: 0.9;
 	}
 
 	/* ======= sekcja descriptionBox z opisem filmu */
@@ -380,7 +380,7 @@
 		height: auto;
 		width: 100%;
 		padding: 1% 1%;
-		background: black;	
+		background: #101010;	
 		position: relative;
 		top: 100px;
 		overflow: hidden;
@@ -404,11 +404,10 @@
 		height: 17.16vw;
 		width: 100%;
 		border-radius: 7px; 
-		/*object-fit: cover;*/
 		/*border: 3px solid  red;*/
 	}
 	
-	.videoBox p {7
+	.videoBox p {
 		width: 100%;
 		display: inline-block; 
 		text-align: center;
@@ -425,7 +424,7 @@
 	
 	.videoBox:hover img{
 		transition: border .15s;
-		border: 3px solid  black;
+		border: 3px solid  #101010;
 	}
 
 	.videoBox:hover i {

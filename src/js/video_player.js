@@ -7,7 +7,7 @@
 		videoContainer = document.querySelector('#videoSection .videoBoxes'),
 		modal = $('.modalBackground');
 	
-	var player;				
+	var player;
 
 	//  najważniejsze funkcje 
 		//	1. initMovies() - pokazanie opisu wybranego filmu w sekcji descriptionBox oraz wyświetlenie kafelek z video sekcja videoScetion
@@ -33,7 +33,7 @@
 			    randomMovie = randomMovies(45);						// wylosowanie jednego filmu z pliku JSON
 			   	displayDescriptionBox(moviesArray[randomMovie],'JSON');	// wyświetlenie danych losowego filmu w descriptionBox
 			   	displayVideoBoxes(moviesArray);						// wyświetlenie posterów i tytułów filmów w sekcji Videosection
-
+			   	
 				// !!! DO ZROBIENIA wykasowanie z tablicy wylosowanego filmu 
 			});
  		}	
@@ -178,10 +178,21 @@
 
 	// pokazanie Modalu na ekranie
 	function openVideoModal(movieToDisplay) {
+		var modalWindow, modalVideo;
+		
+		modalVideo = '';
+		modalVideo += '<video id="modalVideo"';
+		modalVideo +=  			' class="video-js vjs-big-play-centered vjs-default-skin vjs-16-9"';
+		modalVideo +=			' autoplay preload="auto" controls>';
+		modalVideo +=		' <source src="http://www.youtube.com/watch?v=' + movieToDisplay + '"';
+		modalVideo +=		' type="video/youtube">';
+		modalVideo +=  '</video>';
+				
 		modal.addClass('modalOpen');
-		$('#modalVideo')
-			.find('source')
-			.attr('src', 'https://www.youtube.com/watch?v=' + movieToDisplay);
+		modalWindow = $('.modalWindow');
+		modalWindow.append(modalVideo);
+
+		console.log('ostatecznie', modalWindow.find('#modalVideo').find('source').attr('src'));
 	}
 
 	// odtworzenie Video w Modalu
@@ -199,7 +210,7 @@
 		});
 	}
 
-	// funkcja obsługująca nasłuch na elementy związane z Video 
+	// funkcja obsługująca nasłuch na elementach związanych z video 
 	function eventListenerVideoBox() {
 				
 		// event kliknięcia na input "Szukaj"
@@ -237,12 +248,21 @@
 		// z videofilmem, ten sam co prezentowany w descriptionBox (jeden losowo wybrany film)
 		btnWatchVideo.addEventListener('click', function () {
 				
-			// pobranie ID filmu który jest zapisany  w atrybucie data-video-id buttona "Pokaż film"	
-			var movieToDisplay = $('.btnWatchVideo').attr('data-video-id'); 
-
-			openVideoModal(movieToDisplay);											
+			// przekazanie ID filmu, który jest zapisany  w atrybucie data-video-id buttona "Pokaż film"
+			openVideoModal($('.btnWatchVideo').attr('data-video-id'));											
 			playVideoInModal();			
-			
+		});
+
+		// evet kliknięcia na kafelek z video, ukazanie się modala z filmem 
+		videoContainer.addEventListener('click', function (event) {
+			var videoBox = event.target.parentNode;
+
+			if (videoBox.className == 'videoBox') {
+				
+				// przekazanie ID filmu, który jest zapisany  w atrybucie data-video-id w videoBox
+				openVideoModal($(videoBox).attr('data-video-id'));
+				playVideoInModal();
+			}	
 		});
 
 		// eventy: ESC & spacja, gdy wyświetlany jest trailer video
@@ -250,7 +270,7 @@
 			
 			if ((event.which || event.keyCode) == 27) {
 				modal.removeClass('modalOpen');
-				player.pause();
+				player.dispose();
 			}
 			if ((event.which || event.keyCode) == 32) {
 
@@ -267,22 +287,7 @@
 		// event kliknięcia na punkt zamkniecia okna modal w prawym górnym rógu
 		closeModal.addEventListener('click', function () {
 			modal.removeClass('modalOpen');
-			player.pause();
-		});
-
-		// po kliknięciu na kafelki pokazywany jest modal z filmem
-		videoContainer.addEventListener('click', function (event) {
-			var videoBox = event.target.parentNode;
-
-			if (videoBox.className == 'videoBox') {
-				
-				// pobranie ID filmu który jest zapisany  w atrybucie data-video-id buttona "Pokaż film"	
-				var movieToDisplay = videoBox.getAttribute('data-video-id'); 
-				
-				openVideoModal(movieToDisplay);
-				playVideoInModal();
-			}	
-			else console.log('poza');
+			player.dispose();
 		});
 		
 	}	

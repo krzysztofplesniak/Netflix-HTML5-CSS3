@@ -5,7 +5,8 @@ autoprefixer = require('autoprefixer'),
 postCss = require('gulp-postcss'),
 cssImport = require('postcss-import'),
 cssVars = require('postcss-simple-vars'),
-nestedCss = require('postcss-nested'),
+cssNested = require('postcss-nested'),
+cssMixins = require('postcss-mixins'),
 mkNestedCss = require('postcss-to-nest'),
 cssUnused = require('gulp-uncss'),
 cssClean = require('gulp-clean-css'),
@@ -81,7 +82,7 @@ gulp.task('cssinject', ['stylescss'], function() {
 gulp.task('stylescss', function() {
 	return gulp.src(path.cssinname)
 	.pipe(plumber())
-	.pipe(postCss([cssImport, cssVars, nestedCss, 
+	.pipe(postCss([cssImport, cssMixins, cssVars, cssNested, 
 		          autoprefixer({browserslist: ["> 3%","last 3 versions"],cascade: false})]))
 	.pipe(plumber.stop())
 	.pipe(gulp.dest(path.cssout));

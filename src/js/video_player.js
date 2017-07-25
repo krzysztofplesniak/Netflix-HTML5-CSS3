@@ -49,18 +49,19 @@
 	function searchMovie(type, requestedData) {
 	
 	var movieDetails, requestUrl, request,
-		baseUrl = 'https://www.omdbapi.com/',
-		apiKey = '&apikey=3a2d81a4';
-		
 
+        baseUrl = 'http://api.themoviedb.org/3/',
+		apiKey = '?api_key=fa9a488e23b87c8ef52a33bfa830cbe1',
+		parameters = '&language=pl-PL&append_to_response=videos';
+				
 		if (type === 'ID') { 
-				request = '?i=';
+				request = 'movie/';
 			}
 		else if (type === 'Title') {
-				request = '?t=';
+				request = 'search/movie&query=';
 			}
 
-		requestURl = baseUrl + request + requestedData + apiKey;
+		requestURl = baseUrl + request + requestedData + apiKey + parameters;
 		
 		$.ajax({
 			url: requestURl,
@@ -71,7 +72,7 @@
         	 	movieDetails = response;
         	}
         });
-
+		
         return movieDetails;
                
     }
@@ -89,18 +90,18 @@
 		else if (source === 'OMDB') {movieDetails = searchMovie('ID', movieToDisplay.imdbID);}	
  		
 		// wklejenie danych w descriptionBox losowego filmu
-		$('.filmTitle').text(movieDetails.Title);
-		$('.filmDescriptionP1').text(movieDetails.Plot.slice(0,100));
-		$('.filmDescriptionP2').text(movieDetails.Plot.slice(100,movieDetails.Plot.length));
+		$('.filmTitle').text(movieDetails.title);
+		$('.filmDescriptionP1').text(movieDetails.overview.slice(0,200));
+		$('.filmDescriptionP2').text(movieDetails.overview.slice(200,movieDetails.overview.length));
 	    $('.filmGenre').text(movieDetails.Genre);
 	    $('.filmDirector').text(movieDetails.Director);
 	    $('.filmWriter').text(movieDetails.Writer);
 	    $('.filmActors').text(movieDetails.Actors);
 	    $('.filmAwards').text(movieDetails.Awards);
-		$('.filmRating').text(movieDetails.imdbRating);
-		$('.filmYear').text(movieDetails.Year);
-		$('.filmRuntime').text(movieDetails.Runtime);
-		$('.filmPoster').attr('src',movieDetails.Poster);
+		$('.filmRating').text(movieDetails.popularity);
+		$('.filmYear').text(movieDetails.release_date);
+		$('.filmRuntime').text(movieDetails.runtime);
+		$('.filmPoster').attr('src','http://image.tmdb.org/t/p/w780' + movieDetails.poster_path);
 
 		// podmianka w butonach atrybutu data-url potrzebnego pózniej do otworzenia filmu lub strony IMDB z tym filmem 
 		// $('.btnWatchVideo').attr('data-url', "http://www.youtube.com/watch?v=z_R04FgGvtw");
@@ -116,7 +117,7 @@
 	// tytuł & poster ze zdjęciem z filmu
 	function displayVideoBoxes(movieToDisplay) {
 		
-		var outputHtml, movieDetails;
+		var movieDetails, outputHtml = '';
 	
 		for ( i=0; i < movieToDisplay.length; i++) {
 		
@@ -124,28 +125,19 @@
 			// w zmnienniej movie są tylko podstawowe dane tj. url, id, poster, tytuł i opis
 			movieDetails = searchMovie('ID', movieToDisplay[i].id);
 		
-			outputHtml = '';
-			outputHtml += '<div class="videoBox" data-video-id="4IM1XhTxPAE">';
-			outputHtml += '<img src="'+ movieDetails.Poster +'">';
-			outputHtml += '<i class="fa fa-play-circle"></i>';
-			outputHtml += '<p>'+ movieDetails.Title +'</p>';
+			
+			outputHtml += '<div class="videoBox" ';
+			outputHtml += 		'data-video-id="4IM1XhTxPAE">';
+			outputHtml += 		'<img src="'+ movieDetails.Poster +'">';
+			outputHtml += 		'<i class="fa fa-play-circle"></i>';
+			outputHtml += 		'<p>'+ movieDetails.Title +'</p>';
 			outputHtml += '</div>';
 
 			$('.videoBoxes').append(outputHtml);
 		
 		}
 		setVideoRows(4); // pokazanie ograniczonej liczby wierszy
-
-		// dodanie taga <video> do kafelka z filmem
-			// var modal = document.querySelector('.showModal');
-			// modal.style.display = 'block';
-			// outputHtml = '';	
-			// outputHtml = '<video id="videoModal" poster="'+ movieDetails.Poster +'">';
-			// outputHtml = '<source src="'+ movie[i].url +'" type="video/mp4">';
-			// outputHtml = '</video>';
-			// $('#body').append(outputHtml);
-			// console.log('modal', outputHtml);
-		
+	
 	}
 
 	// funkcja która naprzemiennie pokazuj i chowa elementy menuSearch
@@ -178,9 +170,10 @@
 
 	// pokazanie Modalu na ekranie
 	function openVideoModal(movieToDisplay) {
-		var modalWindow, modalVideo;
+		var modalVideo = '';
 		
-		modalVideo = '';
+		// za kazdym klikiem w kafelke jest tworzona oddnowa struktrura tagu <video>
+		
 		modalVideo += '<video id="modalVideo"';
 		modalVideo +=  			' class="video-js vjs-big-play-centered vjs-default-skin vjs-16-9"';
 		modalVideo +=			' autoplay preload="auto" controls>';
@@ -189,10 +182,8 @@
 		modalVideo +=  '</video>';
 				
 		modal.addClass('modalOpen');
-		modalWindow = $('.modalWindow');
-		modalWindow.append(modalVideo);
-
-		console.log('ostatecznie', modalWindow.find('#modalVideo').find('source').attr('src'));
+		$('.modalWindow').append(modalVideo);
+	
 	}
 
 	// odtworzenie Video w Modalu
@@ -207,6 +198,7 @@
   		// event zakończenia filmu 
 		player.on('ended', function() {
 			modal.removeClass('modalOpen');
+			player.dispose();
 		});
 	}
 

@@ -28,9 +28,10 @@ header {
 		z-index: 100;
 		border-bottom: red 4px solid;
 		overflow: hidden;
-		box-sizing: border-box;
+		box-sizing: border-box;		
 	}
 header nav {
+		/* to jest komentarz*/
 		height: 90px;
 		margin: 0px; 
 		transition: all ease-out 0.2s;   
@@ -448,24 +449,6 @@ header ul li a {
 		z-index: 999;
 		opacity: 1;
 	}
-/*	
-	#controlBox {
-		position: fixed;
-		top: 5;
-		left: 5;
-		width: 150px;
-		height: 80px;
-		background: black;
-		padding: 10px;
-		z-index: 200;
-		border: 1px solid yellow;
-	}
-	
-	#controlBox p {
-		color: red;
-		font-size: 20px;
-	}
-	*/
 @media (max-width: 1280px){
 
 /* ======== MEDIA QUERIES 1280PX =======*/

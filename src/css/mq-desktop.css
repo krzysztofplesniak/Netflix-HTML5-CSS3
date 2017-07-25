@@ -18,7 +18,7 @@
 		margin: 0 auto;
 		overflow: hidden;
 		/*border: 3px solid white;*/
-	}	
+	}
 
 	/* ======= sekcja Header z menu na górze i logo Netflixa */
 
@@ -31,15 +31,16 @@
 		z-index: 100;
 		border-bottom: red 4px solid;
 		overflow: hidden;
-		box-sizing: border-box;
-	}
+		box-sizing: border-box;		
+	}	
 
 	header nav {
+		/* to jest komentarz*/
 		height: 90px;
 		margin: 0px; 
 		transition: all ease-out 0.2s;   
 	}
-
+	
 	/*gdy scrollowanie w dół lub opuszczenie header'a to ma się pomiejszyc */
 	.headerBig {
 		margin: 12px 0px;
@@ -501,22 +502,4 @@
 		z-index: 999;
 		opacity: 1;
 	}
-		
-	/*	
-	#controlBox {
-		position: fixed;
-		top: 5;
-		left: 5;
-		width: 150px;
-		height: 80px;
-		background: black;
-		padding: 10px;
-		z-index: 200;
-		border: 1px solid yellow;
-	}
 	
-	#controlBox p {
-		color: red;
-		font-size: 20px;
-	}
-	*/

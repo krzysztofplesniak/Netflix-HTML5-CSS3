@@ -195,10 +195,8 @@
 	// pokazanie Modalu na ekranie
 	function openVideoModal(movieID) {
 		var modalVideo = '';
-		
 		movieIDYoutube = getMovieVideoUrl(movieID);
-		console.log(movieIDYoutube);
-
+		
 		// za każdym klikiem w kafelek, tworzona jest nowa struktura tagu <video>
 		modalVideo += '<video id="modalVideo"';
 		modalVideo +=  			' class="video-js vjs-big-play-centered vjs-default-skin vjs-16-9"';

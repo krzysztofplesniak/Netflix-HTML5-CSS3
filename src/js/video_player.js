@@ -48,20 +48,20 @@
 	// id z plik JSON
 	function searchMovie(type, requestedData) {
 	
-	var movieDetails, requestUrl, request,
-
-        baseUrl = 'http://api.themoviedb.org/3/',
-		apiKey = '?api_key=fa9a488e23b87c8ef52a33bfa830cbe1',
-		parameters = '&language=pl-PL&append_to_response=videos';
-				
+	var movieDetails, requestUrl, request, rest,
+        
+        
+        baseUrl = 'http://www.omdbapi.com/',
+		apiKey = '&apikey=3a2d81a4';
+		
 		if (type === 'ID') { 
-				request = 'movie/';
+				request = '?i=';
 			}
 		else if (type === 'Title') {
-				request = 'search/movie&query=';
+				request = '?t=';
 			}
 
-		requestURl = baseUrl + request + requestedData + apiKey + parameters;
+		requestURl = baseUrl + request + requestedData + apiKey;
 		
 		$.ajax({
 			url: requestURl,
@@ -76,6 +76,30 @@
         return movieDetails;
                
     }
+	
+	// zapytanie do TMDb i pozyskanie ID filmu z  Youtuba 
+	function getMovieVideoUrl(videoID) {
+	
+	var movieDetails, requestUrl,
+	    baseUrl = 'http://api.themoviedb.org/3/movie/',
+		apiKey = '?api_key=fa9a488e23b87c8ef52a33bfa830cbe1',
+		rest = '&append_to_response=videos';
+		
+		requestURl = baseUrl + videoID + apiKey + rest;
+		
+		$.ajax({
+			url: requestURl,
+			type:'GET',
+        	dataType:'json',
+        	async: false,
+        	success: function (response) {
+        	 	movieDetails = response;
+        	}
+        });
+
+        return movieDetails.videos.results[0].key; // funkcja zwraca identyfikator filmu do Youtuba 
+         
+	}	
 
 	// wyświetlenie jednego wybranego filmu w descirptionBOX 
 	function displayDescriptionBox(movieToDisplay, source) {
@@ -90,26 +114,26 @@
 		else if (source === 'OMDB') {movieDetails = searchMovie('ID', movieToDisplay.imdbID);}	
  		
 		// wklejenie danych w descriptionBox losowego filmu
-		$('.filmTitle').text(movieDetails.title);
-		$('.filmDescriptionP1').text(movieDetails.overview.slice(0,200));
-		$('.filmDescriptionP2').text(movieDetails.overview.slice(200,movieDetails.overview.length));
+		$('.filmTitle').text(movieDetails.Title);
+		$('.filmDescriptionP1').text(movieDetails.Plot.slice(0,200));
+		$('.filmDescriptionP2').text(movieDetails.Plot.slice(200,movieDetails.Plot.length));
 	    $('.filmGenre').text(movieDetails.Genre);
 	    $('.filmDirector').text(movieDetails.Director);
 	    $('.filmWriter').text(movieDetails.Writer);
 	    $('.filmActors').text(movieDetails.Actors);
 	    $('.filmAwards').text(movieDetails.Awards);
-		$('.filmRating').text(movieDetails.popularity);
-		$('.filmYear').text(movieDetails.release_date);
-		$('.filmRuntime').text(movieDetails.runtime);
-		$('.filmPoster').attr('src','http://image.tmdb.org/t/p/w780' + movieDetails.poster_path);
+		$('.filmRating').text(movieDetails.imdbRating);
+		$('.filmYear').text(movieDetails.Year);
+		$('.filmRuntime').text(movieDetails.Runtime);
+		$('.filmPoster').attr('src', movieDetails.Poster);
 
 		// podmianka w butonach atrybutu data-url potrzebnego pózniej do otworzenia filmu lub strony IMDB z tym filmem 
 		// $('.btnWatchVideo').attr('data-url', "http://www.youtube.com/watch?v=z_R04FgGvtw");
-		$('.btnWatchVideo').attr('data-video-id', "_KJHRF6RlTQ");
-	    $('.btnShowIMDB').attr('data-url', "http://www.imdb.com/title/"+ movieDetails.imdbID +"/");
+		$('.btnWatchVideo').attr('data-video-id', movieDetails.imdbID);
+	    $('.btnShowIMDB').attr('data-video-id', movieDetails.imdbID);
 
 	    // wklejenie w tag <video> danych filmu, kóry ma sie wyśietlic w tle
-	    $('#videoBackground').attr('poster',movieDetails.Poster);
+	    $('#videoBackground').attr('poster', movieDetails.Poster);
 	} 
 	
 	
@@ -118,14 +142,13 @@
 	function displayVideoBoxes(movieToDisplay) {
 		
 		var movieDetails, outputHtml = '';
-	
-		for ( i=0; i < movieToDisplay.length; i++) {
-		
+	    
+		for ( a=0; a < movieToDisplay.length; a++) {
+		    
 			// pobranie rozszerzonych danych o filmie z zewnetrznej bazy OMDb 
 			// w zmnienniej movie są tylko podstawowe dane tj. url, id, poster, tytuł i opis
-			movieDetails = searchMovie('ID', movieToDisplay[i].id);
-		
-			
+			movieDetails = searchMovie('ID', movieToDisplay[a].id);
+					
 			outputHtml += '<div class="videoBox" ';
 			outputHtml += 		'data-video-id="4IM1XhTxPAE">';
 			outputHtml += 		'<img src="'+ movieDetails.Poster +'">';
@@ -134,7 +157,8 @@
 			outputHtml += '</div>';
 
 			$('.videoBoxes').append(outputHtml);
-		
+			
+			outputHtml = '';
 		}
 		setVideoRows(4); // pokazanie ograniczonej liczby wierszy
 	
@@ -169,15 +193,17 @@
 	}
 
 	// pokazanie Modalu na ekranie
-	function openVideoModal(movieToDisplay) {
+	function openVideoModal(movieID) {
 		var modalVideo = '';
 		
-		// za kazdym klikiem w kafelke jest tworzona oddnowa struktrura tagu <video>
-		
+		movieIDYoutube = getMovieVideoUrl(movieID);
+		console.log(movieIDYoutube);
+
+		// za każdym klikiem w kafelek, tworzona jest nowa struktura tagu <video>
 		modalVideo += '<video id="modalVideo"';
 		modalVideo +=  			' class="video-js vjs-big-play-centered vjs-default-skin vjs-16-9"';
 		modalVideo +=			' autoplay preload="auto" controls>';
-		modalVideo +=		' <source src="http://www.youtube.com/watch?v=' + movieToDisplay + '"';
+		modalVideo +=		' <source src="http://www.youtube.com/watch?v=' + movieIDYoutube + '"';
 		modalVideo +=		' type="video/youtube">';
 		modalVideo +=  '</video>';
 				
@@ -241,7 +267,7 @@
 		btnWatchVideo.addEventListener('click', function () {
 				
 			// przekazanie ID filmu, który jest zapisany  w atrybucie data-video-id buttona "Pokaż film"
-			openVideoModal($('.btnWatchVideo').attr('data-video-id'));											
+			openVideoModal($('.btnWatchVideo').attr('data-video-id'));
 			playVideoInModal();			
 		});
 

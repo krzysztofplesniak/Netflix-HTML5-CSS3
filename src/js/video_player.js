@@ -213,7 +213,6 @@
     	displayDescriptionBox(movieDetails,'OMDB');
 	}
 
-
 	// pokazanie Modalu na ekranie
 	function openVideoModal(youTubeMovieID) {
 		var modalVideo = '';

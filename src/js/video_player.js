@@ -55,8 +55,8 @@
         	 	movieDetails = response;
         	}
         });
-
-    	return movieDetails;  
+   	return movieDetails;  
+   	
 	}
 	
 	// pobranie rozszerzonej ilości danych o jednym filmie tj. tytuł, rok, reżyser,

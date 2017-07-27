@@ -7,8 +7,8 @@
 		iconBars = document.querySelectorAll('.iconBar'), 			// 3 belki hamburgera
 		menuItems = document.querySelector('header ul'),  			// całe menu czyli hamburger icon i pozycje w menu
 		header = document.querySelector('header nav'),
-		showMoreText = document.querySelector('.showMoreText'), 
-		hiddenText = document.querySelector('.hiddenText');
+		showReadMoreText = document.querySelector('.showReadMoreText'), 
+		longDescription = document.querySelector('.longDescription');
 		
 	
 	var pageYOffset, pageWidth, numberOfRows, sectionHeight;
@@ -73,20 +73,23 @@
 		videoSection.height(videoBoxes.height() * sectionHeight);
 					
 	// Pokazanie napisu "Czytaj więcej" dla małych ekranów  
-		if ((pageWidth < 480) && (hiddenText.innerText.length !== 0)) {
-				showMoreText.style.display = 'block';
-			}		
+	  
+		if ((pageWidth < 480) && (longDescription.classList.contains('hiddenText') == true)) {
+				showReadMoreText.style.display = 'block';
+		}		
 	}
 
 	
 // Blok kodu obsługujacy kliknęcie w "Czytaj więcej"  
-	showMoreText.addEventListener('click', showTextDescription); // event nałsuchujący kliknięcia na klawisz 
+	showReadMoreText.addEventListener('click', showLongDescription); // event nałsuchujący kliknięcia na klawisz 
  															     //	"Czytaj więcej" który odsłoni część tekstu dla małych MQ 
-	function showTextDescription() {
+	function showLongDescription() {
 		
-		if (hiddenText.value !== 0) {
-			hiddenText.style.display = 'inline';
-			showMoreText.style.display = 'none';
+		if (longDescription.value !== 0) {
+
+			longDescription.style.display = 'inline';
+			showReadMoreText.style.display = 'none';
+			longDescription.classList.remove('hiddenText');
 		}	
 	}	 
 

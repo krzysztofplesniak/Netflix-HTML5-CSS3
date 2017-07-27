@@ -21,6 +21,7 @@
 	}
 
 	/* ======= sekcja Header z menu na górze i logo Netflixa */
+
 	header {
 		height: auto;
 		width: 100%;
@@ -287,8 +288,8 @@
 		font-size: 0;
 	}*/
 
-	.descriptionBox .filmDescriptionP1, 
-	.descriptionBox .filmDescriptionP2 {
+	.descriptionBox .shortDescription, 
+	.descriptionBox .longDescription {
 		display: inline;
 		color: white;
 		font-weight: 300;

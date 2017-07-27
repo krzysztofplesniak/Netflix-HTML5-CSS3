@@ -252,8 +252,8 @@ header ul li a {
 /*.descriptionBox .filmDescBox {
 		font-size: 0;
 	}*/
-.descriptionBox .filmDescriptionP1, 
-	.descriptionBox .filmDescriptionP2 {
+.descriptionBox .shortDescription, 
+	.descriptionBox .longDescription {
 		display: inline;
 		color: white;
 		font-weight: 300;

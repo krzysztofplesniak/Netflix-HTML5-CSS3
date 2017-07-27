@@ -8,9 +8,8 @@
 		menuItems = document.querySelector('header ul'),  			// całe menu czyli hamburger icon i pozycje w menu
 		header = document.querySelector('header nav'),
 		showMoreText = document.querySelector('.showMoreText'), 
-		hiddenText = document.querySelector('.hiddenText'),
-		videoSection = $("#videoSection"),
-		videoBoxes = $(".videoBoxes");
+		hiddenText = document.querySelector('.hiddenText');
+		
 	
 	var pageYOffset, pageWidth, numberOfRows, sectionHeight;
 	
@@ -32,7 +31,10 @@
 	window.addEventListener('resize', setVideoRows); 
 	
 	function setVideoRows(numberOfRows) {
-				
+
+		var videoSection = $("#videoSection"),
+			videoBoxes = $(".videoBoxes");		
+
 		pageWidth = window.outerWidth;
 		
 		//jak nie jest zadany paramet ile ma by wyświetlanych wierszy domyślnie nadaj 5 
@@ -111,6 +113,8 @@
 	window.addEventListener('scroll', scrollPage);
 	
 	function scrollPage() {
+
+		var videoSection = $("#videoSection");
 		
 		pageWidth = window.outerWidth;
 		pageYScroll = window.scrollY;

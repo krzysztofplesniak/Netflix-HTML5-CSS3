@@ -66,7 +66,7 @@
 	
 	var movieDetails, requestUrl, request, rest,
                 
-        baseUrl = 'http://www.omdbapi.com/',
+        baseUrl = 'https://www.omdbapi.com/',
 		apiKey = '&apikey=3a2d81a4';
 		
 		if (type === 'ID') { 
@@ -88,7 +88,7 @@
 	function getMovie(videoID, type) {
 	
 	var movieDetails, requestUrl, movie, description, rest,
-	    baseUrl = 'http://api.themoviedb.org/3/movie/',
+	    baseUrl = 'https://api.themoviedb.org/3/movie/',
 		apiKey = '?api_key=fa9a488e23b87c8ef52a33bfa830cbe1';
 				
 		// odpytanie o URL filmu na Youtube'ie	

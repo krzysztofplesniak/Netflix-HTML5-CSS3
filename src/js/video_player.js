@@ -3,6 +3,7 @@
 		menuSearch = document.querySelector('.menuSearch'),
 		expandedBox  = document.querySelector('.expandedBox'),
 		smallBox = document.querySelector('.smallBox'),
+		expandedBox = document.querySelector('.expandedBox'),
 		closeModal = document.querySelector('.fa-window-close-o'),
 		videoBoxes = document.querySelector('#videoSection .videoBoxes'),
 		modal = document.querySelector('.modalBackground');
@@ -69,7 +70,7 @@
 	
 	// zapytanuie do bazy OMDB
 		if ((type === 'ID') || (type === 'TITLE')) { 
-			baseUrl = 'https://www.omdbapi.com/',
+			baseUrl = 'https://www.omdbapi.com/';
 			apiKey = '&apikey=3a2d81a4';	
 
 			if (type === 'ID') 
@@ -84,7 +85,7 @@
         }    
 
 	// zapytanie do TMDb i pozyskanie ID filmu z  Youtuba 	
-        baseUrl = 'https://api.themoviedb.org/3/movie/',
+        baseUrl = 'https://api.themoviedb.org/3/movie/';
 		apiKey = '?api_key=fa9a488e23b87c8ef52a33bfa830cbe1';
 				
 		
@@ -156,6 +157,7 @@
 			$('.shortDescription').text(movieDetails.Plot.slice(0, cuttingPosition + 1));
 			$('.longDescription').text(movieDetails.Plot.slice(cuttingPosition + 1, movieDetails.Plot.length));
 		}
+		 else $('.shortDescription').text(movieDetails.Plot);
 		
 		// podmianka w butonach atrybutu data-url potrzebnego pózniej do otworzenia filmu lub strony OMDB z tym filmem 
 		$('.btnWatchVideo').attr('data-video-id', movieDetails.imdbID);
@@ -230,7 +232,7 @@
 		modalVideo += '<video id="modalVideo"';
 		modalVideo +=  			' class="video-js vjs-big-play-centered vjs-default-skin vjs-16-9"';
 		modalVideo +=			' autoplay preload="auto" controls>';
-		modalVideo +=		' <source src="https://www.youtube.com/watch?v=' + youTubeMovieID + '"';
+		modalVideo +=		' <source src="http://www.youtube.com/watch?v=' + youTubeMovieID + '"';
 		modalVideo +=		' type="video/youtube">';
 		modalVideo +=  '</video>';
 				
@@ -261,18 +263,22 @@
 		var omdbMovieID, youTubeMovieID;
 
 		// event kliknięcia na input "Szukaj"
-		menuSearch.addEventListener('click', function () {
+		expandedBox.addEventListener('click', function (event) {
 			expandedBox.value = '';
-		});
+			console.log('klick');
+			event.stopPropagation();
+		}, true);
 		
 		// event najechania na input "Szukaj"
 		menuSearch.addEventListener('mouseenter', function () {
 			menuSearchDisplay('show');
+			console.log('wejscie');
 		});
 
 		// event opuszczenia inputu "Szukaj"
 		menuSearch.addEventListener('mouseleave', function () {
 			menuSearchDisplay('hide');
+			console.log('wyjscie');
 		});
 
 		// event Enter na inpucie "Szukaj"

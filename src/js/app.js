@@ -74,8 +74,9 @@
 					
 	// Pokazanie napisu "Czytaj więcej" dla małych ekranów  
 	  
-		if ((pageWidth < 480) && (longDescription.classList.contains('hiddenText') == true)) {
+		if ((pageWidth < 480) && (longDescription.classList.contains('hiddenText') === true)) {
 				showReadMoreText.style.display = 'block';
+				console.log('Czytaj');
 		}		
 	}
 
